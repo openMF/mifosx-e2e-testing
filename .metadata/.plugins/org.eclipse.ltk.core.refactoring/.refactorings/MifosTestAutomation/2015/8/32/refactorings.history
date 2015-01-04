@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;MifosTestAutomation/src/test/resources/features/Test.features&apos; to &apos;Test.feature&apos;" description="Rename resource &apos;Test.features&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/test/resources/features/Test.features" name="Test.feature" stamp="1438771616828" updateReferences="true"/>
-</session>

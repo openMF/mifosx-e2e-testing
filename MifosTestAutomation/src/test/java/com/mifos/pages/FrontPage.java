@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
@@ -30,7 +31,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+
 import com.ibm.icu.text.NumberFormat;
 import com.mifos.testing.framework.webdriver.LazyWebElement;
 
@@ -98,9 +101,10 @@ public class FrontPage extends MifosWebPage {
 	 *            :- sheet name of an excel sheet
 	 * 
 	 * @return
+	 * @throws Exception 
 	 */
 	public static Map<String, String> parseExcelSheet(String excelSheetPath,
-			String excelsheet, String sheetname) {
+			String excelsheet, String sheetname) throws Exception {
 
 		Map<String, String> excelVlaue = new LinkedHashMap<String, String>();
 		XSSFSheet sheet = null;
@@ -159,7 +163,8 @@ public class FrontPage extends MifosWebPage {
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new Exception("invalid excel sheet or sheet name");
+
 		}
 		return excelVlaue;
 	}
@@ -236,9 +241,10 @@ public class FrontPage extends MifosWebPage {
 	 * @param excelSheetPath
 	 * @param excelSheetName
 	 * @param sheetName
+	 * @throws Exception 
 	 */
 	public void verifyClient(String excelSheetPath, String excelSheetName,
-			String sheetName) {
+			String sheetName) throws Exception {
 		// TODO Auto-generated method stub
 		Map<String, String> clientDetailsMap = parseExcelSheet(excelSheetPath,
 				excelSheetName, sheetName);
@@ -329,9 +335,10 @@ public class FrontPage extends MifosWebPage {
 	 * @param productExcelSheetPath
 	 * @param excelSheetName
 	 * @param sheetName
+	 * @throws Exception 
 	 */
 	public void verifyProduct(String productExcelSheetPath,
-			String excelSheetName, String sheetName) {
+			String excelSheetName, String sheetName) throws Exception {
 		// TODO Auto-generated method stub
 		Map<String, String> productDetailsMap = parseExcelSheet(
 				productExcelSheetPath, excelSheetName, sheetName);
@@ -393,7 +400,7 @@ public class FrontPage extends MifosWebPage {
 						.click();
 			}
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
-	
+
 			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
 				int xlColumnPointer = 0;
 				if (sheetname.equals("Transactions")) {
@@ -401,15 +408,15 @@ public class FrontPage extends MifosWebPage {
 				}
 
 				List<WebElement> applicationCol = null;
+				String Accrual = null;
 				if (sheetname.equals("Summary")
 						|| sheetname.equals("Repayment Schedule")
 						|| sheetname.equals("Transactions")) {
 
-					
 					if (sheetname.equals("Transactions")
 							|| !isaccuralsTypeTransaction) {
 
-						String Accrual = getWebDriver()
+						Accrual = getWebDriver()
 								.findElement(
 										By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div[3]/div[4]/div/div/div["
 												+ sheetIndex
@@ -445,26 +452,33 @@ public class FrontPage extends MifosWebPage {
 											+ sheetIndex
 											+ "]/table/tbody/tr["
 											+ xlRowCount + "]/td"));
-				//	System.out.println("Col count  " + applicationCol.size());
+					// System.out.println("Col count  " +
+					// applicationCol.size());
 
 				} else if (sheetname.equals("Acc_Disbursement")
 						|| sheetname.equals("Acc_Repaymentdisbursement")
 						|| sheetname.equals("Acc_Repayment")) {
 					xlColumnPointer = 4;
-				
+
 					applicationCol = getWebDriver()
 							.findElements(
 									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["
 											+ xlRowCount + "]/td"));
-		//			System.out.println("Col count  " + applicationCol.size());
+					// System.out.println("Col count  " +
+					// applicationCol.size());
 				}
-				verifyColumnDetails(xlColumnPointer, xlRowCount, applicationCol, sheet,
-						sheetname);
+				
+					verifyColumnDetails(xlColumnPointer, xlRowCount,
+							applicationCol, sheet, sheetname);
+					Thread.sleep(getResourceKey("wait"));
 
+				 
 			}
 			Thread.sleep(getResourceKey("mediumWait"));
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
+		} catch (NoSuchElementException e) {
+			Assert.fail("Tab Name:" + sheetname + ": Enable to click \n");
 		}
 	}
 
@@ -565,7 +579,7 @@ public class FrontPage extends MifosWebPage {
 
 
 	/**
-	 * Method makes repayment and verifies Validates Loan tabs details
+	 * Method makes repayment and verifies & Validates Loan tabs details
 	 * @param excelSheetPath
 	 * @param excelSheet
 	 * @throws Throwable 
@@ -610,27 +624,29 @@ public class FrontPage extends MifosWebPage {
 	private void makeRepayment(String excelSheetPath, String excelName,
 			String inputSheet) throws Throwable {
 		// TODO Auto-generated method stub
-		Map<String, String> repaymentDetails = parseExcelSheet(excelSheetPath,
-				excelName, inputSheet);
-		insertValues(repaymentDetails);
-		clickButton(getResource("submitmakerepayment"));
-		Thread.sleep(getResourceKey("extraLargeWait"));
-		
-		//Before reading transaction id need to un check the hideAccurals button for scheduler job scenarios
-		if (!ishideAccuralsChecked) {
-			getWebDriver().findElement(
-					By.xpath("//a[contains(.,'Transactions')]")).click();
-			isTransactionTabSelected = true;
-			LazyWebElement accrualCheck = getElement(getResource("hideaccruals"));
-			if (accrualCheck.isSelected()) {
-				clickButton(getResource("hideaccruals"));
-				Thread.sleep(getResourceKey("mediumWait"));
+		try {
+			Map<String, String> repaymentDetails = parseExcelSheet(
+					excelSheetPath, excelName, inputSheet);
+			insertValues(repaymentDetails);
+			clickButton(getResource("submitmakerepayment"));
+			Thread.sleep(getResourceKey("extraLargeWait"));
+
+			// Before reading transaction id need to un check the hideAccurals
+			// button for scheduler job scenarios
+			if (!ishideAccuralsChecked) {
+				getWebDriver().findElement(
+						By.xpath("//a[contains(.,'Transactions')]")).click();
+				isTransactionTabSelected = true;
+				LazyWebElement accrualCheck = getElement(getResource("hideaccruals"));
+				if (accrualCheck.isSelected()) {
+					clickButton(getResource("hideaccruals"));
+					Thread.sleep(getResourceKey("mediumWait"));
+				}
+
 			}
-			
-
+		}	catch (Exception ioe) {
+			ioe.printStackTrace();
 		}
-		
-
 	}
 
 	public void makeRepaymentAndReadTransactionId(String excelSheetPath,
