@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ClientTests" project="MifosTestAutomation" tests="13" started="13" failures="0" errors="3" ignored="9">
+  <testsuite name="com.mifos.tests.ClientTests">
+    <testsuite name="Feature: Client">
+      <testsuite name="Scenario: As User creates the loans,make repayment and verifies the tabs" incomplete="true">
+        <error>java.lang.NullPointerException&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver.extractInterfaces(EventFiringWebDriver.java:117)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver.access$500(EventFiringWebDriver.java:63)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.&lt;init&gt;(EventFiringWebDriver.java:318)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.&lt;init&gt;(EventFiringWebDriver.java:312)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver.createWebElement(EventFiringWebDriver.java:282)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:182)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:523)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)&#13;
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)&#13;
+	at com.mifos.pages.MifosWebPage.waitForElementToBeVisible(MifosWebPage.java:210)&#13;
+	at com.mifos.pages.MifosWebPage.getElement(MifosWebPage.java:699)&#13;
+	at com.mifos.pages.MifosWebPage.getElement(MifosWebPage.java:684)&#13;
+	at com.mifos.pages.MifosWebPage.getSingleText(MifosWebPage.java:941)&#13;
+	at com.mifos.pages.MifosWebPage.validateSame(MifosWebPage.java:947)&#13;
+	at com.mifos.pages.MifosWebPage.verifySuccessMessage(MifosWebPage.java:1815)&#13;
+	at com.mifos.steps.LoginSteps.I_should_see_login_successfully(LoginSteps.java:43)&#13;
+	at ✽.Then I should see logged in successfully(src\test\resources\features\Client.feature:7)&#13;
+&#13;
+org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=40.0.2214.115)
+  (Driver info: chromedriver=2.8.241075,platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 13 milliseconds
+Build info: version: '2.29.1', revision: 'dfb1306b85be4934d23c123122e06e602a15e446', time: '2013-01-22 12:58:05'
+System info: os.name: 'Windows 8', os.arch: 'amd64', os.version: '6.2', java.version: '1.7.0_51'
+Session ID: 628bcdddabdb8acfeabcdd62425be6a9
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\15\AppData\Local\Temp\scoped_dir2832_26457}, rotatable=false, locationContextEnabled=true, version=40.0.2214.115, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)&#13;
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:187)&#13;
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)&#13;
+	at org.openqa.selenium.chrome.ChromeDriver.getScreenshotAs(ChromeDriver.java:173)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:101)&#13;
+	at com.sun.proxy.$Proxy16.getScreenshotAs(Unknown Source)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver.getScreenshotAs(EventFiringWebDriver.java:262)&#13;
+	at com.mifos.steps.BaseSteps.doScreenshotAfterTests(BaseSteps.java:123)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at cucumber.runtime.Utils$1.call(Utils.java:44)&#13;
+	at cucumber.runtime.Timeout.timeout(Timeout.java:12)&#13;
+	at cucumber.runtime.Utils.invoke(Utils.java:40)&#13;
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:59)&#13;
+	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:194)&#13;
+	at cucumber.runtime.Runtime.runHooks(Runtime.java:185)&#13;
+	at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:179)&#13;
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:38)&#13;
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:83)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)&#13;
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:77)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)&#13;
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:82)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)&#13;
+&#13;
+</error>
+        <testcase name="Given I navigate to mifos" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" incomplete="true"/>
+        <testcase name="And I use login folder" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" incomplete="true"/>
+        <testcase name="When I login into mifos site using excel sheet" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.004" ignored="true"/>
+        <testcase name="When I entered the values into client form using" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.003" ignored="true"/>
+        <testcase name="Then I should see client created successfully" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.002" ignored="true"/>
+        <testcase name="When I set up the new create loan" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.001" ignored="true"/>
+        <testcase name="And I disburse the new created loan" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.004" ignored="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.005" ignored="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.004" ignored="true"/>
+        <testcase name="When I make repayment and verified the following tabs" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.004" ignored="true"/>
+        <testcase name="And I disburse the new created loan" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.021" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="Unrooted Tests" time="0.05">
+    <testcase name="Given I navigate to mifos" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.05"/>
+    <testcase name="And I use login folder" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.0"/>
+    <testcase name="When I login into mifos site using excel sheet" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="5.78"/>
+    <testcase name="Then I should see logged in successfully" classname="Scenario: As User creates the loans,make repayment and verifies the tabs" time="0.092">
+      <error>java.lang.NullPointerException&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver.extractInterfaces(EventFiringWebDriver.java:117)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver.access$500(EventFiringWebDriver.java:63)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.&lt;init&gt;(EventFiringWebDriver.java:318)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.&lt;init&gt;(EventFiringWebDriver.java:312)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver.createWebElement(EventFiringWebDriver.java:282)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:182)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:523)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:39)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:130)&#13;
+	at org.openqa.selenium.support.ui.ExpectedConditions$4.apply(ExpectedConditions.java:126)&#13;
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)&#13;
+	at com.mifos.pages.MifosWebPage.waitForElementToBeVisible(MifosWebPage.java:210)&#13;
+	at com.mifos.pages.MifosWebPage.getElement(MifosWebPage.java:699)&#13;
+	at com.mifos.pages.MifosWebPage.getElement(MifosWebPage.java:684)&#13;
+	at com.mifos.pages.MifosWebPage.getSingleText(MifosWebPage.java:941)&#13;
+	at com.mifos.pages.MifosWebPage.validateSame(MifosWebPage.java:947)&#13;
+	at com.mifos.pages.MifosWebPage.verifySuccessMessage(MifosWebPage.java:1815)&#13;
+	at com.mifos.steps.LoginSteps.I_should_see_login_successfully(LoginSteps.java:43)&#13;
+	at ✽.Then I should see logged in successfully(src\test\resources\features\Client.feature:7)&#13;
+&#13;
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

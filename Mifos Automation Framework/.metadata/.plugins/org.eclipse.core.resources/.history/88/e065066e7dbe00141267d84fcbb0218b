@@ -1,0 +1,53 @@
+Feature:Client
+Background:
+    Given I navigate to mifos
+	And I use login folder 
+	When I login into mifos site using excel sheet
+			| Login.xlsx  | 
+	Then I should see logged in successfully
+	
+@clientcreation		
+Scenario Outline: As User creates the clients using excelsheet
+	
+	Given I setup the clients 
+		| Clientnavigation.xlsx |
+	When I entered the values into client form using
+		 |<Createclient>|
+	Then I should see client created successfully
+	     |<Createclient>|
+	When I set up the new create loan
+	     |<Newcreateloan>|
+	Then I verified the "Summary" details successfully	
+		|<Newcreateloan>|
+	And I verified the "Repayment Schedule" details successfully	
+		|<Newcreateloan>|
+
+Examples:
+ | Createclient     | Newcreateloan     |
+ #| Createclient.xlsx  | Newcreateloan.xlsx  |
+ #| Createclient1.xlsx | Newcreateloan1.xlsx |
+ #| Createclient2.xlsx | Newcreateloan2.xlsx |
+ | Createclient3.xlsx | Newcreateloan3.xlsx |
+
+
+@clientcreations		
+Scenario: As User creates the different loans to single user
+	
+	Given I setup the clients 
+		| Clientnavigation.xlsx |
+	When I entered the values into client form using
+		 |Createclient3.xlsx|
+	Then I should see client created successfully
+	     |Createclient3.xlsx|
+	When I set up the new create loan
+	     |Newcreateloan4.xlsx|
+	Then I verified the "Summary" details successfully	
+		|Newcreateloan4.xlsx|
+    
+    When I went back to the client
+    And I set up the new create loan
+	     |Newcreateloan.xlsx|
+	Then I verified the "Summary" details successfully	
+		|Newcreateloan.xlsx|
+    
+    
