@@ -5,73 +5,14 @@ Background:
 	And I login into mifos site using "Login" excel sheet
 		| Login.xlsx  |
 	Then I should see logged in successfully
-	
-@loanproductcreation	
-Scenario Outline: As User creates the product loan using excelsheet
-
-	Given I setup the product loan "Setup"
-		| Productloannavigation.xlsx |
-	Then I entered the values into product loan from "ProductLoanInput" Sheet
-		| <excelsheet> |
-	Then I should see product loan created successfully	from "ProductLoanOutput" Sheet
-		| <excelsheet> |
- Examples:
-		|excelsheet| 
-	 #  |Loanproduct.xlsx|
-	 	|3102-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
-		|3103-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-CASH-Loanproduct.xlsx|
-	 	|3104-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-CASH-Loanproduct.xlsx|
-	 	|3105-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
-#	 	|3106-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%DIS-AMT-Regular-CASH-Loanproduct.xlsx|
-	 	|3107-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
-	 	|3108-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-CASH-Loanproduct.xlsx|
-#	 	|3109-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%DIS-AMT-Regular-CASH-Loanproduct.xlsx|
-	 	|3110-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
-	    |3111-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
-#		|3112-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%DIS-AMT-Regular-CASH-Loanproduct.xlsx|
-	 	|3113-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
-		|3114-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Loanproduct.xlsx|
-		|3115-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Loanproduct.xlsx|
-		|3116-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
-	    |3117-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-TR-DISB-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
-		|3118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-TR-%DISB-AMT-Regular-CASH-Loanproduct.xlsx|
-		|3124-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
-	 	|3125-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-SPEDUEDATE-FEE-%APRAMT-Regular-CASH-Loanproduct.xlsx|
-	 	|3127-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-INSTALLMENT-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
-	 	|3128-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
-	 	|3130-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
- 	 	|3131-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Loanproduct.xlsx|
-	 	|3132-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Loanproduct.xlsx|
-	 	|3133-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
-	 	|3136-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-PERIODIC-Loanproduct.xlsx|
-		|3137-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-PERIODIC-Loanproduct.xlsx|
-		|3138-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-PERIODIC-Loanproduct.xlsx|
-		|3139-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-PERIODIC-Loanproduct.xlsx|
-		|3142-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-PERIODIC-Loanproduct.xlsx|
-		|3143-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-PERIODIC-Loanproduct.xlsx|
-		|3144-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-PERIODIC-Loanproduct.xlsx|
-		|3145-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-PERIODIC-Loanproduct.xlsx|
-		|3147-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-PERIODIC-Loanproduct.xlsx|
-		|3148-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-PERIODIC-Loanproduct.xlsx|
-		|3149-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-PERIODIC-Loanproduct.xlsx|
-		|3150-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INT-Regular-PERIODIC-Loanproduct.xlsx|
-		|3170-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3171-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3172-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3173-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3175-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3176-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3178-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3179-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3181-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3182-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3183-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-UPFRONT-Loanproduct.xlsx|
-	 	|3184-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INT-Regular-UPFRONT-Loanproduct.xlsx|
-		
 			
 @scenario1-3102-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-CASH
 	  Scenario: 3102-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-CASH  
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3102-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -92,6 +33,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 @scenario2-3103-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-CASH   
 	  Scenario: 3103-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-CASH  
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3103-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -112,6 +57,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 @scenario3-3104-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-CASH   
 	  Scenario: 3104-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-CASH
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3104-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -132,6 +81,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 @scenario4-3105-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-CASH   
 	  Scenario: 3105-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-CASH  
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3105-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -152,6 +105,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 #@scenario5-3106-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%DIS-AMT-Regular-CASH
 #	  Scenario: 3106-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%DIS-AMT-Regular-CASH  
 
+#	  Given I setup the product loan "Setup"
+#				| Productloannavigation.xlsx |
+#	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+#				|3106-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%DIS-AMT-Regular-CASH-Loanproduct.xlsx|
 #   	  Given I setup the clients 
 #	  Then I entered the values into client from "Input" sheet
 #				|Createclient.xlsx|
@@ -172,6 +129,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 @scenario6-3107-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-CASH	   
 	  Scenario: 3107-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-CASH  
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3107-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -192,6 +153,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 @scenario7-3108-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-CASH	   
 	  Scenario: 3108-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-CASH  
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3108-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -212,6 +177,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 #@scenario8-3109-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%DIS-AMT-Regular-CASH	   
 #	  Scenario: 3109-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%DIS-AMT-Regular-CASH  
 
+#	  Given I setup the product loan "Setup"
+#				| Productloannavigation.xlsx |
+#	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+#				|3109-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%DIS-AMT-Regular-CASH-Loanproduct.xlsx|
 #   	  Given I setup the clients 
 #	  Then I entered the values into client from "Input" sheet
 #				|Createclient.xlsx|
@@ -232,6 +201,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 @scenario9-3110-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-CASH	   
 	  Scenario: 3110-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-CASH  
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3110-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -252,6 +225,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 @scenario10-3111-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-CASH	   
 	  Scenario: 3111-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-CASH  
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3111-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -273,6 +250,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 #@scenario11-3112-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%DIS-AMT-Regular-CASH
 #	  Scenario: 3112-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%DIS-AMT-Regular-CASH  
 
+#	  Given I setup the product loan "Setup"
+#				| Productloannavigation.xlsx |
+#	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+#				|3112-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%DIS-AMT-Regular-CASH-Loanproduct.xlsx|
 #   	  Given I setup the clients 
 #	  Then I entered the values into client from "Input" sheet
 #				|Createclient.xlsx|
@@ -293,6 +274,11 @@ Scenario Outline: As User creates the product loan using excelsheet
 
 @scenario12-3113-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH
 	  Scenario: 3113-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH
+ 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3113-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
 	|Createclient.xlsx|
@@ -305,8 +291,7 @@ Scenario Outline: As User creates the product loan using excelsheet
 	  			| 3113-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|
  And I verified the "Repayment Schedule" details successfully 
 	  			| 3113-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Newcreateloan.xlsx|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
- Then I make repayment and read the transaction Id
+  Then I make repayment and read the transaction Id
  	|3113-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
@@ -314,6 +299,11 @@ Scenario Outline: As User creates the product loan using excelsheet
 
 @scenario13-3114-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH
 	  Scenario: 3114-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH  
+ 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3114-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
 	|Createclient.xlsx|
@@ -326,7 +316,7 @@ Scenario Outline: As User creates the product loan using excelsheet
 	| 3114-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan.xlsx|
  And I verified the "Repayment Schedule" details successfully 
 	| 3114-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Newcreateloan.xlsx|
-Then I navigate to scheduler job & execute "Apply penalty to overdue loans"	  			
+	  			
  Then I make repayment and read the transaction Id
  	|3114-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I Navigate to Accounting web page
@@ -335,6 +325,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 
 @scenario14-3115-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH
 	  Scenario: 3115-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3115-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
 	|Createclient.xlsx|
@@ -347,7 +341,7 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 	| 3115-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan.xlsx|
  And I verified the "Repayment Schedule" details successfully 
 	| 3115-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Newcreateloan.xlsx|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ 
  Then I make repayment and read the transaction Id
  	|3115-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I Navigate to Accounting web page
@@ -356,7 +350,11 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 
 @scenario15-3116-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH
 	  Scenario: 3116-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH  
-
+ 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3116-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
 	|Createclient.xlsx|
@@ -369,7 +367,7 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 	| 3116-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan.xlsx|
  And I verified the "Repayment Schedule" details successfully 
 	| 3116-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Newcreateloan.xlsx|
- Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ 
  Then I make repayment and read the transaction Id
  	|3116-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I Navigate to Accounting web page
@@ -379,6 +377,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario16-3117-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-TR-DISB-FEE-FLAT-Regular-CASH
 	  Scenario: 3117-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-TR-DISB-FEE-FLAT-Regular-CASH  
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3117-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-TR-DISB-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -399,6 +401,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario17-3118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-TR-%DISB-AMT-Regular-CASH
 	  Scenario: 3118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-TR-%DISB-AMT-Regular-CASH  
 
+   	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-TR-%DISB-AMT-Regular-CASH-Loanproduct.xlsx|
    	  Given I setup the clients 
 	  Then I entered the values into client from "Input" sheet
 				|Createclient.xlsx|
@@ -419,6 +425,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario18-3124-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-CASH	   
 	  Scenario: 3124-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-CASH 
 
+  	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3124-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
   	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
@@ -451,6 +461,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario19-3125-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-SPEDUEDATE-FEE-%APRAMT-Regular-CASH	   
 	  Scenario: 3125-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-SPEDUEDATE-FEE-%APRAMT-Regular-CASH 
 
+  	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3125-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-SPEDUEDATE-FEE-%APRAMT-Regular-CASH-Loanproduct.xlsx|
   	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
@@ -484,6 +498,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario20-3127-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-INSTALLMENT-FEE-FLAT-Regular-CASH	   
 	  Scenario: 3127-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-INSTALLMENT-FEE-FLAT-Regular-CASH 
 
+  	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3127-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-INSTALLMENT-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
   	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
@@ -516,6 +534,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario21-3128-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-CASH	
 	  Scenario: 3128-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-CASH 
 
+  	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3128-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
   	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
@@ -548,6 +570,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario22-3130-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH	
 	  Scenario: 3130-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH 
 
+  	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3130-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-FLAT-Regular-CASH-Loanproduct.xlsx|
   	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
@@ -581,6 +607,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario23-3131-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH	
 	  Scenario: 3131-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH 
 
+  	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3131-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-CASH-Loanproduct.xlsx|
   	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
@@ -614,6 +644,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario24-3132-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH	
 	  Scenario: 3132-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH 
 
+  	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3132-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-CASH-Loanproduct.xlsx|
   	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
@@ -647,6 +681,10 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 @scenario25-3133-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH
 	  Scenario: 3133-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH 
 
+  	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|3133-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-OVERDUE-FEE-%INTEREST-Regular-CASH-Loanproduct.xlsx|
   	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
@@ -679,8 +717,11 @@ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
 	
 @scenario26-3136-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-PERIODIC
 	  Scenario: 3136-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-PERIODIC
-		
-Given I setup the clients 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3136-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-PERIODIC-Loanproduct.xlsx|	
+ Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
  Then I should see client created successfully from "Output" sheet
@@ -702,8 +743,12 @@ Given I setup the clients
 
 @scenario27-3137-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-PERIODIC
 	  Scenario: 3137-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-PERIODIC
-		
-Given I setup the clients 
+
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3137-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-PERIODIC-Loanproduct.xlsx|	
+ Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
  Then I should see client created successfully from "Output" sheet
@@ -726,7 +771,11 @@ Given I setup the clients
 @scenario28-3138-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-PERIODIC
 	  Scenario: 3138-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-PERIODIC
 		
-Given I setup the clients 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3138-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-PERIODIC-Loanproduct.xlsx|
+ Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
  Then I should see client created successfully from "Output" sheet
@@ -748,8 +797,12 @@ Given I setup the clients
 
 @scenario29-3139-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-PERIODIC
 	  Scenario: 3139-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-PERIODIC
-		
-Given I setup the clients 
+
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3139-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-PERIODIC-Loanproduct.xlsx|		
+ Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
  Then I should see client created successfully from "Output" sheet
@@ -772,6 +825,10 @@ Given I setup the clients
 @scenario30-3142-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-PERIODIC
 	  Scenario: 3142-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-PERIODIC
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3142-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-PERIODIC-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -795,6 +852,10 @@ Given I setup the clients
 @scenario31-3143-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-PERIODIC
 	  Scenario: 3143-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-PERIODIC
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3143-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-PERIODIC-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -818,6 +879,10 @@ Given I setup the clients
 @scenario32-3144-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-PERIODIC
 	  Scenario: 3144-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-PERIODIC
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3144-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-PERIODIC-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -841,6 +906,10 @@ Given I setup the clients
  @scenario33-3145-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-PERIODIC
 	  Scenario: 3145-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-PERIODIC
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3145-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-PERIODIC-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -864,6 +933,10 @@ Given I setup the clients
 @scenario34-3147-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-PERIODIC
 	  Scenario: 3147-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-PERIODIC
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3147-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-PERIODIC-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -887,6 +960,10 @@ Given I setup the clients
 @scenario35-3148-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-PERIODIC
 	  Scenario: 3148-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-PERIODIC
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3148-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-PERIODIC-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -910,6 +987,10 @@ Given I setup the clients
 @scenario36-3149-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-PERIODIC
 	  Scenario: 3149-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-PERIODIC
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3149-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-PERIODIC-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -933,6 +1014,10 @@ Given I setup the clients
 @scenario37-3150-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INT-Regular-PERIODIC
 	  Scenario: 3150-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INT-Regular-PERIODIC
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3150-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INT-Regular-PERIODIC-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -956,6 +1041,10 @@ Given I setup the clients
 @scenario46-3170-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-UPFRONT
 	  Scenario: 3170-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-UPFRONT
 		
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3170-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-FLAT-Regular-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -977,7 +1066,11 @@ Given I setup the clients
 @scenario47-3171-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-UPFRONT
 	  Scenario: 3171-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-UPFRONT
 		
-Given I setup the clients 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3171-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%APR-AMT-Regular-UPFRONT-Loanproduct.xlsx|
+ Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
  Then I should see client created successfully from "Output" sheet
@@ -998,7 +1091,11 @@ Given I setup the clients
 @scenario48-3172-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-UPFRONT
 	  Scenario: 3172-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-UPFRONT
 		
-Given I setup the clients 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3172-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%LOANAMT+INTEREST-Regular-UPFRONT-Loanproduct.xlsx|
+ Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
  Then I should see client created successfully from "Output" sheet
@@ -1019,7 +1116,11 @@ Given I setup the clients
 @scenario49-3173-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-UPFRONT
 	  Scenario: 3173-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-UPFRONT
 		
-Given I setup the clients 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3173-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-DISBURSE-FEE-%INTEREST-Regular-UPFRONT-Loanproduct.xlsx|
+ Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
  Then I should see client created successfully from "Output" sheet
@@ -1040,6 +1141,10 @@ Given I setup the clients
 @scenario50-3175-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-UPFRONT
 	  Scenario: 3175-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-UPFRONT
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3175-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -1058,11 +1163,15 @@ Given I setup the clients
     |3175-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
-    |3175-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-UPFRONT-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Upfront|
+    |3175-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-FLAT-Regular-UPFRONT-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Upfront1|Acc_Upfront2|
 
 @scenario51-3176-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-UPFRONT
 	  Scenario: 3176-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-UPFRONT
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3176-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -1081,11 +1190,15 @@ Given I setup the clients
     |3176-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
-    |3176-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-UPFRONT-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Upfront|
+    |3176-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-SPEDUEDATE-FEE-%APR-AMT-Regular-UPFRONT-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Upfront1|Acc_Upfront2|
 
 @scenario52-3178-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-UPFRONT
 	  Scenario: 3178-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-UPFRONT
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3178-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -1104,11 +1217,15 @@ Given I setup the clients
     |3178-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
-    |3178-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-UPFRONT-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Upfront|
+    |3178-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-FLAT-Regular-UPFRONT-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Upfront1|Acc_Upfront2|
 
  @scenario53-3179-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-UPFRONT
 	  Scenario: 3179-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-UPFRONT
 
+  Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3179-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -1127,10 +1244,14 @@ Given I setup the clients
     |3179-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
-    |3179-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-UPFRONT-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Upfront|
+    |3179-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-INSTALLMENT-FEE-%INTEREST-Regular-UPFRONT-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Upfront1|Acc_Upfront2|
     
 @scenario54-3181-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-UPFRONT
 Scenario: 3181-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-UPFRONT
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3181-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-Regular-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -1154,6 +1275,10 @@ Scenario: 3181-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-R
 @scenario55-3182-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-UPFRONT
 	  Scenario: 3182-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-UPFRONT
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3182-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%APR-AMT-Regular-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -1177,6 +1302,10 @@ Scenario: 3181-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-R
 @scenario56-3183-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-UPFRONT
 	  Scenario: 3183-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-UPFRONT
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3183-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%LOANAMT+INT-Regular-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|
@@ -1200,6 +1329,10 @@ Scenario: 3181-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-FLAT-R
 @scenario57-3184-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INT-Regular-UPFRONT
 	  Scenario: 3184-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INT-Regular-UPFRONT
 
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|3184-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-OVERDUE-FEE-%INT-Regular-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
     |Createclient.xlsx|

@@ -7,8 +7,7 @@ import cucumber.api.junit.Cucumber;
 @Cucumber.Options(format = { "pretty",
 		"html:target/LoanChargesMifos/cucumber-html-report",
 		"json-pretty:target/LoanChargesMifos/cucumber-json-report.json" },
-		features = { "src/test/resources/features/part2.feature" },
-		tags = {"@scenario1-3506-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-DISBURSE-FEE-%APR-AMT-AddThirdTranche"}, 
+		features = { "src/test/resources/features/ChargesMIFOS.feature" },
 		glue = { "com.mifos.steps" })
 
 public class LoanChargesMifosTest {

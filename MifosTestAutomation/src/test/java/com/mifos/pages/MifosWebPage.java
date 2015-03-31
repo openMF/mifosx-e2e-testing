@@ -8,7 +8,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
+//import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -536,7 +536,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "input":
 				try {
 					
-					if (key.equals("numberofrepaymentsdefault")) {
+					if (key.equals("nominalinterestratefrequency")) {
 						((JavascriptExecutor) getWebDriver())
 								.executeScript("scroll(0,600);");
 						Thread.sleep(getResourceKey("smallWait"));
@@ -569,7 +569,18 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 				clickButton(getLocator(getResource(key)));
 				Thread.sleep(getResourceKey("wait"));
+				if (key.equals("cash") || key.equals("accrualperiodic")||key.equals("accrualupfront") ) {
+					((JavascriptExecutor) getWebDriver())
+							.executeScript("window.scrollBy(0,250)", "");
+					Thread.sleep(getResourceKey("mediumWait"));
+					
+				}
 				
+				break;
+				
+			case "Wait":
+				Thread.sleep(Integer.parseInt(value));
+
 				break;
 			case "datePicker":
 				try {
@@ -590,13 +601,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				break;
 			case "dropDown":
 				
-					By scrollToLocator= null;
-					scrollToLocator = getLocator(getResource(key));
-//					((JavascriptExecutor)  getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", element1);
-					WebElement element = getWebDriver().findElement(scrollToLocator);
-				    int elementPosition = element.getLocation().getY();
-					String js = String.format("window.scroll(0, %s)", elementPosition-100);
-					((JavascriptExecutor)getWebDriver()).executeScript(js);
+//					By scrollToLocator= null;
+//					scrollToLocator = getLocator(getResource(key));
+////					((JavascriptExecutor)  getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", element1);
+//					WebElement element = getWebDriver().findElement(scrollToLocator);
+//				    int elementPosition = element.getLocation().getY();
+//					String js = String.format("window.scroll(0, %s)", elementPosition-100);
+//					((JavascriptExecutor)getWebDriver()).executeScript(js);
 				
 					clickButton(getLocator(getResource(key)));
 					By locator = null;
@@ -1183,13 +1194,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	}*/
 
 	public void verifySuccessMessage(String page, String message) {
-		try {
+//		try {
 
 			Assert.assertTrue(validateSame(page, message));
-		}catch (AssertionError  e) {
+			/*}catch (AssertionError  e) {
 			Assert.fail(" Expected result:" + message
 					+ " Actual result:" + getText(getLocator(getResource(page))));
-		}
+		}*/
 	}
 
 	public void verifyPartialSuccessMessage(String page, String message,

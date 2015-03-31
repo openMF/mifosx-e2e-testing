@@ -24,12 +24,26 @@ public class LoginSteps extends WebDriverAwareWebPage{
 	public void I_navigate_to_mifos() throws Throwable {
 		
 		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
-		 Thread.sleep(2000);
-		 getWebDriver().navigate().refresh();
-		 Thread.sleep(4000);
+		
+		boolean loginPageVisible = true;
+		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
+		
+		while (loginPageVisible) {
+			Thread.sleep(5000);
+			if (!getWebDriver().findElement(By.id("uid")).isDisplayed()) {
+				
+				getWebDriver().get(getWebDriver().getCurrentUrl());
+				
+			}else if (getWebDriver().findElement(By.id("uid")).isDisplayed()){
+				loginPageVisible = false;
+			}
+				
+		}/*
+		 Thread.sleep(5000);
 		 if(!getWebDriver().findElement(By.id("uid")).isDisplayed()){			 
-			getWebDriver().navigate().refresh();
-		 }
+			//getWebDriver().navigate().refresh();
+			 getWebDriver().get(getWebDriver().getCurrentUrl());
+		 }*/
 	}
 
 	
