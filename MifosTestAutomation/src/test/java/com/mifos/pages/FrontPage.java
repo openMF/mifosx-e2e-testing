@@ -144,7 +144,10 @@ public class FrontPage extends MifosWebPage {
 							// value);
 							if (HSSFDateUtil.isCellDateFormatted(cell2)) {
 								value = parseDate(cell2);
-								excelVlaue.put(key, value);
+								if(!key.equals("frequencydateforrecalculation")){
+									excelVlaue.put(key, value);
+								}
+								
 
 							} else {
 								excelVlaue.put(key, value);
