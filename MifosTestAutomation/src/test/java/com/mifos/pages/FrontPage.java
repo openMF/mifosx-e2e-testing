@@ -463,6 +463,8 @@ public class FrontPage extends MifosWebPage {
 				sheetIndex = 4;
 			} else if (sheetname.equals("Transactions")) {
 				sheetIndex = 6;
+			} else if (sheetname.equals("Floating Interest Rates")) {
+				sheetIndex = 10;
 			}
 			if (!isTransactionTabSelected) {
 				getWebDriver().findElement(
@@ -481,6 +483,9 @@ public class FrontPage extends MifosWebPage {
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
 
 			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
+				if (sheetname.equals("Floating Interest Rates")) {
+					xlRowCount = 2;
+				}
 				int xlColumnPointer = 0;
 				if (sheetname.equals("Transactions")) {
 					xlColumnPointer = 2;
@@ -490,7 +495,7 @@ public class FrontPage extends MifosWebPage {
 				String Accrual = null;
 				if (sheetname.equals("Summary")
 						|| sheetname.equals("Repayment Schedule")
-						|| sheetname.equals("Transactions")) {
+						|| sheetname.equals("Transactions") || sheetname.equals("Floating Interest Rates")) {
 
 					if (sheetname.equals("Transactions")
 							&& !isaccuralsTypeTransaction) {
@@ -1091,7 +1096,21 @@ public class FrontPage extends MifosWebPage {
 			}
 	  	}
 	  	  
-	  	
+		public void defineFloatingRates(String excelSheetPath,
+				String excelSheetName, String sheetName) throws Throwable {
+			// TODO Auto-generated method stub
+			try {
+				Map<String, String> FloatingRatesMap = parseExcelSheet(
+						excelSheetPath, excelSheetName, sheetName);
+				MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "floatingrates");
+				Thread.sleep(getResourceKey("mediumWait"));
+				insertValues(FloatingRatesMap);
+				Thread.sleep(getResourceKey("mediumWait"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		} 
 	 
 
 	public void searchUser(String user) throws InterruptedException {
