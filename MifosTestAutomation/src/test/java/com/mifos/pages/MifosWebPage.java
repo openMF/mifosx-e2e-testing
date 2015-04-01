@@ -657,7 +657,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				break;
 			case "select":
 				
-				if (key.equals("selectdayofthemonthPattern")) {
+				if (key.equals("selectdayofthemonthPattern") ||key.equals("selectIncreaseMonthBy")) {
 					double parseDoubleValue = Double.parseDouble(value);
 					int parseIntValue = (int) (parseDoubleValue);
 					value = Integer.toString(parseIntValue);

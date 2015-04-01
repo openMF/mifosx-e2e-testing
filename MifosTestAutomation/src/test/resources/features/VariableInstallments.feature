@@ -4033,6 +4033,193 @@ Given I setup the clients
 	|2600-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-SPEDUEDATE-FEE-FLAT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
  Then I make repayment and verified the following tabs
     |2600-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-SPEDUEDATE-FEE-FLAT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@scenario177-2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE
+	Scenario: 2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then i validate and Verify from "Output" sheet
+	|2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Newcreateloan1.xlsx|
+ 
+ @scenario178-2602-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST
+ Scenario: 2602-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2602-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2602-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Edit Repayment Schedule|
+  Then I verified the following Tabs details successfully 
+	|2602-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario179-2603-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST
+ Scenario: 2603-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2603-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2603-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully
+	|2603-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario180-2604-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST
+ Scenario: 2604-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2604-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2604-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully
+	|2604-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario181-2605-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PREPAY-15JAN
+ Scenario: 2605-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PREPAY-15JAN  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2605-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PREPAY-15JAN-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2605-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PREPAY-15JAN-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "Make Pre Payment" and verified the following tabs
+	|2605-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PREPAY-15JAN-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
+
+@scenario182-2606-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST
+ Scenario: 2606-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2606-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2606-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "WaiveInterest" and verified the following tabs
+	|2606-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+@scenario183-2607-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF
+ Scenario: 2607-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2607-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2607-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "WaiveInterest" and verified the following tabs
+	|2607-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+@scenario184-2608-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2
+ Scenario: 2608-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2608-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2608-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "WaiveInterest" and verified the following tabs
+	|2608-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+@scenario185-2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT
+	Scenario: 2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Then I verified the following Tabs details successfully 
+	|2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+
+@scenario186-2610-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE
+ Scenario: 2610-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2610-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2610-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "Wave Charge from Charges tab" and verified the following tabs
+	|2610-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE-Newcreateloan1.xlsx|Charges|Summary|Repayment Schedule|Transactions|
+
+@scenario187-2611-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche
+ Scenario: 2611-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche
+ 		   
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2611-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2611-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "Add trance from trache tab" and verified the following tabs
+	|2611-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche-Newcreateloan1.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
+	
+@scenario188-2612-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche
+ Scenario: 2612-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2612-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2612-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche-Newcreateloan1.xlsx|Edit Repayment Schedule|
+  Then I "Delete trance from trache tab" and verified the following tabs
+	|2612-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche-Newcreateloan1.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
 	
 @scenario189-2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE
 	Scenario: 2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE  
@@ -4391,4 +4578,191 @@ Given I setup the clients
  Then I make repayment and verified the following tabs
     |2630-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-SPEDUEDATE-FEE-FLAT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  	
+@scenario205-2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE
+	Scenario: 2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then i validate and Verify from "Output" sheet
+	|2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Newcreateloan1.xlsx|
+ 
+ @scenario206-2632-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST
+ Scenario: 2632-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2632-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2632-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Edit Repayment Schedule|
+  Then I verified the following Tabs details successfully 
+	|2632-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario207-2633-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST
+ Scenario: 2633-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2633-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2633-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully
+	|2633-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-3-REPAY-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario208-2634-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST
+ Scenario: 2634-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2634-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2634-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully
+	|2634-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-SHORT-PATTERN-INCREASE-MONTHBY-2-VAR-INST-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario209-2635-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PREPAY-15JAN
+ Scenario: 2635-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PREPAY-15JAN  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2635-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PREPAY-15JAN-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2635-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PREPAY-15JAN-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "Make Pre Payment" and verified the following tabs
+	|2635-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PREPAY-15JAN-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
+
+@scenario210-2636-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST
+ Scenario: 2636-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2636-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2636-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "WaiveInterest" and verified the following tabs
+	|2636-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WAIVEINTEREST-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+@scenario211-2637-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF
+ Scenario: 2637-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2637-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2637-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "WRITEOFF" and verified the following tabs
+	|2637-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-WRITEOFF-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+@scenario212-2638-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2
+ Scenario: 2638-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2638-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2638-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "WaiveInterest" and verified the following tabs
+	|2638-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-MOROTORIUM-PRIN+INT-2-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+@scenario113-2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT
+	Scenario: 2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Then I verified the following Tabs details successfully 
+	|2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+
+@scenario214-2640-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE
+ Scenario: 2640-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2640-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2640-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "Wave Charge from Charges tab" and verified the following tabs
+	|2640-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APRAMT-WAIVECHARGE-Newcreateloan1.xlsx|Charges|Summary|Repayment Schedule|Transactions|
+
+@scenario215-2641-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche
+ Scenario: 2641-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2641-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2641-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I "Add trance from trache tab" and verified the following tabs
+	|2641-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-AddTranche-Newcreateloan1.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
+	
+@scenario216-2642-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche
+ Scenario: 2642-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche  
+ 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2642-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche-Newcreateloan1.xlsx|
+ Then I " Add " In Edit Repayment Schedule page
+    |2642-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche-Newcreateloan1.xlsx|Edit Repayment Schedule|
+  Then I "Delete trance from trache tab" and verified the following tabs
+	|2642-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DeleteTraanche-Newcreateloan1.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
+	
  
