@@ -535,10 +535,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "input":
 				try {
 					
-					if (key.equals("Principal")) {
+					if (key.equals("numberofrepaymentsdefault")) {
 						((JavascriptExecutor) getWebDriver())
-								.executeScript("scroll(400,0);");
-						Thread.sleep(getResourceKey("mediumWait"));
+								.executeScript("scroll(0,600);");
+						Thread.sleep(getResourceKey("smallWait"));
 						
 					}
 					By locator = null;

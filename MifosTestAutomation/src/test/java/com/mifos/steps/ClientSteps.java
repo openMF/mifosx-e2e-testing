@@ -43,6 +43,14 @@ public class ClientSteps {
 		varFrontPage.setupNewLoan(ExcelSheetPath, excelSheetName,
 				sheetName);
 	}
+	
+	@Then("^I disburse loan from \"([^\"]*)\" sheet$")
+	public void I_disburse_loan_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupNewLoan(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
 
 	@Then("^I verified the \"([^\"]*)\" details successfully$")
 	public void I_verified_the_details_successfully(String sheetName,
@@ -97,9 +105,10 @@ public class ClientSteps {
 		
 	}
 
-	@Then("^I navigate to scheduler job & execute Periodic Accrual Transactions$")
-	public void I_navigate_to_scheduler_job() throws Throwable {
-		varFrontPage.selectSchedularJob();
+	@Then("^I navigate to scheduler job & execute \"([^\"]*)\"$")
+	public void I_navigate_to_scheduler_job_execute(String SchedularJobName) throws Throwable{
+		varFrontPage.selectSchedularJob(SchedularJobName);
+		
 	}
 
 	@Then("^I went back to the client$")

@@ -163,7 +163,7 @@ public class FrontPage extends MifosWebPage {
 			}
 
 		} catch (Exception e) {
-			throw new Exception("invalid excel sheet or sheet name");
+			throw new Exception("invalid excel sheet or sheet name \n" +excelsheet + sheetname);
 
 		}
 		return excelVlaue;
@@ -262,15 +262,12 @@ public class FrontPage extends MifosWebPage {
 			String excelSheetName, String sheetName)
 			throws Throwable {
 
-		try {
 			Map<String, String> newLoanDetailsMap = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(newLoanDetailsMap);
 			Thread.sleep(getResourceKey("mediumWait"));
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 	/**
@@ -456,7 +453,7 @@ public class FrontPage extends MifosWebPage {
 					// applicationCol.size());
 
 				} else if (sheetname.equals("Acc_Disbursement")
-						|| sheetname.equals("Acc_Repaymentdisbursement")
+						|| sheetname.equals("Acc_RepaymentDisbursement")
 						|| sheetname.equals("Acc_Repayment")) {
 					xlColumnPointer = 4;
 
@@ -624,7 +621,7 @@ public class FrontPage extends MifosWebPage {
 	private void makeRepayment(String excelSheetPath, String excelName,
 			String inputSheet) throws Throwable {
 		// TODO Auto-generated method stub
-		try {
+		
 			Map<String, String> repaymentDetails = parseExcelSheet(
 					excelSheetPath, excelName, inputSheet);
 			insertValues(repaymentDetails);
@@ -644,9 +641,7 @@ public class FrontPage extends MifosWebPage {
 				}
 
 			}
-		}	catch (Exception ioe) {
-			ioe.printStackTrace();
-		}
+		
 	}
 
 	public void makeRepaymentAndReadTransactionId(String excelSheetPath,
@@ -674,7 +669,7 @@ public class FrontPage extends MifosWebPage {
 	public void searchWithTransactinID(String clientExcelSheetPath,
 			String excelSheetName, String sheetName)
 			throws InterruptedException, IOException, ParseException, Exception {
-		try {
+		
 			/*
 			 * List<List<String>> sheetOptions = transaction.raw(); for
 			 * (List<String> sheetOption : sheetOptions) {
@@ -684,7 +679,7 @@ public class FrontPage extends MifosWebPage {
 			 */
 			
 			if (sheetName.equals("Acc_Disbursement")
-					|| sheetName.equals("Acc_Repaymentdisbursement")
+					|| sheetName.equals("Acc_RepaymentDisbursement")
 					|| sheetName.equals("Acc_Repayment")) {
 
 				isTransactionTabSelected = true;
@@ -695,11 +690,11 @@ public class FrontPage extends MifosWebPage {
 								Keys.chord(Keys.CONTROL, "a"),
 								"L"
 										+ setAccuralTransactionID.toArray()[transactionIDIndex++]);
-				Thread.sleep(getResourceKey("mediumWait"));
+				Thread.sleep(getResourceKey("smallWait"));
 				clickButton(
 						getResource("frontend.accounting.searchjournal.transactionid.submit"),
 						"xpath");
-
+				Thread.sleep(getResourceKey("mediumWait"));
 				verifyLoanTabData(clientExcelSheetPath, excelSheetName,
 						sheetName);
 				Thread.sleep(getResourceKey("smallWait"));
@@ -734,30 +729,46 @@ public class FrontPage extends MifosWebPage {
 				}
 			}
 
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	/**
 	 * Method navigates to Scheduler Jobs and select add periodic accrual transactions job and runs it.
+	 * @param schedularJobName 
 	 * @throws InterruptedException
 	 */
-	public void selectSchedularJob() throws InterruptedException {
+	public void selectSchedularJob(String schedularJobName)
+			throws InterruptedException {
 
 		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "jobs");
 		Thread.sleep(getResourceKey("mediumWait"));
-		LazyWebElement check = getElement(getResource("addperiodicaccrualtransactions"));
-		if (!check.isSelected()) {
-			clickButton(getResource("addperiodicaccrualtransactions"));
-			Thread.sleep(getResourceKey("mediumWait"));
-		}
 
+		switch (schedularJobName) {
+
+		case "Periodic Accrual Transactions":
+			LazyWebElement check = getElement(getResource("addperiodicaccrualtransactions"));
+			if (!check.isSelected()) {
+				clickButton(getResource("addperiodicaccrualtransactions"));
+				Thread.sleep(getResourceKey("mediumWait"));
+			}
+			ishideAccuralsChecked = false;
+			isaccuralsTypeTransaction = false;
+			break;
+		case "Apply penalty to overdue loans":
+			LazyWebElement check1 = getElement(getResource("addpenaltytooverdueloans"));
+			if (!check1.isSelected()) {
+				clickButton(getResource("addpenaltytooverdueloans"));
+				Thread.sleep(getResourceKey("mediumWait"));
+			}
+
+			break;
+		default:
+			System.out.println("Invalid schedular Job");
+			break;
+
+		}
 		((JavascriptExecutor) getWebDriver()).executeScript("scroll(0,500);");
 		Thread.sleep(getResourceKey("smallWait"));
-		clickButton(
-				getResource("runSelectedJobs"));
+		clickButton(getResource("runSelectedJobs"));
 		Thread.sleep(getResourceKey("smallWait"));
 		clickButton(getResource("refresh"));
 		Thread.sleep(getResourceKey("mediumWait"));
@@ -765,9 +776,6 @@ public class FrontPage extends MifosWebPage {
 		((JavascriptExecutor) getWebDriver())
 				.executeScript("window.history.go(-1)");
 		Thread.sleep(getResourceKey("mediumWait"));
-
-		ishideAccuralsChecked = false;
-		isaccuralsTypeTransaction = false;
 
 	}
 

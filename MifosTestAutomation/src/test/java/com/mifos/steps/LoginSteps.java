@@ -24,9 +24,9 @@ public class LoginSteps extends WebDriverAwareWebPage{
 	public void I_navigate_to_mifos() throws Throwable {
 		
 		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
-		 Thread.sleep(1000);
+		 Thread.sleep(2000);
 		 getWebDriver().navigate().refresh();
-		 Thread.sleep(5000);
+		 Thread.sleep(4000);
 		 if(!getWebDriver().findElement(By.id("uid")).isDisplayed()){			 
 			getWebDriver().navigate().refresh();
 		 }

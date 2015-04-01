@@ -65,6 +65,18 @@ Scenario Outline: As User creates the product loan using excelsheet
 			   |1110-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Loanproduct.xlsx|
 			   |1111-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Loanproduct.xlsx|
 			   |1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Loanproduct.xlsx|
+			   |1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Loanproduct.xlsx|
+	 		   |1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Loanproduct.xlsx|
+	 		   |1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Loanproduct.xlsx|
+	 		   |1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Loanproduct.xlsx|
+	 		   |1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Loanproduct.xlsx|
+	 		   |1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Loanproduct.xlsx|
+	 		   |1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Loanproduct.xlsx|
+	 		   |1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Loanproduct.xlsx|
+	    	   |2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Loanproduct.xlsx|
+	    	   |2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Loanproduct.xlsx|
+	    	   |2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Loanproduct.xlsx|
+     		   |2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Loanproduct.xlsx|
 	 		   
 
 @scenario1-Loan-581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment	   
@@ -884,3 +896,303 @@ Scenario Outline: As User creates the product loan using excelsheet
 	  			| 1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  When I make repayment and verified the following tabs
        			|1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+       			
+@scenario49-Loan-1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME	   
+	  Scenario: Loan-1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
+				
+@scenario50-Loan-1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME	   
+	  Scenario: Loan-1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
+				
+@scenario51-Loan-1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME	   
+	  Scenario: Loan-1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
+				
+@scenario52-Loan-1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME	   
+	  Scenario: Loan-1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
+				
+@scenario53-Loan-1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY	   
+	  Scenario: Loan-1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
+				
+@scenario54-Loan-1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY
+	  Scenario: Loan-1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
+				
+@scenario55-Loan-1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY	   
+	  Scenario: Loan-1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
+				
+@scenario56-Loan-1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY	   
+	  Scenario: Loan-1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
+
+@scenario57-Loan-2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE	   
+	  Scenario: Loan-2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx| 
+
+@scenario58-Loan-2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE	   
+	  Scenario: Loan-2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx| 
+
+@scenario59-Loan-2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE	   
+	  Scenario: Loan-2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx| 
+
+@scenario60-Loan-2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE	   
+	  Scenario: Loan-2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE
+	
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan1.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+      And I disburse loan from "NewLoanInput" sheet
+      			| 2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx|
+      Then I verified the "Summary" details successfully 
+	  			| 2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx| 			
+	  And I verified the "Transactions" details successfully	
+				| 2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx|        			
