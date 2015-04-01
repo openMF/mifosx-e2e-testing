@@ -19,6 +19,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.lang.math.NumberUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -561,7 +562,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;
 			case "button":
-				if (key.equals("clickonapprove")) {
+				if (key.equals("clickonapprove") || key.equals("clickonModifyApplication")) {
 					((JavascriptExecutor) getWebDriver())
 							.executeScript("scroll(500,0);");
 					Thread.sleep(getResourceKey("mediumWait"));
@@ -579,8 +580,14 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				break;
 				
 			case "Wait":
-				Thread.sleep(Integer.parseInt(value));
-
+				try {
+					double wait = Double.parseDouble(value);
+					int waitTime = (int) (wait);
+					Thread.sleep(waitTime);
+				} catch (NumberFormatException e) {
+					e.printStackTrace();
+				}
+				
 				break;
 			case "datePicker":
 				try {

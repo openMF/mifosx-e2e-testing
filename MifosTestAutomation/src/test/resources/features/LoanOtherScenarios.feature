@@ -697,7 +697,6 @@ Background:
 	  Then I make repayment and verified the following tabs       			
        			|3535-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-AllRepayment-Makerepayment6.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-
 @scenario38-3536-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-NONE-AllRepayment
 	  Scenario: 3536-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-NONE-AllRepayment  
 
