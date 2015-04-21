@@ -1,0 +1,112 @@
+// Copyright (c) 1999-2004 Brian Wellington (bwelling@xbill.org)
+
+package org.xbill.DNS;
+
+import java.io.IOException;
+
+// TODO: Auto-generated Javadoc
+/**
+ * Key - contains a cryptographic public key for use by DNS. The data can be
+ * converted to objects implementing java.security.interfaces.PublicKey
+ * 
+ * @see DNSSEC
+ * 
+ * @author Brian Wellington
+ */
+
+public class DNSKEYRecord extends KEYBase {
+
+	/**
+	 * The Class Protocol.
+	 */
+	public static class Protocol {
+
+		/**
+		 * Instantiates a new protocol.
+		 */
+		private Protocol() {
+		}
+
+		/** Key will be used for DNSSEC. */
+		public static final int DNSSEC = 3;
+	}
+
+	/**
+	 * The Class Flags.
+	 */
+	public static class Flags {
+
+		/**
+		 * Instantiates a new flags.
+		 */
+		private Flags() {
+		}
+
+		/** Key is a zone key. */
+		public static final int ZONE_KEY = 0x100;
+
+		/** Key is a secure entry point key. */
+		public static final int SEP_KEY = 0x1;
+
+		/** Key has been revoked. */
+		public static final int REVOKE = 0x80;
+	}
+
+	/** The Constant serialVersionUID. */
+	private static final long serialVersionUID = -8679800040426675002L;
+
+	/**
+	 * Instantiates a new dNSKEY record.
+	 */
+	DNSKEYRecord() {
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.xbill.DNS.Record#getObject()
+	 */
+	Record getObject() {
+		return new DNSKEYRecord();
+	}
+
+	/**
+	 * Creates a DNSKEY Record from the given data.
+	 * 
+	 * @param name
+	 *            the name
+	 * @param dclass
+	 *            the dclass
+	 * @param ttl
+	 *            the ttl
+	 * @param flags
+	 *            Flags describing the key's properties
+	 * @param proto
+	 *            The protocol that the key was created for
+	 * @param alg
+	 *            The key's algorithm
+	 * @param key
+	 *            Binary data representing the key
+	 */
+	public DNSKEYRecord(Name name, int dclass, long ttl, int flags, int proto,
+			int alg, byte[] key) {
+		super(name, Type.DNSKEY, dclass, ttl, flags, proto, alg, key);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.xbill.DNS.Record#rdataFromString(org.xbill.DNS.Tokenizer,
+	 * org.xbill.DNS.Name)
+	 */
+	void rdataFromString(Tokenizer st, Name origin) throws IOException {
+		flags = st.getUInt16();
+		proto = st.getUInt8();
+		String algString = st.getString();
+		alg = DNSSEC.Algorithm.value(algString);
+		if (alg < 0)
+			throw st.exception("Invalid algorithm: " + algString);
+		key = st.getBase64();
+	}
+
+}
