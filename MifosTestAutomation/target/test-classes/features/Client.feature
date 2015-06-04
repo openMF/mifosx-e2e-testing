@@ -298,3 +298,28 @@ Scenario: As User creates the different loans to single user
     When I make repayment and verified the following tabs
        |Makerepayment3.xlsx|Summary|Repayment Schedule|Transactions| 
        |Makerepayment2.xlsx|Summary|Repayment Schedule|Transactions| 
+   
+   
+   ##eresh     
+       @Advancerepayment		
+	
+	Scenario: As User creates the loans,make repayment and verifies the tabs 
+	
+    Given I setup the clients 
+		| Clientnavigation.xlsx |
+	When I entered the values into client form using
+	 	|Createclient.xlsx|
+	Then I should see client created successfully
+	     |Createclient.xlsx|
+	     
+	When I set up the new create loan
+     |389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
+
+    Then I verified the "Summary" details successfully	
+		|389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
+    And I verified the "Repayment Schedule" details successfully	
+		|389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
+    
+    When I make repayment and verified the following tabs
+       |Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ 

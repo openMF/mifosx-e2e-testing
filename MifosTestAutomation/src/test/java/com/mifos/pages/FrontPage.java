@@ -850,14 +850,17 @@ public class FrontPage extends MifosWebPage {
 			Thread.sleep(3000);
 			break;
 		case "actualdisbursedate":
-			Thread.sleep(2000);
-			HashMap<String, String> actualdisbursedate = new HashMap<String, String>();
-			actualdisbursedate.put("frontend.clients.clients." + key, value);
-			submitIDValues(actualdisbursedate, true);
-			clickButton(getResource("frontend.clientform.dateofbirthclick"),
-					"css");
-			Thread.sleep(3000);
-			break;
+			   Thread.sleep(2000);
+			   HashMap<String, String> actualdisbursedate = new HashMap<String, String>();
+			   actualdisbursedate.put("frontend.clients.clients." + key, value);
+			   submitIDValues(actualdisbursedate, true);
+			   clickButton(getResource("frontend.clientform.dateofbirthclick"),
+			     "css");
+			   Thread.sleep(3000);
+			   clickButton(getResource("frontend.admin.createoffice.savebutton"),
+			     "id");
+			   Thread.sleep(6000);
+			   break;
 		case "transactionamount":
 			HashMap<String, String> transactionamount = new HashMap<String, String>();
 			transactionamount.put("frontend.clients.clients.makerepayment."

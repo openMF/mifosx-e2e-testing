@@ -11,9 +11,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @Cucumber.Options(format = { "pretty", "html:target/cucumber-html-report",
 		"json-pretty:target/cucumber-json-report.json" },
-		features = { "src/test/resources/features/Client.feature" },
-		tags={"@Advancerepayment"},
+		features = { "src/test/resources/features/Repayment.feature" },
 		glue = { "com.mifos.steps" })
-public class ClientTests {
+
+public class RepaymentTest {
 
 }
