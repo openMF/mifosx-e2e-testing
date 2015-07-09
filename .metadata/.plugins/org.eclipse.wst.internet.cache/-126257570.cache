@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.objectweb.org/jonas/ns"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:j2ee="http://java.sun.com/xml/ns/j2ee"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jonas="http://www.objectweb.org/jonas/ns"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            version="4.0">
+  <xsd:annotation>
+    <xsd:documentation>
+      @(#)jonas-j2ee_4_0.xsd  19/11/03
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:annotation>
+    <xsd:documentation>
+      <![CDATA[
+      JOnAS: Java(TM) Open Application Server
+      Copyright (C) 2004-2005 Bull S.A.
+      Contact: jonas-team@objectweb.org
+
+      This library is free software; you can redistribute it and/or
+      modify it under the terms of the GNU Lesser General Public
+      License as published by the Free Software Foundation; either
+      version 2.1 of the License, or any later version.
+
+      This library is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+      Lesser General Public License for more details.
+
+      You should have received a copy of the GNU Lesser General Public
+      License along with this library; if not, write to the Free Software
+      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307
+      USA
+
+      Initial Author : Philippe Coq
+      ]]>
+   </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:annotation>
+    <xsd:documentation>
+      <![CDATA[
+      The following definitions that appear in the common
+      shareable schema(s) of JOnAS specific deployment descriptors should be
+      interpreted with respect to the context they are included:
+      j2ee application;
+      application client;
+      web application;
+      enterprise bean;
+      resource adapter;
+      ]]>
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <import namespace="http://java.sun.com/xml/ns/j2ee"
+          schemaLocation="http://java.sun.com/xml/ns/j2ee/j2ee_1_4.xsd"/>
+
+  <!-- **************************************************** -->
+  <xsd:group name="referenceGroup">
+    <xsd:annotation>
+      <xsd:documentation>
+       This group must be use when a DD needs:
+    jonas-ejb-ref, jonas-service-ref, jonas-resourceType,
+    jonas-resource-env elements
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="jonas-ejb-ref"
+                   type="jonas:jonas-ejb-refType"
+                   minOccurs="0"
+                   maxOccurs="unbounded" />
+      <xsd:element name="jonas-service-ref"
+                   type="jonas:jonas-service-refType"
+                   minOccurs="0"
+                   maxOccurs="unbounded" />
+      <xsd:element name="jonas-resource"
+                   type="jonas:jonas-resourceType"
+                   minOccurs="0"
+                   maxOccurs="unbounded" />
+      <xsd:element name="jonas-resource-env"
+                   type="jonas:jonas-resource-envType"
+                   minOccurs="0"
+                   maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:group>
+  <!-- **************************************************** -->
+  <xsd:complexType name="jonas-ejb-refType">
+    <xsd:annotation>
+      <xsd:documentation>
+  The jonas-ejb-reType defines the JOnAS specific information
+  for a reference to another enterprise bean's home.
+  It contains:
+    - the name of the  ejb reference specified in the standard EJB deployment
+    - the JNDI name of the resource.
+     </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ejb-ref-name" type="j2ee:jndi-nameType">
+        <xsd:annotation>
+          <xsd:documentation>
+        The ejb-ref-name  element contains the name of a
+        beans'reference
+        The name is a JNDI name relative to the
+        java:comp/env context.
+        The name must be specified in the standard EJB
+    deployment descriptor.
+      </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="jndi-name" type="j2ee:jndi-nameType">
+        <xsd:annotation>
+          <xsd:documentation>
+    The jndi-name element contains the JNDI name
+    of the resource.
+      </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- **************************************************** -->
+
+
+  <!-- **************************************************** -->
+  <xsd:complexType name="jonas-resourceType">
+    <xsd:annotation>
+      <xsd:documentation>
+  The jonas-resourceType defines the JOnAS specific information
+  for bean's resource manager connection factory reference.
+  It contains:
+    - the name of the resource reference.
+    - the JNDI name of the resource.
+     </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="res-ref-name" type="j2ee:jndi-nameType">
+        <xsd:annotation>
+          <xsd:documentation>
+        The res-ref-name element contains the name of a
+        resource manager connection factory reference.
+        The name is a JNDI name relative to the
+        java:comp/env context.
+        The name must be specified in the standard EJB
+    deployment descriptor.
+      </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="jndi-name" type="j2ee:jndi-nameType">
+        <xsd:annotation>
+          <xsd:documentation>
+    The jndi-name element contains the JNDI name
+    of the resource.
+      </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- **************************************************** -->
+  <xsd:complexType name="jonas-resource-envType">
+    <xsd:annotation>
+      <xsd:documentation>
+  The jonas-resourceType defines the JOnAS specific information
+  for bean's resource environment references..
+  It contains:
+    - the name of the resource environment reference.
+    - the JNDI name of the resource.
+     </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+
+      <xsd:element name="resource-env-ref-name" type="j2ee:jndi-nameType">
+        <xsd:annotation>
+          <xsd:documentation>
+  The resource-env-ref-name element contains the name
+  of a resource environment reference; its value is
+  the environment entry name used in
+  the standard EJB deployment descriptor.
+  The name is a JNDI name relative to the
+  java:comp/env context.
+  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="jndi-name" type="j2ee:jndi-nameType">
+        <xsd:annotation>
+          <xsd:documentation>
+  The jndi-name element contains the JNDI name
+  of the resource.
+  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <!-- **************************************************** -->
+  <xsd:complexType name="jonas-service-refType">
+    <xsd:annotation>
+      <xsd:documentation>
+    The jonas-resourceType defines a reference on a Web Service
+     </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="service-ref-name" type="j2ee:jndi-nameType">
+        <xsd:annotation>
+          <xsd:documentation>
+        The service-ref-name element declares logical name that the
+        components in the module use to look up the Web service. It
+        is recommended that all service reference names start with
+        "service/".
+        </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="jndi-name" type="j2ee:jndi-nameType">
+        <xsd:annotation>
+          <xsd:documentation>
+  The jndi-name element contains the JNDI name
+  of the resource.
+  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="jonas-init-param"
+                   type="jonas:paramvalueType"
+                   minOccurs="0"
+                   maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- **************************************************** -->
+  <xsd:complexType name="paramvalueType">
+    <xsd:sequence>
+      <xsd:element name="param-name" type="j2ee:string" />
+      <xsd:element name="param-value" type="j2ee:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

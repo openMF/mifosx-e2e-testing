@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="MifosTestingFramework">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../Users/30/Downloads/spring-tool-suite-3.6.4.RELEASE-e4.4.2-win32-x86_64/sts-bundle/sts-3.6.4.RELEASE/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="Maven Dependencies.libraryclasspath">
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-java/2.32.0/selenium-java-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-android-driver/2.32.0/selenium-android-driver-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/2.32.0/selenium-remote-driver-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/2.32.0/selenium-chrome-driver-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-htmlunit-driver/2.32.0/selenium-htmlunit-driver-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/net/sourceforge/htmlunit/htmlunit/2.12/htmlunit-2.12.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/xalan/xalan/2.7.1/xalan-2.7.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/xalan/serializer/2.7.1/serializer-2.7.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/net/sourceforge/htmlunit/htmlunit-core-js/2.12/htmlunit-core-js-2.12.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/xerces/xercesImpl/2.10.0/xercesImpl-2.10.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/net/sourceforge/nekohtml/nekohtml/1.9.18/nekohtml-1.9.18.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/net/sourceforge/cssparser/cssparser/0.9.9/cssparser-0.9.9.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/w3c/css/sac/1.3/sac-1.3.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/eclipse/jetty/jetty-websocket/8.1.9.v20130131/jetty-websocket-8.1.9.v20130131.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/eclipse/jetty/jetty-util/8.1.9.v20130131/jetty-util-8.1.9.v20130131.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/2.32.0/selenium-firefox-driver-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/apache/commons/commons-exec/1.1/commons-exec-1.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/2.32.0/selenium-ie-driver-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/net/java/dev/jna/jna/3.4.0/jna-3.4.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-iphone-driver/2.32.0/selenium-iphone-driver-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/2.32.0/selenium-safari-driver-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-support/2.32.0/selenium-support-2.32.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/webbitserver/webbit/0.4.14/webbit-0.4.14.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/io/netty/netty/3.5.2.Final/netty-3.5.2.Final.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/apache/poi/poi/3.8/poi-3.8.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/commons-codec/commons-codec/1.5/commons-codec-1.5.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/biz/neustar/browsermob-proxy/2.0-beta-8-SNAPSHOT/browsermob-proxy-2.0-beta-8-SNAPSHOT.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/slf4j/slf4j-jdk14/1.5.3/slf4j-jdk14-1.5.3.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/slf4j/slf4j-api/1.5.3/slf4j-api-1.5.3.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/com/google/sitebricks/sitebricks/0.8.3/sitebricks-0.8.3.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/mvel/mvel2/2.0.18/mvel2-2.0.18.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/com/google/guava/guava/r07/guava-r07.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/com/intellij/annotations/7.0.3/annotations-7.0.3.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/commons-lang/commons-lang/2.5/commons-lang-2.5.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/jaxen/jaxen/1.1.1/jaxen-1.1.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/jdom/jdom/1.0/jdom-1.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/xom/xom/1.0/xom-1.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/com/ibm/icu/icu4j/2.6.1/icu4j-2.6.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/saxpath/saxpath/1.0-FCS/saxpath-1.0-FCS.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/jsoup/jsoup/1.4.1/jsoup-1.4.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/freemarker/freemarker/2.3.10/freemarker-2.3.10.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/com/google/inject/extensions/guice-multibindings/3.0/guice-multibindings-3.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.7.1/jackson-core-asl-1.7.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.7.1/jackson-mapper-asl-1.7.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/apache/httpcomponents/httpclient/4.1.2/httpclient-4.1.2.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/apache/httpcomponents/httpcore/4.1.2/httpcore-4.1.2.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/apache/httpcomponents/httpmime/4.2.3/httpmime-4.2.3.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/commons-io/commons-io/1.3.2/commons-io-1.3.2.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/net/sf/jopt-simple/jopt-simple/3.2/jopt-simple-3.2.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/apache/ant/ant/1.8.2/ant-1.8.2.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/apache/ant/ant-launcher/1.8.2/ant-launcher-1.8.2.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.47/bcprov-jdk15on-1.47.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/eclipse/jetty/jetty-server/7.3.0.v20110203/jetty-server-7.3.0.v20110203.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/eclipse/jetty/jetty-continuation/7.3.0.v20110203/jetty-continuation-7.3.0.v20110203.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/eclipse/jetty/jetty-http/7.3.0.v20110203/jetty-http-7.3.0.v20110203.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/eclipse/jetty/jetty-io/7.3.0.v20110203/jetty-io-7.3.0.v20110203.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/eclipse/jetty/jetty-servlet/7.3.0.v20110203/jetty-servlet-7.3.0.v20110203.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/eclipse/jetty/jetty-security/7.3.0.v20110203/jetty-security-7.3.0.v20110203.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/com/google/inject/guice/3.0/guice-3.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/com/google/inject/extensions/guice-servlet/3.0/guice-servlet-3.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/seleniumhq/selenium/selenium-api/2.29.1/selenium-api-2.29.1.jar"/>
+        <pathelement location="../../Users/30/.m2/repository/org/json/json/20080701/json-20080701.jar"/>
+    </path>
+    <path id="MifosTestingFramework.classpath">
+        <pathelement location="target/classes"/>
+        <pathelement location="target/test-classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <mkdir dir="target/test-classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/java">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+        <delete dir="target/test-classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/main/java"/>
+            <classpath refid="MifosTestingFramework.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/test/java"/>
+            <classpath refid="MifosTestingFramework.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+</project>

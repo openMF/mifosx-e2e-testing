@@ -61,6 +61,24 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 *
 	 * @param key
 	 *            the key
+	 * @return the resource for wait
+	 */
+	public static Long getResourceKey(String key) {
+		getWebDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		String value = Resources.getInstance().get(key);
+		Long tempValue = Long.parseLong(value);
+		if (tempValue == null) {
+			Assert.fail("Key not identified : " + key);
+		}
+		 
+		return tempValue;
+	}
+	
+	/**
+	 * Gets the resource.
+	 *
+	 * @param key
+	 *            the key
 	 * @return the resource
 	 */
 	public static String getResource(String key) {
@@ -1811,7 +1829,6 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 	public void verifySuccessMessage(String page, String message,
 			String locatortype) {
-		System.out.println(message);
 		Assert.assertTrue(validateSame(page, message, locatortype));
 	}
 

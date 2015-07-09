@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;sheetname&apos; in &apos;com.mifos.steps.ClientSteps.I_should_see_client_created_successfully_from_sheet(...)&apos; to &apos;sheetName&apos;&#x0D;&#x0A;- Original project: &apos;MifosTestAutomation&apos;&#x0D;&#x0A;- Original element: &apos;com.mifos.steps.ClientSteps.I_should_see_client_created_successfully_from_sheet(String, List&lt;String&gt;).sheetname&apos;&#x0D;&#x0A;- Renamed element: &apos;sheetname&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;sheetname&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/test\/java&lt;com.mifos.steps{ClientSteps.java[ClientSteps~I_should_see_client_created_successfully_from_sheet~QString;~QList\&lt;QString;&gt;;@sheetname!1100!1115!1107!1115!QString;!0!true" name="sheetName" references="true" stamp="1435562426687" version="1.0"/>
+</session>
