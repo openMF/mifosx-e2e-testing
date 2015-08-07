@@ -19,24 +19,21 @@ import cucumber.api.java.en.Then;
 public class LoginSteps {
 
 	final public FrontPage varFrontPage = new FrontPage();
-	public String loginExcelSheetPath = null;
+	public String excelSheetPath = null;
 	
 	@Given("^I navigate to mifos$")
 	public void I_navigate_to_mifos() throws Throwable {
-		varFrontPage.navigateToUrl(MifosWebPage.BASE_URL
+		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL
 				+ MifosWebPage.getResource("home"));
 	}
 
 	
-	@Given("^I use login folder$")
-	public void I_use_login_folder() throws Throwable {
-		loginExcelSheetPath = varFrontPage.getLoginExcelSheetPath();
-	}
-
 	@Given("^I login into mifos site using \"([^\"]*)\" excel sheet$")
 	public void I_login_into_mifos_site_using_excel_sheet(String sheetName,
-			List<String> excelSheetName) throws Throwable {
-		varFrontPage.loginExcelSheet(loginExcelSheetPath, excelSheetName, sheetName);
+			List<String> excelSheet) throws Throwable {
+		excelSheetPath = varFrontPage.getLoginExcelSheetPath();
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupLogin(excelSheetPath, excelSheetName, sheetName);
 		
 	}
 	/** VERIFICATION **/

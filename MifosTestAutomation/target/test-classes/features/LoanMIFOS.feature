@@ -1,24 +1,22 @@
 Feature:LoanMIFOS
+
+Background:
+	Given I navigate to mifos
+	And I login into mifos site using "Login" excel sheet
+		| Login.xlsx  |
+	Then I should see logged in successfully
 	
-	Background:
-	 Given I navigate to mifos
-	 And I use login folder 
-	 When I login into mifos site using excel sheet
-	   | Login.xlsx  | 
-	 Then I should see logged in successfully
- 		   
-	 		  		   
-  			 		
-	@LoanProduct
-	Scenario Outline: Loan
-				 Given I setup the product loan 
-				| Productloannavigation.xlsx |
-		And I entered the values into product loan using
-				| <excelsheet> |
-		Then I should see product loan created successfully	
-				| <excelsheet> |
- 		Examples:
-				| excelsheet   | 
+@loanproductcreation	
+Scenario Outline: As User creates the product loan using excelsheet
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		| <excelsheet> |
+	Then I should see product loan created successfully	from "ProductLoanOutput" Sheet
+		| <excelsheet> |
+ Examples:
+		       | excelsheet   | 
 			   |581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx|
 	 		   |582-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx|
 			   |583-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx|
@@ -71,30 +69,30 @@ Feature:LoanMIFOS
 
 @scenario1-Loan-581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
-	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
-	  			| 581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
-	  			| 581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
+	  			| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
-	  			| 581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
-	  When I make repayment and verified the following tabs
-       			|581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Repayment Schedule|	 		 
-
+	  			| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+	  
 @scenario2-Loan-582-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-582-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	 Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	 When I set up the new create loan from "NewLoanInput" sheet
 	  			| 582-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 582-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -106,12 +104,12 @@ Feature:LoanMIFOS
 @scenario3-Loan-583-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-583-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 583-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 583-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -123,12 +121,12 @@ Feature:LoanMIFOS
 @scenario4-Loan-584-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-584-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 584-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 584-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -140,12 +138,12 @@ Feature:LoanMIFOS
 @scenario5-Loan-629-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-629-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 629-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 629-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -157,12 +155,12 @@ Feature:LoanMIFOS
 @scenario6-Loan-630-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-630-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 630-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 630-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -174,12 +172,12 @@ Feature:LoanMIFOS
 @scenario7-Loan-631-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-631-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 631-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 631-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -191,12 +189,12 @@ Feature:LoanMIFOS
 @scenario8-Loan-632-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-632-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 632-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 632-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -208,12 +206,12 @@ Feature:LoanMIFOS
 @scenario9-Loan-677-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePaymentt		   
 	  Scenario: Loan-677-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePaymentt
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 677-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePaymentt-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 677-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePaymentt-Newcreateloan.xlsx|
@@ -225,12 +223,12 @@ Feature:LoanMIFOS
 @scenario10-Loan-678-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-678-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 678-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 678-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -242,12 +240,12 @@ Feature:LoanMIFOS
 @scenario11-Loan-679-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-679-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 679-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 679-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -259,12 +257,12 @@ Feature:LoanMIFOS
 @scenario12-Loan-680-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-680-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 680-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 680-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -276,12 +274,12 @@ Feature:LoanMIFOS
 @scenario13-Loan-725-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-725-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 725-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 725-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -293,12 +291,12 @@ Feature:LoanMIFOS
 @scenario14-Loan-726-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-726-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 726-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 726-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -310,12 +308,12 @@ Feature:LoanMIFOS
 @scenario15-Loan-727-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-727-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 727-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 727-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -327,12 +325,12 @@ Feature:LoanMIFOS
 @scenario16-Loan-728-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment		   
 	  Scenario: Loan-728-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 728-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 728-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Newcreateloan.xlsx|
@@ -344,12 +342,12 @@ Feature:LoanMIFOS
 @scenario17-Loan-197-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME		   
 	  Scenario: Loan-197-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 197-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 197-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -361,12 +359,12 @@ Feature:LoanMIFOS
 @scenario18-Loan-198-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME		   
 	  Scenario: Loan-198-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 198-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 198-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -378,12 +376,12 @@ Feature:LoanMIFOS
 @scenario19-Loan-199-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME		   
 	  Scenario: Loan-199-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 199-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 199-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -395,12 +393,12 @@ Feature:LoanMIFOS
 @scenario20-Loan-200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME		   
 	  Scenario: Loan-200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -412,12 +410,12 @@ Feature:LoanMIFOS
 @scenario21-Loan-245-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME		   
 	  Scenario: Loan-245-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 245-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 245-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -429,12 +427,12 @@ Feature:LoanMIFOS
 @scenario22-Loan-246-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME		   
 	  Scenario: Loan-246-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 246-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 246-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -446,12 +444,12 @@ Feature:LoanMIFOS
 @scenario23-Loan-247-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME		   
 	  Scenario: Loan-247-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 247-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 247-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -463,12 +461,12 @@ Feature:LoanMIFOS
 @scenario24-Loan-248-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME		   
 	  Scenario: Loan-248-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 248-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 248-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -480,12 +478,12 @@ Feature:LoanMIFOS
 @scenario25-Loan-293-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME		   
 	  Scenario: Loan-293-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 293-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 293-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -497,12 +495,12 @@ Feature:LoanMIFOS
 @scenario26-Loan-294-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME		   
 	  Scenario: Loan-294-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 294-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 294-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -514,12 +512,12 @@ Feature:LoanMIFOS
 @scenario27-Loan-295-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME		   
 	  Scenario: Loan-295-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 295-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 295-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -531,12 +529,12 @@ Feature:LoanMIFOS
 @scenario28-Loan-296-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME		   
 	  Scenario: Loan-296-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 296-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 296-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -548,12 +546,12 @@ Feature:LoanMIFOS
 @scenario29-Loan-341-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME		   
 	  Scenario: Loan-341-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 341-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 341-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -565,15 +563,15 @@ Feature:LoanMIFOS
 @scenario30-Loan-342-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME		   
 	  Scenario: Loan-342-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 342-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 342-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
+	  			|Createclient.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
 	  			| 342-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  When I make repayment and verified the following tabs
@@ -582,12 +580,12 @@ Feature:LoanMIFOS
 @scenario31-Loan-343-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME		   
 	  Scenario: Loan-343-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 343-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 343-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -599,12 +597,12 @@ Feature:LoanMIFOS
 @scenario32-Loan-344-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME		   
 	  Scenario: Loan-344-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 344-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 344-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
@@ -616,12 +614,12 @@ Feature:LoanMIFOS
 @scenario33-Loan-965-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-965-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 965-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 965-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -633,12 +631,12 @@ Feature:LoanMIFOS
 @scenario34-Loan-|966-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-|966-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| |966-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| |966-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -650,12 +648,12 @@ Feature:LoanMIFOS
 @scenario35-Loan-967-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-967-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 967-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 967-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -667,12 +665,12 @@ Feature:LoanMIFOS
 @scenario36-Loan-968-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-968-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 968-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 968-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -684,12 +682,12 @@ Feature:LoanMIFOS
 @scenario37-Loan-1013-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1013-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1013-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1013-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -701,12 +699,12 @@ Feature:LoanMIFOS
 @scenario38-Loan-1014-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1014-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1014-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1014-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -718,12 +716,12 @@ Feature:LoanMIFOS
 @scenario39-Loan-1015-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1015-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1015-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1015-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -735,12 +733,12 @@ Feature:LoanMIFOS
 @scenario40-Loan-1016-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1016-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1016-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1016-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -752,12 +750,12 @@ Feature:LoanMIFOS
 @scenario41-Loan-1061-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1061-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1061-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1061-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -769,12 +767,12 @@ Feature:LoanMIFOS
 @scenario42-Loan-1062-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1062-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1062-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1062-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -786,12 +784,12 @@ Feature:LoanMIFOS
 @scenario43-Loan-1063-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1063-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1063-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1063-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -803,12 +801,12 @@ Feature:LoanMIFOS
 @scenario44-Loan-1064-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1064-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1064-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1064-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -820,12 +818,12 @@ Feature:LoanMIFOS
 @scenario45-Loan-1109-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1109-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1109-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1109-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -837,12 +835,12 @@ Feature:LoanMIFOS
 @scenario46-Loan-1110-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1110-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1110-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1110-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -854,12 +852,12 @@ Feature:LoanMIFOS
 @scenario47-Loan-|1111-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-|1111-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| |1111-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| |1111-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
@@ -871,12 +869,12 @@ Feature:LoanMIFOS
 @scenario48-Loan-1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment		   
 	  Scenario: Loan-1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	  Given I setup the clients 
-	  			| Clientnavigation.xlsx |
-	  When I entered the values into client form using
+	  			
+	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
-	  Then I should see client created successfully
-	  			|Createclient.xlsx|   
-	  When I set up the new create loan
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
 	  			| 1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|
 	  Then I verified the "Summary" details successfully 
 	  			| 1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Newcreateloan.xlsx|

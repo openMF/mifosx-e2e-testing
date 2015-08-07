@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="296" key="DIALOG_WIDTH"/>
-		<item value="393" key="DIALOG_Y_ORIGIN"/>
-		<item value="343" key="DIALOG_HEIGHT"/>
-		<item value="1078" key="DIALOG_X_ORIGIN"/>
+		<item value="295" key="DIALOG_Y_ORIGIN"/>
+		<item value="400" key="DIALOG_HEIGHT"/>
+		<item value="1037" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
@@ -13,26 +13,26 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="System" key="selection"/>
+		<item value="verifyloanproduct" key="selection"/>
 		<list key="findhistory">
+			<item value="verifyloanproduct"/>
+			<item value="system."/>
+			<item value="system.print"/>
 			<item value="system"/>
-			<item value="system.pri"/>
-			<item value="productLoanExcelSheet"/>
-			<item value="setupProduct"/>
-			<item value="clientExcelSheet"/>
-			<item value="setupClient"/>
-			<item value="Excelsheet"/>
-			<item value="createLoanProductExcelsheet"/>
+			<item value="Repayment Schedule|"/>
+			<item value="frequencyintervalforrecalculation"/>
+			<item value="Loanproduct4"/>
+			<item value="When I make repayment and verified the following tabs"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Input|Summary|Repayment Schedule|Transactions|"/>
+			<item value="Loanproduct"/>
+			<item value="Then I make repayment and verified the following tabs"/>
+			<item value="Then I entered the values into client from &quot;Input&quot; sheet"/>
 			<item value=""/>
-			<item value="1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment"/>
-			<item value="|1111-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment"/>
-			<item value="1110-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment"/>
-			<item value="       &#x09;&#x09;&#x09;"/>
-			<item value="1109-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment"/>
-			<item value="1064-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment"/>
-			<item value="1063-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment"/>
+			<item value="Given I setup the clients"/>
+			<item value="dropDown"/>
+			<item value="-&gt;"/>
 		</list>
 	</section>
 </section>

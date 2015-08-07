@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="org.testng.annotations.Test"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="org.webbitserver.handler.exceptions.PrintStackTraceExceptionHandler"/>
 <fullyQualifiedTypeName name="org.apache.xmlbeans.impl.xb.xsdschema.Public"/>
 <fullyQualifiedTypeName name="com.googlecode.totallylazy.Debug"/>
@@ -10,9 +9,34 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.TreeSet"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="cucumber.deps.com.thoughtworks.xstream.io.xml.StaxWriter"/>
+<fullyQualifiedTypeName name="org.apache.poi.hssf.record.HideObjRecord"/>
+<fullyQualifiedTypeName name="org.apache.poi.hssf.usermodel.HSSFCell"/>
+<fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFDataFormat"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+<fullyQualifiedTypeName name="com.mifos.pages.MifosWebPage"/>
+<fullyQualifiedTypeName name="com.mifos.steps.Login"/>
+<fullyQualifiedTypeName name="java.sql.Driver"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.internal.seleniumemulation.Click"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.interactions.Actions"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.internal.selenesedriver.IsElementSelected"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.internal.seleniumemulation.IsVisible"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.interactions.internal.Coordinates"/>
+<fullyQualifiedTypeName name="com.gargoylesoftware.htmlunit.javascript.host.geo.Coordinates"/>
+<fullyQualifiedTypeName name="com.steadystate.css.parser.Locatable"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
 </qualifiedTypeNameHistroy>

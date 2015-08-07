@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="LoginTests (1)" project="MifosTestAutomation" tests="10" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.mifos.tests.LoginTests" incomplete="true">
+    <testsuite name="Feature: LoanRBI" incomplete="true">
+      <testsuite name="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="Unrooted Tests" time="159.982">
+    <testcase name="Given I navigate to mifos" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" time="159.982"/>
+    <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+  </testsuite>
+</testrun>

@@ -261,7 +261,7 @@ public class LazyWebElement implements WebElement {
 	}
 
 	/**
-	 * Wait andfind web element.
+	 * Wait and find web element.
 	 */
 	private void waitAndfindWebElement() {
 		if (element == null) {

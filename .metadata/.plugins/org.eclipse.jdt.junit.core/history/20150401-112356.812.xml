@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="LoginTests (1)" project="MifosTestAutomation" tests="256" started="13" failures="0" errors="1" ignored="6">
+  <testsuite name="com.mifos.tests.LoginTests" incomplete="true">
+    <testsuite name="Feature: LoanRBI" incomplete="true">
+      <testsuite name="Scenario Outline: As User creates the product loan using excelsheet" incomplete="true">
+        <testsuite name="Examples:" incomplete="true">
+          <testsuite name="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |">
+            <testcase name="Given I navigate to mifos" classname="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" time="55.637"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" time="0.15"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" time="1.134"/>
+          </testsuite>
+          <testsuite name="| 390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <error>org.openqa.selenium.WebDriverException: unknown error: cannot get automation extension
+from timeout: Timed out receiving message from renderer: -0.587
+  (Session info: chrome=44.0.2403.125)
+  (Driver info: chromedriver=2.14.313457 (3d645c400edf2e2c500566c9aa096063e707c9cf),platform=Windows NT 6.3 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 10.60 seconds
+Build info: version: '2.29.1', revision: 'dfb1306b85be4934d23c123122e06e602a15e446', time: '2013-01-22 12:58:05'
+System info: os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.7.0_60'
+Session ID: 489f4934303322c7172411015646cf40
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{platform=XP, acceptSslCerts=true, javascriptEnabled=true, browserName=chrome, chrome={userDataDir=C:\Users\30\AppData\Local\Temp\scoped_dir8724_3726}, rotatable=false, locationContextEnabled=true, mobileEmulationEnabled=false, version=44.0.2403.125, takesHeapSnapshot=true, cssSelectorsEnabled=true, databaseEnabled=false, handlesAlerts=true, browserConnectionEnabled=false, webStorageEnabled=true, nativeEvents=true, applicationCacheEnabled=false, takesScreenshot=true}]&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)&#13;
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)&#13;
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)&#13;
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:187)&#13;
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:145)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:554)&#13;
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:783)&#13;
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWindow.maximize(EventFiringWebDriver.java:625)&#13;
+	at com.mifos.steps.BaseSteps.startTests(BaseSteps.java:83)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at cucumber.runtime.Utils$1.call(Utils.java:44)&#13;
+	at cucumber.runtime.Timeout.timeout(Timeout.java:12)&#13;
+	at cucumber.runtime.Utils.invoke(Utils.java:40)&#13;
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:59)&#13;
+	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:194)&#13;
+	at cucumber.runtime.Runtime.runHooks(Runtime.java:185)&#13;
+	at cucumber.runtime.Runtime.runBeforeHooks(Runtime.java:175)&#13;
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:32)&#13;
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:83)&#13;
+	at org.junit.runners.Suite.runChild(Suite.java:127)&#13;
+	at org.junit.runners.Suite.runChild(Suite.java:26)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)&#13;
+	at org.junit.runners.Suite.runChild(Suite.java:127)&#13;
+	at org.junit.runners.Suite.runChild(Suite.java:26)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)&#13;
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:77)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)&#13;
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:82)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)&#13;
+&#13;
+</error>
+            <testcase name="Given I navigate to mifos" classname="| 390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" time="0.001" ignored="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" time="0.001" ignored="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" time="2.675" ignored="true"/>
+          </testsuite>
+          <testsuite name="| 391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+          <testsuite name="| 536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true">
+            <testcase name="Given I navigate to mifos" classname="| 536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see logged in successfully" classname="| 536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Given I setup the product loan &quot;Setup&quot;" classname="| 536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I entered the values into product loan from &quot;ProductLoanInput&quot; Sheet" classname="| 536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+            <testcase name="Then I should see product loan created successfully&#9;from &quot;ProductLoanOutput&quot; Sheet" classname="| 536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true"/>
+          </testsuite>
+        </testsuite>
+      </testsuite>
+      <testsuite name="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+      <testsuite name="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true">
+        <testcase name="Given I navigate to mifos" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see logged in successfully" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Given I setup the clients" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I entered the values into client from &quot;Input&quot; sheet" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I should see client created successfully from &quot;Output&quot; sheet" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="When I set up the new create loan from &quot;NewLoanInput&quot; sheet" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I verified the &quot;Summary&quot; details successfully" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="And I verified the &quot;Repayment Schedule&quot; details successfully" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+        <testcase name="Then I make repayment and verified the following tabs" classname="Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment" incomplete="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+  <testsuite name="Unrooted Tests" time="25.95" incomplete="true">
+    <testcase name="Given I navigate to mifos" classname="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" incomplete="true" ignored="true"/>
+    <testcase name="And I login into mifos site using &quot;Login&quot; excel sheet" classname="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" time="0.0" ignored="true"/>
+    <testcase name="Then I should see logged in successfully" classname="| 389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Loanproduct.xlsx |" time="0.002" ignored="true"/>
+  </testsuite>
+</testrun>
