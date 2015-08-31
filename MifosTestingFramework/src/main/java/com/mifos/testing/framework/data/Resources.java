@@ -54,16 +54,6 @@ public class Resources {
 	 * 
 	 * @param key
 	 *            the key
-	 * @return the long
-	 */
-	public String get(Long key) {
-		return this.props.getProperty(key.toString());
-	}
-	/**
-	 * Gets the.
-	 * 
-	 * @param key
-	 *            the key
 	 * @return the string
 	 */
 	public String get(String key) {

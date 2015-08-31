@@ -23,52 +23,14 @@ import java.io.IOException;
  */
 public class EventListener implements WebDriverEventListener {
 
-	// @Override
-	// public void onException(java.lang.Throwable throwable, WebDriver driver)
-	// {
-	//
-	// WebDriver augmentedDriver = new Augmenter().augment(driver);
-	// File source =
-	// ((TakesScreenshot)augmentedDriver).getScreenshotAs(OutputType.FILE);
-	//
-	// String path = "./target/screenshots/";
-	//
-	// if (!(System.getProperty("screenshot.folder").equals(null)) ){
-	// path = System.getProperty("screenshot.folder");
-	// }
-	//
-	// path = path + source.getName();
-	//
-	// try {
-	// FileUtils.copyFile(source, new File(path));
-	// } catch (IOException e) {
-	// // TODO Auto-generated catch block
-	// e.printStackTrace();
-	// }
-	//
-	// }
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.openqa.selenium.support.events.WebDriverEventListener#afterChangeValueOf
-	 * (org.openqa.selenium.WebElement, org.openqa.selenium.WebDriver)
-	 */
+	
 	@Override
 	public void afterChangeValueOf(WebElement arg0, WebDriver arg1) {
 		// TODO Auto-generated method stub
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.openqa.selenium.support.events.WebDriverEventListener#afterClickOn
-	 * (org.openqa.selenium.WebElement, org.openqa.selenium.WebDriver)
-	 */
-	@Override
+		@Override
 	public void afterClickOn(WebElement arg0, WebDriver arg1) {
 		// TODO Auto-generated method stub
 

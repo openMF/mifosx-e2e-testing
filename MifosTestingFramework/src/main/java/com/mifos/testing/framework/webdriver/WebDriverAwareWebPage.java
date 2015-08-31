@@ -31,9 +31,6 @@ public abstract class WebDriverAwareWebPage{
 	/** Web-Driver factory instance. */
 	private static WebDriverFactory driverFactory;
 
-	/** Web-Driver instance. */
-	private static WebDriver driver;
-
 	/** The server. */
 	private static ProxyServer server;
 
@@ -49,11 +46,7 @@ public abstract class WebDriverAwareWebPage{
 		WebDriverWait wait = new WebDriverWait(getWebDriver(), 10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By
 				.cssSelector("body")));
-		/*if (!this.isOpened()) {
-			throw new IllegalStateException("Page " + this.getClass().getName()
-					+ " cannot be loaded.");
-
-		}*/
+		
 	}
 
 	/**
@@ -63,9 +56,6 @@ public abstract class WebDriverAwareWebPage{
 	 *            the factory class name
 	 */
 	public static synchronized void initialiseWebDriver(String factoryClassName) {
-		if (isWebDriverInitialised()) {
-			throw new IllegalStateException("Web-driver is already initialized");
-		}
 
 		if (!(driverFactory == null || factoryClassName == null || driverFactory
 				.getClass().getName().equals(factoryClassName))) {
@@ -79,11 +69,10 @@ public abstract class WebDriverAwareWebPage{
 				driverFactory = (WebDriverFactory) Class.forName(
 						factoryClassName).newInstance();
 			}
-			driver = driverFactory.getWebDriver();
+			WebDriver driver = driverFactory.getWebDriver();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			server = driverFactory.getProxyServer();
 		} catch (Exception e) {
-			driver = null;
 			throw new Error(
 					"Error in initialising webdriver instance using factory: "
 							+ factoryClassName, e);
@@ -116,8 +105,6 @@ public abstract class WebDriverAwareWebPage{
 
 		driverFactory.quitDriver(saveBrowserProfile);
 
-		driver = null;
-
 		return;
 	}
 
@@ -132,7 +119,7 @@ public abstract class WebDriverAwareWebPage{
 	 * @see #uninitialiseWebDriver()
 	 */
 	public static synchronized boolean isWebDriverInitialised() {
-		return driver != null;
+		return driverFactory != null  && driverFactory.getWebDriver() != null;
 	}
 
 	/**
@@ -151,7 +138,7 @@ public abstract class WebDriverAwareWebPage{
 			throw new IllegalStateException(
 					"Driver instance not yet initialised");
 		}
-		return driver;
+		return driverFactory.getWebDriver();
 	}
 
 	/**
@@ -194,11 +181,6 @@ public abstract class WebDriverAwareWebPage{
 
 			if (this instanceof BookmarkableWebPage) {
 				getWebDriver().get(((BookmarkableWebPage) this).getUrl());
-				// TODO this might breaks things. Changed to throw exception if
-				// page cannot be open instead of returning bool.
-				// if (!this.isOpened()) {throw new
-				// UnsupportedOperationException("Page " +
-				// this.getClass().getName() + " cannot be opened.");}
 				return true;
 			}
 
@@ -213,7 +195,7 @@ public abstract class WebDriverAwareWebPage{
 	 * Maximise window.
 	 */
 	public void maximiseWindow() {
-		driver.manage().window().maximize();
+		driverFactory.getWebDriver().manage().window().maximize();
 	}
 
 	/**

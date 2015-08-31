@@ -9,8 +9,10 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -315,4 +317,12 @@ public class LazyWebElement implements WebElement {
 	public By getLocator() {
 		return locator;
 	}
+
+	@Override
+	public <X> X getScreenshotAs(OutputType<X> arg0) throws WebDriverException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }

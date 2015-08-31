@@ -1,6 +1,6 @@
 Feature:Login
 
-@login
+@Login
 Scenario Outline: As User Login into Mifos site using excelsheet
 
 	Given I navigate to mifos
@@ -11,5 +11,4 @@ Scenario Outline: As User Login into Mifos site using excelsheet
 	Examples:
 		| excelsheet  | 
 		| Login.xlsx  | 
-		| Login1.xlsx |
-        #| Login other User.xlsx |
+	

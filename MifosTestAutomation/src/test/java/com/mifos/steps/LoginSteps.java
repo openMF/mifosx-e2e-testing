@@ -5,26 +5,31 @@ package com.mifos.steps;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
+
 import com.mifos.pages.FrontPage;
 import com.mifos.pages.MifosWebPage;
+import com.mifos.testing.framework.webdriver.WebDriverAwareWebPage;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 
-/**
- * @author salma
- * 
- */
-public class LoginSteps {
+public class LoginSteps extends WebDriverAwareWebPage{
 
 	final public FrontPage varFrontPage = new FrontPage();
 	public String excelSheetPath = null;
 	
 	@Given("^I navigate to mifos$")
 	public void I_navigate_to_mifos() throws Throwable {
-		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL
-				+ MifosWebPage.getResource("home"));
+		
+		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
+		 Thread.sleep(1000);
+		 getWebDriver().navigate().refresh();
+		 Thread.sleep(5000);
+		 if(!getWebDriver().findElement(By.id("uid")).isDisplayed()){			 
+			getWebDriver().navigate().refresh();
+		 }
 	}
 
 	

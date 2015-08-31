@@ -5,10 +5,6 @@ package com.mifos.domainobjects;
 
 import java.util.UUID;
 
-/**
- * @author salma
- * 
- */
 public class PageUtils {
 
 	/**

@@ -21,7 +21,7 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 /**
- * @author salma
+ *
  *
  */
 public class BaseSteps {
@@ -30,7 +30,7 @@ public class BaseSteps {
 	private static final String SYS_PROP_WEB_DRIVER_FACTORY_CLASS_NAME = "webdriver.factory.class.name";
 
 	/** The Constant driverClassName. */
-	private static final String driverClassName = "com.mifos.testing.framework.webdriver.ChromeDriverFactory"; // System.getProperty(SYS_PROP_WEB_DRIVER_FACTORY_CLASS_NAME);
+	private static final String driverClassName = "com.mifos.testing.framework.webdriver.ChromeDriverFactory"; //System.getProperty(SYS_PROP_WEB_DRIVER_FACTORY_CLASS_NAME);//// 
 
 	// //////////////////////////////////Before and
 	// After/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,31 +43,7 @@ public class BaseSteps {
 	 */
 	@Before
 	public void startTests(Scenario s) {
-		// Add the runtime shutdown hook to load up custom reporting
-		/*
-		 * Runtime.getRuntime().addShutdownHook(new Thread() { public void run()
-		 * { File reportOutputDirectory = new File(
-		 * "C:\\gitWork\\automation\\mifosTestAutomation\\target\\cucumber-html-report-custom"
-		 * ); List<String> jsonReportFiles = new ArrayList<String>();
-		 * jsonReportFiles.add("\\target\\cucumber.json");
-		 *
-		 * String buildNumber = "1"; String buildProjectName =
-		 * "mifos-automation"; Boolean skippedFails = false; Boolean
-		 * undefinedFails = false; Boolean flashCharts = true; Boolean
-		 * runWithJenkins = false; ReportBuilder reportBuilder = null;
-		 *
-		 * try { //reportBuilder = new
-		 * ReportBuilder(jsonReportFiles,reportOutputDirectory
-		 * ,"","95","cucumber-jvm",false,false,true,true,false,"",true);
-		 * reportBuilder = new
-		 * ReportBuilder(jsonReportFiles,reportOutputDirectory,"", buildNumber,
-		 * buildProjectName,skippedFails, undefinedFails,
-		 * flashCharts,runWithJenkins, false, ""); } catch (Exception e) {
-		 * e.printStackTrace(); //To change body of catch statement use File |
-		 * Settings | File Templates. } try { reportBuilder.generateReports(); }
-		 * catch (Exception e) { e.printStackTrace(); //To change body of catch
-		 * statement use File | Settings | File Templates. } } });
-		 */
+		
 		if (!(WebDriverAwareWebPage.isWebDriverInitialised())) {
 
 			if (driverClassName == null) {
@@ -81,7 +57,9 @@ public class BaseSteps {
 		if (!((WebDriverAwareWebPage.getWebDriver().getClass().toString()
 				.contains("android")))) {
 			WebDriverAwareWebPage.getWebDriver().manage().window().maximize();
+			
 		}
+		
 		WebDriverAwareWebPage.getWebDriver().manage().deleteAllCookies();
 		// We need to check uf the feature has changed. This is needed to check
 		// if test data needs to be setup
@@ -133,10 +111,7 @@ public class BaseSteps {
 			}
 			scenario.embed(screenshotbytes, "image/png");
 
-			// debug
-			// System.out.print(customer.getEmail() );
-			// System.out.print(customer.getPassword() );
-		}
+			}
 		try {
 			if (WebDriverAwareWebPage.isWebDriverInitialised()) {
 				WebDriverAwareWebPage.uninitialiseWebDriver();

@@ -12,7 +12,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -24,32 +23,25 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.internal.seleniumemulation.IsVisible;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.w3c.css.sac.Locator;
 
-
-
-
-import com.gargoylesoftware.htmlunit.javascript.host.geo.Coordinates;
 import com.google.common.base.Function;
 import com.mifos.testing.framework.data.Resources;
 import com.mifos.testing.framework.webdriver.LazyWebElement;
 import com.mifos.testing.framework.webdriver.WebDriverAwareWebPage;
-import com.steadystate.css.parser.Locatable;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class WowcherWebPage.
  *
- * @author salma
  */
 public class MifosWebPage extends WebDriverAwareWebPage {
 
@@ -235,11 +227,18 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 * @return the web element
 	 */
 	protected static WebElement waitForElementToBeVisible(final By locator) {
-		WebDriverWait wait = new WebDriverWait(getWebDriver(), 100);
-		WebElement element = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(locator));
 
+		WebDriverWait wait = new WebDriverWait(getWebDriver(), 100);
+		WebElement element = null;
+		try {
+			element = wait.until(ExpectedConditions
+					.visibilityOfElementLocated(locator));
+			
+		} catch (TimeoutException timeout 	) {
+			Assert.fail("Not find element " + locator.toString());
+		}
 		return element;
+
 	}
 
 	/**
@@ -504,11 +503,16 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 * @param key
 	 * @param value
 	 */
-	public void insertValues(Map<String, String> loginMap) {
+	public void insertValues(Map<String, String> loginMap) throws Throwable {
 		// TODO Auto-generated method stub
-		for (Map.Entry<String, String> entry : loginMap.entrySet()) {
-			insertValues(entry.getKey(), entry.getValue());
+		try {
+			for (Map.Entry<String, String> entry : loginMap.entrySet()) {
+				insertValues(entry.getKey(), entry.getValue());
+			}
+		} catch (Exception ioe) {
+			ioe.printStackTrace();
 		}
+
 	}
 
 	public void insertValues(String key, String value ) {
@@ -530,19 +534,26 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			
 			case "input":
 				try {
+					
+					if (key.equals("Principal")) {
+						((JavascriptExecutor) getWebDriver())
+								.executeScript("scroll(400,0);");
+						Thread.sleep(getResourceKey("mediumWait"));
+						
+					}
 					By locator = null;
 					locator = getLocator(getResource(key));
 					waitForElementToBeVisible(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
-
 					locatorElement.sendKeys(value);
-					switch (type) {
+					Thread.sleep(getResourceKey("wait"));
+					/*switch (type) {
 					case "combobox":
 						locatorElement.sendKeys(Keys.RETURN);
 						break;
 					default:
 						break;
-					}
+					}*/
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
 				}
@@ -556,6 +567,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					
 				}
 				clickButton(getLocator(getResource(key)));
+				Thread.sleep(getResourceKey("wait"));
 				
 				break;
 			case "datePicker":
@@ -565,14 +577,11 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					waitForElementToBeVisible(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
 
-					locatorElement.sendKeys(value + Keys.TAB);
-					switch (type) {
-					case "combobox":
-						locatorElement.sendKeys(Keys.RETURN);
-						break;
-					default:
-						break;
-					}
+					locatorElement.sendKeys(value);
+					Thread.sleep(getResourceKey("wait"));
+					locatorElement.sendKeys(Keys.ESCAPE);
+					Thread.sleep(getResourceKey("wait"));
+
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
 				}
@@ -582,31 +591,21 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				
 					By scrollToLocator= null;
 					scrollToLocator = getLocator(getResource(key));
-					
 //					((JavascriptExecutor)  getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", element1);
-					WebElement element3 = getWebDriver().findElement(scrollToLocator);
-				    int elementPosition = element3.getLocation().getY();
+					WebElement element = getWebDriver().findElement(scrollToLocator);
+				    int elementPosition = element.getLocation().getY();
 					String js = String.format("window.scroll(0, %s)", elementPosition-100);
 					((JavascriptExecutor)getWebDriver()).executeScript(js);
-					
-					
-				clickButton(getLocator(getResource(key)));
+				
+					clickButton(getLocator(getResource(key)));
 					By locator = null;
 					locator = getLocator(getResource(key + ".input"));
 					waitForElementToBeVisible(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
-					locatorElement.sendKeys(value);
-					
-					switch (type) {
-					case "combobox":
-						locatorElement.sendKeys(Keys.RETURN);
-						break;
-					default:
-						break;
-					}
-					getElement(getLocator(getResource(key + ".input"))).sendKeys(Keys.TAB);
+					locatorElement.sendKeys(value + Keys.TAB);
+			//		getElement(getLocator(getResource(key + ".input"))).sendKeys(Keys.TAB);
 		
-				Thread.sleep(getResourceKey("smallWait"));
+				Thread.sleep(getResourceKey("wait"));
 
 				break;
 			case "checkbox":
@@ -614,7 +613,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				LazyWebElement check = getElement(getResource(key));
 				if (check.isSelected() != checked) {
 					clickButton(getLocator(getResource(key)));
-					Thread.sleep(getResourceKey("mediumWait"));
+					Thread.sleep(getResourceKey("smallWait"));
 				}
 
 				break;
@@ -631,26 +630,17 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;
 			case "select":
-				type = "text";
-				LazyWebElement selectelement = getElement(getResource(key));
-				Select statusselect = new Select(selectelement);
-				switch (type.toLowerCase()) {
-				case "text":
-					statusselect.selectByVisibleText(value);
-					break;
-				case "value":
-					statusselect.selectByValue(value);
-					break;
-				case "index":
-					int index =  0;
-					statusselect.selectByIndex(index);
-					break;
-				}
 				
-
-				break;
-
-			default:
+				try {
+					LazyWebElement selectelement = getElement(getResource(key));
+					Select statusselect = new Select(selectelement);
+					statusselect.selectByVisibleText(value);
+					Thread.sleep(getResourceKey("wait"));
+				} catch (NoSuchElementException e) {
+					Assert.fail("Could not find the " + key);
+				}
+				/*Assert.assertEquals(value, statusselect
+						.getFirstSelectedOption().getText());*/				
 				break;
 			}
 		} catch (Exception e) {
@@ -863,33 +853,6 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 	}
 	
-	/////////////////////
-	private void submitValue1(String key, String value, String type,
-			boolean clear) {
-		try {
-			By locator = null;
-		//	locator = getLocator(getResource(key), locatortype);
-			locator = getLocator(getResource(key));
-			waitForElementToBeVisible(locator);
-			LazyWebElement locatorElement = getElement(locator, clear);
-
-			locatorElement.sendKeys(value);
-			System.out
-					.println("SubmitValue" + locator.toString() + ":" + value);
-			switch (type) {
-			case "combobox":
-				locatorElement.sendKeys(Keys.RETURN);
-				break;
-			default:
-				break;
-			}
-		} catch (NoSuchElementException exception) {
-			Assert.fail("Could not find the " + key);
-		}
-
-	}
-	///////////////////////////////////////
-
 	/**
 	 * Gets the element.
 	 *
@@ -1102,16 +1065,6 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	
 	//////////////////Selenium/////////////////////////////
 	
-	/** 
-	 * @param key
-	 * @param value
-	 * @param type
-	 * @param clear
-	 */
-	private void submitValues(String key, String value, String type, boolean clear) {
-		
-	}
-	
 	public static String getLocatorFieldType(String fieldType) {
 
 		String locatorFieldType = fieldType.split("->")[0];
@@ -1121,25 +1074,26 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public By getLocator(String logicalname) {
 		By by = null;
 		// String locator=getResource(logicalname);
-		String locatorName;
+		String locatorName = null;
 		String locatorValue;
+		
+			locatorName = logicalname.split("->")[1];
+			locatorValue = logicalname.split("->")[2];
 
-		locatorName = logicalname.split("->")[1];
-		locatorValue = logicalname.split("->")[2];
-
-		if (locatorName.equalsIgnoreCase("id")) {
-			by = By.id(locatorValue);
-		} else if (locatorName.equalsIgnoreCase("name")) {
-			by = By.name(locatorValue);
-		} else if (locatorName.equalsIgnoreCase("xpath")) {
-			by = By.xpath(locatorValue);
-		} else if (locatorName.equalsIgnoreCase("linktext")) {
-			by = By.linkText(locatorValue);
-		} else if (locatorName.equalsIgnoreCase("cssselector")) {
-			by = By.cssSelector(locatorValue);
-		} else {
-			System.out.println("There is an invalid locator entered...");
-		}
+			if (locatorName.equalsIgnoreCase("id")) {
+				by = By.id(locatorValue);
+			} else if (locatorName.equalsIgnoreCase("name")) {
+				by = By.name(locatorValue);
+			} else if (locatorName.equalsIgnoreCase("xpath")) {
+				by = By.xpath(locatorValue);
+			} else if (locatorName.equalsIgnoreCase("linktext")) {
+				by = By.linkText(locatorValue);
+			} else if (locatorName.equalsIgnoreCase("cssselector")) {
+				by = By.cssSelector(locatorValue);
+			} else {
+				Assert.fail("Cannot find element" + locatorName);
+			}
+	
 		return by;
 	}
 	
@@ -1423,6 +1377,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				element = new LazyWebElement(getWebDriver(), locator);
 			}
 			clickButton(element, true);
+			
 		} catch (NoSuchElementException e) {
 			Assert.fail(message);
 		}
