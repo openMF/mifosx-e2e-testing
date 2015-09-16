@@ -55,7 +55,7 @@ Scenario Outline: As User creates the product loan using excelsheet
 	 	|776-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-Late Repayment-Loanproduct.xlsx|
 	 	|821-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment-Loanproduct.xlsx|
 	 	|822-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment-Loanproduct.xlsx|
-	 	|823-RBI-EI-DB-SAR-Y-NON-RNI-CTRFD-SAR-MD-Y-1-Late Repayment-Loanproduct.xlsx|
+	 	|823-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment-Loanproduct.xlsx|
 	 	|824-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-Late Repayment-Loanproduct.xlsx| 
 	 	|869-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment-Loanproduct.xlsx|
 	 	|870-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment-Loanproduct.xlsx|
@@ -66,7 +66,7 @@ Scenario Outline: As User creates the product loan using excelsheet
 	 	|919-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Loanproduct.xlsx|
 	 	|920-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Loanproduct.xlsx|
 	
-@scenario1-Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment	   
+@scenario1-Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment  
 	  Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
 	
 	  Given I setup the clients
@@ -343,10 +343,10 @@ Scenario Outline: As User creates the product loan using excelsheet
 	    	   |Createclient.xlsx|
 	  When I set up the new create loan from "NewLoanInput" sheet
 	           | 5-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
-	  Then I verified the "Summary" details successfully	
-			   | 5-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
-   	  And I verified the "Repayment Schedule" details successfully	
-	           | 5-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  		   | 5-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  		   | 5-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Newcreateloan.xlsx|         
 	  Then I make repayment and verified the following tabs
    		       |5-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
     
@@ -611,7 +611,7 @@ Scenario:  Loan-773-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment
     And I verified the "Repayment Schedule" details successfully	
 	     | 773-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment-Newcreateloan.xlsx|
 	     Then I make repayment and verified the following tabs
-    |773-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+         |773-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
   
  @scenario34-Loan-774-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateLateRepayment
 Scenario: Loan-774-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment
@@ -694,20 +694,21 @@ Scenario: Loan-822-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment
      |822-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|     
 
 @scenario39-Loan-823-RBI-EI-DB-SAR-Y-NON-RNI-CTRFD-SAR-MD-Y-1-LateRepayment
-Scenario: Loan-823-RBI-EI-DB-SAR-Y-NON-RNI-CTRFD-SAR-MD-Y-1-Late Repayment
+Scenario: Loan-823-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment
 	Given I setup the clients 
 	When I entered the values into client from "Input" sheet
 	    |Createclient.xlsx|
 	Then I should see client created successfully from "Output" sheet
 	  			|Createclient.xlsx|
 	When I set up the new create loan from "NewLoanInput" sheet
-	     | 823-RBI-EI-DB-SAR-Y-NON-RNI-CTRFD-SAR-MD-Y-1-Late Repayment-Newcreateloan.xlsx|
+	     | 823-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment-Newcreateloan.xlsx|
+	       
 	Then I verified the "Summary" details successfully	
-		 | 823-RBI-EI-DB-SAR-Y-NON-RNI-CTRFD-SAR-MD-Y-1-Late Repayment-Newcreateloan.xlsx|
+		 | 823-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment-Newcreateloan.xlsx|
     And I verified the "Repayment Schedule" details successfully	
-	     | 823-RBI-EI-DB-SAR-Y-NON-RNI-CTRFD-SAR-MD-Y-1-Late Repayment-Newcreateloan.xlsx|
+	     | 823-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment-Newcreateloan.xlsx|
 	     Then I make repayment and verified the following tabs
-     |823-RBI-EI-DB-SAR-Y-NON-RNI-CTRFD-SAR-MD-Y-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+     |823-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
 @scenario40-Loan-824-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment   
 Scenario: Loan-824-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-Late Repayment
