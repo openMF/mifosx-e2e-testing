@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
@@ -47,7 +46,7 @@ public class FrontPage extends MifosWebPage {
 	Set<String> setAccuralTransactionType = new TreeSet<String>();
 	static String value = "";
 	public String rowval;
-	public static boolean ishideAccuralsChecked = true;
+	public boolean ishideAccuralsChecked = true;
 	boolean isTransactionTabSelected;
 	public boolean isaccuralsTypeTransaction = true;
 	int transactionIDIndex = 0;
@@ -395,6 +394,15 @@ public class FrontPage extends MifosWebPage {
 				getWebDriver().findElement(
 						By.xpath("//a[contains(.,'" + sheetname + "')]"))
 						.click();
+				// Before reading transaction id need to un-check the hideAccurals
+				// button for periodic scenarios
+				if (sheetname.equals("Transactions") && !ishideAccuralsChecked) {
+					LazyWebElement accrualCheck = getElement(getResource("hideaccruals"));
+					if (accrualCheck.isSelected()) {
+						clickButton(getResource("hideaccruals"));
+						Thread.sleep(getResourceKey("mediumWait"));
+					}
+				}
 			}
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
 
@@ -411,7 +419,7 @@ public class FrontPage extends MifosWebPage {
 						|| sheetname.equals("Transactions")) {
 
 					if (sheetname.equals("Transactions")
-							|| !isaccuralsTypeTransaction) {
+							&& !isaccuralsTypeTransaction) {
 
 						Accrual = getWebDriver()
 								.findElement(
@@ -453,8 +461,10 @@ public class FrontPage extends MifosWebPage {
 					// applicationCol.size());
 
 				} else if (sheetname.equals("Acc_Disbursement")
+						|| sheetname.equals("Acc_Disbursement1")
 						|| sheetname.equals("Acc_RepaymentDisbursement")
-						|| sheetname.equals("Acc_Repayment")) {
+						|| sheetname.equals("Acc_Repayment")
+						|| sheetname.equals("Acc_Repayment1")) {
 					xlColumnPointer = 4;
 
 					applicationCol = getWebDriver()
@@ -603,6 +613,9 @@ public class FrontPage extends MifosWebPage {
 	private void validateTransactions(String excelSheetPath, String excelName,
 			String transactionsSheet) throws Exception {
 		// TODO Auto-generated method stub
+		if (!ishideAccuralsChecked) {
+			isaccuralsTypeTransaction = false;
+		}
 		verifyLoanTabData(excelSheetPath, excelName, transactionsSheet);
 	}
 
@@ -630,7 +643,7 @@ public class FrontPage extends MifosWebPage {
 
 			// Before reading transaction id need to un check the hideAccurals
 			// button for scheduler job scenarios
-			if (!ishideAccuralsChecked) {
+		/*	if (!ishideAccuralsChecked) {
 				getWebDriver().findElement(
 						By.xpath("//a[contains(.,'Transactions')]")).click();
 				isTransactionTabSelected = true;
@@ -640,11 +653,11 @@ public class FrontPage extends MifosWebPage {
 					Thread.sleep(getResourceKey("mediumWait"));
 				}
 
-			}
+			}*/
 		
 	}
 
-	public void makeRepaymentAndReadTransactionId(String excelSheetPath,
+/*	public void makeRepaymentAndReadTransactionId(String excelSheetPath,
 			List<String> excelSheet) throws Throwable {
 		// TODO Auto-generated method stub
 
@@ -655,8 +668,24 @@ public class FrontPage extends MifosWebPage {
 		// Make Repayment
 		makeRepayment(excelSheetPath, excelName, inputSheet);
 		//validateTransaction And Capture transaction ID
+		
 		validateTransactions(excelSheetPath, excelName, transactionsSheet);
 
+	}*/
+	public void verifyAndReadTransactionId(String excelSheetPath,
+			String excelSheetName, String sheetName)throws Throwable {
+		// TODO Auto-generated method stub
+		isaccuralsTypeTransaction = false;
+		verifyLoanTabData(excelSheetPath, excelSheetName, sheetName);
+	}
+	public void makeRepaymentAndReadTransactionId(String excelSheetPath,
+			String excelName, String sheetName) throws Throwable {
+		if (sheetName.equals("Input")) {
+			makeRepayment(excelSheetPath, excelName, sheetName);
+		} else {
+			isaccuralsTypeTransaction = false;
+			verifyLoanTabData(excelSheetPath, excelName, sheetName);
+		}
 	}
 
 	/**Method Searches Journal Entries by entering transaction id and verify the account details.
@@ -679,8 +708,10 @@ public class FrontPage extends MifosWebPage {
 			 */
 			
 			if (sheetName.equals("Acc_Disbursement")
+					|| sheetName.equals("Acc_Disbursement1")
 					|| sheetName.equals("Acc_RepaymentDisbursement")
-					|| sheetName.equals("Acc_Repayment")) {
+					|| sheetName.equals("Acc_Repayment")
+					|| sheetName.equals("Acc_Repayment1")) {
 
 				isTransactionTabSelected = true;
 				getWebDriver()
@@ -704,35 +735,35 @@ public class FrontPage extends MifosWebPage {
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
 
-			if (sheetName.equals("Accural")) {
+		if (sheetName.equals("Acc_Periodic") || sheetName.equals("Acc_Upfront")) {
 
-				Iterator<String> getTransactionType = setAccuralTransactionType
-						.iterator();
-				while (getTransactionType.hasNext()) {
-					getWebDriver()
-							.findElement(
-									By.xpath("//input[@placeholder='Search by transaction']"))
-							.sendKeys(Keys.chord(Keys.CONTROL, "a"),
-									"L" + getTransactionType.next());
+			Iterator<String> getTransactionType = setAccuralTransactionType
+					.iterator();
+			while (getTransactionType.hasNext()) {
+				getWebDriver()
+						.findElement(
+								By.xpath("//input[@placeholder='Search by transaction']"))
+						.sendKeys(Keys.chord(Keys.CONTROL, "a"),
+								"L" + getTransactionType.next());
 
-					Thread.sleep(getResourceKey("mediumWait"));
-					clickButton(
-							getResource("frontend.accounting.searchjournal.transactionid.submit"),
-							"xpath");
-					Thread.sleep(getResourceKey("mediumWait"));
-					verifyAccrualData(clientExcelSheetPath, excelSheetName,
-							sheetName);
-					clickButton(
-							getResource("frontend.accounting.searchjournal.transactionid.Parameters"),
-							"xpath");
-					Thread.sleep(getResourceKey("mediumWait"));
-				}
+				Thread.sleep(getResourceKey("mediumWait"));
+				clickButton(
+						getResource("frontend.accounting.searchjournal.transactionid.submit"),
+						"xpath");
+				Thread.sleep(getResourceKey("mediumWait"));
+				verifyAccrualData(clientExcelSheetPath, excelSheetName,
+						sheetName);
+				clickButton(
+						getResource("frontend.accounting.searchjournal.transactionid.Parameters"),
+						"xpath");
+				Thread.sleep(getResourceKey("mediumWait"));
 			}
+		}
 
 	}
 
 	/**
-	 * Method navigates to Scheduler Jobs and select add periodic accrual transactions job and runs it.
+	 * Method navigates to Scheduler Jobs and select job and runs it.
 	 * @param schedularJobName 
 	 * @throws InterruptedException
 	 */
@@ -745,21 +776,67 @@ public class FrontPage extends MifosWebPage {
 		switch (schedularJobName) {
 
 		case "Periodic Accrual Transactions":
-			LazyWebElement check = getElement(getResource("addperiodicaccrualtransactions"));
-			if (!check.isSelected()) {
+			LazyWebElement checkPeriodic = getElement(getResource("addperiodicaccrualtransactions"));
+			if (!checkPeriodic.isSelected()) {
 				clickButton(getResource("addperiodicaccrualtransactions"));
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
 			ishideAccuralsChecked = false;
-			isaccuralsTypeTransaction = false;
+			
 			break;
 		case "Apply penalty to overdue loans":
-			LazyWebElement check1 = getElement(getResource("addpenaltytooverdueloans"));
-			if (!check1.isSelected()) {
+			LazyWebElement checkpenalty = getElement(getResource("addpenaltytooverdueloans"));
+			if (!checkpenalty.isSelected()) {
 				clickButton(getResource("addpenaltytooverdueloans"));
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
-
+			break;
+		case "Periodic & penalty to overdue loans":
+			LazyWebElement checkPeriodic1 = getElement(getResource("addperiodicaccrualtransactions"));
+			if (!checkPeriodic1.isSelected()) {
+				clickButton(getResource("addperiodicaccrualtransactions"));
+				Thread.sleep(getResourceKey("mediumWait"));
+			}
+			((JavascriptExecutor) getWebDriver()).executeScript("scroll(0,500);");
+			Thread.sleep(getResourceKey("smallWait"));
+			clickButton(getResource("runSelectedJobs"));
+			Thread.sleep(getResourceKey("smallWait"));
+			clickButton(getResource("refresh"));
+			Thread.sleep(getResourceKey("largeWait"));
+			ishideAccuralsChecked = false;
+			LazyWebElement checkpenalty1 = getElement(getResource("addpenaltytooverdueloans"));
+			if (!checkpenalty1.isSelected()) {
+				clickButton(getResource("addpenaltytooverdueloans"));
+				Thread.sleep(getResourceKey("mediumWait"));
+			}
+			break;
+		case "Add Upfront Accrual Transactions":
+			LazyWebElement addupfrontaccrual = getElement(getResource("addupfrontaccrualtransactions"));
+			if (!addupfrontaccrual.isSelected()) {
+				clickButton(getResource("addupfrontaccrualtransactions"));
+				Thread.sleep(getResourceKey("mediumWait"));
+			}
+			ishideAccuralsChecked = false;
+			break;
+			
+		case "Upfront & penalty to overdue loans":
+			LazyWebElement addupfrontaccrual1 = getElement(getResource("addupfrontaccrualtransactions"));
+			if (!addupfrontaccrual1.isSelected()) {
+				clickButton(getResource("addupfrontaccrualtransactions"));
+				Thread.sleep(getResourceKey("mediumWait"));
+			}
+			((JavascriptExecutor) getWebDriver()).executeScript("scroll(0,500);");
+			Thread.sleep(getResourceKey("smallWait"));
+			clickButton(getResource("runSelectedJobs"));
+			Thread.sleep(getResourceKey("smallWait"));
+			clickButton(getResource("refresh"));
+			Thread.sleep(getResourceKey("largeWait"));
+			ishideAccuralsChecked = false;
+			LazyWebElement checkpenalty2 = getElement(getResource("addpenaltytooverdueloans"));
+			if (!checkpenalty2.isSelected()) {
+				clickButton(getResource("addpenaltytooverdueloans"));
+				Thread.sleep(getResourceKey("mediumWait"));
+			}
 			break;
 		default:
 			System.out.println("Invalid schedular Job");
@@ -775,7 +852,7 @@ public class FrontPage extends MifosWebPage {
 
 		((JavascriptExecutor) getWebDriver())
 				.executeScript("window.history.go(-1)");
-		Thread.sleep(getResourceKey("mediumWait"));
+		Thread.sleep(getResourceKey("largeWait"));
 
 	}
 
@@ -845,7 +922,7 @@ public class FrontPage extends MifosWebPage {
 
 					readApplicationCol = getWebDriver()
 							.findElements(
-									By.xpath(".//[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["
+									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["
 											+ xPathRow + "]/td"));
 					verifyColumnDetails(colIndex, currentRow,
 							readApplicationCol, sheet, sheetname);
@@ -857,12 +934,58 @@ public class FrontPage extends MifosWebPage {
 
 			} catch (FileNotFoundException fnfe) {
 				fnfe.printStackTrace();
-			}
+			} 
 
 	//		break;
 	//	}
 
 	}
+	  
+	  /**
+	   * Method adds delete and modify tranche from tranche tabs and verifies tabs
+	   * @param clientExcelSheetPath
+	   * @param excelSheetName
+	   * @param sheetName
+	   * @throws Throwable 
+	   */
+	  	  public void loanTrancheDetails(String clientExcelSheetPath,
+	  				String excelSheetName, String sheetName) throws Throwable {
+	  		// TODO Auto-generated method stub
+	  		  
+	  		  if (sheetName.equals("Loan Tranche Details")) {
+	  			  getWebDriver().findElement(
+	  						By.xpath("//a[contains(.,'" + sheetName + "')]"))
+	  						.click();
+	  			  Map<String, String> repaymentDetails = parseExcelSheet(
+	  					  clientExcelSheetPath, excelSheetName, sheetName);
+	  				insertValues(repaymentDetails);
+	  				Thread.sleep(getResourceKey("largeWait"));
+	  			}  else {
+	  				verifyLoanTabData(clientExcelSheetPath, excelSheetName, sheetName);
+	  			}
+
+	  	}
+	  	  
+	  	/**
+	  	 * Method verifyAndValidate Error msg successfully from target excel
+	  	 * sheet 
+	  	 * @param excelSheetPath
+	  	 * @param excelSheetName
+	  	 * @param sheetName
+	  	 * @throws Exception 
+	  	 */
+	  	public void verifyAndValidate(String excelSheetPath, String excelSheetName,
+				String sheetName) throws Exception {
+			// TODO Auto-generated method stub
+			Map<String, String> verifyMap = parseExcelSheet(excelSheetPath,
+					excelSheetName, sheetName);
+			for (Map.Entry<String, String> entry : verifyMap.entrySet()) {
+				verifySuccessMessage(entry.getKey(), entry.getValue());
+				
+			}
+	  	}
+	  	  
+	  	
 	 
 
 	public void searchUser(String user) throws InterruptedException {
@@ -934,6 +1057,10 @@ public class FrontPage extends MifosWebPage {
 																 * ; }
 																 */
 	}
+
+	
+
+
 
 
 

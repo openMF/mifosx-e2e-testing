@@ -33,7 +33,7 @@ public class ClientSteps {
 	public void I_should_see_client_created_successfully_from_sheet(String sheetName,
  List<String> excelSheet) throws Throwable {
 		String excelSheetName = excelSheet.get(0).toString();
-		varFrontPage.verifyClient(ExcelSheetPath, excelSheetName, sheetName);
+		varFrontPage.verifyAndValidate(ExcelSheetPath, excelSheetName, sheetName);
 	}
 
 	@When("^I set up the new create loan from \"([^\"]*)\" sheet$")
@@ -59,12 +59,12 @@ public class ClientSteps {
 		varFrontPage.verifyLoanTabData(ExcelSheetPath, excelSheetName, sheetName);
 	}
 	
-	/*@When("^I make repayment and verified the following tabs$")
-	public void I_make_repayment_and_verified_the_following_tabs(DataTable excel)
-			throws Throwable {
-		List<List<String>> excelSheet = excel.raw();
-		varFrontPage.createMakeRepayment(ExcelSheetPath, excelSheet);
-	}*/
+	@Then("^I verified the \"([^\"]*)\" details and read the transaction Id$")
+		public void I_verified_the_details_and_read_the_transaction_Id(String sheetName,
+				List<String> excelSheet) throws Throwable {
+			String excelSheetName = excelSheet.get(0).toString();
+			varFrontPage.verifyAndReadTransactionId(ExcelSheetPath, excelSheetName, sheetName);
+	}
 	
 	@Then("^I make repayment and verified the following tabs$")
 	public void I_make_repayment_and_verified_the_following_tabs(List<List<String>> excel)
@@ -82,7 +82,10 @@ public class ClientSteps {
 	public void I_make_repayment_and_read_the_transaction_Id(List<List<String>> excel) throws Throwable {
 		
 		for (List<String> excelSheet : excel) {
-			varFrontPage.makeRepaymentAndReadTransactionId(ExcelSheetPath, excelSheet);
+			for (int i = 1; i < excelSheet.size(); i++) {
+				varFrontPage.makeRepaymentAndReadTransactionId(ExcelSheetPath, excelSheet.get(0),excelSheet.get(i));	
+			}
+		//	varFrontPage.makeRepaymentAndReadTransactionId(ExcelSheetPath, excelSheet);
 	
 		}
 	}
@@ -109,6 +112,23 @@ public class ClientSteps {
 	public void I_navigate_to_scheduler_job_execute(String SchedularJobName) throws Throwable{
 		varFrontPage.selectSchedularJob(SchedularJobName);
 		
+	}
+	
+	@Then("^I \"([^\"]*)\" trance from trache tab and verified the following tabs$")
+	public void I_trance_from_trache_tab_and_verified_the_following_tabs(String arg1,
+			List<List<String>> excelSheet) throws Throwable {
+		for (List<String> option : excelSheet) {
+			for (int i = 1; i < option.size(); i++) {
+				varFrontPage.loanTrancheDetails(ExcelSheetPath, option.get(0),option.get(i));			
+			}
+		}
+	}
+	
+	@Then("^i validate and Verify from \"([^\"]*)\" sheet$")
+	public void i_validate_and_Verify_from_sheet(String sheetName,
+ List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.verifyAndValidate(ExcelSheetPath, excelSheetName, sheetName);
 	}
 
 	@Then("^I went back to the client$")

@@ -8,6 +8,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -1090,7 +1091,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				by = By.linkText(locatorValue);
 			} else if (locatorName.equalsIgnoreCase("cssselector")) {
 				by = By.cssSelector(locatorValue);
-			} else {
+			} else if (locatorName.equalsIgnoreCase("class")){
+				by = By.className(locatorValue);
+			}
+			else {
 				Assert.fail("Cannot find element" + locatorName);
 			}
 	
@@ -1179,7 +1183,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	}*/
 
 	public void verifySuccessMessage(String page, String message) {
-		Assert.assertTrue(validateSame(page, message));
+		try {
+
+			Assert.assertTrue(validateSame(page, message));
+		}catch (AssertionError  e) {
+			Assert.fail(" Expected result:" + message
+					+ " Actual result:" + getText(getLocator(getResource(page))));
+		}
 	}
 
 	public void verifyPartialSuccessMessage(String page, String message,
