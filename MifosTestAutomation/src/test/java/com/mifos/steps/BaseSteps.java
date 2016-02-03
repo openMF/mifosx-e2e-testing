@@ -13,6 +13,7 @@ import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.io.filefilter.FileFileFilter;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 
 import com.mifos.testing.framework.webdriver.WebDriverAwareWebPage;
 
@@ -31,7 +32,8 @@ public class BaseSteps {
 
 	/** The Constant driverClassName. */
 	private static final String driverClassName = "com.mifos.testing.framework.webdriver.ChromeDriverFactory"; //System.getProperty(SYS_PROP_WEB_DRIVER_FACTORY_CLASS_NAME);//// 
-
+	//FirefoxDriverFactory
+	//ChromeDriverFactory
 	// //////////////////////////////////Before and
 	// After/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Gets run only once before the test class
@@ -44,6 +46,7 @@ public class BaseSteps {
 	@Before
 	public void startTests(Scenario s) {
 		
+		try {
 		if (!(WebDriverAwareWebPage.isWebDriverInitialised())) {
 
 			if (driverClassName == null) {
@@ -54,11 +57,19 @@ public class BaseSteps {
 			}
 			WebDriverAwareWebPage.initialiseWebDriver(driverClassName);
 		}
-		if (!((WebDriverAwareWebPage.getWebDriver().getClass().toString()
-				.contains("android")))) {
-			WebDriverAwareWebPage.getWebDriver().manage().window().maximize();
+		
+			if (!((WebDriverAwareWebPage.getWebDriver().getClass().toString()
+					.contains("android")))) {
+				
+				WebDriverAwareWebPage.getWebDriver().manage().window().maximize();
+				
+			}
+		}catch (TimeoutException e) {
+			System.out.println("Dead Dead Dead");
+			e.printStackTrace();
 			
 		}
+		
 		
 		WebDriverAwareWebPage.getWebDriver().manage().deleteAllCookies();
 		// We need to check uf the feature has changed. This is needed to check

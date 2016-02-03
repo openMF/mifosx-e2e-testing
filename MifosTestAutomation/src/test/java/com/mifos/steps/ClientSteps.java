@@ -71,12 +71,12 @@ public class ClientSteps {
 			throws Throwable {
 		
 		for (List<String> excelSheet : excel) {
-			varFrontPage.makeAndVerifyRepayment(ExcelSheetPath, excelSheet);
-		/*	for (int i = 1; i < excelSheet.size(); i++) {
-				//varFrontPage.createMakeRepayment(ExcelSheetPath, option.get(0),option.get(i));	
-			}*/
+			//	varFrontPage.makeAndVerifyRepayment(ExcelSheetPath, excelSheet);
+				for (int i = 1; i < excelSheet.size(); i++) {
+					varFrontPage.makeAndVerifyRepayment(ExcelSheetPath, excelSheet.get(0),excelSheet.get(i));	
+				}
+			}
 		}
-	}
 	
 	@Then("^I make repayment and read the transaction Id$")
 	public void I_make_repayment_and_read_the_transaction_Id(List<List<String>> excel) throws Throwable {
@@ -114,15 +114,15 @@ public class ClientSteps {
 		
 	}
 	
-	@Then("^I \"([^\"]*)\" trance from trache tab and verified the following tabs$")
+/*	@Then("^I \"([^\"]*)\" trance from trache tab and verified the following tabs$")
 	public void I_trance_from_trache_tab_and_verified_the_following_tabs(String arg1,
 			List<List<String>> excelSheet) throws Throwable {
 		for (List<String> option : excelSheet) {
 			for (int i = 1; i < option.size(); i++) {
-				varFrontPage.loanTrancheDetails(ExcelSheetPath, option.get(0),option.get(i));			
+				varFrontPage.loanTabDetails(ExcelSheetPath, option.get(0),option.get(i));			
 			}
 		}
-	}
+	}*/
 	
 	@Then("^i validate and Verify from \"([^\"]*)\" sheet$")
 	public void i_validate_and_Verify_from_sheet(String sheetName,
@@ -131,6 +131,26 @@ public class ClientSteps {
 		varFrontPage.verifyAndValidate(ExcelSheetPath, excelSheetName, sheetName);
 	}
 
+/*	@Then("^I \"([^\"]*)\" from Charges tab and verified the following tabs$")
+	public void I_from_Charges_tab_and_verified_the_following_tabs(String arg1,
+			List<List<String>> excelSheet) throws Throwable {
+		for (List<String> option : excelSheet) {
+			for (int i = 1; i < option.size(); i++) {
+				varFrontPage.loanTabDetails(ExcelSheetPath, option.get(0),option.get(i));			
+			}
+		}
+	}*/
+	
+	@Then("^I \"([^\"]*)\" and verified the following tabs$")
+	public void I_and_verified_the_following_tabs(String arg1,
+			List<List<String>> excelSheet) throws Throwable {
+		for (List<String> option : excelSheet) {
+			for (int i = 1; i < option.size(); i++) {
+				varFrontPage.loanTabDetails(ExcelSheetPath, option.get(0),option.get(i));			
+			}
+		}
+	}
+	
 	@Then("^I went back to the client$")
 	public void I_went_back_to_the_client() throws Throwable {
 		varFrontPage.clickBackToClient();
