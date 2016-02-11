@@ -674,11 +674,7 @@ Background:
 	  Then I "Make Pre Payment" and verified the following tabs
 	  			|3531-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-SP-FLAT-PREPAY-PERIODIC-Newcreateloan.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
 	 
-<<<<<<< HEAD
 @scenario37-3535-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-AllRepayment
-=======
-@scenario27-3535-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-AllRepayment
->>>>>>> 10ecfb8927341c12eea6300df0a0a13d9fc358e2
 	  Scenario: 3535-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-AllRepayment  
 
       Given I setup the product loan "Setup"
@@ -701,11 +697,7 @@ Background:
 	  Then I make repayment and verified the following tabs       			
        			|3535-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-AllRepayment-Makerepayment6.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-<<<<<<< HEAD
 @scenario38-3536-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-NONE-AllRepayment
-=======
-@scenario28-3536-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-NONE-AllRepayment
->>>>>>> 10ecfb8927341c12eea6300df0a0a13d9fc358e2
 	  Scenario: 3536-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-NONE-AllRepayment  
 
       Given I setup the product loan "Setup"
