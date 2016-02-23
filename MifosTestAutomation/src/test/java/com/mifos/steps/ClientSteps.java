@@ -44,6 +44,14 @@ public class ClientSteps {
 				sheetName);
 	}
 	
+	@When("^I modify New Loan Account from \"([^\"]*)\" sheet$")
+	public void I_modify_New_Loan_Account_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupNewLoan(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
+	
 	@Then("^I disburse loan from \"([^\"]*)\" sheet$")
 	public void I_disburse_loan_from_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {

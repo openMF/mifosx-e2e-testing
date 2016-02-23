@@ -600,6 +600,7 @@ public class FrontPage extends MifosWebPage {
 			case Cell.CELL_TYPE_BLANK:
 
 				break;
+			case Cell.CELL_TYPE_FORMULA:	
 			case Cell.CELL_TYPE_NUMERIC:
 				if (HSSFDateUtil.isCellDateFormatted(sheet.getRow(xlRowCount)
 						.getCell(xlColumnPointer))) {
