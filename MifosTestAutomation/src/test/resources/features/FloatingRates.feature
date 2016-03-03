@@ -394,6 +394,488 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 2365-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|
 
+@scenario17-2366-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-BLR
+	  Scenario: 2366-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-BLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2366-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-BLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2366-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-BLR-Newcreateloan1.xlsx|
+	 Then I verified the "Summary" details successfully 
+	  			| 2366-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-BLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2366-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-BLR-Newcreateloan1.xlsx|
+
+@scenario18-2367-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-BLR
+	  Scenario: 2367-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-BLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2367-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-BLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2367-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-BLR-Newcreateloan1.xlsx|
+	  And I modify New Loan Account from "ModifyLoan" sheet
+	  			| 2367-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-BLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2367-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-BLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2367-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-BLR-Newcreateloan1.xlsx|
+	  			
+@scenario19-2368-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-BLR
+	  Scenario: 2368-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-BLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2368-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-BLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2368-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-BLR-Newcreateloan1.xlsx|
+	  And I modify New Loan Account from "ModifyLoan" sheet
+	  			| 2368-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-BLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2368-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-BLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2368-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-BLR-Newcreateloan1.xlsx|
+
+@scenario20-2369-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-BLR
+	  Scenario: 2369-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-BLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2369-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-BLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2369-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-BLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2369-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-BLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2369-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-BLR-Newcreateloan1.xlsx|
+	  			
+@scenario21-2370-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-BLR
+	  Scenario: 2370-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-BLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2370-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-BLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2370-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-BLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2370-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-BLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2370-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-BLR-Newcreateloan1.xlsx|
+	  			
+@scenario22-2371-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-BLR
+	  Scenario: 2371-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-BLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2371-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-BLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2371-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-BLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2371-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-BLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2371-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-BLR-Newcreateloan1.xlsx|
+	  			
+@scenario23-2372-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-BLR
+	  Scenario: 2372-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-BLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2372-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-BLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2372-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-BLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2372-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-BLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2372-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-BLR-Newcreateloan1.xlsx|	
+
+@scenario24-2373-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-BLR
+	  Scenario: 2373-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-BLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2373-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-BLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2373-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-BLR-Newcreateloan1.xlsx|
+	  Then I "Make Pre Payment" and verified the following tabs
+	  			|2373-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-BLR-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
+	  			
+@scenario25-2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR
+	  Scenario: 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR  
+
+	 Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR-Loanproduct.xlsx|
+	
+	 Given I setup the clients 
+	 Then I entered the values into client from "Input" sheet
+		|Createclient.xlsx|
+	 Then I should see client created successfully from "Output" sheet
+		|Createclient.xlsx|
+	 When I set up the new create loan from "NewLoanInput" sheet
+		| 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR-Newcreateloan1.xlsx|
+	 Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+	 Then I verified the "Summary" details successfully 
+		| 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR-Newcreateloan1.xlsx|
+	 And I verified the "Repayment Schedule" details successfully 
+		| 2374-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-BLR-Newcreateloan1.xlsx|
+		
+@scenario26-2375-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-BLR
+	  Scenario: 2375-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-BLR  
+
+	 Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2375-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-BLR-Loanproduct.xlsx|
+	
+	 Given I setup the clients 
+	 Then I entered the values into client from "Input" sheet
+		|Createclient.xlsx|
+	 Then I should see client created successfully from "Output" sheet
+		|Createclient.xlsx|
+	 When I set up the new create loan from "NewLoanInput" sheet
+		| 2375-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-BLR-Newcreateloan1.xlsx|
+	 Then I verified the "Summary" details successfully 
+		| 2375-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-BLR-Newcreateloan1.xlsx|
+	 And I verified the "Repayment Schedule" details successfully 
+		| 2375-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-BLR-Newcreateloan1.xlsx|
+	 Then I "Add Third trance from trache tab" and verified the following tabs
+	  			|2375-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-BLR-LoanTranche.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
+		
+@scenario27-2376-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-BLR
+	  Scenario: 2376-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-BLR  
+
+      Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|2376-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-BLR-Loanproduct.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2376-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-BLR-Newcreateloan1.xlsx|
+	  Then I "WaiveInterest" and verified the following tabs
+	  			| 2376-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-BLR-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  			
+@scenario28-2377-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-BLR
+	  Scenario: 2377-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-BLR  
+
+     Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|2377-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-BLR-Loanproduct.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2377-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-BLR-Newcreateloan1.xlsx|
+	  Then I "WaiveInterest" and verified the following tabs
+	  			| 2377-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-BLR-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|		
+	  			
+@scenario29-2378-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From4thJan+Repayment0n-1Feb-BLR
+	  Scenario: 2378-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1Feb-BLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2378-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1Feb-BLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2378-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1Feb-BLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2378-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1Feb-BLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2378-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1Feb-BLR-Newcreateloan1.xlsx|		    			
+
+@scenario30-2379-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-DLR
+	  Scenario: 2379-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-DLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2379-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-DLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2379-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-DLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2379-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-DLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2379-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Uncheck-FR-DLR-Newcreateloan1.xlsx|
+
+@scenario31-2380-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-DLR
+	  Scenario: 2380-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-DLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2380-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-DLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2380-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-DLR-Newcreateloan1.xlsx|
+	  And I modify New Loan Account from "ModifyLoan" sheet
+	  			| 2380-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-DLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2380-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-DLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2380-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Uncheck-FR-DLR-Newcreateloan1.xlsx|
+	  			
+@scenario32-2381-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-DLR
+	  Scenario: 2381-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-DLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2381-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-DLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2381-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-DLR-Newcreateloan1.xlsx|
+	  And I modify New Loan Account from "ModifyLoan" sheet
+	  			| 2381-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-DLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2381-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-DLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2381-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ModifyApp-EDIT-IRD-Check-FR-DLR-Newcreateloan1.xlsx|
+
+@scenario33-2382-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-DLR
+	  Scenario: 2382-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-DLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2382-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-DLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2382-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-DLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2382-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-DLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2382-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-ApproveDate-DLR-Newcreateloan1.xlsx|
+	  			
+@scenario34-2383-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-DLR
+	  Scenario: 2383-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-DLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2383-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-DLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2383-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-DLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2383-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-DLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2383-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL-3-DLR-Newcreateloan1.xlsx|
+	  			
+@scenario35-2384-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-DLR
+	  Scenario: 2384-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-DLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2384-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-DLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2384-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-DLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2384-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-DLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2384-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-INTEREST-3-DLR-Newcreateloan1.xlsx|
+	  			
+@scenario36-2385-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-DLR
+	  Scenario: 2385-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-DLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2385-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-DLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2385-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-DLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2385-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-DLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2385-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-MOROTORIUM-PRINCIPAL+INT-3-DLR-Newcreateloan1.xlsx|	
+
+@scenario37-2386-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-DLR
+	  Scenario: 2386-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-DLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2386-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-DLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2386-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-DLR-Newcreateloan1.xlsx|
+	  Then I "Make Pre Payment" and verified the following tabs
+	  			|2386-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-PREPAY-ON-15-JAN-DLR-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
+	  			
+@scenario38-2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR
+	  Scenario: 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR  
+
+	 Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR-Loanproduct.xlsx|
+	
+	 Given I setup the clients 
+	 Then I entered the values into client from "Input" sheet
+		|Createclient.xlsx|
+	 Then I should see client created successfully from "Output" sheet
+		|Createclient.xlsx|
+	 When I set up the new create loan from "NewLoanInput" sheet
+		| 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR-Newcreateloan1.xlsx|
+	 Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+	 Then I verified the "Summary" details successfully 
+		| 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR-Newcreateloan1.xlsx|
+	 And I verified the "Repayment Schedule" details successfully 
+		| 2387-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-OVERDUE-FEE-%LOANAMT+INT-DLR-Newcreateloan1.xlsx|
+		
+@scenario39-2388-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-DLR
+	  Scenario: 2388-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-DLR  
+
+	 Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2388-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-DLR-Loanproduct.xlsx|
+	
+	 Given I setup the clients 
+	 Then I entered the values into client from "Input" sheet
+		|Createclient.xlsx|
+	 Then I should see client created successfully from "Output" sheet
+		|Createclient.xlsx|
+	 When I set up the new create loan from "NewLoanInput" sheet
+		| 2388-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-DLR-Newcreateloan1.xlsx|
+	 Then I verified the "Summary" details successfully 
+		| 2388-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-DLR-Newcreateloan1.xlsx|
+	 And I verified the "Repayment Schedule" details successfully 
+		| 2388-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-DLR-Newcreateloan1.xlsx|
+	 Then I "Add Third trance from trache tab" and verified the following tabs
+	  			|2388-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-3-ADD-TWO-TR-AFTER-DIS-DLR-LoanTranche.xlsx|Loan Tranche Details|Summary|Repayment Schedule|Transactions|
+		
+@scenario40-2389-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-DLR
+	  Scenario: 2389-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-DLR  
+
+      Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|2389-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-DLR-Loanproduct.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2389-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-DLR-Newcreateloan1.xlsx|
+	  Then I "WaiveInterest" and verified the following tabs
+	  			| 2389-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-WaiveInterest-DLR-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+	  			
+@scenario41-2390-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-DLR
+	  Scenario: 2390-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-DLR  
+
+     Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|2390-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-DLR-Loanproduct.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2390-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-DLR-Newcreateloan1.xlsx|
+	  Then I "WaiveInterest" and verified the following tabs
+	  			| 2390-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-Writeoff-DLR-Newcreateloan1.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|		
+
+@scenario42-2391-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From4thJan+Repayment0n-1FebDLR
+	  Scenario: 2391-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1FebDLR
+
+	Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|2391-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1FebDLR-Loanproduct.xlsx|
+		 
+	Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 2391-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1FebDLR-Newcreateloan1.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 2391-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1FebDLR-Newcreateloan1.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 2391-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-EDIT-INT-From 4thJan+Repayment0n-1FebDLR-Newcreateloan1.xlsx|	  			
+
 @scenario51-2400-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-BLR-EARLY-CASH
 	  Scenario: 2400-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-BLR-EARLY-CASH
 	

@@ -878,9 +878,10 @@ public class FrontPage extends MifosWebPage {
 			}
 			break;
 		case "Periodic & penalty to overdue loans":
-			LazyWebElement checkPeriodic1 = getElement(getResource("addperiodicaccrualtransactions"));
-			if (!checkPeriodic1.isSelected()) {
-				clickButton(getResource("addperiodicaccrualtransactions"));
+			
+			LazyWebElement checkpenalty1 = getElement(getResource("addpenaltytooverdueloans"));
+			if (!checkpenalty1.isSelected()) {
+				clickButton(getResource("addpenaltytooverdueloans"));
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
 			((JavascriptExecutor) getWebDriver()).executeScript("scroll(0,500);");
@@ -890,9 +891,10 @@ public class FrontPage extends MifosWebPage {
 			clickButton(getResource("refresh"));
 			Thread.sleep(getResourceKey("largeWait"));
 			ishideAccuralsChecked = false;
-			LazyWebElement checkpenalty1 = getElement(getResource("addpenaltytooverdueloans"));
-			if (!checkpenalty1.isSelected()) {
-				clickButton(getResource("addpenaltytooverdueloans"));
+
+			LazyWebElement checkPeriodic1 = getElement(getResource("addperiodicaccrualtransactions"));
+			if (!checkPeriodic1.isSelected()) {
+				clickButton(getResource("addperiodicaccrualtransactions"));
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
 			break;
