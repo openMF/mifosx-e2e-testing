@@ -1115,6 +1115,13 @@ public class FrontPage extends MifosWebPage {
 
 		} 
 	 
+		public void editRepaymentSchedulePageVarInstalment(String excelSheetPath,
+				String excelSheetName, String sheetName) throws Throwable {
+			Map<String, String> newLoanDetailsMap = parseExcelSheet1(
+					excelSheetPath, excelSheetName, sheetName);
+			insertValues(newLoanDetailsMap);
+			Thread.sleep(getResourceKey("largeWait"));
+		}	
 
 	public void searchUser(String user) throws InterruptedException {
 		getWebDriver().findElement(By.id("search")).sendKeys(user);
@@ -1185,6 +1192,8 @@ public class FrontPage extends MifosWebPage {
 																 * ; }
 																 */
 	}
+
+	
 
 	
 

@@ -650,6 +650,11 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				break;
 			case "select":
 				
+				if (key.equals("selectdayofthemonthPattern")) {
+					double parseDoubleValue = Double.parseDouble(value);
+					int parseIntValue = (int) (parseDoubleValue);
+					value = Integer.toString(parseIntValue);
+				}							
 				try {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);

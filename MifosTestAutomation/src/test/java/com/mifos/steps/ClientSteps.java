@@ -36,6 +36,9 @@ public class ClientSteps {
 		varFrontPage.verifyAndValidate(ExcelSheetPath, excelSheetName, sheetName);
 	}
 
+/*
+ * When I set up the new create loan from "NewLoanInput" sheet	
+ */
 	@When("^I set up the new create loan from \"([^\"]*)\" sheet$")
 	public void I_set_up_the_new_create_loan_from_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {
@@ -139,15 +142,6 @@ public class ClientSteps {
 		varFrontPage.verifyAndValidate(ExcelSheetPath, excelSheetName, sheetName);
 	}
 
-/*	@Then("^I \"([^\"]*)\" from Charges tab and verified the following tabs$")
-	public void I_from_Charges_tab_and_verified_the_following_tabs(String arg1,
-			List<List<String>> excelSheet) throws Throwable {
-		for (List<String> option : excelSheet) {
-			for (int i = 1; i < option.size(); i++) {
-				varFrontPage.loanTabDetails(ExcelSheetPath, option.get(0),option.get(i));			
-			}
-		}
-	}*/
 	
 	@Then("^I \"([^\"]*)\" and verified the following tabs$")
 	public void I_and_verified_the_following_tabs(String arg1,
@@ -180,6 +174,20 @@ public class ClientSteps {
 	@Then("^I make reverse of transaction$")
 	public void I_make_reverse_of_transaction() throws Throwable {
 		varFrontPage.reverseTransaction();
+	}
+	
+	/*
+	 * Then I "Edit Date " In Edit Repayment Schedule page
+	 */
+	@Then("^I \"([^\"]*)\" In Edit Repayment Schedule page$")
+	public void I_In_Edit_Repayment_Schedule_page(String arg1,
+			List<List<String>> excelSheet) throws Throwable {
+		for (List<String> option : excelSheet) {
+			for (int i = 1; i < option.size(); i++) {
+				varFrontPage.editRepaymentSchedulePageVarInstalment(ExcelSheetPath, option.get(0),option.get(i));			
+			}
+		}
+	   
 	}
 
 /*	@When("^I set up the new savings$")
