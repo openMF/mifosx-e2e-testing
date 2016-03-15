@@ -297,7 +297,7 @@ public class FrontPage extends MifosWebPage {
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(clientDetailsMap);
 			clickButton(getResource("submitclient"));
-			Thread.sleep(getResourceKey("mediumWait"));
+			Thread.sleep(getResourceKey("largeWait"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
