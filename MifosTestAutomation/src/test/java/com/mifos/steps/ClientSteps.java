@@ -89,6 +89,21 @@ public class ClientSteps {
 			}
 		}
 	
+	/*
+	 * Then I verified the following Tabs details successfully 
+	 * Summary|Repayment Schedule|Transactions
+	 */
+	@Then("^I verified the following Tabs details successfully$")
+		public void I_verified_the_following_Tabs_details_successfully(List<List<String>> excel) throws Throwable {
+
+		for (List<String> excelSheet : excel) {
+			//	varFrontPage.makeAndVerifyRepayment(ExcelSheetPath, excelSheet);
+				for (int i = 1; i < excelSheet.size(); i++) {
+					varFrontPage.verifyLoanTabData(ExcelSheetPath, excelSheet.get(0),excelSheet.get(i));	
+				}
+			}
+		}
+	
 	@Then("^I make repayment and read the transaction Id$")
 	public void I_make_repayment_and_read_the_transaction_Id(List<List<String>> excel) throws Throwable {
 		

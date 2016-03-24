@@ -569,7 +569,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					
 				}
 				clickButton(getLocator(getResource(key)));
-				Thread.sleep(getResourceKey("wait"));
+				Thread.sleep(getResourceKey("mediumWait"));
 				if (key.equals("cash") || key.equals("accrualperiodic")||key.equals("accrualupfront") ) {
 					((JavascriptExecutor) getWebDriver())
 							.executeScript("window.scrollBy(0,250)", "");
