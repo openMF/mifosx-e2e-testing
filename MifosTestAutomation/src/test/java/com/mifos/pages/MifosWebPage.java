@@ -562,19 +562,26 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;
 			case "button":
-				if (key.equals("clickonapprove") || key.equals("clickonModifyApplication")) {
+				if (key.equals("clickonapprove")
+						|| key.equals("clickonModifyApplication")) {
 					((JavascriptExecutor) getWebDriver())
 							.executeScript("scroll(500,0);");
 					Thread.sleep(getResourceKey("mediumWait"));
-					
+
 				}
-				clickButton(getLocator(getResource(key)));
-				Thread.sleep(getResourceKey("mediumWait"));
-				if (key.equals("cash") || key.equals("accrualperiodic")||key.equals("accrualupfront") ) {
-					((JavascriptExecutor) getWebDriver())
-							.executeScript("window.scrollBy(0,250)", "");
+
+				try {
+					clickButton(getLocator(getResource(key)));
 					Thread.sleep(getResourceKey("mediumWait"));
-					
+				} catch (NoSuchElementException exception) {
+					Assert.fail("Could not find the " + key);
+				}
+				if (key.equals("cash") || key.equals("accrualperiodic")
+						|| key.equals("accrualupfront")) {
+					((JavascriptExecutor) getWebDriver()).executeScript(
+							"window.scrollBy(0,250)", "");
+					Thread.sleep(getResourceKey("mediumWait"));
+
 				}
 				
 				break;

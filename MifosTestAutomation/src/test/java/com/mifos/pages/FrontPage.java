@@ -811,7 +811,7 @@ public class FrontPage extends MifosWebPage {
 				clickButton(
 						getResource("frontend.accounting.searchjournal.transactionid.submit"),
 						"xpath");
-				Thread.sleep(getResourceKey("mediumWait"));
+				Thread.sleep(getResourceKey("smallWait"));
 				verifyLoanTabData(clientExcelSheetPath, excelSheetName,
 						sheetName);
 				Thread.sleep(getResourceKey("smallWait"));
@@ -832,7 +832,7 @@ public class FrontPage extends MifosWebPage {
 						.sendKeys(Keys.chord(Keys.CONTROL, "a"),
 								"L" + getTransactionType.next());
 
-				Thread.sleep(getResourceKey("mediumWait"));
+				Thread.sleep(getResourceKey("smallWait"));
 				clickButton(
 						getResource("frontend.accounting.searchjournal.transactionid.submit"),
 						"xpath");
@@ -1095,6 +1095,7 @@ public class FrontPage extends MifosWebPage {
 					excelSheetName, sheetName);
 			for (Map.Entry<String, String> entry : verifyMap.entrySet()) {
 				verifySuccessMessage(entry.getKey(), entry.getValue());
+				Thread.sleep(getResourceKey("smallWait"));
 				
 			}
 	  	}

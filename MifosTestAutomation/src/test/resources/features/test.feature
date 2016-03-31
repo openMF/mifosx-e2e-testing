@@ -1,4 +1,4 @@
-Feature:RBI1
+Feature:RBI
 
 Background:
 	Given I navigate to mifos

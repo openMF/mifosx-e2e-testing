@@ -1299,6 +1299,548 @@ Given I setup the clients
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
 	|2484-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+
+@scenario61-2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE
+	Scenario: 2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2485-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx|
+
+@scenario62-2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE
+	Scenario: 2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2486-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx|
+	
+@scenario63-2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE
+	Scenario: 2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2487-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx|
+
+@scenario64-2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE
+	Scenario: 2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2488-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx|
+	
+@scenario65-2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE
+	Scenario: 2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2489-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx|
+
+@scenario66-2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH
+	Scenario: 2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2490-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+ 	
+@scenario67-2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH
+	Scenario: 2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2491-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+
+@scenario68-2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH
+	Scenario: 2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2492-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+
+@scenario69-2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH
+	Scenario: 2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2493-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+	
+@scenario70-2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH
+	Scenario: 2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2494-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+
+@scenario71-2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC
+	Scenario: 2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2495-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+
+@scenario72-2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC
+	Scenario: 2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2496-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+
+@scenario73-2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC
+	Scenario: 2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2497-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+
+@scenario74-2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC
+	Scenario: 2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2498-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+
+@scenario75-2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC
+	Scenario: 2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|
+ And I disburse loan from "NewLoanInput" sheet
+    |2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2499-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+
+	
+@scenario76-2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT
+	Scenario: 2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2500-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+	
+@scenario77-2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT
+	Scenario: 2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2501-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+	
+@scenario78-2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT
+	Scenario: 2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2502-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+	
+@scenario79-2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT
+	Scenario: 2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2503-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+	
+@scenario80-2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT
+	Scenario: 2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2504-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
  	
 @scenario81-2505-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST
 	  Scenario: 2505-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST  
@@ -2593,4 +3135,546 @@ Given I setup the clients
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
 	|2564-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+
+@scenario141-2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE
+	Scenario: 2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Newcreateloan2.xlsx|
+
+@scenario142-2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE
+	Scenario: 2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2566-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-NONE-Newcreateloan2.xlsx|
+	
+@scenario143-2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE
+	Scenario: 2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2567-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-NONE-Newcreateloan2.xlsx|
+
+@scenario144-2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE
+	Scenario: 2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2568-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-NONE-Newcreateloan2.xlsx|
+	
+@scenario145-2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE
+	Scenario: 2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the "Summary" details successfully 
+	|2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|
+ And I verified the "Transactions" details successfully	
+    |2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx|
+ Then I verified the "Summary" details successfully 
+	|2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx|
+ And I verified the "Repayment Schedule" details successfully 
+	|2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx| 			
+ And I verified the "Transactions" details successfully	
+	|2569-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-NONE-Newcreateloan2.xlsx|
+
+@scenario146-2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH
+	Scenario: 2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+ 	
+@scenario147-2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH
+	Scenario: 2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2571-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+
+@scenario148-2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH
+	Scenario: 2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2572-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+
+@scenario149-2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH
+	Scenario: 2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2573-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+	
+@scenario150-2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH
+	Scenario: 2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan1.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and verified the following tabs
+    |2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I make repayment and read the transaction Id
+	|2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2574-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-CASH-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|
+	
+
+@scenario151-2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC
+	Scenario: 2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+
+@scenario152-2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC
+	Scenario: 2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2576-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+
+@scenario153-2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC
+	Scenario: 2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2577-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DELETE-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+
+@scenario154-2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC
+	Scenario: 2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2578-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+
+@scenario155-2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC
+	Scenario: 2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Makerepayment1.xlsx|Input|
+ And I disburse loan from "NewLoanInput" sheet
+    |2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2579-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-PATTERN-VAR-INST-PERIODIC-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Periodic|
+	
+@scenario156-2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT
+	Scenario: 2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+	
+@scenario157-2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT
+	Scenario: 2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2581-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-AMT-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+	
+@scenario158-2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT
+	Scenario: 2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2582-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DELETE-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+	
+@scenario159-2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT
+	Scenario: 2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2583-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-ADD-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+	
+@scenario160-2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT
+	Scenario: 2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ Then I navigate to scheduler job & execute "Add Upfront Accrual Transactions"
+ Then I make repayment and read the transaction Id
+	|2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment2.xlsx|Input|Transactions|
+ And I Navigate to Accounting web page
+ And I search with transaction id & verified the accounting entries
+	|2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
  
