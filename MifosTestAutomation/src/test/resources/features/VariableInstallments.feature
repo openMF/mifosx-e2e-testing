@@ -3677,4 +3677,373 @@ Given I setup the clients
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
 	|2584-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-PATTERN-VAR-INST-UPFRONT-Makerepayment2.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Disbursement1|Acc_Repayment1|Acc_Upfront|
+
+@scenario151-2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE
+	Scenario: 2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ 
+@scenario151-2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY
+	Scenario: 2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2586-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ 
+@scenario151-2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT
+	Scenario: 2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ And I disburse loan from "NewLoanInput" sheet
+    |2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ 	
+@scenario151-2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT
+	Scenario: 2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario151-2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT
+	Scenario: 2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario151-2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT
+	Scenario: 2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Then I verified the following Tabs details successfully 
+	|2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ 	
+@scenario151-2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE
+	Scenario: 2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Input|
+ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Then I verified the following Tabs details successfully 
+	|2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2591-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario151-2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE
+	Scenario: 2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Input|
+ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Then I verified the following Tabs details successfully 
+	|2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2592-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+	
+	@scenario151-2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE
+	Scenario: 2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-MIS-Loanproduct.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ 
+@scenario151-2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY
+	Scenario: 2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2616-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-EARLY-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ 
+@scenario151-2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT
+	Scenario: 2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ And I disburse loan from "NewLoanInput" sheet
+    |2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan2.xlsx|
+ Then I verified the following Tabs details successfully 
+	|2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ 	
+@scenario151-2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT
+	Scenario: 2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario151-2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT
+	Scenario: 2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I verified the following Tabs details successfully 
+	|2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario151-2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT
+	Scenario: 2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT  
+ Given I setup the product loan "Setup"
+	| Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	|2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Loanproduct.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Then I verified the following Tabs details successfully 
+	|2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Makerepayment1.xlsx|Input|
+ And I disburse loan from "NewLoanInput" sheet
+    |2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ 	
+@scenario151-2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE
+	Scenario: 2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Input|
+ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Then I verified the following Tabs details successfully 
+	|2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2621-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+
+@scenario151-2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE
+	Scenario: 2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE  
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	|Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	| 2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan1.xlsx|
+ Then I "Edit Date " In Edit Repayment Schedule page
+    |2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan1.xlsx|Edit Repayment Schedule|
+ Then I make repayment and verified the following tabs
+    |2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Input|
+ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Then I verified the following Tabs details successfully 
+	|2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Makerepayment1.xlsx|Summary|Repayment Schedule|Transactions|
+ And I disburse loan from "NewLoanInput" sheet
+    |2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|
+ Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
+ Then I verified the following Tabs details successfully 
+	|2622-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-MORE-AMT-LATE-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
+ 	
  
