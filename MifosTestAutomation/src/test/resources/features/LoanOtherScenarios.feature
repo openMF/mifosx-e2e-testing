@@ -790,4 +790,300 @@ Background:
        			|3536-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-NONE-AllRepayment-Makerepayment5.xlsx|Input|
 	  Then I make repayment and verified the following tabs       			
        			|3536-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-NONE-AllRepayment-Makerepayment6.xlsx|Input|Summary|Repayment Schedule|Transactions|
+       			
+@scenario39-2650-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-REPAY-AccCL1stFEB-REPAY1stMAR
+	  Scenario: 2650-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-REPAY-AccCL1stFEB-REPAY1stMAR  
+Given I setup the product loan "Setup"
+	 | Productloannavigation.xlsx |
+Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 |2650-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-ACCOUNTCLOSER-PERIODIC-Loanproduct.xlsx|
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2650-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-REPAY-AccCL1stFEB-REPAY1stMAR-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2650-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-REPAY-AccCL1stFEB-REPAY1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2650-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-REPAY-AccCL1stFEB-REPAY1stMAR-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2650-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-REPAY-AccCL1stFEB-REPAY1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2650-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-REPAY-AccCL1stFEB-REPAY1stMAR-Newcreateloan1.xlsx|Repay2|
+ Then I Execute Periodic Accrual Accounting
+     |2650-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-REPAY-AccCL1stFEB-REPAY1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual|
+  	 
+@scenario40-2651-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY1stFEB
+	Scenario: 2651-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY1stFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2651-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY1stFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2651-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY1stFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2651-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY1stFEB-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2651-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY1stFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2651-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY1stFEB-Newcreateloan1.xlsx|Repay2|
+ Then i validate and Verify from "Output" sheet
+	|2651-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY1stFEB-Newcreateloan1.xlsx|
+  	 
+@scenario41-2652-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY2ndFEB
+	Scenario: 2652-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY2ndFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2652-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2652-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2652-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2652-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2652-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LESS-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx|Repay2|Summary|
+  	 
+@scenario42-2653-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-MORE-REPAY-AccCL1stMAR-REPAY1stMAR
+	Scenario: 2653-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-MORE-REPAY-AccCL1stMAR-REPAY1stMAR  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2653-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-MORE-REPAY-AccCL1stMAR-REPAY1stMAR-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2653-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-MORE-REPAY-AccCL1stMAR-REPAY1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2653-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-MORE-REPAY-AccCL1stMAR-REPAY1stMAR-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2653-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-MORE-REPAY-AccCL1stMAR-REPAY1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2653-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-MORE-REPAY-AccCL1stMAR-REPAY1stMAR-Newcreateloan1.xlsx|Repay2|
+ Then i validate and Verify from "Output" sheet
+	|2653-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-MORE-REPAY-AccCL1stMAR-REPAY1stMAR-Newcreateloan1.xlsx|
+  	  	  	
+@scenario43-2654-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-Early-REPAY-AccCL1stFEB-REPAY2ndFEB
+	Scenario: 2654-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-Early-REPAY-AccCL1stFEB-REPAY2ndFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2654-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-Early-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx| 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2654-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-Early-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2654-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-Early-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2654-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-Early-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2654-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-Early-REPAY-AccCL1stFEB-REPAY2ndFEB-Newcreateloan1.xlsx|Repay2|Summary|
+  	
+@scenario44-2655-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT
+	Scenario: 2655-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2655-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT-Newcreateloan1.xlsx| 	 
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2655-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2655-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2655-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT-Newcreateloan1.xlsx|
+ Then I Modify Transaction 
+    |2655-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT-Newcreateloan1.xlsx|Edit Transaction|
+  	
+ @scenario45-2656-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-DATE
+	Scenario: 2656-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-DATE  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2656-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-DATE-Newcreateloan1.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2656-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-DATE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2656-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-DATE-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2656-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-DATE-Newcreateloan1.xlsx|
+ Then I Modify Transaction 
+    |2656-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-DATE-Newcreateloan1.xlsx|Edit Transaction|
+  
+@scenario46-2657-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT+DATE
+	Scenario: 2657-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT+DATE  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2657-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT+DATE-Newcreateloan1.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2657-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT+DATE-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2657-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT+DATE-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2657-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT+DATE-Newcreateloan1.xlsx|
+ Then I Modify Transaction 
+    |2657-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-EDIT-TRANSACTION-AMT+DATE-Newcreateloan1.xlsx|Edit Transaction|
+ 
+@scenario47-2658-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-DELETE-TRANSACTION
+	Scenario: 2658-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-DELETE-TRANSACTION  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2658-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-DELETE-TRANSACTION-Newcreateloan1.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2658-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-DELETE-TRANSACTION-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2658-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-DELETE-TRANSACTION-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2658-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-DELETE-TRANSACTION-Newcreateloan1.xlsx|
+ Then I Modify Transaction 
+    |2658-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-DELETE-TRANSACTION-Newcreateloan1.xlsx|Edit Transaction|
+  	
+@scenario48-2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT
+	Scenario: 2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT  
+ Given I setup the product loan "Setup"
+	 | Productloannavigation.xlsx |
+ Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 |2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT-Loanproduct.xlsx|
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
+ Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+ Then I verified the "Summary" details successfully 
+	|2659-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-OVERDUE-FEE-FLAT-Newcreateloan1.xlsx|
+  	 	 	
+@scenario49-2661-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-31JAN
+	Scenario: 2661-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-31JAN   
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2661-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-31JAN-Newcreateloan1.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2661-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-31JAN-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2661-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-31JAN-Newcreateloan1.xlsx|
+ Then I "Make Pre Payment" and verified the following tabs
+	|2661-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-31JAN-Newcreateloan1.xlsx|Prepay Loan|
+  
+@scenario50-2662-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-2ndFEB
+	Scenario: 2662-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-2ndFEB   
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2662-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-2ndFEB-Newcreateloan1.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2662-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-2ndFEB-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2662-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-2ndFEB-Newcreateloan1.xlsx|
+ Then I "Make Pre Payment" and verified the following tabs
+	|2662-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-2ndFEB-Newcreateloan1.xlsx|Prepay Loan|
+ Then I verified the "Summary" details successfully 
+ 	|2662-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-AccCL1stFEB-PREPAY-ON-2ndFEB-Newcreateloan1.xlsx|
+  	
+@scenario51-2663-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-1stFEB
+	Scenario: 2663-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-1stFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2663-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-1stFEB-Newcreateloan1.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2663-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-1stFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2663-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-1stFEB-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2663-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-1stFEB-Newcreateloan1.xlsx|
+ Then I "WaiveInterest" and verified the following tabs
+	|2663-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-1stFEB-Newcreateloan1.xlsx|Modify Transaction|
+  	
+@scenario52-2664-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-2ndFEB
+	Scenario: 2664-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-2ndFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2664-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-2ndFEB-Newcreateloan1.xlsx|	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2664-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-2ndFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2664-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-2ndFEB-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2664-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-2ndFEB-Newcreateloan1.xlsx|
+ Then I "WaiveInterest" and verified the following tabs
+	|2664-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WAIVEINTEREST-ON-2ndFEB-Newcreateloan1.xlsx|Modify Transaction|Summary|
+ 
+@scenario53-2665-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-SP-FLAT-ON-15JAN-AccCL1stFEB-WAIVECHARGE
+	Scenario: 2665-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-SP-FLAT-ON-15JAN-AccCL1stFEB-WAIVECHARGE  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2665-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-SP-FLAT-ON-15JAN-AccCL1stFEB-WAIVECHARGE-Newcreateloan1.xlsx| 	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2665-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-SP-FLAT-ON-15JAN-AccCL1stFEB-WAIVECHARGE-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2665-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-SP-FLAT-ON-15JAN-AccCL1stFEB-WAIVECHARGE-Newcreateloan1.xlsx|
+ Then I "Wave Charge from Charges tab" and verified the following tabs
+	|2665-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-SP-FLAT-ON-15JAN-AccCL1stFEB-WAIVECHARGE-Newcreateloan1.xlsx|Charges|
+
+@scenario54-2666-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-1stINST
+	Scenario: 2666-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-1stINST  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2666-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-1stINST-Newcreateloan1.xlsx| 	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2666-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-1stINST-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2666-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-1stINST-Newcreateloan1.xlsx|
+ Then I "Wave Charge from Charges tab" and verified the following tabs
+	|2666-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-1stINST-Newcreateloan1.xlsx|Charges|
+       			
 	 	 	  			    			

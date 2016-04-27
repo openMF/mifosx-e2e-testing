@@ -655,6 +655,11 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 
 				break;
+			case "verify":
+				verifySuccessMessage(key , value);
+				Thread.sleep(getResourceKey("wait"));
+				break;
+				
 			case "select":
 				
 				if (key.equals("selectdayofthemonthPattern") ||key.equals("selectIncreaseMonthBy")) {

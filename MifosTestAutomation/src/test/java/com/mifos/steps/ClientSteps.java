@@ -186,9 +186,19 @@ public class ClientSteps {
 		varFrontPage.undoDisbursal();
 	}
 
-	@Then("^I make reverse of transaction$")
-	public void I_make_reverse_of_transaction() throws Throwable {
-		varFrontPage.reverseTransaction();
+	/*
+	 * Then I Modify Transaction
+	 */
+	@Then("^I Modify Transaction$")
+	public void I_Modify_Transaction(
+			List<List<String>> excelSheet) throws Throwable {
+		
+		for (List<String> option : excelSheet) {
+			for (int i = 1; i < option.size(); i++) {
+				varFrontPage.modifyTransaction(ExcelSheetPath, option.get(0),option.get(i));			
+			}
+		}
+		
 	}
 	
 	/*
@@ -205,6 +215,43 @@ public class ClientSteps {
 	   
 	}
 
+	/*
+	 * And I create Account Closures Entry from "CreateAccountClosures" sheet
+	 */
+	@Then("^I create Account Closures Entry from \"([^\"]*)\" sheet$")
+	public void I_create_Account_Closures_Entry_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.createAccountClosuresEntry(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
+	
+	/*
+	 * I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+	 */
+	@Then("^I Delete Account Closures Entry from \"([^\"]*)\" sheet$")
+	public void I_Delete_Account_Closures_Entry_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.deleteAccountClosuresEntry(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
+
+	/*
+	 * Then I Execute Periodic Accrual Accounting
+	 */
+	@Then("^I Execute Periodic Accrual Accounting$")
+	public void I_Execute_Periodic_Accrual_Accounting(List<List<String>> excel)
+			throws Throwable {
+
+		for (List<String> excelSheet : excel) {
+			for (int i = 1; i < excelSheet.size(); i++) {
+				varFrontPage.RunPeriodicAccrual(ExcelSheetPath,
+						excelSheet.get(0), excelSheet.get(i));
+			}
+		}
+	}
+	
 /*	@When("^I set up the new savings$")
 	public void I_set_up_the_new_savings(String sheetName,
 			List<String> excelSheetName) throws Throwable {
