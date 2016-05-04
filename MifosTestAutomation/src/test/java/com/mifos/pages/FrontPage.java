@@ -51,6 +51,7 @@ public class FrontPage extends MifosWebPage {
 	boolean isTransactionTabSelected;
 	public boolean isaccuralsTypeTransaction = true;
 	int transactionIDIndex = 0;
+	static String currentUrl ="";
 
 	// WebDriver driver = new ChromeDriver();
 
@@ -346,6 +347,7 @@ public class FrontPage extends MifosWebPage {
 				clientExcelSheetPath, excelSheetName, sheetName);
 		insertValues(newLoanDetailsMap);
 		Thread.sleep(getResourceKey("largeWait"));
+		currentUrl = getWebDriver().getCurrentUrl();
 
 	}
 
@@ -1102,16 +1104,17 @@ public class FrontPage extends MifosWebPage {
 	public void createAccountClosuresEntry(String excelSheetPath,
 			String excelSheetName, String sheetName) throws Throwable {
 		Map<String, String> newLoanDetailsMap;
-
+		Thread.sleep(getResourceKey("smallWait"));
 		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "accounts_closure");
 		newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
 				sheetName);
 		Thread.sleep(getResourceKey("mediumWait"));
 		insertValues(newLoanDetailsMap);
 		Thread.sleep(getResourceKey("smallWait"));
-
-		((JavascriptExecutor) getWebDriver())
-				.executeScript("window.history.go(-3)");
+		
+		MifosWebPage.navigateToUrl(currentUrl);
+		/*((JavascriptExecutor) getWebDriver())
+				.executeScript("window.history.go(-3)");*/
 		Thread.sleep(getResourceKey("mediumWait"));
 	}
 
@@ -1143,14 +1146,28 @@ public class FrontPage extends MifosWebPage {
 			String excelSheetName, String sheetName) throws Throwable {
 		Map<String, String> newLoanDetailsMap;
 
-		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL
-				+ "run_periodic_accrual");
-		newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
-				sheetName);
-		Thread.sleep(getResourceKey("smallWait"));
-		insertValues(newLoanDetailsMap);
-		Thread.sleep(getResourceKey("smallWait"));
+		ishideAccuralsChecked = false;
+		if (sheetName.equals("RunPeriodicAccrual")
+				|| sheetName.equals("RunPeriodicAccrual1")
+				|| sheetName.equals("RunPeriodicAccrual2")) {
+			MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL
+					+ "run_periodic_accrual");
+			newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
+					sheetName);
+			Thread.sleep(getResourceKey("smallWait"));
+			insertValues(newLoanDetailsMap);
+			Thread.sleep(getResourceKey("smallWait"));
+			MifosWebPage.navigateToUrl(currentUrl);
+		} else if (sheetName.equals("Transactions")) {
+			/*
+			 * ((JavascriptExecutor) getWebDriver())
+			 * .executeScript("window.history.go(-5)");
+			 * Thread.sleep(getResourceKey("mediumWait"));
+			 */
+			MifosWebPage.navigateToUrl(currentUrl);
 
+			verifyLoanTabData(excelSheetPath, excelSheetName, sheetName);
+		}
 	}
 
 	public void searchUser(String user) throws InterruptedException {

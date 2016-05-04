@@ -19,6 +19,8 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+
+
 //import org.apache.commons.lang.math.NumberUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -583,9 +585,15 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					Thread.sleep(getResourceKey("mediumWait"));
 
 				}
-				
+							
 				break;
+			
+			case "Navigate":
 				
+				if (FrontPage.currentUrl != "") {
+					MifosWebPage.navigateToUrl(FrontPage.currentUrl);
+				}
+			break;	
 			case "Wait":
 				try {
 					double wait = Double.parseDouble(value);
@@ -656,8 +664,16 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;
 			case "verify":
-				verifySuccessMessage(key , value);
-				Thread.sleep(getResourceKey("wait"));
+				
+				String bodyText = getWebDriver().findElement(By.tagName("body"))
+				.getText();
+				if (bodyText.contains("Error")) {
+					verifySuccessMessage(key , value);
+					Thread.sleep(getResourceKey("wait"));
+				}else 
+				Assert.fail("Expected result:" + value );
+		
+				
 				break;
 				
 			case "select":
@@ -1218,13 +1234,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	}*/
 
 	public void verifySuccessMessage(String page, String message) {
-//		try {
+		try {
 
 			Assert.assertTrue(validateSame(page, message));
-			/*}catch (AssertionError  e) {
+			}catch (AssertionError  e) {
 			Assert.fail(" Expected result:" + message
 					+ " Actual result:" + getText(getLocator(getResource(page))));
-		}*/
+		}
 	}
 
 	public void verifyPartialSuccessMessage(String page, String message,

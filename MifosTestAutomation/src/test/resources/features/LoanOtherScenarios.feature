@@ -1085,5 +1085,625 @@ Then I entered the values into product loan from "ProductLoanInput" Sheet
  	|2666-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-1stINST-Newcreateloan1.xlsx|
  Then I "Wave Charge from Charges tab" and verified the following tabs
 	|2666-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-1stINST-Newcreateloan1.xlsx|Charges|
+
+@scenario55-2667-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-2stINST
+	Scenario: 2667-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-2stINST  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2667-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-2stINST-Newcreateloan1.xlsx| 	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2667-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-2stINST-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2667-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-2stINST-Newcreateloan1.xlsx|
+ Then I "Wave Charge from Charges tab" and verified the following tabs
+	|2667-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-INST-FEE-FLAT-AccCL1stFEB-WAIVECHARGE-ON-2stINST-Newcreateloan1.xlsx|Charges|
+
+@scenario56-2668-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-1stFEB
+	Scenario: 2668-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-1stFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2668-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-1stFEB-Newcreateloan1.xlsx| 	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2668-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-1stFEB-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2668-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-1stFEB-Newcreateloan1.xlsx|
+ Then I "WRITEOFF" and verified the following tabs
+	|2668-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-1stFEB-Newcreateloan1.xlsx|Modify Transaction|
+
+@scenario57-2669-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-2ndFEB
+	Scenario: 2669-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-2ndFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	|2669-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-2ndFEB-Newcreateloan1.xlsx| 	
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2669-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-2ndFEB-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2669-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-2ndFEB-Newcreateloan1.xlsx|
+ Then I "WRITEOFF" and verified the following tabs
+	|2669-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-REPAY-AccCL1stFEB-WRITEOFF-ON-2ndFEB-Newcreateloan1.xlsx|Modify Transaction|Summary|
+	
+@scenario58-2670-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN-1
+	  Scenario: 2670-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN-1  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2670-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN-1-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2670-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN-1-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2670-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN-1-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2670-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN-1-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2670-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN-1-Newcreateloan1.xlsx|Repay2|
+ Then i validate and Verify from "Output" sheet
+	|2670-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN-1-Newcreateloan1.xlsx|
+#Then I Execute Periodic Accrual Accounting
+#     |2670-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN-1-Newcreateloan1.xlsx|RunPeriodicAccrual|
+
+@scenario59-2671-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-INT-1
+	  Scenario: 2671-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-INT-1  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2671-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-INT-1-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2671-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-INT-1-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2671-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-INT-1-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2671-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-INT-1-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2671-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-INT-1-Newcreateloan1.xlsx|Repay2|
+ Then i validate and Verify from "Output" sheet
+	|2671-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-INT-1-Newcreateloan1.xlsx|
+
+@scenario60-2672-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN+INT-1
+	  Scenario: 2672-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN+INT-1  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2672-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN+INT-1-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2672-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN+INT-1-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2672-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN+INT-1-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2672-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN+INT-1-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2672-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN+INT-1-Newcreateloan1.xlsx|Repay2|
+ Then i validate and Verify from "Output" sheet
+	|2672-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-LESS-REPAY-AccCL1stFEB-REPAY-ON-15JAN-MORO-PRIN+INT-1-Newcreateloan1.xlsx|
+
+@scenario61-2673-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-PERIODIC
+	  Scenario: 2673-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-PERIODIC  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2673-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-PERIODIC-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2673-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2673-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-PERIODIC-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2673-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2673-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-PERIODIC-Newcreateloan1.xlsx|Repay2|
+ Then I Execute Periodic Accrual Accounting
+     |2673-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-PERIODIC-Newcreateloan1.xlsx|RunPeriodicAccrual|
+
+@scenario62-2674-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-PERIODIC
+	  Scenario: 2674-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-PERIODIC  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2674-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-PERIODIC-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2674-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2674-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-PERIODIC-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2674-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2674-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-PERIODIC-Newcreateloan1.xlsx|Repay2|
+ Then I Execute Periodic Accrual Accounting
+     |2674-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-PERIODIC-Newcreateloan1.xlsx|RunPeriodicAccrual|
+
+@scenario63-2675-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-PERIODIC
+	  Scenario: 2675-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-PERIODIC  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2675-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-PERIODIC-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2675-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2675-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-PERIODIC-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2675-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2675-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-PERIODIC-Newcreateloan1.xlsx|Repay2|
+ Then I Execute Periodic Accrual Accounting
+     |2675-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-PERIODIC-Newcreateloan1.xlsx|RunPeriodicAccrual|
+
+@scenario64-2676-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-DEL-AccCL-PERIODIC
+	  Scenario: 2676-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-DEL-AccCL-PERIODIC  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2676-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2676-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2676-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2676-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2676-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|Repay2|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2676-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+     |2676-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|RunPeriodicAccrual|Transactions|
+
+@scenario65-2677-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-DEL-AccCL-PERIODIC
+	  Scenario: 2677-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-DEL-AccCL-PERIODIC  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2677-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2677-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2677-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2677-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2677-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|Repay2|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2677-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+     |2677-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|RunPeriodicAccrual|Transactions|
+
+@scenario66-2678-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-DEL-AccCL-PERIODIC
+	  Scenario: 2678-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-DEL-AccCL-PERIODIC  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2678-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2678-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2678-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2678-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2678-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|Repay2|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2678-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+     |2678-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-MORE-REPAY-AccCL1stFEB-REPAY-ON-15FEB-MORO-PRIN+INT-1-DEL-AccCL-PERIODIC-Newcreateloan1.xlsx|RunPeriodicAccrual|Transactions|
+
+@scenario67-2679-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-REPAY+RunPER-ON31JAN+AccCL31JAN+DISTR2-31JAN
+	  Scenario: 2679-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-REPAY+RunPER-ON31JAN+AccCL31JAN+DISTR2-31JAN  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2679-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-REPAY+RunPER-ON31JAN+AccCL31JAN+DISTR2-31JAN-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2679-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-REPAY+RunPER-ON31JAN+AccCL31JAN+DISTR2-31JAN-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2679-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-REPAY+RunPER-ON31JAN+AccCL31JAN+DISTR2-31JAN-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+     |2679-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-REPAY+RunPER-ON31JAN+AccCL31JAN+DISTR2-31JAN-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2679-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-REPAY+RunPER-ON31JAN+AccCL31JAN+DISTR2-31JAN-Newcreateloan1.xlsx|
+ Then I disburse loan from "Second Tranch" sheet
+     |2679-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-REPAY+RunPER-ON31JAN+AccCL31JAN+DISTR2-31JAN-Newcreateloan1.xlsx|	
+     
+@scenario68-2680-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-DISTR2on1stFEB
+	  Scenario: 2680-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-DISTR2on1stFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2680-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-DISTR2on1stFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2680-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-DISTR2on1stFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2680-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-DISTR2on1stFEB-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+     |2680-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-DISTR2on1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2680-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-DISTR2on1stFEB-Newcreateloan1.xlsx|
+ Then I disburse loan from "Second Tranch" sheet
+     |2680-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-DISTR2on1stFEB-Newcreateloan1.xlsx|	
+ And I verified the "Transactions" details successfully	
+	 |2680-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-DISTR2on1stFEB-Newcreateloan1.xlsx|
+
+@scenario69-2681-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-lATEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB
+	  Scenario: 2681-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-lATEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2681-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-lATEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2681-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-lATEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2681-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-lATEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+     |2681-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-lATEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2681-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-lATEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|
+ Then I disburse loan from "Second Tranch" sheet
+     |2681-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-lATEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|	
+ And I verified the "Transactions" details successfully	
+	 |2681-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-lATEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|
+
+@scenario70-2682-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB
+	  Scenario: 2682-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2682-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2682-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2682-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+     |2682-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2682-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|
+ Then I disburse loan from "Second Tranch" sheet
+     |2682-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|	
+ And I verified the "Transactions" details successfully	
+	 |2682-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-DISTR2on20thFEB-Newcreateloan1.xlsx|
+
+@scenario71-2683-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY31JAN
+	  Scenario: 2683-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY31JAN  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2683-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY31JAN-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2683-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY31JAN-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2683-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY31JAN-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+     |2683-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY31JAN-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2683-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY31JAN-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2683-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY31JAN-Newcreateloan1.xlsx|Repay2|
+ Then i validate and Verify from "Output" sheet
+	|2683-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY31JAN-Newcreateloan1.xlsx|
+
+@scenario72-2684-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY10thFEB
+	  Scenario: 2684-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY10thFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2684-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY10thFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	 |Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	 |2684-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY10thFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2684-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY10thFEB-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+     |2684-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY10thFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	 |2684-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY10thFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2684-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLYREPAY-RunPERon31JAN-AccCL31JAN-REPAY10thFEB-Newcreateloan1.xlsx|Repay2|Transactions|
+
+@scenario73-2685-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATEREPAY-RunPERon15FEB-AccCL15FEB-REPAY10thMAR
+	  Scenario: 2685-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATEREPAY-RunPERon15FEB-AccCL15FEB-REPAY10thMAR  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2685-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATEREPAY-RunPERon15FEB-AccCL15FEB-REPAY10thMAR-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2685-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATEREPAY-RunPERon15FEB-AccCL15FEB-REPAY10thMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2685-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATEREPAY-RunPERon15FEB-AccCL15FEB-REPAY10thMAR-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2685-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATEREPAY-RunPERon15FEB-AccCL15FEB-REPAY10thMAR-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2685-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATEREPAY-RunPERon15FEB-AccCL15FEB-REPAY10thMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2685-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATEREPAY-RunPERon15FEB-AccCL15FEB-REPAY10thMAR-Newcreateloan1.xlsx|Repay2|Transactions|
+
+@scenario74-2686-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-REPAY1stMAR
+	  Scenario: 2686-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-REPAY1stMAR  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2686-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-REPAY1stMAR-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2686-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-REPAY1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2686-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-REPAY1stMAR-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2686-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-REPAY1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2686-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-REPAY1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2686-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-ONTIMEREPAY-RunPERon15FEB-AccCL15FEB-REPAY1stMAR-Newcreateloan1.xlsx|Repay2|Transactions|
+
+@scenario75-2687-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RunPERon1stFEB
+	  Scenario: 2687-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RunPERon1stFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2687-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RunPERon1stFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2687-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RunPERon1stFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2687-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RunPERon1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ Then I make repayment and verified the following tabs
+    |2687-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RunPERon1stFEB-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2687-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RunPERon1stFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2687-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RunPERon1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual1|
+ 
+@scenario76-2688-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RUNPERon2ndFEB
+	  Scenario: 2688-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RUNPERon2ndFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2688-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RUNPERon2ndFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2688-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RUNPERon2ndFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2688-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RUNPERon2ndFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ Then I make repayment and verified the following tabs
+    |2688-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RUNPERon2ndFEB-Newcreateloan1.xlsx|Repay1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2688-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RUNPERon2ndFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2688-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-RunPERon1stAPR-LESSREPAYon1stFEB-AccCL1stFEB-RUNPERon2ndFEB-Newcreateloan1.xlsx|RunPeriodicAccrual1|
+ 
+@scenario77-2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB
+	  Scenario: 2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB-Newcreateloan1.xlsx|Repay1|Transactions|
+ 
+@scenario78-2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB
+	  Scenario: 2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
+
+@scenario79-2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB
+	  Scenario: 2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|Transactions|
+
+@scenario80-2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR
+	  Scenario: 2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
+
+@scenario81-2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR
+	  Scenario: 2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
+ 
+@scenario82-2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR
+	  Scenario: 2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|
+ Then I make repayment and verified the following tabs
+    |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|Repay1|
+ Then I Execute Periodic Accrual Accounting
+    |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
+
+@scenario83-2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB
+	  Scenario: 2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
+
+@scenario84-2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB
+	  Scenario: 2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB  
+ Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Given I setup the clients 
+ Then I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+ Then I should see client created successfully from "Output" sheet
+	|Createclient.xlsx|
+ When I set up the new create loan from "NewLoanInput" sheet
+	|2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
+ 	 |2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual1|
+ And I create Account Closures Entry from "CreateAccountClosures" sheet
+ 	|2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ Then I Execute Periodic Accrual Accounting
+    |2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual2|
        			
 	 	 	  			    			
