@@ -667,7 +667,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				
 				String bodyText = getWebDriver().findElement(By.tagName("body"))
 				.getText();
-				if (bodyText.contains("Error")) {
+				if (bodyText.contains("Error")|| bodyText.contains("field is required")) {
 					verifySuccessMessage(key , value);
 					Thread.sleep(getResourceKey("wait"));
 				}else 
