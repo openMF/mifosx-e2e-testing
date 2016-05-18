@@ -252,6 +252,11 @@ public class ClientSteps {
 		}
 	}
 	
+	@Then("^I navigate To Loan Account Page$")
+	public void I_navigate_To_Loan_Account_Page() throws Throwable {
+		varFrontPage.navigateLoanAccounting();
+		}
+	
 /*	@When("^I set up the new savings$")
 	public void I_set_up_the_new_savings(String sheetName,
 			List<String> excelSheetName) throws Throwable {

@@ -590,9 +590,15 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			
 			case "Navigate":
 				
-				if (FrontPage.currentUrl != "") {
-					MifosWebPage.navigateToUrl(FrontPage.currentUrl);
+				FrontPage url = new FrontPage();
+				String curUrl = url.currentUrl;
+				if (curUrl != "") {
+					MifosWebPage.navigateToUrl(curUrl);
 				}
+				
+				/*if (FrontPage.currentUrl != "") {
+					MifosWebPage.navigateToUrl(FrontPage.currentUrl);
+				}*/
 			break;	
 			case "Wait":
 				try {

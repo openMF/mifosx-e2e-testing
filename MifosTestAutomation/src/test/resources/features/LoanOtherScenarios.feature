@@ -357,7 +357,7 @@ Background:
     |3515-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PERIODIC-OVERDUE-FEE-FLAT-PENALTY-FRE-1-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I Navigate to Accounting web page
  And I search with transaction id & verified the accounting entries
-    |3515-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PERIODIC-OVERDUE-FEE-FLAT-PENALTY-FRE-1-Makerepayment1.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Repayment|Acc_Periodic|	  			    			
+    |3515-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PERIODIC-OVERDUE-FEE-FLAT-PENALTY-FRE-1-Makerepayment1.xlsx|Acc_Disbursement|Acc_Repayment|Acc_Periodic|	  			    			
 
 @scenario17-3516-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-SP-FLAT-WAIVEPENALTY
 	  Scenario: 3516-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-SP-FLAT-WAIVEPENALTY  
@@ -1547,30 +1547,32 @@ Then I entered the values into product loan from "ProductLoanInput" Sheet
     |2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
  Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
  	 |2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB-Newcreateloan1.xlsx|
+ And I navigate To Loan Account Page
  Then I make repayment and verified the following tabs
     |2689-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon1stFEB-Newcreateloan1.xlsx|Repay1|Transactions|
  
-@scenario78-2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB
-	  Scenario: 2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB  
+@scenario78-2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON2ndFEB
+	  Scenario: 2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON2ndFEB  
  Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
- 	 |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ 	 |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON2ndFEB-Newcreateloan1.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
 	 |Createclient.xlsx|
  Then I should see client created successfully from "Output" sheet
 	|Createclient.xlsx|
  When I set up the new create loan from "NewLoanInput" sheet
-	|2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+	|2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON2ndFEB-Newcreateloan1.xlsx|
  And I create Account Closures Entry from "CreateAccountClosures" sheet
- 	|2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ 	|2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON2ndFEB-Newcreateloan1.xlsx|
  Then I Execute Periodic Accrual Accounting
-    |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+    |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON2ndFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
  Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
- 	 |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ 	 |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON2ndFEB-Newcreateloan1.xlsx|
+ And I navigate To Loan Account Page
  Then I make repayment and verified the following tabs
-    |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|Repay1|
+    |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON2ndFEB-Newcreateloan1.xlsx|Repay1|
  Then I Execute Periodic Accrual Accounting
-    |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
+    |2690-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERON1stFEB-DELETEAccCL-REPAYon2ndFEB-RunPERON2ndFEB-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
 
 @scenario79-2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB
 	  Scenario: 2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB  
@@ -1588,7 +1590,7 @@ Then I entered the values into product loan from "ProductLoanInput" Sheet
  Then I make repayment and verified the following tabs
     |2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-Newcreateloan1.xlsx|Repay1|
  Then I Execute Periodic Accrual Accounting
-    |2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|Transactions|
+    |2691-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
 
 @scenario80-2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR
 	  Scenario: 2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR  
@@ -1609,8 +1611,9 @@ Then I entered the values into product loan from "ProductLoanInput" Sheet
     |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual|
  Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
  	 |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|
+ And I navigate To Loan Account Page
  Then I make repayment and verified the following tabs
-    |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|Repay1|
+    |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|Repay2|
  Then I Execute Periodic Accrual Accounting
     |2692-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYONTIME-RunPERon1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
 
@@ -1633,8 +1636,9 @@ Then I entered the values into product loan from "ProductLoanInput" Sheet
     |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|RunPeriodicAccrual|
  Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
  	 |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|
+ And I navigate To Loan Account Page
  Then I make repayment and verified the following tabs
-    |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|Repay1|
+    |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|Repay2|
  Then I Execute Periodic Accrual Accounting
     |2693-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYLATE-RunPERon15thMAR-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
  
@@ -1657,8 +1661,9 @@ Then I entered the values into product loan from "ProductLoanInput" Sheet
     |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual|
  Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
  	 |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|
+ And I navigate To Loan Account Page
  Then I make repayment and verified the following tabs
-    |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|Repay1|
+    |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|Repay2|
  Then I Execute Periodic Accrual Accounting
     |2694-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-REPAYon2ndFEB-RunPERon2ndFEB-DELETEAccCL-REPAYEARLY-RunPERon1stMAR-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
 
@@ -1679,6 +1684,7 @@ Then I entered the values into product loan from "ProductLoanInput" Sheet
     |2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
  Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
  	 |2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-Newcreateloan1.xlsx|
+ And I navigate To Loan Account Page
  Then I Execute Periodic Accrual Accounting
     |2695-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual1|Transactions|
 
@@ -1699,6 +1705,7 @@ Then I entered the values into product loan from "ProductLoanInput" Sheet
     |2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
  Then I Delete Account Closures Entry from "DeleteAccountClosures" sheet
  	 |2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|
+ And I navigate To Loan Account Page
  Then I Execute Periodic Accrual Accounting
     |2696-RBI-EI-DB-DL-REC-Non-RNI-CTPD-DL-MD-TR-2-DIS-AccCL1stFEB-RunPERon1stFEB-DELETEAccCL-RunPERON1stFEB-AccCL1stFEB-RunPERON1stFEB-Newcreateloan1.xlsx|RunPeriodicAccrual1|
  And I create Account Closures Entry from "CreateAccountClosures" sheet

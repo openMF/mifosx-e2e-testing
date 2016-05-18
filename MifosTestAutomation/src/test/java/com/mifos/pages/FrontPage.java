@@ -52,7 +52,7 @@ public class FrontPage extends MifosWebPage {
 	boolean isTransactionTabSelected;
 	public boolean isaccuralsTypeTransaction = true;
 	int transactionIDIndex = 0;
-	static String currentUrl ="";
+	public String currentUrl ="";
 
 	// WebDriver driver = new ChromeDriver();
 
@@ -564,6 +564,7 @@ public class FrontPage extends MifosWebPage {
 						|| sheetname.equals("Acc_Repayment1")
 						|| sheetname.equals("Acc_Upfront1")
 						|| sheetname.equals("Acc_Upfront2")
+						|| sheetname.equals("Acc_Upfront3")
 						|| sheetname.equals("Acc_Periodic")
 						|| sheetname.equals("Acc_Upfront")) {
 					xlColumnPointer = 6;
@@ -652,6 +653,7 @@ public class FrontPage extends MifosWebPage {
 									failColCnt = xlCol;
 									expected = (String) xlRow.get(xlCol - 6).value;
 									actual = textVal;
+									
 								}
 								break;
 							}
@@ -670,7 +672,7 @@ public class FrontPage extends MifosWebPage {
 				Thread.sleep(getResourceKey("wait"));
 
 			}
-			Thread.sleep(getResourceKey("mediumWait"));
+			Thread.sleep(getResourceKey("wait"));
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
 		} catch (NoSuchElementException e) {
@@ -694,9 +696,6 @@ public class FrontPage extends MifosWebPage {
 			}
 			switch (sheet.getRow(xlRowCount).getCell(xlColumnPointer)
 					.getCellType()) {
-			case Cell.CELL_TYPE_BLANK:
-				elements.add(new XLCellElement(null, "null"));
-				break;
 			case Cell.CELL_TYPE_FORMULA:
 			case Cell.CELL_TYPE_NUMERIC:
 				if (HSSFDateUtil.isCellDateFormatted(sheet.getRow(xlRowCount)
@@ -723,6 +722,9 @@ public class FrontPage extends MifosWebPage {
 					} else {
 						elements.add(new XLCellElement(strCellValue, "string"));
 					}
+				break;
+			default:
+				elements.add(new XLCellElement(null, "null"));
 				break;
 			}
 		}
@@ -911,7 +913,8 @@ public class FrontPage extends MifosWebPage {
 				|| sheetName.equals("Acc_Repayment")
 				|| sheetName.equals("Acc_Repayment1")
 				|| sheetName.equals("Acc_Upfront1")
-				|| sheetName.equals("Acc_Upfront2")) {
+				|| sheetName.equals("Acc_Upfront2")
+				|| sheetName.equals("Acc_Upfront3")) {
 
 			if (sheetName.equals("Acc_Upfront1")) {
 				transactionIDIndex = 0;
@@ -1371,6 +1374,10 @@ public class FrontPage extends MifosWebPage {
 		insertValues(newLoanDetailsMap);
 		Thread.sleep(getResourceKey("smallWait"));
 
+	}
+
+	public void navigateLoanAccounting() {
+		MifosWebPage.navigateToUrl(currentUrl);		
 	}
 
 }
