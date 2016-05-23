@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -44,8 +45,10 @@ import com.mifos.testing.framework.webdriver.LazyWebElement;
 
 public class FrontPage extends MifosWebPage {
 
-	Set<String> setAccuralTransactionID = new TreeSet<String>();
-	Set<String> setAccuralTransactionType = new TreeSet<String>();
+//	Set<String> setAccuralTransactionID = new TreeSet<String>();
+//	Set<String> setAccuralTransactionType = new TreeSet<String>();
+	Set<String> setAccuralTransactionID = new LinkedHashSet<String>();
+	Set<String> setAccuralTransactionType = new LinkedHashSet<String>();
 	static String value = "";
 	public String rowval;
 	public boolean ishideAccuralsChecked = true;
@@ -53,6 +56,7 @@ public class FrontPage extends MifosWebPage {
 	public boolean isaccuralsTypeTransaction = true;
 	int transactionIDIndex = 0;
 	public String currentUrl ="";
+	private boolean istransactionIdIndexAssigned = true;
 
 	// WebDriver driver = new ChromeDriver();
 
@@ -916,55 +920,60 @@ public class FrontPage extends MifosWebPage {
 				|| sheetName.equals("Acc_Upfront2")
 				|| sheetName.equals("Acc_Upfront3")) {
 
-			if (sheetName.equals("Acc_Upfront1")) {
-				transactionIDIndex = 0;
-				setAccuralTransactionID = setAccuralTransactionType;
+			if (istransactionIdIndexAssigned) {
+				transactionIDIndex = setAccuralTransactionID.size() - 1;
 			}
-
-			isTransactionTabSelected = true;
-			getWebDriver()
-					.findElement(
-							By.xpath("//input[@placeholder='Search by transaction']"))
-					.sendKeys(
-							Keys.chord(Keys.CONTROL, "a"),
-							"L"
-									+ setAccuralTransactionID.toArray()[transactionIDIndex++]);
-			Thread.sleep(getResourceKey("smallWait"));
-			clickButton(
-					getResource("frontend.accounting.searchjournal.transactionid.submit"),
-					"xpath");
-			Thread.sleep(getResourceKey("smallWait"));
-			verifyLoanTabData(clientExcelSheetPath, excelSheetName, sheetName);
-			Thread.sleep(getResourceKey("smallWait"));
-			clickButton(
-					getResource("frontend.accounting.searchjournal.transactionid.Parameters"),
-					"xpath");
-			Thread.sleep(getResourceKey("mediumWait"));
+			if (transactionIDIndex >= 0) {
+				istransactionIdIndexAssigned = false;
+				if (sheetName.equals("Acc_Upfront1")) {
+					setAccuralTransactionID = setAccuralTransactionType;
+				}
+				isTransactionTabSelected = true;
+				getWebDriver()
+						.findElement(
+								By.xpath("//input[@placeholder='Search by transaction']"))
+						.sendKeys(
+								Keys.chord(Keys.CONTROL, "a"),
+								"L"
+										+ setAccuralTransactionID.toArray()[transactionIDIndex--]);
+//				Thread.sleep(getResourceKey("smallWait"));
+				clickButton(
+						getResource("frontend.accounting.searchjournal.transactionid.submit"),
+						"xpath");
+				Thread.sleep(getResourceKey("smallWait"));
+				verifyLoanTabData(clientExcelSheetPath, excelSheetName,
+						sheetName);
+				Thread.sleep(getResourceKey("smallWait"));
+				clickButton(
+						getResource("frontend.accounting.searchjournal.transactionid.Parameters"),
+						"xpath");
+				Thread.sleep(getResourceKey("smallWait"));
+			}
 		}
 
 		if (sheetName.equals("Acc_Periodic") || sheetName.equals("Acc_Upfront")) {
 
-			Iterator<String> getTransactionType = setAccuralTransactionType
-					.iterator();
-
-			while (getTransactionType.hasNext()) {
+//			Iterator<String> getTransactionType = setAccuralTransactionType
+//					.iterator();
+			for (int i = setAccuralTransactionType.size()-1; i>=0; i-- ) {
+//			while (getTransactionType.hasNext()) {
 				getWebDriver()
-						.findElement(
-								By.xpath("//input[@placeholder='Search by transaction']"))
-						.sendKeys(Keys.chord(Keys.CONTROL, "a"),
-								"L" + getTransactionType.next());
-
-				Thread.sleep(getResourceKey("smallWait"));
+				.findElement(
+						By.xpath("//input[@placeholder='Search by transaction']"))
+				.sendKeys(Keys.chord(Keys.CONTROL, "a"),
+						"L" + setAccuralTransactionType.toArray()[i]);
+		System.out.println("Accruals " + setAccuralTransactionType.toArray()[i] );
+		Thread.sleep(getResourceKey("smallWait"));
 				clickButton(
 						getResource("frontend.accounting.searchjournal.transactionid.submit"),
 						"xpath");
-				Thread.sleep(getResourceKey("mediumWait"));
+				Thread.sleep(getResourceKey("smallWait"));
 				verifyLoanTabData(clientExcelSheetPath, excelSheetName,
 						sheetName);
 				clickButton(
 						getResource("frontend.accounting.searchjournal.transactionid.Parameters"),
 						"xpath");
-				Thread.sleep(getResourceKey("mediumWait"));
+				Thread.sleep(getResourceKey("smallWait"));
 			}
 		}
 
