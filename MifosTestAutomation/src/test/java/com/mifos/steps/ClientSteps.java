@@ -40,7 +40,7 @@ public class ClientSteps {
 	public void I_entered_the_values_into_group_from_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {
 		String excelSheetName = excelSheet.get(0).toString();
-		varFrontPage.setupClient(ExcelSheetPath, excelSheetName, sheetName);
+		varFrontPage.setupGroup(ExcelSheetPath, excelSheetName, sheetName);
 	}
 	
 	@Then("^I Edit Client from \"([^\"]*)\" sheet$")
@@ -55,7 +55,7 @@ public class ClientSteps {
 	public void I_from_sheet(String arg1, String sheetName,
 			List<String> excelSheet) throws Throwable {
 		String excelSheetName = excelSheet.get(0).toString();
-		varFrontPage.setupClient(ExcelSheetPath, excelSheetName, sheetName);
+		varFrontPage.transferClient(ExcelSheetPath, excelSheetName, sheetName);
 	}
 	
 	@Then("^I should see client created successfully from \"([^\"]*)\" sheet$")

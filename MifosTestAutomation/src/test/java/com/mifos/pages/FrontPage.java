@@ -34,6 +34,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 
 import com.ibm.icu.text.NumberFormat;
@@ -273,19 +274,10 @@ public class FrontPage extends MifosWebPage {
 	 */
 	public void setupLogin(String loginExcelSheetPath, String excelSheetName,
 			String sheetName) throws Throwable {
-		try {
-
-			Map<String, String> loginMap = parseExcelSheet(loginExcelSheetPath,
-					excelSheetName, sheetName);
-
-			insertValues(loginMap);
-
-			clickButton(getResource("signin"));
-			Thread.sleep(getResourceKey("extraLargeWait"));
-		} catch (Exception ioe) {
-			ioe.printStackTrace();
-		}
-
+		Map<String, String> loginMap = parseExcelSheet(loginExcelSheetPath,
+				excelSheetName, sheetName);
+		insertValues(loginMap);
+		clickButton(getResource("signin"));
 	}
 
 	/**
@@ -295,12 +287,10 @@ public class FrontPage extends MifosWebPage {
 	 */
 	public void clientNavigation() throws Throwable {
 		try {
-
 			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"clients");
-			Thread.sleep(getResourceKey("mediumWait"));
-
+			verifySuccessMessage("clickoncreateclient", "Create Client");
 			clickButton(getResource("clickoncreateclient"));
-			Thread.sleep(getResourceKey("mediumWait"));
+			verifySuccessMessage("submitclient", "Submit");
 
 		} catch (Exception ioe) {
 			ioe.printStackTrace();
@@ -314,8 +304,8 @@ public class FrontPage extends MifosWebPage {
 	 */
 	public void groupNavigation() throws Throwable {
 		try {
-
 			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"creategroup");
+			verifySuccessMessage("submitGroup", "Submit");
 			Thread.sleep(getResourceKey("mediumWait"));
 
 		} catch (Exception ioe) {
@@ -337,9 +327,39 @@ public class FrontPage extends MifosWebPage {
 			Map<String, String> clientDetailsMap = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(clientDetailsMap);
-//			clickButton(getResource("submitclient"));
-			Thread.sleep(getResourceKey("largeWait"));
-			
+			verifySuccessMessage("clickonmorebutton", "More");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void setupGroup(String clientExcelSheetPath, String excelSheetName,
+			String sheetName) throws Throwable {
+		try {
+			Map<String, String> clientDetailsMap = parseExcelSheet(
+					clientExcelSheetPath, excelSheetName, sheetName);
+			insertValues(clientDetailsMap);
+//			verifySuccessMessage("clickonmorebutton", "More");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Method enters values from target excel sheet into Client page
+	 * 
+	 * @param clientExcelSheetPath
+	 * @param excelSheetName
+	 * @param sheetName
+	 * @throws Throwable
+	 */
+	public void transferClient(String clientExcelSheetPath, String excelSheetName,
+			String sheetName) throws Throwable {
+		try {
+			Map<String, String> clientDetailsMap = parseExcelSheet(
+					clientExcelSheetPath, excelSheetName, sheetName);
+			insertValues(clientDetailsMap);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -381,7 +401,7 @@ public class FrontPage extends MifosWebPage {
 		Map<String, String> newLoanDetailsMap = parseExcelSheet(
 				clientExcelSheetPath, excelSheetName, sheetName);
 		insertValues(newLoanDetailsMap);
-		Thread.sleep(getResourceKey("largeWait"));
+		Thread.sleep(getResourceKey("extraLargeWait"));
 		currentUrl = getWebDriver().getCurrentUrl();
 
 	}
@@ -397,15 +417,9 @@ public class FrontPage extends MifosWebPage {
 	public void productNavigation(String productExcelSheetPath,
 			List<String> excelsheet, String sheetName) throws Throwable {
 		try {
-
-			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "products");
+			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createloanproduct");
 			Thread.sleep(getResourceKey("mediumWait"));
-
-			clickButton(getResource("clickonloanproducts"));
-			Thread.sleep(getResourceKey("mediumWait"));
-
-			clickButton(getResource("clickoncreateloanproduct"));
-			Thread.sleep(getResourceKey("extraLargeWait"));
+			
 		} catch (Exception ioe) {
 			ioe.printStackTrace();
 		}
@@ -422,22 +436,17 @@ public class FrontPage extends MifosWebPage {
 	 */
 	public void setupLoanProduct(String productExcelSheetPath,
 			String excelSheetName, String sheetName) throws Throwable {
-		try {
 			Map<String, String> productDetailsMap = parseExcelSheet(
 					productExcelSheetPath, excelSheetName, sheetName);
 
 			insertValues(productDetailsMap);
 
 			clickButton(getResource("submitloanproduct"));
-			Thread.sleep(getResourceKey("smallWait"));
+			Thread.sleep(getResourceKey("mediumWait"));
 			((JavascriptExecutor) getWebDriver())
 					.executeScript("scroll(500,0);");
-
+			verifySuccessMessage("editloanproduct", "Edit");
 			Thread.sleep(getResourceKey("mediumWait"));
-
-		} catch (Exception ioe) {
-			ioe.printStackTrace();
-		}
 
 	}
 
@@ -700,14 +709,12 @@ public class FrontPage extends MifosWebPage {
 
 				}
 
-				Thread.sleep(getResourceKey("wait"));
 
 			}
-			Thread.sleep(getResourceKey("wait"));
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
 		} catch (NoSuchElementException e) {
-			Assert.fail(" Enable to click \n");
+			Assert.fail(" Unable to click \n");
 		}
 	}
 
@@ -903,7 +910,7 @@ public class FrontPage extends MifosWebPage {
 				excelName, inputSheet);
 		insertValues(repaymentDetails);
 		clickButton(getResource("submitmakerepayment"));
-		Thread.sleep(getResourceKey("extraLargeWait"));
+		Thread.sleep(getResourceKey("largeWait"));
 
 	}
 
@@ -963,44 +970,39 @@ public class FrontPage extends MifosWebPage {
 								Keys.chord(Keys.CONTROL, "a"),
 								"L"
 										+ setAccuralTransactionID.toArray()[transactionIDIndex--]);
-//				Thread.sleep(getResourceKey("smallWait"));
+				Thread.sleep(getResourceKey("smallWait"));
 				clickButton(
 						getResource("frontend.accounting.searchjournal.transactionid.submit"),
 						"xpath");
-				Thread.sleep(getResourceKey("smallWait"));
+				Thread.sleep(getResourceKey("mediumWait"));
 				verifyLoanTabData(clientExcelSheetPath, excelSheetName,
 						sheetName);
-				Thread.sleep(getResourceKey("smallWait"));
 				clickButton(
 						getResource("frontend.accounting.searchjournal.transactionid.Parameters"),
 						"xpath");
-				Thread.sleep(getResourceKey("smallWait"));
+				Thread.sleep(getResourceKey("mediumWait"));
 			}
 		}
 
 		if (sheetName.equals("Acc_Periodic") || sheetName.equals("Acc_Upfront")) {
 
-//			Iterator<String> getTransactionType = setAccuralTransactionType
-//					.iterator();
 			for (int i = setAccuralTransactionType.size()-1; i>=0; i-- ) {
-//			while (getTransactionType.hasNext()) {
 				getWebDriver()
 				.findElement(
 						By.xpath("//input[@placeholder='Search by transaction']"))
 				.sendKeys(Keys.chord(Keys.CONTROL, "a"),
 						"L" + setAccuralTransactionType.toArray()[i]);
-		System.out.println("Accruals " + setAccuralTransactionType.toArray()[i] );
 		Thread.sleep(getResourceKey("smallWait"));
 				clickButton(
 						getResource("frontend.accounting.searchjournal.transactionid.submit"),
 						"xpath");
-				Thread.sleep(getResourceKey("smallWait"));
+				Thread.sleep(getResourceKey("mediumWait"));
 				verifyLoanTabData(clientExcelSheetPath, excelSheetName,
 						sheetName);
 				clickButton(
 						getResource("frontend.accounting.searchjournal.transactionid.Parameters"),
 						"xpath");
-				Thread.sleep(getResourceKey("smallWait"));
+				Thread.sleep(getResourceKey("mediumWait"));
 			}
 		}
 
@@ -1014,17 +1016,16 @@ public class FrontPage extends MifosWebPage {
 	 */
 	public void selectSchedularJob(String schedularJobName)
 			throws InterruptedException {
-
 		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "jobs");
-		Thread.sleep(getResourceKey("mediumWait"));
 
 		switch (schedularJobName) {
 
 		case "Periodic Accrual Transactions":
 			LazyWebElement checkPeriodic = getElement(getResource("addperiodicaccrualtransactions"));
 			if (!checkPeriodic.isSelected()) {
-				clickButton(getResource("addperiodicaccrualtransactions"));
-				Thread.sleep(getResourceKey("mediumWait"));
+				By locator = null;
+				locator = getLocator(getResource("addperiodicaccrualtransactions"));
+				clickButton(locator, 30);
 			}
 			ishideAccuralsChecked = false;
 			System.out.println("currentUrl "+ currentUrl);
@@ -1033,36 +1034,40 @@ public class FrontPage extends MifosWebPage {
 		case "Apply penalty to overdue loans":
 			LazyWebElement checkpenalty = getElement(getResource("addpenaltytooverdueloans"));
 			if (!checkpenalty.isSelected()) {
-				clickButton(getResource("addpenaltytooverdueloans"));
-				Thread.sleep(getResourceKey("mediumWait"));
+				By locator = null;
+				locator = getLocator(getResource("addpenaltytooverdueloans"));
+				clickButton(locator, 30);
 			}
 			break;
 		case "Periodic & penalty to overdue loans":
 
 			LazyWebElement checkpenalty1 = getElement(getResource("addpenaltytooverdueloans"));
 			if (!checkpenalty1.isSelected()) {
-				clickButton(getResource("addpenaltytooverdueloans"));
+				By locator = null;
+				locator = getLocator(getResource("addpenaltytooverdueloans"));
+				clickButton(locator, 30);
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
-			((JavascriptExecutor) getWebDriver())
-					.executeScript("scroll(0,500);");
-			Thread.sleep(getResourceKey("smallWait"));
-			clickButton(getResource("runSelectedJobs"));
-			Thread.sleep(getResourceKey("smallWait"));
+			By locator = null;
+			locator = getLocator(getResource("runSelectedJobs"));
+			clickButton(locator, 30);
 			clickButton(getResource("refresh"));
 			Thread.sleep(getResourceKey("largeWait"));
 			ishideAccuralsChecked = false;
 
 			LazyWebElement checkPeriodic1 = getElement(getResource("addperiodicaccrualtransactions"));
 			if (!checkPeriodic1.isSelected()) {
-				clickButton(getResource("addperiodicaccrualtransactions"));
-				Thread.sleep(getResourceKey("mediumWait"));
+				By locator1 = null;
+				locator1 = getLocator(getResource("addperiodicaccrualtransactions"));
+				clickButton(locator1, 30);
 			}
 			break;
 		case "Add Upfront Accrual Transactions":
 			LazyWebElement addupfrontaccrual = getElement(getResource("addupfrontaccrualtransactions"));
 			if (!addupfrontaccrual.isSelected()) {
-				clickButton(getResource("addupfrontaccrualtransactions"));
+				By locator1 = null;
+				locator1 = getLocator(getResource("addupfrontaccrualtransactions"));
+				clickButton(locator1, 30);
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
 			ishideAccuralsChecked = false;
@@ -1071,21 +1076,21 @@ public class FrontPage extends MifosWebPage {
 		case "Upfront & penalty to overdue loans":
 			LazyWebElement addupfrontaccrual1 = getElement(getResource("addupfrontaccrualtransactions"));
 			if (!addupfrontaccrual1.isSelected()) {
-				clickButton(getResource("addupfrontaccrualtransactions"));
-				Thread.sleep(getResourceKey("mediumWait"));
+				By locator1 = null;
+				locator1 = getLocator(getResource("addupfrontaccrualtransactions"));
+				clickButton(locator1, 30);
 			}
-			((JavascriptExecutor) getWebDriver())
-					.executeScript("scroll(0,500);");
-			Thread.sleep(getResourceKey("smallWait"));
-			clickButton(getResource("runSelectedJobs"));
-			Thread.sleep(getResourceKey("smallWait"));
+			By locator1 = null;
+			locator1 = getLocator(getResource("runSelectedJobs"));
+			clickButton(locator1, 30);
 			clickButton(getResource("refresh"));
 			Thread.sleep(getResourceKey("largeWait"));
 			ishideAccuralsChecked = false;
 			LazyWebElement checkpenalty2 = getElement(getResource("addpenaltytooverdueloans"));
 			if (!checkpenalty2.isSelected()) {
-				clickButton(getResource("addpenaltytooverdueloans"));
-				Thread.sleep(getResourceKey("mediumWait"));
+				By locator11 = null;
+				locator11 = getLocator(getResource("addpenaltytooverdueloans"));
+				clickButton(locator11, 30);
 			}
 			break;
 		default:
@@ -1093,16 +1098,15 @@ public class FrontPage extends MifosWebPage {
 			break;
 
 		}
-		((JavascriptExecutor) getWebDriver()).executeScript("scroll(0,500);");
-		Thread.sleep(getResourceKey("smallWait"));
-		clickButton(getResource("runSelectedJobs"));
-		Thread.sleep(getResourceKey("smallWait"));
+		By locator = null;
+		locator = getLocator(getResource("runSelectedJobs"));
+		clickButton(locator, 30);
+		
 		clickButton(getResource("refresh"));
-		Thread.sleep(getResourceKey("mediumWait"));
-
-		((JavascriptExecutor) getWebDriver())
-				.executeScript("window.history.go(-1)");
 		Thread.sleep(getResourceKey("largeWait"));
+
+		System.out.println(currentUrl);
+		MifosWebPage.navigateToUrl(currentUrl);
 
 	}
 
@@ -1110,8 +1114,6 @@ public class FrontPage extends MifosWebPage {
 			String excelSheetName, String sheetname)
 			throws InterruptedException, IOException, ParseException {
 
-		// for (String excelname : excelSheetName) {
-//		int[] result = null;
 		int[] result = new int[10];
 		int currentRow = 1;
 		int rowToiterate = 0;
@@ -1214,8 +1216,7 @@ public class FrontPage extends MifosWebPage {
 
 		if (sheetName.equals("Loan Tranche Details")) {
 
-			getWebDriver().findElement(
-					By.xpath("//a[contains(.,'" + sheetName + "')]")).click();
+			StaleElementHandle("//a[contains(.,'" + sheetName + "')]");
 			Map<String, String> tabDetails = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
@@ -1225,7 +1226,7 @@ public class FrontPage extends MifosWebPage {
 					.findElement(
 							By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div[3]/div[4]/div/ul/li[11]/a"))
 					.click();
-			Thread.sleep(getResourceKey("smallWait"));
+			Thread.sleep(getResourceKey("largeWait"));
 			Map<String, String> tabDetails = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
@@ -1270,6 +1271,7 @@ public class FrontPage extends MifosWebPage {
 		Map<String, String> verifyMap = parseExcelSheet(excelSheetPath,
 				excelSheetName, sheetName);
 		for (Map.Entry<String, String> entry : verifyMap.entrySet()) {
+			Thread.sleep(getResourceKey("smallWait"));
 			verifySuccessMessage(entry.getKey(), entry.getValue());
 			Thread.sleep(getResourceKey("smallWait"));
 
@@ -1290,9 +1292,7 @@ public class FrontPage extends MifosWebPage {
 			Map<String, String> FloatingRatesMap = parseExcelSheet(
 					excelSheetPath, excelSheetName, sheetName);
 			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "floatingrates");
-			Thread.sleep(getResourceKey("mediumWait"));
 			insertValues(FloatingRatesMap);
-			Thread.sleep(getResourceKey("mediumWait"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -1320,18 +1320,19 @@ public class FrontPage extends MifosWebPage {
 	public void createAccountClosuresEntry(String excelSheetPath,
 			String excelSheetName, String sheetName) throws Throwable {
 		Map<String, String> newLoanDetailsMap;
-		Thread.sleep(getResourceKey("smallWait"));
+		Thread.sleep(getResourceKey("largeWait"));
 		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "accounts_closure");
 		newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
 				sheetName);
-		Thread.sleep(getResourceKey("mediumWait"));
+		Thread.sleep(getResourceKey("largeWait"));
 		insertValues(newLoanDetailsMap);
-		Thread.sleep(getResourceKey("smallWait"));
-		
+		try {
+			verifySuccessMessage("clickOnDELETEGLCLOSURE", "Delete");
+		} catch (Exception e) {
+			System.out.println("Page Is Not Loded");
+		}
+		Thread.sleep(getResourceKey("largeWait"));
 		MifosWebPage.navigateToUrl(currentUrl);
-		/*((JavascriptExecutor) getWebDriver())
-				.executeScript("window.history.go(-3)");*/
-		Thread.sleep(getResourceKey("mediumWait"));
 	}
 
 	/*
@@ -1340,9 +1341,8 @@ public class FrontPage extends MifosWebPage {
 	public void deleteAccountClosuresEntry(String excelSheetPath,
 			String excelSheetName, String sheetName) throws Throwable {
 		Map<String, String> newLoanDetailsMap;
-
 		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "accounts_closure");
-		Thread.sleep(getResourceKey("mediumWait"));
+		Thread.sleep(getResourceKey("largeWait"));
 		String bodyText = getWebDriver().findElement(By.tagName("body"))
 				.getText();
 		if (bodyText.contains("Head Office")) {
@@ -1350,7 +1350,7 @@ public class FrontPage extends MifosWebPage {
 					sheetName);
 			Thread.sleep(getResourceKey("mediumWait"));
 			insertValues(newLoanDetailsMap);
-			Thread.sleep(getResourceKey("smallWait"));
+			Thread.sleep(getResourceKey("mediumWait"));
 		}
 
 	}
@@ -1366,19 +1366,21 @@ public class FrontPage extends MifosWebPage {
 		if (sheetName.equals("RunPeriodicAccrual")
 				|| sheetName.equals("RunPeriodicAccrual1")
 				|| sheetName.equals("RunPeriodicAccrual2")) {
+			Thread.sleep(getResourceKey("mediumWait"));
 			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"run_periodic_accrual");
 			newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
 					sheetName);
-			Thread.sleep(getResourceKey("smallWait"));
+			Thread.sleep(getResourceKey("largeWait"));
 			insertValues(newLoanDetailsMap);
-			Thread.sleep(getResourceKey("smallWait"));
+			try {
+				verifySuccessMessage("VerifyPageLoaded", "  Accruals");
+			} catch (Exception e) {
+				System.out.println("Page is not Loaded");
+			}
+			Thread.sleep(getResourceKey("largeWait"));
 			MifosWebPage.navigateToUrl(currentUrl);
 		} else if (sheetName.equals("Transactions")) {
-			/*
-			 * ((JavascriptExecutor) getWebDriver())
-			 * .executeScript("window.history.go(-5)");
-			 * Thread.sleep(getResourceKey("mediumWait"));
-			 */
+			Thread.sleep(getResourceKey("largeWait"));
 			MifosWebPage.navigateToUrl(currentUrl);
 
 			verifyLoanTabData(excelSheetPath, excelSheetName, sheetName);
@@ -1388,30 +1390,23 @@ public class FrontPage extends MifosWebPage {
 	public void searchUser(String user) throws InterruptedException {
 		getWebDriver().findElement(By.id("search")).sendKeys(user);
 		getWebDriver().findElement(By.id("search")).sendKeys(Keys.ENTER);
-		Thread.sleep(getResourceKey("extraLargeWait"));
 		getWebDriver().findElement(By.xpath(".//div[1]/div/span[2]/a")).click();
-		Thread.sleep(getResourceKey("largeWait"));
-
 	}
 
 	public void undoDisbursal() throws InterruptedException {
 		clickButton(getResource("frontend.clients.clients.undodisbursal"),
 				"xpath");
 		clickButton(getResource("frontend.admin.createoffice.savebutton"), "id");
-		Thread.sleep(getResourceKey("mediumWait"));
 	}
 
 	public void modifyTransaction(String excelSheetPath, String excelSheetName,
 			String sheetName) throws Throwable {
 
 		Map<String, String> newLoanDetailsMap;
-
-		getWebDriver().findElement(By.xpath("//a[contains(.,'Transactions')]"))
-				.click();
-		Thread.sleep(getResourceKey("smallWait"));
+		
+		StaleElementHandle("//a[contains(.,'Transactions')]");
 		newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
 				sheetName);
-		Thread.sleep(getResourceKey("smallWait"));
 		insertValues(newLoanDetailsMap);
 		Thread.sleep(getResourceKey("smallWait"));
 
@@ -1420,5 +1415,21 @@ public class FrontPage extends MifosWebPage {
 	public void navigateLoanAccounting() {
 		MifosWebPage.navigateToUrl(currentUrl);		
 	}
-
+	
+	public void StaleElementHandle (String elementID){
+		int count = 0;
+		boolean clicked = false;
+		while (count < 4 && !clicked){
+		    try {
+		       WebElement yourSlipperyElement= getWebDriver().findElement(By.xpath(elementID));
+		       yourSlipperyElement.click(); 
+		       clicked = true;
+		     } catch (StaleElementReferenceException e){
+		       e.toString();
+		       System.out.println("Trying to recover from a stale element :" + e.getMessage());
+		       count = count+1;
+		       clicked = false;
+		     }     
+		}
+	}
 }

@@ -122,6 +122,12 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 */
 	public static void navigateToUrl(String url) {
 		navigateToUrl(url, false);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -263,7 +269,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	protected static WebElement waitForElementToBeVisibleWithText(
 			final By locator, final String text) {
 		WebElement finalElement = null;
-		WebDriverWait wait = new WebDriverWait(getWebDriver(), 40);
+		WebDriverWait wait = new WebDriverWait(getWebDriver(), 30);
 		Boolean elementAvailable = wait.until(ExpectedConditions
 				.invisibilityOfElementWithText(locator, text));
 		if (!elementAvailable) {
@@ -286,14 +292,73 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 *            the locator
 	 * @return the web element
 	 */
-	protected static WebElement waitForElementToBeClickable(final By locator) {
+	protected static WebElement waitForElementAndPoll(final By locator) {
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver())
 				.withTimeout(30, TimeUnit.SECONDS)
-				.pollingEvery(500, TimeUnit.MILLISECONDS)
+				.pollingEvery(1000, TimeUnit.MILLISECONDS)
+				.ignoring(NoSuchElementException.class);
+
+		WebElement element = null;
+		for (int i = 0; i < 2; i++) {
+			try {
+				element = wait.until(ExpectedConditions
+						.visibilityOfElementLocated(locator));
+				if (element != null) {
+					break;
+				}
+			} catch (TimeoutException e) {
+					if (i == 1 ){
+						 throw new TimeoutException(e);
+					}
+					try {
+						Thread.sleep(5000);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				
+			}
+
+		}
+		return element;
+	}
+	
+	/**
+	 * Wait for element to be clickable.
+	 *
+	 * @param locator
+	 *            the locator
+	 * @return the web element
+	 */
+	protected static WebElement waitForElemenForClickabletAndPoll(final By locator) {
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver())
+				.withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(1000, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class);
 
 		WebElement element = wait.until(ExpectedConditions
 				.elementToBeClickable(locator));
+
+		return element;
+	}
+	
+	/**
+	 * Wait for element to be clickable.
+	 *
+	 * @param locator
+	 *            the locator
+	 * @return the web element
+	 */
+	protected static WebElement waitForElemenForToVisibleAndPoll(final By locator) {
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver())
+				.withTimeout(30, TimeUnit.SECONDS)
+				.pollingEvery(1000, TimeUnit.MILLISECONDS)
+				.ignoring(NoSuchElementException.class);
+
+		LazyWebElement locatorElement = new LazyWebElement(getWebDriver(),
+				locator);
+		WebElement element = wait.until(ExpectedConditions
+				.visibilityOf(locatorElement));
 
 		return element;
 	}
@@ -510,22 +575,52 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	}
 	
 	/**
+	 * @throws InterruptedException 
+	 * 
+	 */
+	public void checkPageIsReady() throws InterruptedException {
+		  
+		  JavascriptExecutor js = (JavascriptExecutor)getWebDriver();
+		  
+		  //Initially bellow given if condition will check ready state of page.
+		  if (js.executeScript("return document.readyState").toString().equals("complete")){ 
+			  Thread.sleep(1000);
+		   System.out.println("Page Is loaded.");
+		   return; 
+		  } 
+		  
+		  //This loop will rotate for 25 times to check If page Is ready after every 1 second.
+		  //You can replace your value with 25 If you wants to Increase or decrease wait time.
+		  for (int i=0; i<25; i++){ 
+		   try {
+		    Thread.sleep(1000);
+		    }catch (InterruptedException e) {} 
+		   //To check page ready state.
+		   if (js.executeScript("return document.readyState").toString().equals("complete")){ 
+			   System.out.println("Waited " + i + "to page load");
+			   break; 
+		   }   
+		  }
+	}
+	
+	
+	/**
 	 * @param key
 	 * @param value
 	 */
 	public void insertValues(Map<String, String> loginMap) throws Throwable {
 		// TODO Auto-generated method stub
-		try {
+//		try {
 			for (Map.Entry<String, String> entry : loginMap.entrySet()) {
 				insertValues(entry.getKey(), entry.getValue());
 			}
-		} catch (Exception ioe) {
-			ioe.printStackTrace();
-		}
+//		} catch (Exception ioe) {
+//			ioe.printStackTrace();
+//		}
 
 	}
 
-	public void insertValues(String key, String value ) {
+	public void insertValues(String key, String value ) throws InterruptedException {
 		insertValues(key, value, "",true);
 	}
 
@@ -536,25 +631,30 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 * @param type
 	 * @param clear
 	 */
-	private void insertValues(String key, String value, String type, boolean clear) {
+	private void insertValues(String key, String value, String type, boolean clear) throws InterruptedException {
 		// TODO Auto-generated method stub
-		try {
+//		try {
 			String feldType = getLocatorFieldType(getResource(key));
 			switch (feldType) {
 			
 			case "input":
 				try {
 					
-					if (key.equals("nominalinterestratefrequency")) {
-						((JavascriptExecutor) getWebDriver())
-								.executeScript("scroll(0,600);");
-						Thread.sleep(getResourceKey("smallWait"));
-						
-					}
+//					if (key.equals("nominalinterestratefrequency")) {
+//						((JavascriptExecutor) getWebDriver())
+//								.executeScript("scroll(0,600);");
+////						Thread.sleep(getResourceKey("smallWait"));
+//						
+//					}
 					By locator = null;
 					locator = getLocator(getResource(key));
-					waitForElementToBeVisible(locator);
+//					waitForElementToBeVisible(locator);
+					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
+					if(key.equals("repaymenttransactionamount")){
+						Thread.sleep(getResourceKey("largeWait"));
+					}
+					Thread.sleep(getResourceKey("wait"));
 					locatorElement.sendKeys(value);
 					Thread.sleep(getResourceKey("wait"));
 					/*switch (type) {
@@ -578,22 +678,16 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 						|| key.equals("clickonModifyApplication")) {
 					((JavascriptExecutor) getWebDriver())
 							.executeScript("scroll(500,0);");
-					Thread.sleep(getResourceKey("mediumWait"));
+					Thread.sleep(getResourceKey("largeWait"));
 
 				}
 
 				try {
+//					checkPageIsReady();
 					clickButton(getLocator(getResource(key)));
 					Thread.sleep(getResourceKey("mediumWait"));
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
-				}
-				if (key.equals("cash") || key.equals("accrualperiodic")
-						|| key.equals("accrualupfront")) {
-					((JavascriptExecutor) getWebDriver()).executeScript(
-							"window.scrollBy(0,250)", "");
-					Thread.sleep(getResourceKey("mediumWait"));
-
 				}
 							
 				break;
@@ -606,9 +700,6 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					MifosWebPage.navigateToUrl(curUrl);
 				}
 				
-				/*if (FrontPage.currentUrl != "") {
-					MifosWebPage.navigateToUrl(FrontPage.currentUrl);
-				}*/
 			break;	
 			
 			case "NavigatePage":
@@ -616,7 +707,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					value = currentJlgLoanUrl.split("#/")[1];
 				}
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
-				Thread.sleep(getResourceKey("mediumWait"));
+				Thread.sleep(getResourceKey("largeWait"));
 				
 			break;
 			case "Wait":
@@ -633,38 +724,24 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				try {
 					By locator = null;
 					locator = getLocator(getResource(key));
-					waitForElementToBeVisible(locator);
+					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
 
 					locatorElement.sendKeys(value);
-					Thread.sleep(getResourceKey("wait"));
 					locatorElement.sendKeys(Keys.ESCAPE);
-					Thread.sleep(getResourceKey("wait"));
 
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
 				}
-			//	clickButton(getLocator(getResource("clickondate")));
 				break;
 			case "dropDown":
-				
-//					By scrollToLocator= null;
-//					scrollToLocator = getLocator(getResource(key));
-////					((JavascriptExecutor)  getWebDriver()).executeScript("arguments[0].scrollIntoView(true);", element1);
-//					WebElement element = getWebDriver().findElement(scrollToLocator);
-//				    int elementPosition = element.getLocation().getY();
-//					String js = String.format("window.scroll(0, %s)", elementPosition-100);
-//					((JavascriptExecutor)getWebDriver()).executeScript(js);
 				
 					clickButton(getLocator(getResource(key)));
 					By locator = null;
 					locator = getLocator(getResource(key + ".input"));
-					waitForElementToBeVisible(locator);
+					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
 					locatorElement.sendKeys(value + Keys.TAB);
-			//		getElement(getLocator(getResource(key + ".input"))).sendKeys(Keys.TAB);
-		
-				Thread.sleep(getResourceKey("wait"));
 
 				break;
 			case "checkbox":
@@ -672,7 +749,6 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				LazyWebElement check = getElement(getResource(key));
 				if (check.isSelected() != checked) {
 					clickButton(getLocator(getResource(key)));
-					Thread.sleep(getResourceKey("smallWait"));
 				}
 
 				break;
@@ -712,17 +788,11 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
 					statusselect.selectByVisibleText(value);
-					Thread.sleep(getResourceKey("wait"));
 				} catch (NoSuchElementException e) {
 					Assert.fail("Could not find the " + key);
 				}
-				/*Assert.assertEquals(value, statusselect
-						.getFirstSelectedOption().getText());*/				
 				break;
 			}
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
 	
 	}
 
@@ -953,7 +1023,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	protected LazyWebElement getElement(By locator, boolean clear) {
 		LazyWebElement locatorElement = new LazyWebElement(getWebDriver(),
 				locator);
-		waitForElementToBeVisible(locator);
+//		waitForElementToBeVisible(locator);
+		waitForElementAndPoll(locator);
 		if (clear)
 			locatorElement.clear();
 		return locatorElement;
@@ -1011,6 +1082,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	private LazyWebElement getElement(String locatortype,
 			boolean clear) {
 		By locator = getLocator(locatortype);
+		waitForElementAndPoll(locator);
 		return getElement(locator, clear);
 	}
 	/*private LazyWebElement getElement(String path, String locatortype,
@@ -1126,6 +1198,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "linktext":
 				locator = By.linkText(path);
 				break;
+			case "tagname":
+				locator = By.tagName(path);
+				break;	
 			default:
 				locator = By.name(path);
 				break;
@@ -1169,6 +1244,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				by = By.cssSelector(locatorValue);
 			} else if (locatorName.equalsIgnoreCase("class")){
 				by = By.className(locatorValue);
+			}else if (locatorName.equalsIgnoreCase("tagname")){
+				by = By.tagName(locatorValue);
 			}
 			else {
 				Assert.fail("Cannot find element" + locatorName);
@@ -1260,7 +1337,17 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 	public void verifySuccessMessage(String page, String message) {
 		try {
-
+			By locator = null;
+			locator =getLocator(getResource(page));
+			System.out.println("");
+			String pageValue = getText(locator);
+			try {
+				if (pageValue.equals("")) {
+					waitForElementToBeVisibleWithText(locator, pageValue);
+				}
+			} catch (Exception e) {
+				
+			}
 			Assert.assertTrue(validateSame(page, message));
 			}catch (AssertionError  e) {
 			Assert.fail(" Expected result:" + message
@@ -1405,6 +1492,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 *            the timeout
 	 */
 	public void clickButton(By locator, int timeout) {
+		waitForElemenForClickabletAndPoll(locator);
 		clickButton(locator, "Cannot find " + locator.toString(), timeout);
 	}
 
@@ -1455,7 +1543,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 */
 	public void clickButton(By locator, String message, int timeout) {
 		try {
-			waitForElementToBeVisible(locator);
+//			waitForElementToBeVisible(locator);
+			waitForElementAndPoll(locator);
 			LazyWebElement element = null;
 			if (timeout != 0) {
 				element = new LazyWebElement(getWebDriver(), locator, timeout);
