@@ -1212,6 +1212,11 @@ public class FrontPage extends MifosWebPage {
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
 			Thread.sleep(getResourceKey("largeWait"));
+		} else if (sheetName.equals("Undo Disbursal")) {
+			Map<String, String> tabDetails = parseExcelSheet1(
+					clientExcelSheetPath, excelSheetName, sheetName);
+			insertValues(tabDetails);
+			Thread.sleep(getResourceKey("largeWait"));
 		} else {
 			if (sheetName.equals("Transactions")) {
 				if (!ishideAccuralsChecked) {
