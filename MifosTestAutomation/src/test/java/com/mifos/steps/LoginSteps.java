@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 
+import com.mifos.common.TenantsUtils;
 import com.mifos.pages.FrontPage;
 import com.mifos.pages.MifosWebPage;
 import com.mifos.testing.framework.webdriver.WebDriverAwareWebPage;
@@ -23,10 +24,17 @@ public class LoginSteps extends WebDriverAwareWebPage{
 	@Given("^I navigate to mifos$")
 	public void I_navigate_to_mifos() throws Throwable {
 		
-		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
+		String tenant = TenantsUtils.getTenant() ;
+		TenantsUtils.setLocalTenant(tenant);
+		
+		//https://localhost/?tenantIdentifier=default1#/home
+		String url = MifosWebPage.BASE_URL+"?tenantIdentifier="+tenant+"#/" ;
+		MifosWebPage.navigateToUrl(url);
+		
+//		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
 		
 		boolean loginPageVisible = true;
-		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
+//		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
 		
 		while (loginPageVisible) {
 			Thread.sleep(5000);

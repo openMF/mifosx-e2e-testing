@@ -37,6 +37,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import com.ibm.icu.text.NumberFormat;
+import com.mifos.common.TenantsUtils;
 import com.mifos.testing.framework.webdriver.LazyWebElement;
 
 //import org.jopendocument.dom.spreadsheet.MutableCell;
@@ -286,7 +287,7 @@ public class FrontPage extends MifosWebPage {
 	public void clientNavigation() throws Throwable {
 		try {
 
-			MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "clients");
+			MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL +"?tenantIdentifier="+TenantsUtils.getLocalTenant()+"#/"+"clients");
 			Thread.sleep(getResourceKey("mediumWait"));
 
 			clickButton(getResource("clickoncreateclient"));
@@ -371,7 +372,7 @@ public class FrontPage extends MifosWebPage {
 			List<String> excelsheet, String sheetName) throws Throwable {
 		try {
 
-			MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "products");
+			MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL +"?tenantIdentifier="+TenantsUtils.getLocalTenant()+"#/"+ "products");
 			Thread.sleep(getResourceKey("mediumWait"));
 
 			clickButton(getResource("clickonloanproducts"));
@@ -988,7 +989,7 @@ public class FrontPage extends MifosWebPage {
 	public void selectSchedularJob(String schedularJobName)
 			throws InterruptedException {
 
-		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "jobs");
+		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL +"?tenantIdentifier="+TenantsUtils.getLocalTenant()+"#/"+ "jobs");
 		Thread.sleep(getResourceKey("mediumWait"));
 
 		switch (schedularJobName) {
@@ -1261,7 +1262,7 @@ public class FrontPage extends MifosWebPage {
 		try {
 			Map<String, String> FloatingRatesMap = parseExcelSheet(
 					excelSheetPath, excelSheetName, sheetName);
-			MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "floatingrates");
+			MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL +"?tenantIdentifier="+TenantsUtils.getLocalTenant()+"#/"+ "floatingrates");
 			Thread.sleep(getResourceKey("mediumWait"));
 			insertValues(FloatingRatesMap);
 			Thread.sleep(getResourceKey("mediumWait"));
@@ -1293,7 +1294,7 @@ public class FrontPage extends MifosWebPage {
 			String excelSheetName, String sheetName) throws Throwable {
 		Map<String, String> newLoanDetailsMap;
 		Thread.sleep(getResourceKey("smallWait"));
-		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "accounts_closure");
+		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL +"?tenantIdentifier="+TenantsUtils.getLocalTenant()+"#/"+ "accounts_closure");
 		newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
 				sheetName);
 		Thread.sleep(getResourceKey("mediumWait"));
@@ -1313,7 +1314,7 @@ public class FrontPage extends MifosWebPage {
 			String excelSheetName, String sheetName) throws Throwable {
 		Map<String, String> newLoanDetailsMap;
 
-		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "accounts_closure");
+		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL +"?tenantIdentifier="+TenantsUtils.getLocalTenant()+"#/" + "accounts_closure");
 		Thread.sleep(getResourceKey("mediumWait"));
 		String bodyText = getWebDriver().findElement(By.tagName("body"))
 				.getText();
@@ -1338,7 +1339,7 @@ public class FrontPage extends MifosWebPage {
 		if (sheetName.equals("RunPeriodicAccrual")
 				|| sheetName.equals("RunPeriodicAccrual1")
 				|| sheetName.equals("RunPeriodicAccrual2")) {
-			MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL
+			MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL +"?tenantIdentifier="+TenantsUtils.getLocalTenant()+"#/"
 					+ "run_periodic_accrual");
 			newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
 					sheetName);
