@@ -2,6 +2,7 @@ package com.mifos.steps;
 
 import java.util.List;
 
+import com.mifos.common.TenantsUtils;
 import com.mifos.pages.FrontPage;
 import com.mifos.pages.MifosWebPage;
 
@@ -118,7 +119,7 @@ public class ClientSteps {
 
 	@Then("^I Navigate to Accounting web page$")
 	public void I_Navigate_to_Accounting() throws Throwable {
-		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL
+		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL +"?tenantIdentifier="+TenantsUtils.getLocalTenant()+"#/"
 				+ MifosWebPage.getResource("AccountingSearchJournalEntries"));
 	}
 
