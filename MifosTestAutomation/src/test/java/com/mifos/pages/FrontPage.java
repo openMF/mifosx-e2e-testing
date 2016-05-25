@@ -1000,6 +1000,7 @@ public class FrontPage extends MifosWebPage {
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
 			ishideAccuralsChecked = false;
+			System.out.println("currentUrl "+ currentUrl);
 
 			break;
 		case "Apply penalty to overdue loans":
