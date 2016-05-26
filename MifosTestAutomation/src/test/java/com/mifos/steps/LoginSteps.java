@@ -21,21 +21,15 @@ public class LoginSteps extends WebDriverAwareWebPage{
 	final public FrontPage varFrontPage = new FrontPage();
 	public String excelSheetPath = null;
 	
-	@Given("^I navigate to mifos$")
-	public void I_navigate_to_mifos() throws Throwable {
-		
-		String tenant = TenantsUtils.getTenant() ;
-		TenantsUtils.setLocalTenant(tenant);
-		
-		//https://localhost/?tenantIdentifier=default1#/home
-		String url = MifosWebPage.BASE_URL+"?tenantIdentifier="+tenant+"#/" ;
+	@Given("^I navigate to mifos using \"([^\"]*)\"$")
+	public void I_navigate_to_mifos_using(String tenantName) throws Throwable {
+		String tenant = tenantName;
+		String url = MifosWebPage.BASE_URL+tenant ;
+		TenantsUtils.setLocalTenantUrl(url);
 		MifosWebPage.navigateToUrl(url);
-		
-//		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
-		
-		boolean loginPageVisible = true;
-//		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL + "home");
-		
+	}
+	
+/*		boolean loginPageVisible = true;		
 		while (loginPageVisible) {
 			Thread.sleep(5000);
 			if (!getWebDriver().findElement(By.id("uid")).isDisplayed()) {
@@ -46,15 +40,8 @@ public class LoginSteps extends WebDriverAwareWebPage{
 				loginPageVisible = false;
 			}
 				
-		}/*
-		 Thread.sleep(5000);
-		 if(!getWebDriver().findElement(By.id("uid")).isDisplayed()){			 
-			//getWebDriver().navigate().refresh();
-			 getWebDriver().get(getWebDriver().getCurrentUrl());
-		 }*/
-	}
-
-	
+		}
+*/
 	@Given("^I login into mifos site using \"([^\"]*)\" excel sheet$")
 	public void I_login_into_mifos_site_using_excel_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {
@@ -63,7 +50,7 @@ public class LoginSteps extends WebDriverAwareWebPage{
 		varFrontPage.setupLogin(excelSheetPath, excelSheetName, sheetName);
 		
 	}
-	/** VERIFICATION **/
+	/** VERIFICATION */
 
 	@Then("^I should see logged in successfully$")
 	public void I_should_see_login_successfully() throws Throwable {

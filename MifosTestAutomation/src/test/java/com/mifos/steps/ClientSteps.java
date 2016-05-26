@@ -119,8 +119,7 @@ public class ClientSteps {
 
 	@Then("^I Navigate to Accounting web page$")
 	public void I_Navigate_to_Accounting() throws Throwable {
-		MifosWebPage.navigateToUrl(MifosWebPage.BASE_URL +"?tenantIdentifier="+TenantsUtils.getLocalTenant()+"#/"
-				+ MifosWebPage.getResource("AccountingSearchJournalEntries"));
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ MifosWebPage.getResource("AccountingSearchJournalEntries"));
 	}
 
 	@Then("^I search with transaction id & verified the accounting entries$")
