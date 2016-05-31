@@ -145,6 +145,10 @@ public class FrontPage extends MifosWebPage {
 						switch (cell2.getCellType()) {
 						case Cell.CELL_TYPE_NUMERIC:
 							int i = (int) cell2.getNumericCellValue();
+							if (key.equals("mobilenumber") || key.equals("verifymobilenumber")){
+								value =  new BigDecimal(cell2.getNumericCellValue()).toPlainString();
+								
+							}else 
 							value = String.valueOf(i);
 							// System.out.println("Cell Two ... value=" +
 							// value);
@@ -312,7 +316,7 @@ public class FrontPage extends MifosWebPage {
 			Map<String, String> clientDetailsMap = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(clientDetailsMap);
-			clickButton(getResource("submitclient"));
+//			clickButton(getResource("submitclient"));
 			Thread.sleep(getResourceKey("largeWait"));
 
 		} catch (Exception e) {
