@@ -4,8 +4,8 @@ import org.junit.runner.RunWith;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@Cucumber.Options(format = { "pretty", "html:target/VariableInstallment1/cucumber-html-report",
-		"json-pretty:target/VariableInstallment1/cucumber-json-report.json" },
+@Cucumber.Options(format = { "pretty", "html:target/VariableInstallment/cucumber-html-report",
+		"json-pretty:target/VariableInstallment/cucumber-json-report.json" },
 		features = { "src/test/resources/features/VariableInstallments.feature" },
 		glue = { "com.mifos.steps" })
 

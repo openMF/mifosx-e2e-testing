@@ -574,7 +574,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				try {
 					clickButton(getLocator(getResource(key)));
-					Thread.sleep(getResourceKey("largeWait"));
+					Thread.sleep(getResourceKey("mediumWait"));
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
 				}
