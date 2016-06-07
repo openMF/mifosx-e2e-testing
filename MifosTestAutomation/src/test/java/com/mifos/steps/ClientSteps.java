@@ -30,6 +30,21 @@ public class ClientSteps {
 		varFrontPage.setupClient(ExcelSheetPath, excelSheetName, sheetName);
 	}
 	
+	@Then("^I Edit Client from \"([^\"]*)\" sheet$")
+	public void I_Edit_Client_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupClient(ExcelSheetPath, excelSheetName, sheetName);
+	}
+	
+	//Then I "Transfer Client" from "Transfer Client" sheet
+	@Then("^I \"([^\"]*)\" from \"([^\"]*)\" sheet$")
+	public void I_from_sheet(String arg1, String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupClient(ExcelSheetPath, excelSheetName, sheetName);
+	}
+	
 	@Then("^I should see client created successfully from \"([^\"]*)\" sheet$")
 	public void I_should_see_client_created_successfully_from_sheet(String sheetName,
  List<String> excelSheet) throws Throwable {

@@ -21,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 
 
+
 //import org.apache.commons.lang.math.NumberUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -38,6 +39,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
+import com.mifos.common.TenantsUtils;
 import com.mifos.testing.framework.data.Resources;
 import com.mifos.testing.framework.webdriver.LazyWebElement;
 import com.mifos.testing.framework.webdriver.WebDriverAwareWebPage;
@@ -600,6 +602,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					MifosWebPage.navigateToUrl(FrontPage.currentUrl);
 				}*/
 			break;	
+			
+			case "NavigatePage":
+				
+				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
+				Thread.sleep(getResourceKey("mediumWait"));
+				
+			break;
 			case "Wait":
 				try {
 					double wait = Double.parseDouble(value);
