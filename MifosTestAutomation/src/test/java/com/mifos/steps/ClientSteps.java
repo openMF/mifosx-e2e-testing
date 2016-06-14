@@ -30,6 +30,19 @@ public class ClientSteps {
 		varFrontPage.setupClient(ExcelSheetPath, excelSheetName, sheetName);
 	}
 	
+	@Given("^I setup the group$")
+	public void I_setup_the_group() throws Throwable {
+		//ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
+		varFrontPage.groupNavigation();
+	}
+
+	@When("^I entered the values into group from \"([^\"]*)\" sheet$")
+	public void I_entered_the_values_into_group_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupClient(ExcelSheetPath, excelSheetName, sheetName);
+	}
+	
 	@Then("^I Edit Client from \"([^\"]*)\" sheet$")
 	public void I_Edit_Client_from_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {

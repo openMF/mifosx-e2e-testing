@@ -305,6 +305,22 @@ public class FrontPage extends MifosWebPage {
 			ioe.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Method navigates to client page
+	 * 
+	 * @throws Throwable
+	 */
+	public void groupNavigation() throws Throwable {
+		try {
+
+			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"creategroup");
+			Thread.sleep(getResourceKey("mediumWait"));
+
+		} catch (Exception ioe) {
+			ioe.printStackTrace();
+		}
+	}
 
 	/**
 	 * Method enters values from target excel sheet into Client page
