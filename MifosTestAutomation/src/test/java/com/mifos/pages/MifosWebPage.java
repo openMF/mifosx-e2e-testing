@@ -22,6 +22,9 @@ import java.util.concurrent.TimeUnit;
 
 
 
+
+import net.sourceforge.htmlunit.corejs.javascript.regexp.SubString;
+
 //import org.apache.commons.lang.math.NumberUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -62,6 +65,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public static final String HOME_URL = BASE_URL
 			+ Resources.getInstance().get("homepage.url");
 	public String rowval;
+	public String currentJlgLoanUrl;
 
 	/**
 	 * Gets the resource.
@@ -566,6 +570,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;
 			case "button":
+				if(key.equals("ClickOnADD")){
+					currentJlgLoanUrl = getWebDriver().getCurrentUrl();
+				
+				}
 				if (key.equals("clickonapprove")
 						|| key.equals("clickonModifyApplication")) {
 					((JavascriptExecutor) getWebDriver())
@@ -604,7 +612,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			break;	
 			
 			case "NavigatePage":
-				
+				if(key.equals("NavigateToCurrentJLG")){
+					value = currentJlgLoanUrl.split("#/")[1];
+				}
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
 				Thread.sleep(getResourceKey("mediumWait"));
 				

@@ -2907,5 +2907,287 @@ Scenario:4101-CREATACTIVEGROUP-EDIT
      Given I setup the group
    When I entered the values into group from "Input" sheet
       |4101-CREATACTIVEGROUP-EDIT.xlsx|	  			
+
+@4102-CREATACTIVEGROUP-ASSIGNSTAFF
+Scenario:4102-CREATACTIVEGROUP-ASSIGNSTAFF
+     Given I setup the group
+   When I entered the values into group from "Input" sheet
+      |4102-CREATACTIVEGROUP-ASSIGNSTAFF.xlsx|
+      
+@4103-CREATACTIVEGROUP-UNASSIGNSTAFF
+Scenario:4103-CREATACTIVEGROUP-UNASSIGNSTAFF
+     Given I setup the group
+   When I entered the values into group from "Input" sheet
+      |4103-CREATACTIVEGROUP-UNASSIGNSTAFF.xlsx|
+      
+@4104-CREATACTIVEGROUP-WITHCLIENTATTACHED-ASSIGNSTAFF
+Scenario:4104-CREATACTIVEGROUP-WITHCLIENTATTACHED-ASSIGNSTAFF
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4104-CREATACTIVEGROUP-WITHCLIENTATTACHED-ASSIGNSTAFF.xlsx|
+	  			
+@4105-CREATACTIVEGROUP-WITHCLIENTATTACHED-UNASSIGNSTAFF
+Scenario:4105-CREATACTIVEGROUP-WITHCLIENTATTACHED-UNASSIGNSTAFF
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4105-CREATACTIVEGROUP-WITHCLIENTATTACHED-UNASSIGNSTAFF.xlsx|  
+	  			
+@4106-CREATACTIVEGROUP-WITHCLIENTATTACHED-EDIT
+Scenario:4106-CREATACTIVEGROUP-WITHCLIENTATTACHED-EDIT
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4106-CREATACTIVEGROUP-WITHCLIENTATTACHED-EDIT.xlsx|  
+	  			
+@4107-CREATACTIVEGROUP-WITHCLIENTATTACHED-CLOSEGROUP
+Scenario:4107-CREATACTIVEGROUP-WITHCLIENTATTACHED-CLOSEGROUP
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4107-CREATACTIVEGROUP-WITHCLIENTATTACHED-CLOSEGROUP.xlsx|
+	  			
+@4108-CREATGROUP-WITHCLIENTATTACHED-ACTIVATEGROUP
+Scenario:4108-CREATGROUP-WITHCLIENTATTACHED-ACTIVATEGROUP
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4108-CREATGROUP-WITHCLIENTATTACHED-ACTIVATEGROUP.xlsx|
+	  			
+@4109-CREATACTIVEGROUP-WITHCLIENTATTACHED-ATTACHEMEETING
+Scenario:4109-CREATACTIVEGROUP-WITHCLIENTATTACHED-ATTACHEMEETING
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4109-CREATACTIVEGROUP-WITHCLIENTATTACHED-ATTACHEMEETING.xlsx|	  				  			
+
+@4110-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2
+Scenario:4110-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4110-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2.xlsx|
+	  			
+@4111-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-WEEKLY-2
+Scenario:4111-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-WEEKLY-2
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4111-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-WEEKLY-2.xlsx|
+	  			
+@4112-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-MONTHLY-2
+Scenario:4112-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-MONTHLY-2
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4112-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-MONTHLY-2.xlsx|
+	  			
+@4113-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-YEARLY-2
+Scenario:4113-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-YEARLY-2
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4113-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-YEARLY-2.xlsx|	  				  				  			
+	  			
+@4114-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2-FRI
+Scenario:4114-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2-FRI
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4114-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2-FRI.xlsx|
+	  			
+@4115-CREATACTIVEGROUP-ATTACHEMEETING-BEFORE-GRP-ACTIVATION
+Scenario:4115-CREATACTIVEGROUP-ATTACHEMEETING-BEFORE-GRP-ACTIVATION
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4115-CREATACTIVEGROUP-ATTACHEMEETING-BEFORE-GRP-ACTIVATION.xlsx|
+	  			
+@4116-CREATACTIVEGROUP-ATTACHEMEETING-ATTACHEMEETING
+Scenario:4116-CREATACTIVEGROUP-ATTACHEMEETING-ATTACHEMEETING
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4116-CREATACTIVEGROUP-ATTACHEMEETING-ATTACHEMEETING.xlsx|	  	
+	  			
+@4117-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-ValidDATE
+Scenario:4117-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-ValidDATE
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4117-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-ValidDATE.xlsx|	  	
+	  			
+@4118-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-InValidDATE
+Scenario:4118-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-InValidDATE
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4118-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-InValidDATE.xlsx|
+	  			
+@4119-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-Changemeetingstartdate
+Scenario:4119-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-Changemeetingstartdate
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4119-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-Changemeetingstartdate.xlsx|	  				  								  				  				  			
+	  			  				  				  			
+@4120-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoDAY
+Scenario:4120-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoDAY
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4120-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoDAY.xlsx|	 
+	  			
+@4121-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoMONTH
+Scenario:4121-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoMONTH
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4121-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoMONTH.xlsx|	  				  								  				  				  			
+
+@4122-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoYEAR
+Scenario:4122-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoYEAR
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4122-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoYEAR.xlsx|
+	  			
+@4123-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-DAYOFTHEWEEK
+Scenario:4123-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-DAYOFTHEWEEK
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4123-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-DAYOFTHEWEEK.xlsx|	  				  								  				  				  			
+
+@4124-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-CHANGE-FUTURE-DATE
+Scenario:4124-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-CHANGE-FUTURE-DATE
+     Given I setup the group
+	  When I entered the values into group from "Input" sheet
+	  			|4124-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-CHANGE-FUTURE-DATE.xlsx|	  				  								  				  				  			
+	  				  				  								  				  				  			
+@4130-RBI-EI-DB-DL-NOREC-MOREREPAY
+Scenario:4130-RBI-EI-DB-DL-NOREC-MOREREPAY
+     Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|4130-RBI-EI-DB-DL-NOREC-MOREREPAY-Loanproduct.xlsx|
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4130-RBI-EI-DB-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4130-RBI-EI-DB-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4130-RBI-EI-DB-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 Then I make repayment and verified the following tabs
+    	|4130-RBI-EI-DB-DL-NOREC-MOREREPAY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@4131-RBI-EI-FL-DL-NOREC-MOREREPAY
+Scenario:4131-RBI-EI-FL-DL-NOREC-MOREREPAY
+     Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|4131-RBI-EI-FL-DL-NOREC-MOREREPAY-Loanproduct.xlsx|
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4131-RBI-EI-FL-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4131-RBI-EI-FL-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4131-RBI-EI-FL-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 Then I make repayment and verified the following tabs
+    	|4131-RBI-EI-FL-DL-NOREC-MOREREPAY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+    	
+@4132-RBI-EPP-DB-DL-NOREC-MOREREPAY
+Scenario:4132-RBI-EPP-DB-DL-NOREC-MOREREPAY
+     Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|4132-RBI-EPP-DB-DL-NOREC-MOREREPAY-Loanproduct.xlsx|
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4132-RBI-EPP-DB-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4132-RBI-EPP-DB-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4132-RBI-EPP-DB-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 Then I make repayment and verified the following tabs
+    	|4132-RBI-EPP-DB-DL-NOREC-MOREREPAY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@4133-RBI-EPP-FL-DL-NOREC-MOREREPAY
+Scenario:4133-RBI-EPP-FL-DL-NOREC-MOREREPAY
+     Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|4133-RBI-EPP-FL-DL-NOREC-MOREREPAY-Loanproduct.xlsx|
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4133-RBI-EPP-FL-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4133-RBI-EPP-FL-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4133-RBI-EPP-FL-DL-NOREC-MOREREPAY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 Then I make repayment and verified the following tabs
+    	|4133-RBI-EPP-FL-DL-NOREC-MOREREPAY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@4134-RBI-EI-DB-SAR-NOREC-MOREREPAY
+Scenario:4134-RBI-EI-DB-SAR-NOREC-MOREREPAY
+     Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|4134-RBI-EI-DB-SAR-NOREC-MOREREPAY-Loanproduct.xlsx|
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4134-RBI-EI-DB-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4134-RBI-EI-DB-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4134-RBI-EI-DB-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 Then I make repayment and verified the following tabs
+    	|4134-RBI-EI-DB-SAR-NOREC-MOREREPAY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@4135-RBI-EI-FL-SAR-NOREC-MOREREPAY
+Scenario:4135-RBI-EI-FL-SAR-NOREC-MOREREPAY
+     Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|4135-RBI-EI-FL-SAR-NOREC-MOREREPAY-Loanproduct.xlsx|
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4135-RBI-EI-FL-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4135-RBI-EI-FL-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4135-RBI-EI-FL-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 Then I make repayment and verified the following tabs
+    	|4135-RBI-EI-FL-SAR-NOREC-MOREREPAY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY
+Scenario:4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY
+     Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY-Loanproduct.xlsx|
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 Then I make repayment and verified the following tabs
+    	|4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY
+Scenario:4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY
+     Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY-Loanproduct.xlsx|
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 Then I make repayment and verified the following tabs
+    	|4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  				  				  			  					 
 	 	 	  			    			

@@ -57,6 +57,7 @@ public class FrontPage extends MifosWebPage {
 	public boolean isaccuralsTypeTransaction = true;
 	int transactionIDIndex = 0;
 	public String currentUrl ="";
+	public String currentJlgLoanUrl ="";
 	private boolean istransactionIdIndexAssigned = true;
 
 	// WebDriver driver = new ChromeDriver();
@@ -338,6 +339,7 @@ public class FrontPage extends MifosWebPage {
 			insertValues(clientDetailsMap);
 //			clickButton(getResource("submitclient"));
 			Thread.sleep(getResourceKey("largeWait"));
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
