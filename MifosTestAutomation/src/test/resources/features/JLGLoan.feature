@@ -2480,5 +2480,240 @@ Scenario:4369-ACTGRP-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETIN
 	 When I set up the new create loan from "NewLoanInput" sheet
 	  	|4369-ACTGRP-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery2weeks-Newcreateloan1.xlsx|
 
+	@4370-ACTGRP-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months
+Scenario:4370-ACTGRP-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4370-ACTGRP-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4370-ACTGRP-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months-Newcreateloan1.xlsx|
+	Then I verified the following Tabs details successfully 
+	    |4370-ACTGRP-MEETING-EVERY1MONTH-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	
+	 @4371-ACTGRP-MEETING-EVERY2MONTHS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery1month
+Scenario:4371-ACTGRP-MEETING-EVERY2MONTHS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery1month
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4371-ACTGRP-MEETING-EVERY2MONTHS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery1month-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4371-ACTGRP-MEETING-EVERY2MONTHS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery1month-Newcreateloan1.xlsx|
+
+@4372-ACTGRP-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Dailyloanevery1day
+Scenario:4372-ACTGRP-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Dailyloanevery1day
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4372-ACTGRP-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Dailyloanevery1day-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4372-ACTGRP-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Dailyloanevery1day-Newcreateloan1.xlsx|
+
+@4373-ACTGRP-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months
+Scenario:4373-ACTGRP-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4373-ACTGRP-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4373-ACTGRP-MEETING-EVERY1YEAR-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Monthlyloanevery2months-Newcreateloan1.xlsx|
+	   	
+@4374-ACTGRP-MEETING-EVERY1YEARS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery2years
+Scenario:4374-ACTGRP-MEETING-EVERY1YEARS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery2years
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4374-ACTGRP-MEETING-EVERY1YEARS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery2years-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4374-ACTGRP-MEETING-EVERY1YEARS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery2years-Newcreateloan1.xlsx|
+	Then I verified the following Tabs details successfully 
+	    |4374-ACTGRP-MEETING-EVERY1YEARS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery2years-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+
+@4375-ACTGRP-MEETING-EVERY2YEARS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery1year
+Scenario:4375-ACTGRP-MEETING-EVERY2YEARS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery1year
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4375-ACTGRP-MEETING-EVERY2YEARS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery1year-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4375-ACTGRP-MEETING-EVERY2YEARS-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Yearlyloanevery1year-Newcreateloan1.xlsx|
+
+@4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate
+Scenario:4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|
+	 And I modify New Loan Account from "ModifyLoan" sheet
+	    |4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 
+@4377-ACTGRP-MEE-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATEotherthanmeetingdate
+Scenario:4377-ACTGRP-MEE-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATEotherthanmeetingdate
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4377-ACTGRP-MEE-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATEotherthanmeetingdate-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4377-ACTGRP-MEE-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATEotherthanmeetingdate-Newcreateloan1.xlsx|
+
+@4378-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATE-othermeetingdate
+Scenario:4378-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATE-othermeetingdate
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4378-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATE-othermeetingdate-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4378-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATE-othermeetingdate-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4378-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATE-othermeetingdate-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+
+@4379-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-otherthanmeetingdate
+Scenario:4379-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-otherthanmeetingdate
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4379-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-otherthanmeetingdate-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4379-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-otherthanmeetingdate-Newcreateloan1.xlsx|
+
+@4380-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-othermeetingdate
+Scenario:4380-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-othermeetingdate
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4380-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-othermeetingdate-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4380-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-othermeetingdate-Newcreateloan1.xlsx|
+
+@4381-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifymeeting-toWednesday
+Scenario:4381-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifymeeting-toWednesday
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4381-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifymeeting-toWednesday-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4381-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifymeeting-toWednesday-Newcreateloan1.xlsx|
+
+@4382-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifyfuturemeeting-to15April2015
+Scenario:4382-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifyfuturemeeting-to15April2015
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4382-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifyfuturemeeting-to15April2015-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4382-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-Modifyfuturemeeting-to15April2015-Newcreateloan1.xlsx|
+
+@4383-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15April2015-Makerepayment
+Scenario:4383-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15April2015-Makerepayment
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4383-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15April2015-Makerepayment-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4383-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15April2015-Makerepayment-Newcreateloan1.xlsx|
+	Then I verified the following Tabs details successfully 
+	    |4383-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15April2015-Makerepayment-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	
+@4384-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15MARCH2015
+Scenario:4384-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15MARCH2015
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4384-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15MARCH2015-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4384-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15MARCH2015-Newcreateloan1.xlsx|
+	 Then I verified the following Tabs details successfully 
+	    |4384-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15MARCH2015-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	 
+@4385-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-From10April2015-to-11April2016
+Scenario:4385-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-From10April2015-to-11April2016
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4385-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-From10April2015-to-11April2016-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4385-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-From10April2015-to-11April2016-Newcreateloan1.xlsx|
+	Then I verified the following Tabs details successfully 
+	    |4385-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-From10April2015-to-11April2016-Newcreateloan1.xlsx|Summary|Repayment Schedule|
+	
+@4386-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoDaily
+Scenario:4386-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoDaily
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4386-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoDaily-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4386-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoDaily-Newcreateloan1.xlsx|
+
+@4387-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoBiWeekly
+Scenario:4387-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoBiWeekly
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4387-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoBiWeekly-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4387-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoBiWeekly-Newcreateloan1.xlsx|
+
+@4388-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoMonthly
+Scenario:4388-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoMonthly
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4388-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoMonthly-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4388-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifymeetingtoMonthly-Newcreateloan1.xlsx|
+
+@4389-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifytoYearly
+Scenario:4389-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifytoYearly
+     
+     Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4389-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifytoYearly-Newcreateloan1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	  	|4389-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifytoYearly-Newcreateloan1.xlsx|
 	  				  				  			  					 
 	            

@@ -41,6 +41,7 @@ public class ClientSteps {
 			List<String> excelSheet) throws Throwable {
 		String excelSheetName = excelSheet.get(0).toString();
 		varFrontPage.setupGroup(ExcelSheetPath, excelSheetName, sheetName);
+		System.out.println("group Created");
 	}
 	
 	@Then("^I Edit Client from \"([^\"]*)\" sheet$")
