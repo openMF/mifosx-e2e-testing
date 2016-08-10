@@ -44,6 +44,39 @@ public class ClientSteps {
 		System.out.println("group Created");
 	}
 	
+	@Given("^I setup the center$")
+	public void I_setup_the_center() throws Throwable {
+		varFrontPage.centerNavigation();
+	}
+
+	@When("^I entered the values into center from \"([^\"]*)\" sheet$")
+	public void I_entered_the_values_into_center_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupCenter(ExcelSheetPath, excelSheetName, sheetName);
+	}
+	
+	@Then("^I Add Group for created center from \"([^\"]*)\" sheet$")
+	public void I_Add_Group_for_created_center_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupCenter(ExcelSheetPath, excelSheetName, sheetName);
+	}
+	
+	@Then("^I Add Dupicate Group for created center from \"([^\"]*)\" sheet$")
+	public void I_Add_Dupicate_Group_for_created_center_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupCenter(ExcelSheetPath, excelSheetName, sheetName);
+	}
+	
+	@Then("^I should see Center created successfully from \"([^\"]*)\" sheet$")
+	public void I_should_see_Center_created_successfully_from_sheet(String sheetName,
+ List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.verifyAndValidate(ExcelSheetPath, excelSheetName, sheetName);
+	}
+	
 	@Then("^I Edit Client from \"([^\"]*)\" sheet$")
 	public void I_Edit_Client_from_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {

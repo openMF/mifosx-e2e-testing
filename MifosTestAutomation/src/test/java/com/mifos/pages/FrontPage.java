@@ -312,6 +312,21 @@ public class FrontPage extends MifosWebPage {
 			ioe.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Method navigates to client page
+	 * 
+	 * @throws Throwable
+	 */
+	public void centerNavigation() throws Throwable {
+		try {
+			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"createcenter");
+			Thread.sleep(getResourceKey("mediumWait"));
+
+		} catch (Exception ioe) {
+			ioe.printStackTrace();
+		}
+	}
 
 	/**
 	 * Method enters values from target excel sheet into Client page
@@ -341,6 +356,21 @@ public class FrontPage extends MifosWebPage {
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(clientDetailsMap);
 //			verifySuccessMessage("clickonmorebutton", "More");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void setupCenter(String clientExcelSheetPath, String excelSheetName,
+			String sheetName) throws Throwable {
+		try {
+			Map<String, String> centerDetailsMap = parseExcelSheet(
+					clientExcelSheetPath, excelSheetName, sheetName);
+			insertValues(centerDetailsMap);
+			if(!centerDetailsMap.containsKey("clickoncancelCenter")){
+				verifySuccessMessage("clickonmorebutton", "More");
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

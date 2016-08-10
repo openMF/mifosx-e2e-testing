@@ -2656,8 +2656,6 @@ Scenario:4384-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	  	|4384-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15MARCH2015-Newcreateloan1.xlsx|
-	 Then I verified the following Tabs details successfully 
-	    |4384-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-to15MARCH2015-Newcreateloan1.xlsx|Summary|Repayment Schedule|
 	 
 @4385-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-From10April2015-to-11April2016
 Scenario:4385-ACTGRP-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifyfuturMeet-From10April2015-to-11April2016
@@ -2715,5 +2713,146 @@ Scenario:4389-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETIN
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	  	|4389-ACTGRP-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Disburse-ModifytoYearly-Newcreateloan1.xlsx|
-	  				  				  			  					 
+
+@4400-CreateCenter
+Scenario:4400-CreateCenter
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4400-CreateCenter.xlsx|
+	 Then I should see Center created successfully from "Output" sheet
+	 |4400-CreateCenter.xlsx|
+	 
+	 @4401-CreateCenter-withattaching-existingPendingGroup
+Scenario:4401-CreateCenter-withattaching-existingPendingGroup
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4401-CreateCenter-withattaching-existingPendingGroup.xlsx|
+	 
+	 @4402-CreateCenter-withattaching-existingActiveGroup
+Scenario:4402-CreateCenter-withattaching-existingActiveGroup
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4402-CreateCenter-withattaching-existingActiveGroup.xlsx|
+	 
+	 @4403-CreateCenter-EnterAllRequiredFields-And-Click-OnCancelButton
+Scenario:4403-CreateCenter-EnterAllRequiredFields-And-Click-OnCancelButton
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4403-CreateCenter-EnterAllRequiredFields-And-Click-OnCancelButton.xlsx|
+	
+	@4404-CreateActive-Center
+Scenario:4404-CreateActive-Center
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4404-CreateActive-Center.xlsx|
+	 
+	 @4405-CreateCenter-Activate
+Scenario:4405-CreateCenter-Activate
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4405-CreateCenter-Activate.xlsx|
+	 
+	@4406-CreateCenter-Activate-Cancel
+Scenario:4406-CreateCenter-Activate-Cancel
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4406-CreateCenter-Activate-Cancel.xlsx|
+	 	 
+	 @4407-CreateCenter-Edit
+Scenario:4407-CreateCenter-Edit
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4407-CreateCenter-Edit.xlsx|
+	 
+	 @4408-CreateActiveCenter-Edit
+Scenario:4408-CreateActiveCenter-Edit
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4408-CreateActiveCenter-Edit.xlsx|
+	 
+	 @4409-CreateCenter-AddGroup
+Scenario:4409-CreateCenter-AddGroup
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4409-CreateCenter-AddGroup.xlsx|
+	 Then I Add Group for created center from "AddGroup" sheet
+	 |4409-CreateCenter-AddGroup.xlsx|
+	 
+	  @4410-CreateCenter-AddduplicateGroup
+Scenario:4410-CreateCenter-AddduplicateGroup
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4410-CreateCenter-AddduplicateGroup.xlsx|
+	 Then I Add Group for created center from "AddGroup" sheet
+	 |4410-CreateCenter-AddduplicateGroup.xlsx|
+	 Then I Add Dupicate Group for created center from "AddGroup1" sheet
+	 |4410-CreateCenter-AddduplicateGroup.xlsx|
+	 
+	 @4411-CreateCenter-AddGroupwithoutattachingclient
+Scenario:4411-CreateCenter-AddGroupwithoutattachingclient
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4411-CreateCenter-AddGroupwithoutattachingclient.xlsx|
+	 Then I Add Group for created center from "AddGroup" sheet
+	 |4411-CreateCenter-AddGroupwithoutattachingclient.xlsx|
+	 
+	 @4412-CreateCenter-AddGroupwithattachingclient
+Scenario:4412-CreateCenter-AddGroupwithattachingclient
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4412-CreateCenter-AddGroupwithattachingclient.xlsx|
+	 Then I Add Group for created center from "AddGroup" sheet
+	 |4412-CreateCenter-AddGroupwithattachingclient.xlsx|
+	 
+	 @4413-CreateCenter-AddNotes
+Scenario:4413-CreateCenter-AddNotes
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4413-CreateCenter-AddNotes.xlsx|
+	 Then I "addnotes" from "AddNotes" sheet
+	 |4413-CreateCenter-AddNotes.xlsx|
+	 Then i validate and Verify from "Output" sheet
+     |4413-CreateCenter-AddNotes.xlsx|
+     
+     @4414-CreateActiveCenter-withattachingexistingPendingGroup
+Scenario:4414-CreateActiveCenter-withattachingexistingPendingGroup
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4414-CreateActiveCenter-withattachingexistingPendingGroup.xlsx|
+	 
+	 @4415-CreateActiveCenter-withattachingexistingactiveGroup
+Scenario:4415-CreateActiveCenter-withattachingexistingactiveGroup
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4415-CreateActiveCenter-withattachingexistingactiveGroup.xlsx|
+	 
+	 @4416-CreateActiveCenter-withattachingexistingactiveGroup-Clickoncancelbutton
+Scenario:4416-CreateActiveCenter-withattachingexistingactiveGroup-Clickoncancelbutton
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4416-CreateActiveCenter-withattachingexistingactiveGroup-Clickoncancelbutton.xlsx|
+	 
+	 @4417-CreateActiveCenter-AddGroup
+Scenario:4417-CreateActiveCenter-AddGroup
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4417-CreateActiveCenter-AddGroup.xlsx|
+	 Then I Add Group for created center from "AddGroup" sheet
+	 |4417-CreateActiveCenter-AddGroup.xlsx|
+	 
+	 @4418-CreateActiveCenter-AddGroupwithoutattachingclient
+Scenario:4418-CreateActiveCenter-AddGroupwithoutattachingclient
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4418-CreateActiveCenter-AddGroupwithoutattachingclient.xlsx|
+	 Then I Add Group for created center from "AddGroup" sheet
+	 |4418-CreateActiveCenter-AddGroupwithoutattachingclient.xlsx|
+	 
+	 @4419-CreateActiveCenter-AddGroupwithattachingclient
+Scenario:4419-CreateActiveCenter-AddGroupwithattachingclient
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4419-CreateActiveCenter-AddGroupwithattachingclient.xlsx|
+	 Then I Add Group for created center from "AddGroup" sheet
+	 |4419-CreateActiveCenter-AddGroupwithattachingclient.xlsx|	  				  				  			  					 
 	            
