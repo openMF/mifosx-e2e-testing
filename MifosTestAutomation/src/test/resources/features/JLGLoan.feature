@@ -2854,5 +2854,201 @@ Scenario:4419-CreateActiveCenter-AddGroupwithattachingclient
 	 When I entered the values into center from "Input" sheet
 	 |4419-CreateActiveCenter-AddGroupwithattachingclient.xlsx|
 	 Then I Add Group for created center from "AddGroup" sheet
-	 |4419-CreateActiveCenter-AddGroupwithattachingclient.xlsx|	  				  				  			  					 
+	 |4419-CreateActiveCenter-AddGroupwithattachingclient.xlsx|	  
+	 
+	 @4420-CreateCenter-ManageGroup-AddPendingGroup
+Scenario:4420-CreateCenter-ManageGroup-AddPendingGroup
+	 Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4420Create-Pending-Group.xlsx|
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4420-CreateCenter-ManageGroup-AddPendingGroup.xlsx|
+	 
+	 @4421-CreateCenter-ManageGroup-AddActiveGroup
+Scenario:4421-CreateCenter-ManageGroup-AddActiveGroup
+	 Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4421Create-AddActiveGroup.xlsx|
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4421-CreateCenter-ManageGroup-AddActiveGroup.xlsx|
+	 
+	 @4422-CreateCenter-ManageGroup-AddActiveGroupWithMeetingAttachedtotheGroup
+Scenario:4422-CreateCenter-ManageGroup-AddActiveGroupWithMeetingAttachedtotheGroup
+	 Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4422Create-AddActiveGroup-MeetingAttached.xlsx|
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4422-CreateCenter-ManageGroup-AddActiveGroupWithMeetingAttachedtotheGroup.xlsx|
+	 
+	 @4423-CreateCenter-ManageGroup-AddClosedGroup
+Scenario:4423-CreateCenter-ManageGroup-AddClosedGroup
+	 Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4423Create-AddClosedGroup.xlsx|
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4423-CreateCenter-ManageGroup-AddClosedGroup.xlsx|
+	 
+	 @4424-CreateCenter-Assignstaff
+Scenario:4424-CreateCenter-Assignstaff
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4424-CreateCenter-Assignstaff.xlsx|
+	 
+	 @4425-CreateCenter-Assignstaff-Unassignstaff
+Scenario:4425-CreateCenter-Assignstaff-Unassignstaff
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4425-CreateCenter-Assignstaff-Unassignstaff.xlsx|
+	 
+	 @4426-CreateCenter-Assignstaff-delete-Center
+Scenario:4426-CreateCenter-Assignstaff-delete-Center
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4426-CreateCenter-Assignstaff-delete-Center.xlsx|
+	 
+	 @4426-CreateCenter-Assignstaff-delete-Center
+Scenario:4426-CreateCenter-Assignstaff-delete-Center
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4426-CreateCenter-Assignstaff-delete-Center.xlsx|
+	 
+	 @4427-CreateCenter-Assignstaff-Close
+Scenario:4427-CreateCenter-Assignstaff-Close
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4427-CreateCenter-Assignstaff-Close.xlsx|
+	 
+	 @4428-CreateCenter-Assignstaff-Unassignstaff-staffassignmenthistory
+Scenario:4428-CreateCenter-Assignstaff-Unassignstaff-staffassignmenthistory
+     Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4428-CreateCenter-Assignstaff-Unassignstaff-staffassignmenthistory.xlsx|
+	 
+	 @4429-CreateActiveCenter-ManageGroup-addActivegroup
+Scenario:4429-CreateActiveCenter-ManageGroup-addActivegroup
+	 Given I setup the group
+	 When I entered the values into group from "Input1" sheet
+	  	|4429-CreateActiveCenter-ManageGroup-addActivegroup.xlsx|
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4429-CreateActiveCenter-ManageGroup-addActivegroup.xlsx|
+	 
+	 @4430-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithmonthlymeeting
+Scenario:4430-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithmonthlymeeting
+	 Given I setup the group
+	 When I entered the values into group from "Input1" sheet
+	  	|4430-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithmonthlymeeting.xlsx|
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4430-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithmonthlymeeting.xlsx|
+	 
+	 @4431-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonfridaymeeting
+Scenario:4431-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonfridaymeeting
+	 Given I setup the group
+	 When I entered the values into group from "Input1" sheet
+	  	|4431-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonfridaymeeting.xlsx|
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4431-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonfridaymeeting.xlsx|
+
+	 @4432-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonWednesdaymeeting
+Scenario:4432-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonWednesdaymeeting
+	 Given I setup the group
+	 When I entered the values into group from "Input1" sheet
+	  	|4432-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonWednesdaymeeting.xlsx|
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4432-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonWednesdaymeeting.xlsx|
+
+	@4433-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonWednesdaymeeting
+Scenario:4433-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonWednesdaymeeting
+	 Given I setup the group
+	 When I entered the values into group from "Input1" sheet
+	  	|4433-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonWednesdaymeeting.xlsx|
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4433-CreateActiveCenterwithmeetingattachedasweeklyFriday-ManageGroup-addactivegroupwithweeklyonWednesdaymeeting.xlsx|
+	 
+	@4434-CreateActiveCenterwithmeetingattachedasweeklyFriday-Centersavingsapplication
+Scenario:4434-CreateActiveCenterwithmeetingattachedasweeklyFriday-Centersavingsapplication
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4434-CreateActiveCenterwithmeetingattachedasweeklyFriday-Centersavingsapplication.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4434-CreateActiveCenterwithmeetingattachedasweeklyFriday-Centersavingsapplication.xlsx|
+	 
+	 @4435-CreateActiveCenterwithmeetingattachedasweeklyFriday-AttendancePastDate
+Scenario:4435-CreateActiveCenterwithmeetingattachedasweeklyFriday-AttendancePastDate
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4435-CreateActiveCenterwithmeetingattachedasweeklyFriday-AttendancePastDate.xlsx|
+	 
+	  @4436-CreateActiveCenterwithmeetingattachedasweeklyFriday-ExactDate-Attendance
+Scenario:4436-CreateActiveCenterwithmeetingattachedasweeklyFriday-ExactDate-Attendance
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4436-CreateActiveCenterwithmeetingattachedasweeklyFriday-ExactDate-Attendance.xlsx|
+	 
+	 @4437-CreateActiveCenterwithmeetingattachedasweeklyFriday-SubmitSameAttendanceDate2Times
+Scenario:4437-CreateActiveCenterwithmeetingattachedasweeklyFriday-SubmitSameAttendanceDate2Times
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4437-CreateActiveCenterwithmeetingattachedasweeklyFriday-SubmitSameAttendanceDate2Times.xlsx|
+	 
+	 @4438-CreateActiveCenterwithmeetingattachedasweeklyFriday-Close
+Scenario:4438-CreateActiveCenterwithmeetingattachedasweeklyFriday-Close
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4438-CreateActiveCenterwithmeetingattachedasweeklyFriday-Close.xlsx|
+	 
+	 @4439-CreateActiveCenterwithmeetingattachedasweeklyFriday-Assignstaff-Unassignstaff
+Scenario:4439-CreateActiveCenterwithmeetingattachedasweeklyFriday-Assignstaff-Unassignstaff
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4439-CreateActiveCenterwithmeetingattachedasweeklyFriday-Assignstaff-Unassignstaff.xlsx|
+	 
+	 @4440-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonevery2weeksonWednesday
+Scenario:4440-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonevery2weeksonWednesday
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4440-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonevery2weeksonWednesday.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4440-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonevery2weeksonWednesday.xlsx|
+	 	 
+	 @4441-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonevery2weeksonWednesday-abovechangeseffectfrom-15March2015
+Scenario:4441-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonevery2weeksonWednesday-abovechangeseffectfrom-15March2015
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4441-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonevery2weeksonWednesday-abovechangeseffectfrom-15March2015.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4441-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonevery2weeksonWednesday-abovechangeseffectfrom-15March2015.xlsx|
+	 
+	  @4442-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonmonthly
+Scenario:4442-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonmonthly
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4442-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonmonthly.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4442-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Repetesonmonthly.xlsx|
+	 
+	 @4443-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-CancelModifyMeeting
+Scenario:4443-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-CancelModifyMeeting
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4443-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-CancelModifyMeeting.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4443-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-CancelModifyMeeting.xlsx|
+	 
+	 @4444-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Futuremeeting-Changemeetingdatefrom10April2015to15April2015
+Scenario:4444-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Futuremeeting-Changemeetingdatefrom10April2015to15April2015
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4444-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Futuremeeting-Changemeetingdatefrom10April2015to15April2015.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4444-CreateActiveCenterwithmeetingattachedasweeklyFriday-Modifymeeting-Futuremeeting-Changemeetingdatefrom10April2015to15April2015.xlsx|
+	 				  				  			  					 
 	            

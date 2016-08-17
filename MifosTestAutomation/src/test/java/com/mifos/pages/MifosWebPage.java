@@ -670,6 +670,24 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 
 				break;
+			case "input1":
+				try {
+
+					By locator = null;
+					locator = getLocator(getResource(key));
+					waitForElementAndPoll(locator);
+					LazyWebElement locatorElement = getElement(locator, clear);
+					locatorElement.sendKeys(value);
+					new WebDriverWait(getWebDriver(), 5).until(
+					        ExpectedConditions.elementToBeClickable(
+					            By.xpath("//a[contains(.,'" + value + "')]")))
+					                .click();
+					Thread.sleep(getResourceKey("wait"));
+				} catch (NoSuchElementException exception) {
+					Assert.fail("Could not find the " + key);
+				}
+
+				break;	
 			case "button":
 				if(key.equals("ClickOnADD")){
 					currentJlgLoanUrl = getWebDriver().getCurrentUrl();					

@@ -367,10 +367,10 @@ public class FrontPage extends MifosWebPage {
 			Map<String, String> centerDetailsMap = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(centerDetailsMap);
-			if(!centerDetailsMap.containsKey("clickoncancelCenter")){
-				verifySuccessMessage("clickonmorebutton", "More");
-			}
-			
+			// if(!centerDetailsMap.containsKey("clickoncancelCenter")){
+			// verifySuccessMessage("clickonmorebutton", "More");
+			// }
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
