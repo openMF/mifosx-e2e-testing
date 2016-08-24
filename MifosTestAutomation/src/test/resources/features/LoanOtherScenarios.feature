@@ -547,7 +547,7 @@ Background:
 	  Then I make repayment and verified the following tabs
        			|3524-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PREPAY-PERIODIC-Makerepayment1.xlsx|Input|
 	  Then I "Make Pre Payment" and verified the following tabs
-	  			|3524-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PREPAY-PERIODIC-Newcreateloan.xlsx|Prepay Loan|Summary|Repayment Schedule|
+	  			|3524-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PREPAY-PERIODIC-Newcreateloan.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
 	  
 @scenario26-3525-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-PREPAY-PERIODIC
 	  Scenario: 3525-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-PREPAY-PERIODIC  
@@ -568,7 +568,7 @@ Background:
 	   And I disburse loan from "NewLoanInput" sheet
       			|3525-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-PREPAY-PERIODIC-Newcreateloan2.xlsx|
 	  Then I "Make Pre Payment" and verified the following tabs
-	  			|3525-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-PREPAY-PERIODIC-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|
+	  			|3525-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-PREPAY-PERIODIC-Newcreateloan1.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
   			
 @scenario27-3526-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-PREPAY-PERIODIC
 	  Scenario: 3526-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-PREPAY-PERIODIC  
@@ -585,7 +585,7 @@ Background:
 	  When I set up the new create loan from "NewLoanInput" sheet
 	  			|3526-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-PREPAY-PERIODIC-Newcreateloan.xlsx|
 	  Then I "Make Pre Payment" and verified the following tabs
-	  			|3526-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-PREPAY-PERIODIC-Newcreateloan.xlsx|Prepay Loan|Summary|Repayment Schedule|
+	  			|3526-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-PREPAY-PERIODIC-Newcreateloan.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
 	  	
 @scenario28-3527-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-PREPAY-PERIODIC
 	  Scenario: 3527-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-PREPAY-PERIODIC  
@@ -602,7 +602,7 @@ Background:
 	  When I set up the new create loan from "NewLoanInput" sheet
 	  			|3527-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-PREPAY-PERIODIC-Newcreateloan.xlsx|
 	  Then I "Make Pre Payment" and verified the following tabs
-	  			|3527-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-PREPAY-PERIODIC-Newcreateloan.xlsx|Prepay Loan|Summary|Repayment Schedule|
+	  			|3527-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-PREPAY-PERIODIC-Newcreateloan.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
 	  			
 @scenario29-3528-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PREPAY-PERIODIC
 	  Scenario: 3528-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PREPAY-PERIODIC  
@@ -654,7 +654,7 @@ Background:
 	  			|3530-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-INSTALLMENT-FEE-FLAT-PREPAY-PERIODIC-Newcreateloan.xlsx|
 	  Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
 	  Then I "Make Pre Payment" and verified the following tabs
-	  			|3530-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-INSTALLMENT-FEE-FLAT-PREPAY-PERIODIC-Newcreateloan.xlsx|Prepay Loan|Summary|Repayment Schedule|
+	  			|3530-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-INSTALLMENT-FEE-FLAT-PREPAY-PERIODIC-Newcreateloan.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
 	  
 @scenario32-3531-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-SP-FLAT-PREPAY-PERIODIC
 	  Scenario: 3531-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-SP-FLAT-PREPAY-PERIODIC  

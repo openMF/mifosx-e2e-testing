@@ -27,21 +27,22 @@ public class LoginSteps extends WebDriverAwareWebPage{
 		String url = MifosWebPage.BASE_URL+tenant ;
 		TenantsUtils.setLocalTenantUrl(url);
 		MifosWebPage.navigateToUrl(url);
-	}
-	
-/*		boolean loginPageVisible = true;		
+		boolean loginPageVisible = true;		
 		while (loginPageVisible) {
-			Thread.sleep(5000);
 			if (!getWebDriver().findElement(By.id("uid")).isDisplayed()) {
-				
-				getWebDriver().get(getWebDriver().getCurrentUrl());
+				Thread.sleep(3000);
+//				getWebDriver().get(getWebDriver().getCurrentUrl());
+				getWebDriver().navigate().refresh();
 				
 			}else if (getWebDriver().findElement(By.id("uid")).isDisplayed()){
 				loginPageVisible = false;
 			}
 				
 		}
-*/
+	}
+	
+		
+
 	@Given("^I login into mifos site using \"([^\"]*)\" excel sheet$")
 	public void I_login_into_mifos_site_using_excel_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {

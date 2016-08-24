@@ -314,6 +314,14 @@ public class ClientSteps {
 		}
 	}
 	
+	@Then("^I Navigate Back to Current Center Page from \"([^\"]*)\" sheet$")
+	public void I_Navigate_Back_to_Current_Center_Page_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.navigateToCurrentCenterPage(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
+	
 	@Then("^I navigate To Loan Account Page$")
 	public void I_navigate_To_Loan_Account_Page() throws Throwable {
 		varFrontPage.navigateLoanAccounting();

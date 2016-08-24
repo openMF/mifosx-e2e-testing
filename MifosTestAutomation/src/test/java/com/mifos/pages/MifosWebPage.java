@@ -67,6 +67,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public String rowval;
 	public String currentJlgLoanUrl;
 	public String currentNewLoanUrl;
+	public String currentCenterUrl;
 
 	/**
 	 * Gets the resource.
@@ -692,7 +693,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				if(key.equals("ClickOnADD")){
 					currentJlgLoanUrl = getWebDriver().getCurrentUrl();					
 				}
-				
+							
 				if (key.equals("clickonapprove")
 						|| key.equals("clickonModifyApplication")) {
 					((JavascriptExecutor) getWebDriver())
@@ -707,6 +708,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					Thread.sleep(getResourceKey("mediumWait"));
 					if(key.equals("submitdisburse")){
 						currentNewLoanUrl = getWebDriver().getCurrentUrl();				
+					}
+					if(key.equals("submitCenter")){
+						currentCenterUrl = getWebDriver().getCurrentUrl();					
 					}
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
@@ -731,6 +735,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			}
 			if (key.equals("NavigateToLoan")){
 				value = currentNewLoanUrl.split("#/")[1];
+			}
+			if (key.equals("NavigateToCurrentCenterPage")){
+				value = currentCenterUrl.split("#/")[1];
 			}
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
 				Thread.sleep(getResourceKey("largeWait"));

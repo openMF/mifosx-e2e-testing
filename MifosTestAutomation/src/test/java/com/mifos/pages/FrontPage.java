@@ -36,6 +36,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ibm.icu.text.NumberFormat;
 import com.mifos.common.TenantsUtils;
@@ -351,30 +353,23 @@ public class FrontPage extends MifosWebPage {
 	
 	public void setupGroup(String clientExcelSheetPath, String excelSheetName,
 			String sheetName) throws Throwable {
-		try {
+	
 			Map<String, String> clientDetailsMap = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(clientDetailsMap);
 //			verifySuccessMessage("clickonmorebutton", "More");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+		} 
 	
 	public void setupCenter(String clientExcelSheetPath, String excelSheetName,
 			String sheetName) throws Throwable {
-		try {
+		
 			Map<String, String> centerDetailsMap = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(centerDetailsMap);
 			// if(!centerDetailsMap.containsKey("clickoncancelCenter")){
 			// verifySuccessMessage("clickonmorebutton", "More");
 			// }
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+		} 
 	
 	/**
 	 * Method enters values from target excel sheet into Client page
@@ -431,9 +426,19 @@ public class FrontPage extends MifosWebPage {
 		Map<String, String> newLoanDetailsMap = parseExcelSheet(
 				clientExcelSheetPath, excelSheetName, sheetName);
 		insertValues(newLoanDetailsMap);
-		Thread.sleep(getResourceKey("extraLargeWait"));
 		currentUrl = getWebDriver().getCurrentUrl();
-
+		
+		try {
+			for (int i = 10; i >= 0; i--) {
+			if (!currentUrl.contains("viewloanaccount")) {
+					Thread.sleep(getResourceKey("smallWait"));
+					currentUrl = getWebDriver().getCurrentUrl();
+				}
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+//			Assert.fail("Unable to find url");
+		}
 	}
 
 	/**
@@ -550,9 +555,14 @@ public class FrontPage extends MifosWebPage {
 				sheetIndex = 10;
 			}
 			if (!isTransactionTabSelected) {
-				getWebDriver().findElement(
-						By.xpath("//a[contains(.,'" + sheetname + "')]"))
-						.click();
+//				getWebDriver().findElement(
+//						By.xpath("//a[contains(.,'" + sheetname + "')]"))
+//						.click();
+				
+				new WebDriverWait(getWebDriver(), 120).until(
+				        ExpectedConditions.elementToBeClickable(
+				            By.xpath("//a[contains(.,'" + sheetname + "')]")))
+				                .click();
 				// Before reading transaction id need to un-check the
 				// hideAccurals
 				// button for periodic scenarios
@@ -1341,7 +1351,7 @@ public class FrontPage extends MifosWebPage {
 		Map<String, String> newLoanDetailsMap = parseExcelSheet1(
 				excelSheetPath, excelSheetName, sheetName);
 		insertValues(newLoanDetailsMap);
-		Thread.sleep(getResourceKey("largeWait"));
+		Thread.sleep(getResourceKey("extraLargeWait"));
 	}
 
 	/*
@@ -1442,8 +1452,19 @@ public class FrontPage extends MifosWebPage {
 
 	}
 
-	public void navigateLoanAccounting() {
-		MifosWebPage.navigateToUrl(currentUrl);		
+	public void navigateLoanAccounting() throws Throwable {
+		MifosWebPage.navigateToUrl(currentUrl);	
+		Thread.sleep(getResourceKey("smallWait"));
+	}
+	
+	public void navigateToCurrentCenterPage(String excelSheetPath,
+			String excelSheetName, String sheetName) throws Throwable {
+
+		Map<String, String> newLoanDetailsMap;
+		newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
+				sheetName);
+		Thread.sleep(getResourceKey("smallWait"));
+		insertValues(newLoanDetailsMap);		
 	}
 	
 	public void StaleElementHandle (String elementID){
@@ -1462,4 +1483,6 @@ public class FrontPage extends MifosWebPage {
 		     }     
 		}
 	}
+
+
 }

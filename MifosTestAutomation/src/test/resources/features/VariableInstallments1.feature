@@ -1,4 +1,4 @@
-Feature:VariableInstallment
+Feature:VariableInstallment1
 
 Background:
 	Given I navigate to mifos using "default4#/"
