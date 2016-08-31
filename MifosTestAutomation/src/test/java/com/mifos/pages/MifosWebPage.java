@@ -296,8 +296,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 */
 	protected static WebElement waitForElementAndPoll(final By locator) {
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver())
-				.withTimeout(30, TimeUnit.SECONDS)
-				.pollingEvery(1000, TimeUnit.MILLISECONDS)
+				.withTimeout(120, TimeUnit.SECONDS)
+				.pollingEvery(2000, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class);
 
 		WebElement element = null;
@@ -690,9 +690,19 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;	
 			case "button":
-				if(key.equals("ClickOnADD")){
-					currentJlgLoanUrl = getWebDriver().getCurrentUrl();					
+			if (key.equals("ClickOnADD")) {
+				By loc = null;
+				loc = getLocator(getResource(key));
+				LazyWebElement ele = getElement(loc);
+				currentJlgLoanUrl = getWebDriver().getCurrentUrl();
+				new WebDriverWait(getWebDriver(), 120).until(ExpectedConditions
+						.elementToBeClickable(ele));
+				if (ele.isDisplayed()) {
+					ele.click();
+					break;
 				}
+
+			}
 							
 				if (key.equals("clickonapprove")
 						|| key.equals("clickonModifyApplication")) {
@@ -706,6 +716,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 //					checkPageIsReady();
 					clickButton(getLocator(getResource(key)));
 					Thread.sleep(getResourceKey("mediumWait"));
+					if(key.equals("AddGroup")){
+						By locator = null;
+						locator = getLocator(getResource("office"));
+						
+						new WebDriverWait(getWebDriver(), 120).until(
+						        ExpectedConditions.invisibilityOfElementLocated(locator));						
+					}
 					if(key.equals("submitdisburse")){
 						currentNewLoanUrl = getWebDriver().getCurrentUrl();				
 					}

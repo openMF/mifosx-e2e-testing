@@ -2,9 +2,14 @@ package com.mifos.steps;
 
 import java.util.List;
 
+import org.openqa.selenium.remote.server.handler.GetCurrentUrl;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.mifos.common.TenantsUtils;
 import com.mifos.pages.FrontPage;
 import com.mifos.pages.MifosWebPage;
+import com.mifos.testing.framework.webdriver.WebDriverAwareWebPage;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -55,6 +60,37 @@ public class ClientSteps {
 		String excelSheetName = excelSheet.get(0).toString();
 		varFrontPage.setupCenter(ExcelSheetPath, excelSheetName, sheetName);
 	}
+	
+	@Then("^I navigate to collection Sheet$")
+	public void I_navigate_to_collection_Sheet() throws Throwable {
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()
+				+ "entercollectionsheet");
+		String expectedCollectionPageUrl = TenantsUtils.getLocalTenantUrl()+ "entercollectionsheet";
+		String collectionPage = MifosWebPage.getWebDriver().getCurrentUrl();
+		int i = 3;
+		while (!collectionPage.contains("entercollectionsheet") && i>0) {
+			try {
+				new WebDriverWait(MifosWebPage.getWebDriver(), 30).until(ExpectedConditions.urlMatches(expectedCollectionPageUrl));
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()
+						+ "entercollectionsheet");
+				collectionPage = MifosWebPage.getWebDriver().getCurrentUrl();
+				i--;
+			}
+		}
+
+	}
+
+	@Then("^I Make Repayment Through \"([^\"]*)\" sheet$")
+	public void I_Make_Repayment_Through_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.payThroughCollectionSheet(ExcelSheetPath, excelSheetName, sheetName);
+	}
+
 	
 	@Then("^I Add Group for created center from \"([^\"]*)\" sheet$")
 	public void I_Add_Group_for_created_center_from_sheet(String sheetName,

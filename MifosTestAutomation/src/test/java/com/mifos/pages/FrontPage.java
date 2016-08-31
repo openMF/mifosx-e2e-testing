@@ -1484,5 +1484,12 @@ public class FrontPage extends MifosWebPage {
 		}
 	}
 
+	public void payThroughCollectionSheet(String excelSheetPath,
+			String excelSheetName, String sheetName) throws Throwable {					
+				Map<String, String> collectionDetailsMap = parseExcelSheet(
+						excelSheetPath, excelSheetName, sheetName);
+				insertValues(collectionDetailsMap);
+			}
+
 
 }
