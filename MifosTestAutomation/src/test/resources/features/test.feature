@@ -1,454 +1,409 @@
 Feature:RBI
 
 Background:
-	Given I navigate to mifos using "default7#/"
+	Given I navigate to mifos using "default#/"
 	And I login into mifos site using "Login" excel sheet
 		|Login.xlsx|
 	Then I should see logged in successfully
 	
-@4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN
-Scenario:4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN
-	  Given I setup the product loan "Setup"
-		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
-		|4352-MS-Simple-Group-Loan-Product-Loanproduct.xlsx|
+@4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
+Scenario:4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
-	 |4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN.xlsx|
+	 |4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 	 Then I entered the values into group from "Group" sheet
-     |4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN.xlsx|		  								  				  				  			
+     |4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|		  								  				  				  			
 	 Then I entered the values into client from "Input" sheet
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN.xlsx|
-	 
-@4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN
-Scenario:4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|
+	 |4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF
-Scenario:4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF.xlsx|
+@4546-MS-ACT2CTR-MEET-WEEKLYonFRI-NOSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
+Scenario:4546-MS-ACT2CTR-MEET-WEEKLYonFRI-NOSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
+	 Given I navigate to collection Sheet
+	 Then I Make Repayment Through "Productive Collection" sheet
+	 |4546-MS-ACT2CTR-MEET-WEEKLYonFRI-NOSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
-@4498-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP
-Scenario:4498-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4498-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4498-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4498-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4498-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERGRP.xlsx|
+@4547-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-ON-10JAN2015
+Scenario:4547-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-ON-10JAN2015
+	 Given I navigate to collection Sheet
+	 Then I Make Repayment Through "Productive Collection" sheet
+	 |4547-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-ON-10JAN2015.xlsx|
 
-@4499-MS-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015
-Scenario:4499-MS-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4499-MS-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4499-MS-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4499-MS-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4499-MS-ACTCTR-NO-MEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN2015.xlsx|
+@4548-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-Branch-OFFICE 
+Scenario:4548-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-Branch-OFFICE 
+	 Given I navigate to collection Sheet
+	 Then I Make Repayment Through "Productive Collection" sheet
+	 |4548-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-Branch-OFFICE .xlsx|
 
-@4500-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014
-Scenario:4500-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014
+@4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
+Scenario:4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
-	 |4500-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014.xlsx|
+	 |4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C1.xlsx|
 	 Then I entered the values into group from "Group" sheet
-     |4500-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014.xlsx|		  								  				  				  			
+     |4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C1.xlsx|		  								  				  				  			
 	 Then I entered the values into client from "Input" sheet
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4500-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4500-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON25DEC2014.xlsx|
-
-@4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN
-Scenario:4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN
+	 |4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C1.xlsx|
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
-	 |4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN.xlsx|
+	 |4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
 	 Then I entered the values into group from "Group" sheet
-     |4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN.xlsx|		  								  				  				  			
+     |4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|		  								  				  				  			
 	 Then I entered the values into client from "Input" sheet
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN.xlsx|
+	 |4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
 	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4501-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON02JAN.xlsx|
-	 
-@4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN
-Scenario:4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN.xlsx|
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
 	 And I navigate To Loan Account Page
 	 Then I verified the following Tabs details successfully 
-	 |4502-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
-	 
-@4503-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN
-Scenario:4503-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4503-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4503-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4503-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4503-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN-SAVEON03JAN.xlsx|
-
-@4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN
-Scenario:4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4504-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-		 
-@4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN
-Scenario:4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4505-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYLESS-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-		 
-@4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN
-Scenario:4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4506-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYMORE-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-	 
-@4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN
-Scenario:4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN.xlsx|
-	 Then I make repayment and verified the following tabs
-     |4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN.xlsx|Repay1|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4507-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYandCLOSELOAN-COLLSHEETON09JAN.xlsx|Summary|	 	 
-
-@4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN
-Scenario:4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN.xlsx|
-	 Then I "WRITEOFF" and verified the following tabs
-	 |4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN.xlsx|Modify Transaction|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4508-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFFLOAN-COLLSHEETON09JAN.xlsx|Summary|	 	 
-	 	 
-@4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN
-Scenario:4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN.xlsx|
-	 Then I "WaiveInterest" and verified the following tabs
-	 |4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN.xlsx|Modify Transaction|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4509-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINT-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-	 
-@4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN
-Scenario:4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN.xlsx|
-	 Then I "Wave Charge from Charges tab" and verified the following tabs
-	 |4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN.xlsx|Charges|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4510-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEFEE-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-	 
-@4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN
-Scenario:4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN.xlsx|
-	 Then I "WAIVEPENALTY" and verified the following tabs
-	 |4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN.xlsx|Charges|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4511-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEPENALTY-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-	 
-@4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN
-Scenario:4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN.xlsx|
-	 Then I "Do Undo Disbursal" and verified the following tabs
-	 |4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN.xlsx|Undo Disbursal|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4512-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-UNDODISB-COLLSHEETON09JAN.xlsx|
-
-@4513-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE02JAN-COLLSHEETON09JAN
-Scenario:4513-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE02JAN-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4513-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE02JAN-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4513-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE02JAN-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4513-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE02JAN-COLLSHEETON09JAN.xlsx|
-	 	 	 	 	 
-@4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN
-Scenario:4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4514-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-SPDUEDATE05JAN-COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
-	 	 	 	 
-@4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN
-Scenario:4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-	 	 	 	 
-@4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN
-Scenario:4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN
-	 Given I setup the product loan "Setup"
-		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
-		|4353-MS-Simple-Group-Loan-Product-Loanproduct-OVERDUEFEEFLAT.xlsx|
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to scheduler job & execute "Periodic & penalty to overdue loans"
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-
-@4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN
-Scenario:4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to scheduler job & execute "Periodic & penalty to overdue loans"
-	 Then I make repayment and verified the following tabs
-     |4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|Repay1|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4517-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIME-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 
-@4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN
-Scenario:4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to scheduler job & execute "Periodic & penalty to overdue loans"
-	 Then I make repayment and verified the following tabs
-     |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|Repay1|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4518-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMELESS-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	
-@4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN
-Scenario:4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then I navigate to scheduler job & execute "Periodic & penalty to overdue loans"
-	 Then I make repayment and verified the following tabs
-     |4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|Repay1|
-	 Then I navigate to collection Sheet
-	 Then I Make Repayment Through "Collection" sheet
-	 |4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4519-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTIMEMORE-OVERDUE-FLAT-COLLSHEETON09JAN.xlsx|
+	 |4549-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|Summary|Repayment Schedule|
 	 	 	
+@4550-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-STAFF1 
+Scenario:4550-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-STAFF1 
+	 Given I navigate to collection Sheet
+	 Then I Make Repayment Through "Productive Collection" sheet
+	 |4550-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-FOR-DIF-STAFF1.xlsx|
+
+@4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
+Scenario:4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C1.xlsx|
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
+	 Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
+	 And I navigate To Loan Account Page
+	 Then I verified the following Tabs details successfully 
+	 |4551-MS-ACT2CTR-MEET-sameStaff-WEEKLYonFRI--ACT2GRP-1DiffStaff-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|Summary|Repayment Schedule|
+
+@4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
+Scenario:4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C1.xlsx|
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
+	 Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4552-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-C2.xlsx|
+
+@4553-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON14JAN
+Scenario:4553-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON14JAN
+	 Given I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4553-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON14JAN-C2.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4553-MS-ACT2CTR-MEET-ONEWEEKLYonFRIandOTHERonWED-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON14JAN-C2.xlsx|
+	  	 
+@4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC
+Scenario:4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC.xlsx|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4554-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON26DEC.xlsx|
+	 
+@4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN
+Scenario:4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN.xlsx|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4555-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON02JAN.xlsx|
+	 
+@4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1
+Scenario:4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1.xlsx|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1.xlsx|
+	 And I navigate To Loan Account Page
+	 Then I verified the following Tabs details successfully 
+	 |4556-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON16JAN-C1.xlsx|Summary|Repayment Schedule|
+
+@4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1
+Scenario:4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1.xlsx|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1.xlsx|
+	 And I navigate To Loan Account Page
+	 Then I verified the following Tabs details successfully 
+	 |4557-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYLESSONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
+
+@4558-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-Remaning-on-09JAN
+Scenario:4558-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-Remaning-on-09JAN
+	 Given I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4558-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-Remaning-on-09JAN.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4558-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-Remaning-on-09JAN.xlsx|
+
+@4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN
+Scenario:4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN-C1.xlsx|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN-C1.xlsx|
+	 And I navigate To Loan Account Page
+	 Then I verified the following Tabs details successfully 
+	 |4559-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAYMOREONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
+
+@4560-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-2nd-Payment16JAN
+Scenario:4560-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-2nd-Payment16JAN
+	 Given I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4560-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-2nd-Payment16JAN.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4560-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEET_REPAY-2nd-Payment16JAN.xlsx|
+
+@4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET
+Scenario:4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET-C1.xlsx|
+     Then I "Do Undo Disbursal" and verified the following tabs
+     |4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET-C1.xlsx|Undo Disbursal|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4561-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-UndoDisburse-PRODUCTIVE_COLLSHEET-C1.xlsx|
+
+@4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN
+Scenario:4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN-C1.xlsx|
+     Then I make repayment and verified the following tabs
+     |4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN-C1.xlsx|Repay1|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN-C1.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4562-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ON09JAN-C1.xlsx|
+
+@4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN
+Scenario:4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+     Then I make repayment and verified the following tabs
+     |4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Repay1|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 And I navigate To Loan Account Page
+	 Then I verified the following Tabs details successfully 
+	 |4563-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKElessREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
+
+@4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN
+Scenario:4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+     Then I make repayment and verified the following tabs
+     |4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Repay1|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4564-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-MAKEmoreREPAYMENTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+
+@4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+Scenario:4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+     Then I "WaiveInterest" and verified the following tabs
+	 |4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Modify Transaction|
+	  Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4565-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVEINTFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 
+@4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+Scenario:4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+     Then I "WAIVEPENALTY" and verified the following tabs
+	 |4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Charges|
+	 Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 And I navigate To Loan Account Page
+	 Then I verified the following Tabs details successfully 
+	 |4566-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WAIVECHARGEFOR1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
+
+@4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+Scenario:4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 And I navigate To Loan Account Page
+	 Then I verified the following Tabs details successfully 
+	 |4567-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WithPenaltyCharge-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
+
+@4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+Scenario:4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+     Then I "WRITEOFF" and verified the following tabs
+	 |4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Modify Transaction|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then i validate and Verify from "Output" sheet
+	 |4568-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-WRITEOFF1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+
+@4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+Scenario:4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN 
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+     Then I navigate to collection Sheet
+     Then I Make Repayment Through "Productive Collection" sheet
+	 |4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|
+	 And I navigate To Loan Account Page
+	 Then I verified the following Tabs details successfully 
+	 |4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
+	 
+	  	 	   	 		 	 	
