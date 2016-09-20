@@ -1,17 +1,17 @@
 Feature:Centers
 
 Background:
-	Given I navigate to mifos using "default6#/"
+	Given I navigate to mifos using "default7#/"
 	And I login into mifos site using "Login" excel sheet
 		|Login.xlsx|
 	Then I should see logged in successfully
 	
 @4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate
 Scenario:4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate
-#	 Given I setup the product loan "Setup"
-#		| Productloannavigation.xlsx |
-#	 Then I entered the values into product loan from "ProductLoanInput" Sheet
-#		|4350-Simple-Group-Loan-Product-Loanproduct.xlsx|
+	 Given I setup the product loan "Setup"
+		| Productloannavigation.xlsx |
+	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+		|4350-Simple-Group-Loan-Product-Loanproduct.xlsx|
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
 	 |4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate.xlsx|
