@@ -1071,6 +1071,17 @@ public class FrontPage extends MifosWebPage {
 			System.out.println("currentUrl "+ currentUrl);
 
 			break;
+		case "Apply Holidays To Loans":
+			LazyWebElement checkHHoliday = getElement(getResource("addperiodicaccrualtransactions"));
+			if (!checkHHoliday.isSelected()) {
+				By locator = null;
+				locator = getLocator(getResource("addHolidays"));
+				clickButton(locator, 30);
+			}
+			ishideAccuralsChecked = false;
+			System.out.println("currentUrl "+ currentUrl);
+
+			break;	
 		case "Apply penalty to overdue loans":
 			LazyWebElement checkpenalty = getElement(getResource("addpenaltytooverdueloans"));
 			if (!checkpenalty.isSelected()) {
@@ -1490,6 +1501,15 @@ public class FrontPage extends MifosWebPage {
 						excelSheetPath, excelSheetName, sheetName);
 				insertValues(collectionDetailsMap);
 			}
+
+	public void holiday(String excelSheetPath, String excelSheetName,
+			String sheetName) throws Throwable {
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()
+				+ "holidays");
+		Map<String, String> collectionDetailsMap = parseExcelSheet(
+				excelSheetPath, excelSheetName, sheetName);
+		insertValues(collectionDetailsMap);
+	}
 
 
 }
