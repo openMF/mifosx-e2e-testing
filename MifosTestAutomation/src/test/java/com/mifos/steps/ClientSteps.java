@@ -83,6 +83,13 @@ public class ClientSteps {
 		}
 
 	}
+	
+	@Then("^I \"([^\"]*)\" holiday$")
+	public void I_holiday(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.holiday(ExcelSheetPath, excelSheetName, sheetName);
+	}
 
 	@Then("^I Make Repayment Through \"([^\"]*)\" sheet$")
 	public void I_Make_Repayment_Through_sheet(String sheetName,

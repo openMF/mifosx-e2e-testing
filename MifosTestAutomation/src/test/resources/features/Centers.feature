@@ -2060,7 +2060,7 @@ Scenario:4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02J
 	 Then I verified the following Tabs details successfully 
 	 |4569-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERPAY1LOAN-PRODUCTIVE_COLLSHEET_ONTIME09JAN-C1.xlsx|Summary|Repayment Schedule|
 
-4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
+@4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
 Scenario:4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2247,6 +2247,189 @@ Scenario:4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-less
 	 And I navigate To Loan Account Page
 	 Then I verified the following Tabs details successfully 
 	 |4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
+
+@4600-Holidayon15Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN
+	  Scenario: 4600-Holidayon15Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN  
+
+      Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|4600-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Holiday-Loanproduct.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4600-Holidayon15Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4600-Holidayon15Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
+
+@4601-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon15JAN
+	  Scenario: 4601-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon15JAN  
+
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4601-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon15JAN.xlsx|
+
+@4602-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN
+	  Scenario: 4602-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN  
+
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4602-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4602-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN.xlsx|Repay1|Repayment Schedule|
+     			
+@4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET
+Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET
+	 Given I setup the center
+	 When I entered the values into center from "Input" sheet
+	 |4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET.xlsx|
+	 Then I entered the values into group from "Group" sheet
+     |4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET.xlsx|		  								  				  				  			
+	 Then I entered the values into client from "Input" sheet
+	 	|Createclient.xlsx|	 				  								  				  				  			
+	 When I set up the new create loan from "NewLoanInput" sheet
+	 |4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET.xlsx|
+	 Then I navigate to collection Sheet
+	 Then I Make Repayment Through "Collection" sheet
+	 |4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET.xlsx|     			
+	  	  			
+@4604-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-PREPAYON15JAN
+	  Scenario: 4604-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-PREPAYON15JAN  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4604-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-PREPAYON15JAN.xlsx|
+	  Then I "Make Pre Payment" and verified the following tabs
+	  			|4604-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-PREPAYON15JAN.xlsx|Prepay Loan|
+
+@4605-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WRITEOFFON15JAN
+	  Scenario: 4605-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WRITEOFFON15JAN  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4605-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WRITEOFFON15JAN.xlsx|
+	  Then I "WRITEOFF" and verified the following tabs
+	            |4605-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WRITEOFFON15JAN.xlsx|Modify Transaction|Repayment Schedule|
+
+@4606-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WAIVEINTERESTON15JAN
+	  Scenario: 4606-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WAIVEINTERESTON15JAN  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4606-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WAIVEINTERESTON15JAN.xlsx|
+	  Then I "WRITEOFF" and verified the following tabs
+	            |4606-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WAIVEINTERESTON15JAN.xlsx|Modify Transaction|Repayment Schedule|
+
+@4607-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN-EDITTRANSACTIONDATETO15JAN
+	  Scenario: 4607-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN-EDITTRANSACTIONDATETO15JAN  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4607-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN-EDITTRANSACTIONDATETO15JAN.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|4607-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN-EDITTRANSACTIONDATETO15JAN.xlsx|Input|
+	   Then I "Edit transaction from transaction tab" and verified the following tabs
+	  			|4607-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN-EDITTRANSACTIONDATETO15JAN.xlsx|Modify Transaction|
+
+@4608-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY20JAN
+	  Scenario: 4608-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY20JAN  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4608-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY20JAN.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|4608-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY20JAN.xlsx|Input|Repayment Schedule|
+
+@4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN
+	  Scenario: 4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|
+	  Then I "Delete" holiday
+	  |4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|
+	  And I navigate To Loan Account Page
+	  Then I make repayment and verified the following tabs
+      |4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|Input|Repayment Schedule|
+
+@4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN
+	  Scenario: 4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN  
+      Given I "Create" holiday
+	  |4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
+
+@4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN
+	  Scenario: 4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN.xlsx|
+
+@4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan
+	  Scenario: 4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
+	   Then I "Delete" holiday
+	  |4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
+	  
+@4613-DISBLOAN01JAN-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-EXECUTE-SCHEDULER-JOB
+	  Scenario: 4613-DISBLOAN01JAN-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-EXECUTE-SCHEDULER-JOB  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  |4613-DISBLOAN01JAN-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+	  Given I "Create" holiday
+	  |4613-DISBLOAN01JAN-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+	  And I navigate To Loan Account Page
+	  Then I navigate to scheduler job & execute "Apply Holidays To Loans"
+	  And I verified the "Repayment Schedule" details successfully 
+	  |4613-DISBLOAN01JAN-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+
+@4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB
+	  Scenario: 4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB  
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+	  Then I make repayment and verified the following tabs
+      |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|Input|
+	  Given I "Create" holiday
+	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+	  And I navigate To Loan Account Page
+	  Then I navigate to scheduler job & execute "Apply Holidays To Loans"
+	  And I verified the "Repayment Schedule" details successfully 
+	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
 	 
 	 
 
