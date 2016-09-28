@@ -1,196 +1,85 @@
 Feature:RBI
 
 Background:
-	Given I navigate to mifos using "default6#/"
+	Given I navigate to mifos using "default1#/"
 	And I login into mifos site using "Login" excel sheet
 		|Login.xlsx|
 	Then I should see logged in successfully
 	
-@4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
-Scenario:4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4570-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
+@4615-DISB02JAN2013-NonWorkSatandSun
+	  Scenario: 4615-DISB02JAN2013-NonWorkSatandSun
+      Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|4615-WorkingNoNWorking-Loanproduct.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4615-DISB02JAN2013-NonWorkSatandSun.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4615-DISB02JAN2013-NonWorkSatandSun.xlsx|
 
-@4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
-Scenario:4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4571-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
+@4616-NonWorkSatandSun-DISB03JAN2013
+	  Scenario: 4616-NonWorkSatandSun-DISB03JAN2013
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4616-NonWorkSatandSun-DISB03JAN2013.xlsx|
+	  			
+@4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013
+	  Scenario: 4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013
+	  Given I create "same day" As Payments due on non working days
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013.xlsx|	
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013.xlsx|
 
-@4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN
-Scenario:4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I make repayment and verified the following tabs
-     |4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Repay1|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4572-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
+@4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013
+	  Scenario: 4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013
+	  Given I create "move to next working day" As Payments due on non working days
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|	
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|	  			  			
 
-@4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN
-Scenario:4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|		  								  				  				  			
+@4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013
+	  Scenario: 4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013
+	  Given I create "move to previous working day" As Payments due on non working days
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|	
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
+	  			
+@4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013
+	  Scenario: 4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013
+	  Given I create "move to next repayment meeting day" As Payments due on non working days
+      Given I setup the group
+	 When I entered the values into group from "Input" sheet
+	  	|4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|		  								  				  				  			
 	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
+	 	|Createclient.xlsx|
 	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
-	 Then I make repayment and verified the following tabs
-     |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Repay1|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4573-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-	
-@4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN
-Scenario:4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|
- 	 Then I make repayment and verified the following tabs
-     |4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|Repay1|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4574-RBI-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
-
-@4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
-Scenario:4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4575-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-SUBMIT2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-
-@4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
-Scenario:4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4576-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-APPROVE2JLGLOANSON02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-
-@4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN
-Scenario:4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I make repayment and verified the following tabs
-     |4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Repay1|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	 |4577-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISBURSE2JLGLOANSON02JAN-CLOSE1LOAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-
-@4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN
-Scenario:4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
- 	 Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
-	 Then I make repayment and verified the following tabs
-     |4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Repay1|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4578-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-OVERDUEFEEFLAT-PRODUCTIVE_COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
-	
-@4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN
-Scenario:4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|
- 	 Then I make repayment and verified the following tabs
-     |4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|Repay1|
- 	 Then I navigate to collection Sheet
-     Then I Make Repayment Through "Productive Collection" sheet
-	 |4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-lessRepay-09JAN-SPDUEDATE10JAN-PRODUCTIVE_COLLSHEETON16JAN.xlsx|Summary|Repayment Schedule|
-	  	 	   	 		 	 	
+	  			|4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|	
+	 And I verified the "Repayment Schedule" details successfully 
+	  			|4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|	  					 	   	 		 	 	
