@@ -90,6 +90,31 @@ public class ClientSteps {
 		String excelSheetName = excelSheet.get(0).toString();
 		varFrontPage.holiday(ExcelSheetPath, excelSheetName, sheetName);
 	}
+	
+
+	@Then("^I navigate to Individual collection Sheet$")
+	public void I_navigate_to_Individual_collection_Sheet() throws Throwable {
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()
+				+ "individualcollectionsheet");
+		String expectedCollectionPageUrl = TenantsUtils.getLocalTenantUrl()+ "individualcollectionsheet";
+		String collectionPage = MifosWebPage.getWebDriver().getCurrentUrl();
+		int i = 3;
+		while (!collectionPage.contains("individualcollectionsheet") && i>0) {
+			try {
+				new WebDriverWait(MifosWebPage.getWebDriver(), 30).until(ExpectedConditions.urlMatches(expectedCollectionPageUrl));
+				
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()
+						+ "individualcollectionsheet");
+				collectionPage = MifosWebPage.getWebDriver().getCurrentUrl();
+				i--;
+			}
+		}
+
+	}
+
 
 	@Then("^I Make Repayment Through \"([^\"]*)\" sheet$")
 	public void I_Make_Repayment_Through_sheet(String sheetName,
@@ -262,6 +287,12 @@ public class ClientSteps {
 		varFrontPage.verifyAndValidate(ExcelSheetPath, excelSheetName, sheetName);
 	}
 
+	@Then("^I Verify \"([^\"]*)\" not visible$")
+	public void I_Verify_not_visible(String arg1,List<String> excelSheet) throws Throwable {
+		String element = excelSheet.get(0).toString();
+		varFrontPage.verifyElementNotVisible(element);
+		
+	}
 	
 	@Then("^I \"([^\"]*)\" and verified the following tabs$")
 	public void I_and_verified_the_following_tabs(String arg1,
@@ -382,5 +413,7 @@ public class ClientSteps {
 			throws Throwable {
 		varFrontPage.createMakeRepayment(ExcelSheetPath, excel);
 	}*/
+	
+	
 
 }
