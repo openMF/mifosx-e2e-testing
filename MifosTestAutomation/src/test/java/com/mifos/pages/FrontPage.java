@@ -3,6 +3,8 @@
  */
 package com.mifos.pages;
 
+import static org.junit.Assert.fail;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -1509,6 +1511,17 @@ public class FrontPage extends MifosWebPage {
 		Map<String, String> collectionDetailsMap = parseExcelSheet(
 				excelSheetPath, excelSheetName, sheetName);
 		insertValues(collectionDetailsMap);
+	}
+
+	public void verifyElementNotVisible(String element) {
+		
+		By locator = null;
+		locator = getLocator(getResource(element));
+		boolean isPresent = getWebDriver().findElement(locator).isDisplayed();
+		
+		if(isPresent){
+			Assert.fail("UnExpected element is present : "+element); 
+		}
 	}
 
 

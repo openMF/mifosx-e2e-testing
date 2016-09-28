@@ -2440,6 +2440,287 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  And I verified the "Repayment Schedule" details successfully 
 	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
 	 
+@4580-RBI-SUBMITLOANON02JAN-INDCOLLSHEETON09JAN
+	  Scenario: 4580-RBI-SUBMITLOANON02JAN-INDCOLLSHEETON09JAN
+	  
+	  Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|4580-RBI-SUBMITLOANON02JAN-INDCOLLSHEETON09JAN.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4580-RBI-SUBMITLOANON02JAN-INDCOLLSHEETON09JAN.xlsx|
+	  Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4580-RBI-SUBMITLOANON02JAN-INDCOLLSHEETON09JAN.xlsx|
+	  And I Verify "element" not visible
+	            |verifySubmitbutton|
+
+
+@4581-RBI-APRLOANON02JAN-INDCOLLSHEETON02JAN
+	  Scenario: 4581-RBI-APRLOANON02JAN-INDCOLLSHEETON02JAN
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4581-RBI-APRLOANON02JAN-INDCOLLSHEETON02JAN.xlsx|
+	  Then I navigate to Individual collection Sheet
+	 And I Make Repayment Through "Collection" sheet
+	            |4581-RBI-APRLOANON02JAN-INDCOLLSHEETON02JAN.xlsx|
+	  And I Verify "element" not visible
+	            |verifySubmitbutton| 
+	   
+@4582-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN
+	  Scenario: 4582-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN
+	  
+	 Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4582-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN.xlsx|
+      Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4582-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN.xlsx|
+	  And I navigate To Loan Account Page
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4582-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN.xlsx|         
+
+@4583-RBI-DISBLOANON02JAN-UNDODISB-INDCOLLSHEETON09JAN
+	  Scenario: 4583-RBI-DISBLOANON02JAN-UNDODISB-INDCOLLSHEETON09JAN
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4583-RBI-DISBLOANON02JAN-UNDODISB-INDCOLLSHEETON09JAN.xlsx|
+	  Then I "Do Undo Disbursal" and verified the following tabs
+	            |4583-RBI-DISBLOANON02JAN-UNDODISB-INDCOLLSHEETON09JAN.xlsx|Undo Disbursal|
+      Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4583-RBI-DISBLOANON02JAN-UNDODISB-INDCOLLSHEETON09JAN.xlsx|	
+
+@4584-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN-REPAYON16JAN
+	  Scenario: 4584-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN-REPAYON16JAN
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4584-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN-REPAYON16JAN.xlsx|
+	  Then I make repayment and verified the following tabs
+                |4584-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN-REPAYON16JAN.xlsx|Repay1|
+      And I verified the "Repayment Schedule" details successfully 
+	  			|4584-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN-REPAYON16JAN.xlsx|
+      Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4584-RBI-DISBLOANON02JAN-INDCOLLSHEETON16JAN-REPAYON16JAN.xlsx|
+	  And I Verify "element" not visible
+	            |verifySubmitbutton|		
+
+@4585-RBI-DISBLOANON02JAN-INDCOLLSHEETON10JAN
+	  Scenario: 4585-RBI-DISBLOANON02JAN-INDCOLLSHEETON10JAN
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4585-RBI-DISBLOANON02JAN-INDCOLLSHEETON10JAN.xlsx|
+      Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4585-RBI-DISBLOANON02JAN-INDCOLLSHEETON10JAN.xlsx|
+	  And I navigate To Loan Account Page
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4585-RBI-DISBLOANON02JAN-INDCOLLSHEETON10JAN.xlsx|		
+
+@4586-RBI-DISBLOANON02JAN-WAIVEINT-INDCOLLSHEETON10JAN
+	  Scenario: 4586-RBI-DISBLOANON02JAN-WAIVEINT-INDCOLLSHEETON10JAN
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4586-RBI-DISBLOANON02JAN-WAIVEINT-INDCOLLSHEETON10JAN.xlsx|
+	  Then I "WaiveInterest" and verified the following tabs
+	            |4586-RBI-DISBLOANON02JAN-WAIVEINT-INDCOLLSHEETON10JAN.xlsx|Modify Transaction|
+      Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4586-RBI-DISBLOANON02JAN-WAIVEINT-INDCOLLSHEETON10JAN.xlsx|
+	  And I navigate To Loan Account Page
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4586-RBI-DISBLOANON02JAN-WAIVEINT-INDCOLLSHEETON10JAN.xlsx|	
+
+@4587-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN
+	  Scenario: 4587-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4587-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4587-RBI-DISBLOANON02JAN-instalmentFEE-INDCOLLSHEETON10JAN.xlsx|
+	  Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4587-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN.xlsx|
+	  And I navigate To Loan Account Page
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4587-RBI-DISBLOANON02JAN-instalmentFEE-INDCOLLSHEETON10JAN.xlsx|	
+
+@4588-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN
+	  Scenario: 4588-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4588-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|						
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4588-RBI-DISBLOANON02JAN-instalmentFEE-INDCOLLSHEETON10JAN.xlsx|			
+	  Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4588-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN.xlsx|
+	  And I navigate To Loan Account Page
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4588-RBI-DISBLOANON02JAN-instalmentFEE-INDCOLLSHEETON10JAN.xlsx|	
+	  			
+	  				            	
+
+@4589-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN
+	  Scenario: 4589-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4589-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN.xlsx|
+	  Then I "WAIVEPENALTY" and verified the following tabs
+	            |4589-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN.xlsx|Charges|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4589-RBI-DISBLOANON02JAN-instalmentFEE-INDCOLLSHEETON10JAN.xlsx|
+	  Then I "WAIVEPENALTY" and verified the following tabs
+	            |4589-RBI-DISBLOANON02JAN-instalmentFEE-INDCOLLSHEETON10JAN.xlsx|Charges|
+	  Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4589-RBI-DISBLOANON02JAN-SPDUEDATEFEE05Jan-INDCOLLSHEETON10JAN.xlsx|
+	  And I navigate To Loan Account Page
+	  And I verified the "Repayment Schedule" details successfully 
+	  			|4589-RBI-DISBLOANON02JAN-instalmentFEE-INDCOLLSHEETON10JAN.xlsx|	
+				
+				
+@4590-RBI-DISBLOANON02JAN-WRITEOFF-INDCOLLSHEETON09JAN2015
+	  Scenario: 4590-RBI-DISBLOANON02JAN-WRITEOFF-INDCOLLSHEETON09JAN2015
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4590-RBI-DISBLOANON02JAN-WRITEOFF- INDCOLLSHEETON09JAN2015.xlsx|
+	  Then I "WRITEOFF" and verified the following tabs
+	            |4590-RBI-DISBLOANON02JAN-WRITEOFF- INDCOLLSHEETON09JAN2015.xlsx|Modify Transaction|
+      Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4590-RBI-DISBLOANON02JAN-WRITEOFF- INDCOLLSHEETON09JAN2015.xlsx|
+	  And I Verify "element" not visible
+	            |verifySubmitbutton|
+				
+				
+@4591-RBI-DISBLOANON02JAN-OVERPAY-INDCOLLSHEETON09JAN2015
+	  Scenario: 4591-RBI-DISBLOANON02JAN-OVERPAY-INDCOLLSHEETON09JAN2015
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4591-RBI-DISBLOANON02JAN-OVERPAY-INDCOLLSHEETON09JAN2015.xlsx|
+	  Then I make repayment and verified the following tabs
+                |4591-RBI-DISBLOANON02JAN-OVERPAY-INDCOLLSHEETON09JAN2015.xlsx|Repay1|
+      Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4591-RBI-DISBLOANON02JAN-OVERPAY-INDCOLLSHEETON09JAN2015.xlsx|
+	  And I Verify "element" not visible
+	            |verifySubmitbutton|
+				
+				
+@4592-RBI-CREATE2CLIENTS-ASSIGNSTAFFto1CLIENT-DISBLOANFORBOTHCLIENTS-INDCOLLECTIONSHEET
+	  Scenario: 4592-RBI-CREATE2CLIENTS-ASSIGNSTAFFto1CLIENT-DISBLOANFORBOTHCLIENTS-INDCOLLECTIONSHEET
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx| 
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4592-RBI-CREATE2CLIENTS-ASSIGNSTAFFto1CLIENT-DISBLOANFORBOTHCLIENTS-INDCOLLECTIONSHEET.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4592-RBI-CREATE2CLIENTS-ASSIGNSTAFFto1CLIENT-DISBLOANFORBOTHCLIENTS-INDCOLLECTIONSHEET.xlsx|
+	  Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4592-RBI-CREATE2CLIENTS-ASSIGNSTAFFto1CLIENT-DISBLOANFORBOTHCLIENTS-INDCOLLECTIONSHEET.xlsx|
+	  Then i validate and Verify from "Output" sheet
+	            |4592-RBI-CREATE2CLIENTS-ASSIGNSTAFFto1CLIENT-DISBLOANFORBOTHCLIENTS-INDCOLLECTIONSHEET.xlsx|
+				
+@4593-RBI-CREATE2OFFICES-CREATE1CLIENT-DISBLOANforTHATCLIENT-INDCOLLECTION-SHEET-FOR-OTHEROFFICE
+	  Scenario: 4593-RBI-CREATE2OFFICES-CREATE1CLIENT-DISBLOANforTHATCLIENT-INDCOLLECTION-SHEET-FOR-OTHEROFFICE
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx| 
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4593-RBI-CREATE2OFFICES-CREATE1CLIENT-DISBLOANforTHATCLIENT-INDCOLLECTION-SHEET-FOR-OTHEROFFICE.xlsx|
+	  Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4593-RBI-CREATE2OFFICES-CREATE1CLIENT-DISBLOANforTHATCLIENT-INDCOLLECTION-SHEET-FOR-OTHEROFFICE.xlsx|
+	  And I Verify "element" not visible
+	            |verifySubmitbutton|
+				
+@4594-RBI-DISBLOANON02JAN-INDCOLLSHEETON01JAN
+	  Scenario: 4594-RBI-DISBLOANON02JAN-INDCOLLSHEETON01JAN
+	  
+	 Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4594-RBI-DISBLOANON02JAN-INDCOLLSHEETON01JAN.xlsx|
+      Then I navigate to Individual collection Sheet
+	  And I Make Repayment Through "Collection" sheet
+	            |4594-RBI-DISBLOANON02JAN-INDCOLLSHEETON01JAN.xlsx|
+	  And I Verify "element" not visible
+	            |verifySubmitbutton|
 	 
 
 		            
