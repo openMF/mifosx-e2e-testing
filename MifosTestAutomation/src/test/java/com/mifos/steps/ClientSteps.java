@@ -90,6 +90,11 @@ public class ClientSteps {
 		String excelSheetName = excelSheet.get(0).toString();
 		varFrontPage.holiday(ExcelSheetPath, excelSheetName, sheetName);
 	}
+	
+	@Given("^I create \"([^\"]*)\" As Payments due on non working days$")
+	public void I_create_As_Payments_due_on_non_working_days(String arg1) throws Throwable {
+		varFrontPage.createWorkingDays(arg1);
+	}
 
 	@Then("^I Make Repayment Through \"([^\"]*)\" sheet$")
 	public void I_Make_Repayment_Through_sheet(String sheetName,

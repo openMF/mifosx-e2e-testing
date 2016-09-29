@@ -1510,6 +1510,14 @@ public class FrontPage extends MifosWebPage {
 				excelSheetPath, excelSheetName, sheetName);
 		insertValues(collectionDetailsMap);
 	}
+	public void createWorkingDays(String value) throws InterruptedException {
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"workingdays");
+		Thread.sleep(getResourceKey("smallWait"));
+		insertValues("Paymentsdueonnonworkingdays", value);
+		Thread.sleep(getResourceKey("smallWait"));
+		clickButton(getResource("clickOnSubmitWorkingDayButton"));
+		
+	}
 
 
 }

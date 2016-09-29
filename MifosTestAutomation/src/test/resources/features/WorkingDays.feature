@@ -1,4 +1,4 @@
-Feature:RBI
+Feature:WorkingDays
 
 Background:
 	Given I navigate to mifos using "default8#/"
