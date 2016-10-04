@@ -1,4 +1,4 @@
-Feature:FloatingRates
+Feature:Floating/Foreclosure
 Background:
 	Given I navigate to mifos using "default#/"
 	And I login into mifos site using "Login" excel sheet
@@ -1282,5 +1282,262 @@ Background:
 	  And I verified the "Repayment Schedule" details successfully 
 	  			| 2415-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|
 	  And I verified the "Transactions" details successfully	
-				| 2415-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|								
+				| 2415-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|		
+				
+				
+				
+########## Foreclosure 
+
+
+
+@4625-EI-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015
+Scenario:4625-EI-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4625-EI-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4625-EI-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4625-EI-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+				
+				
+@4626-EI-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015
+Scenario:4626-EI-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4626-EI-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4626-EI-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4626-EI-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+				
+				
+@4627-EPP-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015
+Scenario:4627-EPP-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4627-EPP-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4627-EPP-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4627-EPP-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+	  			
+@4628-EPP-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015
+Scenario:4628-EPP-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4628-EPP-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4628-EPP-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4628-EPP-DB-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+				
+				
+@4629-EI-DB-DL-DISB-01JAN2015-FC-15JAN2015
+Scenario:4629-EI-DB-DL-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4629-EI-DB-DL-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4629-EI-DB-DL-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4629-EI-DB-DL-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+				
+@4630-EPP-DB-DL-DISB-01JAN2015-FC-15JAN20155
+Scenario:4630-EPP-DB-DL-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4630-EPP-DB-DL-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4630-EPP-DB-DL-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4630-EPP-DB-DL-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+				
+				
+@4631-EI-FL-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015
+Scenario:4631-EI-FL-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4631-EI-FL-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4631-EI-FL-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4631-EI-FL-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+	  			
+
+@4632-EI-FL-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015
+Scenario:4632-EI-FL-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4632-EI-FL-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4632-EI-FL-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4632-EI-FL-SAR-CIFEDIPP-UNCHECKED-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+	  			
+@4633-EI-FL-DL-DISB-01JAN2015-FC-15JAN2015
+Scenario:4633-EI-FL-DL-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4633-EI-FL-DL-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4633-EI-FL-DL-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4633-EI-FL-DL-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+				
+				
+@4634-EI-DB-DL-MORATORIUMonINT-1-DISB-01JAN2015-FC-15JAN2015
+Scenario:4634-EI-DB-DL-MORATORIUMonINT-1-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4634-EI-DB-DL-MORATORIUMonINT-1-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4634-EI-DB-DL-MORATORIUMonINT-1-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4634-EI-DB-DL-MORATORIUMonINT-1-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+	  			
+	  			
+@4635-EI-DB-DL-MORATORIUMonPRINCIPAL+INT-1-DISB-01JAN2015-FC-15JAN2015
+Scenario:4635-EI-DB-DL-MORATORIUMonPRINCIPAL+INT-1-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4635-EI-DB-DL-MORATORIUMonPRINCIPAL+INT-1-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4635-EI-DB-DL-MORATORIUMonPRINCIPAL+INT-1-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4635-EI-DB-DL-MORATORIUMonPRINCIPAL+INT-1-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+				
+@4636-EI-DB-DL-INTCHARGEDFROM-015FEB2015-DISB-01JAN2015-FC-15JAN2015
+Scenario:4636-EI-DB-DL-INTCHARGEDFROM-015FEB2015-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4636-EI-DB-DL-INTCHARGEDFROM-015FEB2015-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4636-EI-DB-DL-INTCHARGEDFROM-015FEB2015-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4636-EI-DB-DL-INTCHARGEDFROM-015FEB2015-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+				
+@4637-EI-DB-DL-OVERDUEFEEflat100-DISB-01JAN2015-FC-15JAN2015
+Scenario:4637-EI-DB-DL-OVERDUEFEEflat100-DISB-01JAN2015-FC-15JAN2015
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4637-EI-DB-DL-OVERDUEFEEflat100-DISB-01JAN2015-FC-15JAN2015.xlsx|       
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4637-EI-DB-DL-OVERDUEFEEflat100-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I navigate to scheduler job & execute "Apply penalty to overdue loans"
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4637-EI-DB-DL-OVERDUEFEEflat100-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+	  			
+	  							
+@4638-EI-DB-DL-SPDUEDATEFEEon10JAN2015-DISB-01JAN2015-FC-15JAN2015
+Scenario:4638-EI-DB-DL-SPDUEDATEFEEon10JAN2015-DISB-01JAN2015-FC-15JAN2015       
+	   Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4638-EI-DB-DL-SPDUEDATEFEEon10JAN2015-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4638-EI-DB-DL-SPDUEDATEFEEon10JAN2015-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4638-EI-DB-DL-SPDUEDATEFEEon10JAN2015-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |
+	  			
+@4639-EI-DB-DL-SPDUEDATEFEEon20JAN2015-DISB-01JAN2015-FC-15JAN2015
+Scenario:4639-EI-DB-DL-SPDUEDATEFEEon20JAN2015-DISB-01JAN2015-FC-15JAN2015  
+      Given I setup the product loan "Setup"
+		        | Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+		        |4639-EI-DB-DL-SPDUEDATEFEEon20JAN2015-DISB-01JAN2015-FC-15JAN2015.xlsx|      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	 			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4639-EI-DB-DL-SPDUEDATEFEEon20JAN2015-DISB-01JAN2015-FC-15JAN2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4639-EI-DB-DL-SPDUEDATEFEEon20JAN2015-DISB-01JAN2015-FC-15JAN2015.xlsx| Foreclosure | Transactions |				
+				
+										
 		
