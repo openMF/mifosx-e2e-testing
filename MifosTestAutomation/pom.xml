@@ -37,7 +37,7 @@
 							<include>**/*Test.java</include>
 						</includes>
 						<parallel>classes</parallel>
-							<threadCount>4</threadCount>
+							<threadCount>15</threadCount>
 						
 						<testFailureIgnore>true</testFailureIgnore>
 						<systemPropertyVariables>
