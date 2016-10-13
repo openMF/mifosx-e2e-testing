@@ -636,8 +636,115 @@ public class FrontPage extends MifosWebPage {
 											+ xlRowCount + "]/td"));
 					// System.out.println("Col count  " +
 					// applicationCol.size());
-					verifyColumnDetails(xlColumnPointer, xlRowCount,
-							applicationCol, sheet, sheetname);
+					if (sheetname.equals("Transactions")) {
+						boolean rowMatchSuccess = true;
+						int failRowCnt = 0;
+						int failColCnt = 0;
+						String expected = null;
+						String actual = null;
+						DateFormat dateFormat = new SimpleDateFormat(
+								"dd MMMM yyyy");
+						for (int row = 1; row <= rowCount; row++) {
+
+							List<XLCellElement> xlRow = getColumnDetails(
+									xlColumnPointer, row,
+									applicationCol, sheet, sheetname);
+
+							for (int appRow = 1; appRow <= rowCount; appRow++) {
+								applicationCol = getWebDriver()
+										.findElements(
+												By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div[3]/div[4]/div/div/div["
+														+ sheetIndex
+														+ "]/table/tbody/tr["
+														+ appRow + "]/td"));
+								if (!(applicationCol
+										.get(2)
+										.getText()
+										.equals(dateFormat.format((Date) xlRow
+												.get(0).value)) && applicationCol
+										.get(3).getText()
+										.equals((String) xlRow.get(1).value))) {
+									continue;
+								}
+
+								for (int xlCol = 2; xlCol < applicationCol
+										.size(); xlCol++) {
+									String textVal = applicationCol.get(xlCol)
+											.getText();
+
+									switch (xlRow.get(xlCol - 2).type) {
+									case "null":
+										break;
+									case "date":
+										if (!textVal.equals(dateFormat
+												.format((Date) xlRow
+														.get(xlCol - 2).value))) {
+											rowMatchSuccess = false;
+											failRowCnt = row;
+											failColCnt = xlCol;
+											expected = dateFormat
+													.format((Date) xlRow
+															.get(xlCol - 2).value);
+											actual = textVal;
+										}
+										break;
+									case "decimal":
+										double screenVal = 0.0;
+										if ((textVal != null)
+												&& !(textVal.trim().equals("")))
+											screenVal = parseDecimal(textVal);
+										if (screenVal != parseDecimal((String) xlRow
+												.get(xlCol - 2).value)) {
+											rowMatchSuccess = false;
+											failRowCnt = row;
+											failColCnt = xlCol;
+											expected = (String) xlRow
+													.get(xlCol - 2).value;
+											actual = textVal;
+										}else{
+											rowMatchSuccess = true;
+										}
+										break;
+									case "string":
+										if (textVal.contains("$")) {
+											textVal = textVal.substring(
+													textVal.indexOf(" ") + 1,
+													textVal.length());
+										}
+										if (!textVal.equals((String) xlRow
+												.get(xlCol - 2).value)) {
+											rowMatchSuccess = false;
+											failRowCnt = row;
+											failColCnt = xlCol;
+											expected = (String) xlRow
+													.get(xlCol - 2).value;
+											actual = textVal;
+
+										}
+										break;
+									}
+									
+								}
+								
+								if (!rowMatchSuccess) {
+									continue;
+								}
+							}
+							if (!rowMatchSuccess) {
+								Assert.fail("Tab Name:" + sheetname
+										+ " Row number:" + failRowCnt
+										+ " Column number:" + failColCnt
+										+ " Expected result:" + expected
+										+ " Actual result:" + actual);
+							}
+
+						}
+
+					}else{
+						verifyColumnDetails(xlColumnPointer, xlRowCount,
+								applicationCol, sheet, sheetname);
+					}
+					
 
 				} else if (sheetname.equals("Acc_Disbursement")
 						|| sheetname.equals("Acc_Disbursement1")
@@ -751,7 +858,7 @@ public class FrontPage extends MifosWebPage {
 
 				}
 
-
+				break;
 			}
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
