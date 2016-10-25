@@ -271,7 +271,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	protected static WebElement waitForElementToBeVisibleWithText(
 			final By locator, final String text) {
 		WebElement finalElement = null;
-		WebDriverWait wait = new WebDriverWait(getWebDriver(), 30);
+		WebDriverWait wait = new WebDriverWait(getWebDriver(), 120);
 		Boolean elementAvailable = wait.until(ExpectedConditions
 				.invisibilityOfElementWithText(locator, text));
 		if (!elementAvailable) {
@@ -580,29 +580,36 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 * @throws InterruptedException 
 	 * 
 	 */
-	public void checkPageIsReady() throws InterruptedException {
-		  
+	public boolean checkPageIsReady() throws InterruptedException {
+		  boolean check = false;
 		  JavascriptExecutor js = (JavascriptExecutor)getWebDriver();
 		  
 		  //Initially bellow given if condition will check ready state of page.
-		  if (js.executeScript("return document.readyState").toString().equals("complete")){ 
+		/*  if (js.executeScript("return document.readyState").toString().equals("complete")){ 
 			  Thread.sleep(1000);
 		   System.out.println("Page Is loaded.");
 		   return; 
-		  } 
+		  } */
 		  
 		  //This loop will rotate for 25 times to check If page Is ready after every 1 second.
 		  //You can replace your value with 25 If you wants to Increase or decrease wait time.
-		  for (int i=0; i<25; i++){ 
-		   try {
+		  for (int i=0; i<20; i++){ 
+		   /*try {
 		    Thread.sleep(1000);
-		    }catch (InterruptedException e) {} 
+		    }catch (InterruptedException e) {} */
 		   //To check page ready state.
 		   if (js.executeScript("return document.readyState").toString().equals("complete")){ 
 			   System.out.println("Waited " + i + "to page load");
+			   check=true;
 			   break; 
-		   }   
+		   }  
+		   else
+		   {
+			   
+			   Thread.sleep(1000);
+		   }
 		  }
+		  return check;
 	}
 	
 	
@@ -748,6 +755,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "NavigatePage":
 			if (key.equals("NavigateToCurrentJLG")
 					|| key.equals("NavigateToCurrentJLG1")) {
+				Thread.sleep(getResourceKey("largeWait"));
 				value = currentJlgLoanUrl.split("#/")[1];
 			}
 			if (key.equals("NavigateToLoan")){
@@ -757,6 +765,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				value = currentCenterUrl.split("#/")[1];
 			}
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
+				
 				Thread.sleep(getResourceKey("largeWait"));
 				
 			break;
@@ -1391,6 +1400,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			locator =getLocator(getResource(page));
 			System.out.println("");
 			String pageValue = getText(locator);
+			
 			try {
 				if (pageValue.equals("")) {
 					waitForElementToBeVisibleWithText(locator, pageValue);
