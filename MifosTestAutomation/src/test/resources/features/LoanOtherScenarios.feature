@@ -527,7 +527,7 @@ Background:
 #    |3523-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-ADV.ACC-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 # And I Navigate to Accounting web page
 # And I search with transaction id & verified the accounting entries
-#    |3523-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-ADV.ACC-Makerepayment1.xlsx|Acc_Disbursement|Acc_RepaymentDisbursement|Acc_Repayment|Acc_Periodic|
+#    |3523-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-NONE-ADV.ACC-Makerepayment1.xlsx|Acc_RepaymentDisbursement|Acc_Disbursement|Acc_Repayment|Acc_Periodic|
 
 
 @scenario25-3524-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-PREPAY-PERIODIC

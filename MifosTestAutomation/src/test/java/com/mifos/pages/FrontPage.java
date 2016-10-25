@@ -669,6 +669,11 @@ public class FrontPage extends MifosWebPage {
 
 								for (int xlCol = 2; xlCol < applicationCol
 										.size(); xlCol++) {
+									String a= ((String) xlRow
+											.get(1).value);
+									
+									if(!(a.equals("Repayment (at time of disbursement)") && xlCol==9))
+									{
 									String textVal = applicationCol.get(xlCol)
 											.getText();
 
@@ -725,9 +730,12 @@ public class FrontPage extends MifosWebPage {
 									}
 									
 								}
-								
+								}
 								if (!rowMatchSuccess) {
 									continue;
+								}
+								else{
+									break;
 								}
 							}
 							if (!rowMatchSuccess) {
@@ -740,11 +748,11 @@ public class FrontPage extends MifosWebPage {
 
 						}
 
-					}else{
-						verifyColumnDetails(xlColumnPointer, xlRowCount,
-								applicationCol, sheet, sheetname);
 					}
-					
+					else{
+					verifyColumnDetails(xlColumnPointer, xlRowCount,
+							applicationCol, sheet, sheetname);
+					}
 
 				} else if (sheetname.equals("Acc_Disbursement")
 						|| sheetname.equals("Acc_Disbursement1")
@@ -858,7 +866,7 @@ public class FrontPage extends MifosWebPage {
 
 				}
 
-				break;
+
 			}
 		} catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
