@@ -6,7 +6,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @Cucumber.Options(format = { "pretty", "html:target/Centers/cucumber-html-report",
 		"json-pretty:target//Centers/cucumber-json-report.json" },
-		features = { "src/test/resources/features/Centers.feature" },
+		features = { "src/test/resources/features/centers.feature" },
 		glue = { "com.mifos.steps" })
 
 public class CenterTest {

@@ -1677,5 +1677,138 @@ Scenario:4649-EI-FL-DL-VARINST-DATE-15JAN2015-DISB-FC-25JAN2015
 	  Then I "Foreclosure" and verified the following tabs
 	  			|4649-EI-FL-DL-VARINST-DATE-15JAN2015-DISB-FC-25JAN2015.xlsx| Foreclosure | Transactions |			
 				
-										
+@4650-DISB01JAN2015-RESCHDULE01FEB2015-INSTRESCHDULE15FEB2015
+	  Scenario: 4650-DISB01JAN2015-RESCHDULE01FEB2015-INSTRESCHDULE15FEB2015
+      Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|4650-DISB01JAN2015-RESCHDULE01FEB2015-INSTRESCHDULE15FEB2015.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4650-DISB01JAN2015-RESCHDULE01FEB2015-INSTRESCHDULE15FEB2015.xlsx|
+	  Then I "Edit Date " In Edit Repayment Schedule page
+                |4650-DISB01JAN2015-RESCHDULE01FEB2015-INSTRESCHDULE15FEB2015.xlsx|Edit Repayment Schedule|
+      And I verified the "Repayment Schedule" details successfully 
+	  			|4650-DISB01JAN2015-RESCHDULE01FEB2015-INSTRESCHDULE15FEB2015.xlsx|
+				
+@4651-DISB01JAN2015-RESCHDULE01FEB2015-Mid-GracePeriods-principal-3and-interest-3
+	  Scenario: 4651-DISB01JAN2015-RESCHDULE01FEB2015-Mid-GracePeriods-principal-3and-interest-3
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4651-DISB01JAN2015-RESCHDULE01FEB2015-Mid-GracePeriods-principal-3and-interest-3.xlsx|
+	  Then I "Edit Date " In Edit Repayment Schedule page
+                |4651-DISB01JAN2015-RESCHDULE01FEB2015-Mid-GracePeriods-principal-3and-interest-3.xlsx|Edit Repayment Schedule|
+      And I verified the "Repayment Schedule" details successfully 
+	  			|4651-DISB01JAN2015-RESCHDULE01FEB2015-Mid-GracePeriods-principal-3and-interest-3.xlsx|
+				
+@4652-DISB01JAN2015-RESCHDULE01FEB2015-EXTN-REPAYMENTPRD-NUMBER-OF-REPAYMENT-3
+	  Scenario: 4652-DISB01JAN2015-RESCHDULE01FEB2015-EXTN-REPAYMENTPRD-NUMBER-OF-REPAYMENT-3
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4652-DISB01JAN2015-RESCHDULE01FEB2015-EXTN-REPAYMENTPRD-NUMBER-OF-REPAYMENT-3.xlsx|
+	  Then I "Edit Date " In Edit Repayment Schedule page
+                |4652-DISB01JAN2015-RESCHDULE01FEB2015-EXTN-REPAYMENTPRD-NUMBER-OF-REPAYMENT-3.xlsx|Edit Repayment Schedule|
+      And I verified the "Repayment Schedule" details successfully 
+	  			|4652-DISB01JAN2015-RESCHDULE01FEB2015-EXTN-REPAYMENTPRD-NUMBER-OF-REPAYMENT-3.xlsx|
+				
+@4653-DISB01JAN2015-REPAYMENTON-1FEB2015AND1MAR2015-RESCHDULE01APR2015-INTEREST-ON-REMAINDERLOAN-24
+	  Scenario: 4653-DISB01JAN2015-REPAYMENTON-1FEB2015AND1MAR2015-RESCHDULE01APR2015-INTEREST-ON-REMAINDERLOAN-24
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4653-DISB01JAN2015-REPAYMENTON-1FEB2015AND1MAR2015-RESCHDULE01APR2015-INTEREST-ON-REMAINDERLOAN-24.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4653-DISB01JAN2015-REPAYMENTON-1FEB2015AND1MAR2015-RESCHDULE01APR2015-INTEREST-ON-REMAINDERLOAN-24.xlsx|Repay1|Repay2|
+	  Then I "Edit Date " In Edit Repayment Schedule page
+                |4653-DISB01JAN2015-REPAYMENTON-1FEB2015AND1MAR2015-RESCHDULE01APR2015-INTEREST-ON-REMAINDERLOAN-24.xlsx|Edit Repayment Schedule|
+      And I verified the "Repayment Schedule" details successfully 
+	  			|4653-DISB01JAN2015-REPAYMENTON-1FEB2015AND1MAR2015-RESCHDULE01APR2015-INTEREST-ON-REMAINDERLOAN-24.xlsx|
+				
+@4654-DISB01JAN2015-EARLYREPAYMENTON-15JAN2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-24
+	  Scenario: 4654-DISB01JAN2015-EARLYREPAYMENTON-15JAN2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-24
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4654-DISB01JAN2015-EARLYREPAYMENTON-15JAN2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-24.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4654-DISB01JAN2015-EARLYREPAYMENTON-15JAN2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-24.xlsx|Repay1|
+	  Then I "Edit Date " In Edit Repayment Schedule page
+                |4654-DISB01JAN2015-EARLYREPAYMENTON-15JAN2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-24.xlsx|Edit Repayment Schedule|
+      And I verified the "Repayment Schedule" details successfully 
+	  			|4654-DISB01JAN2015-EARLYREPAYMENTON-15JAN2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-24.xlsx|
+				
+@4655-DISB01JAN2015-LESSREPAYMENTON-01FEB2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-2
+	  Scenario: 4655-DISB01JAN2015-LESSREPAYMENTON-01FEB2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-2
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4655-DISB01JAN2015-LESSREPAYMENTON-01FEB2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-2.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4655-DISB01JAN2015-LESSREPAYMENTON-01FEB2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-2.xlsx|Repay1|
+	  Then I "Edit Date " In Edit Repayment Schedule page
+                |4655-DISB01JAN2015-LESSREPAYMENTON-01FEB2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-2.xlsx|Edit Repayment Schedule|
+      And I verified the "Repayment Schedule" details successfully 
+	  			|4655-DISB01JAN2015-LESSREPAYMENTON-01FEB2015-RESCHDULE01MAR2015-INTEREST-ON-REMAINDERLOAN-2.xlsx|
+				
+@4656-DISB01JAN2015-MOREREPAYMENTON-01FEB2015-RESCHDULEFROM01MAR2015-INSTRESCHDULETO15MAR2015INTEREST-ON-REMAINDERLOAN-24
+	  Scenario: 4656-DISB01JAN2015-MOREREPAYMENTON-01FEB2015-RESCHDULEFROM01MAR2015-INSTRESCHDULETO15MAR2015INTEREST-ON-REMAINDERLOAN-24
+
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4656-DISB01JAN2015-MOREREPAYMENTON-01FEB2015-RESCHDULEFROM01MAR2015-INSTRESCHDULETO15MAR2015INTEREST-ON-REMAINDERLOAN-24.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4656-DISB01JAN2015-MOREREPAYMENTON-01FEB2015-RESCHDULEFROM01MAR2015-INSTRESCHDULETO15MAR2015INTEREST-ON-REMAINDERLOAN-24.xlsx|Repay1|
+	  Then I "Edit Date " In Edit Repayment Schedule page
+                |4656-DISB01JAN2015-MOREREPAYMENTON-01FEB2015-RESCHDULEFROM01MAR2015-INSTRESCHDULETO15MAR2015INTEREST-ON-REMAINDERLOAN-24.xlsx|Edit Repayment Schedule|
+      And I verified the "Repayment Schedule" details successfully 
+	  			|4656-DISB01JAN2015-MOREREPAYMENTON-01FEB2015-RESCHDULEFROM01MAR2015-INSTRESCHDULETO15MAR2015INTEREST-ON-REMAINDERLOAN-24.xlsx|
+				
+@4657-DISB01JAN2015-REPAYMENTON-01FEB2015-RESCHDULEFROM01FEB2015-INSTRESCHDULETO15FEB2015
+	  Scenario: 4657-DISB01JAN2015-REPAYMENTON-01FEB2015-RESCHDULEFROM01FEB2015-INSTRESCHDULETO15FEB2015
+
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4657-DISB01JAN2015-REPAYMENTON-01FEB2015-RESCHDULEFROM01FEB2015-INSTRESCHDULETO15FEB2015.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4657-DISB01JAN2015-REPAYMENTON-01FEB2015-RESCHDULEFROM01FEB2015-INSTRESCHDULETO15FEB2015.xlsx|Repay1|
+	  Then I "Edit Date " In Edit Repayment Schedule page
+                |4657-DISB01JAN2015-REPAYMENTON-01FEB2015-RESCHDULEFROM01FEB2015-INSTRESCHDULETO15FEB2015.xlsx|Edit Repayment Schedule|
+   	  Then i validate and Verify from "error" sheet
+	 			|4657-DISB01JAN2015-REPAYMENTON-01FEB2015-RESCHDULEFROM01FEB2015-INSTRESCHDULETO15FEB2015.xlsx|										
 		

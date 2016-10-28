@@ -229,8 +229,12 @@ public class FrontPage extends MifosWebPage {
 
 						switch (cell2.getCellType()) {
 						case Cell.CELL_TYPE_NUMERIC:
+							if(key.contains("Reschedule")){
+							int i = (int) cell2.getNumericCellValue();
+							value = String.valueOf(i);}
+							else{
 							double i = (double) cell2.getNumericCellValue();
-							value = String.valueOf(i);
+							value = String.valueOf(i);}
 							// System.out.println("Cell Two ... value=" +
 							// value);
 							if (key.equals("mobilenumber")) {
