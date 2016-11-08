@@ -3,8 +3,6 @@
  */
 package com.mifos.pages;
 
-import static org.junit.Assert.fail;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,7 +21,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
@@ -732,7 +729,13 @@ public class FrontPage extends MifosWebPage {
 										}
 										break;
 									}
-									
+									if (!rowMatchSuccess) {
+										Assert.fail("Tab Name:" + sheetname
+												+ " Row number:" + failRowCnt
+												+ " Column number:" + failColCnt
+												+ " Expected result:" + expected
+												+ " Actual result:" + actual);
+									}
 								}
 								}
 								if (!rowMatchSuccess) {
