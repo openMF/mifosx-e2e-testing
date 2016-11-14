@@ -68,7 +68,6 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public String currentJlgLoanUrl;
 	public String currentNewLoanUrl;
 	public String currentCenterUrl;
-
 	/**
 	 * Gets the resource.
 	 *
@@ -697,6 +696,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;	
 			case "button":
+				if (key.equals("ClickOnADD")||key.equals("AddGroup"))
+				 {
+					 Thread.sleep(10000);
+				 }
 			if (key.equals("ClickOnADD")) {
 				By loc = null;
 				loc = getLocator(getResource(key));
@@ -724,11 +727,11 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					clickButton(getLocator(getResource(key)));
 					Thread.sleep(getResourceKey("mediumWait"));
 					if(key.equals("AddGroup")){
-						By locator = null;
+						/*By locator = null;
 						locator = getLocator(getResource("office"));
 						
 						new WebDriverWait(getWebDriver(), 120).until(
-						        ExpectedConditions.invisibilityOfElementLocated(locator));						
+						        ExpectedConditions.invisibilityOfElementLocated(locator));*/						
 					}
 					if(key.equals("submitdisburse")){
 						currentNewLoanUrl = getWebDriver().getCurrentUrl();				

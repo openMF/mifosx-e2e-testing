@@ -202,7 +202,14 @@ public class ClientSteps {
 	public void I_verified_the_details_successfully(String sheetName,
 			List<String> excelSheet) throws Throwable {
 		String excelSheetName = excelSheet.get(0).toString();
-		varFrontPage.verifyLoanTabData(ExcelSheetPath, excelSheetName, sheetName);
+		if(sheetName.contains("Loan Provisioning Journals"))
+		{
+			varFrontPage.verifyProvisionData(ExcelSheetPath, excelSheetName, sheetName);
+		}
+		else
+		{
+			varFrontPage.verifyLoanTabData(ExcelSheetPath, excelSheetName, sheetName);
+			}
 	}
 	
 	@Then("^I verified the \"([^\"]*)\" details and read the transaction Id$")
@@ -405,6 +412,14 @@ public class ClientSteps {
 		varFrontPage.navigateLoanAccounting();
 		}
 	
+	@Given("^I Navigate and create Loan Provisioning \"([^\"]*)\" from \"([^\"]*)\" Sheet$")
+	public void I_navigate_and_create_Provisioning_Criteria_age(String LoanProvision, String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.navigateToLoanProvisioningPage(ExcelSheetPath, excelSheetName,LoanProvision,
+				sheetName);
+		
+	}
 /*	@When("^I set up the new savings$")
 	public void I_set_up_the_new_savings(String sheetName,
 			List<String> excelSheetName) throws Throwable {
