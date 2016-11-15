@@ -2001,4 +2001,228 @@ Scenario:4649-EI-FL-DL-VARINST-DATE-15JAN2015-DISB-FC-25JAN2015
       And I verified the "Repayment Schedule" details successfully 
 	  			|4668-SUBMITLOAN01JAN2015-DATE-VAR-INST-15FEB2015-DISBURSE01JAN2015-RESCHEDULE-15FEB2015to25FEB2015.xlsx|
 	
-		
+	
+########## Loan Provisioning
+	
+@4669-DISBURSELOANon01JAN2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-01MAR2015
+	  Scenario:4669-DISBURSELOANon01JAN2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-01MAR2015
+      
+      Given I Navigate and create Loan Provisioning "Criteria" from "Loan Provisioning Criteria" Sheet
+                |4669-DISBURSELOANon01JAN2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-01MAR2015.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4669-DISBURSELOANon01JAN2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-01MAR2015.xlsx|
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4669-DISBURSELOANon01JAN2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-01MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4669-DISBURSELOANon01JAN2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-01MAR2015.xlsx|
+
+
+@4670-DISBURSELOANon01JAN2015-REPAY0N01FEB2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-02MAR2015
+	  Scenario:4670-DISBURSELOANon01JAN2015-REPAY0N01FEB2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-02MAR2015
+      
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4670-DISBURSELOANon01JAN2015-REPAY0N01FEB2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-02MAR2015.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|4670-DISBURSELOANon01JAN2015-REPAY0N01FEB2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-02MAR2015.xlsx|Repay1|
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4670-DISBURSELOANon01JAN2015-REPAY0N01FEB2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-02MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4670-DISBURSELOANon01JAN2015-REPAY0N01FEB2015-RUNSCHEDULERJOB-VIEWJOURNALENTRIES-ON-02MAR2015.xlsx|
+	
+
+	
+@4671-DISBLOAN01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURNALENT-03MAR2015-UNDOLASTTRANSACTION-RUNSCHEDJOB-VIEWJOURNALENTRIES-04MAR2015
+	  Scenario:4671-DISBLOAN01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURNALENT-03MAR2015-UNDOLASTTRANSACTION-RUNSCHEDJOB-VIEWJOURNALENTRIES-04MAR2015
+      
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4671-DISBLOAN01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURNALENT-03MAR2015-UNDOLASTTRANSACTION-RUNSCHEDJOB-VIEWJOURNALENTRIES-04MAR2015.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|4671-DISBLOAN01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURNALENT-03MAR2015-UNDOLASTTRANSACTION-RUNSCHEDJOB-VIEWJOURNALENTRIES-04MAR2015.xlsx|Repay1|
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4671-DISBLOAN01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURNALENT-03MAR2015-UNDOLASTTRANSACTION-RUNSCHEDJOB-VIEWJOURNALENTRIES-04MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4671-DISBLOAN01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURNALENT-03MAR2015-UNDOLASTTRANSACTION-RUNSCHEDJOB-VIEWJOURNALENTRIES-04MAR2015.xlsx|
+	  Then I "undo transaction from transaction tab" and verified the following tabs
+	  			|4671-DISBLOAN01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURNALENT-03MAR2015-UNDOLASTTRANSACTION-RUNSCHEDJOB-VIEWJOURNALENTRIES-04MAR2015.xlsx|Modify Transaction|
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry1" Sheet
+	            |4671-DISBLOAN01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURNALENT-03MAR2015-UNDOLASTTRANSACTION-RUNSCHEDJOB-VIEWJOURNALENTRIES-04MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals1" details successfully 
+	  			|4671-DISBLOAN01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURNALENT-03MAR2015-UNDOLASTTRANSACTION-RUNSCHEDJOB-VIEWJOURNALENTRIES-04MAR2015.xlsx|
+				
+@4672-DISB01JAN2015-SCHEDJOB-VIEWJOURENT05MAR2015-RESCHD-LOAN-GRACEON-PRI-INT-3-RUNSCHEDJOB-VIEWJOURENT-06MAR2015 
+	  Scenario:4672-DISB01JAN2015-SCHEDJOB-VIEWJOURENT05MAR2015-RESCHD-LOAN-GRACEON-PRI-INT-3-RUNSCHEDJOB-VIEWJOURENT-06MAR2015 
+      
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4672-DISB01JAN2015-SCHEDJOB-VIEWJOURENT05MAR2015-RESCHD-LOAN-GRACEON-PRI-INT-3-RUNSCHEDJOB-VIEWJOURENT-06MAR2015.xlsx|
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4672-DISB01JAN2015-SCHEDJOB-VIEWJOURENT05MAR2015-RESCHD-LOAN-GRACEON-PRI-INT-3-RUNSCHEDJOB-VIEWJOURENT-06MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4672-DISB01JAN2015-SCHEDJOB-VIEWJOURENT05MAR2015-RESCHD-LOAN-GRACEON-PRI-INT-3-RUNSCHEDJOB-VIEWJOURENT-06MAR2015.xlsx|
+	  Then I "Edit Date " In Edit Repayment Schedule page
+                |4672-DISB01JAN2015-SCHEDJOB-VIEWJOURENT05MAR2015-RESCHD-LOAN-GRACEON-PRI-INT-3-RUNSCHEDJOB-VIEWJOURENT-06MAR2015.xlsx|Edit Repayment Schedule|
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry1" Sheet
+	            |4672-DISB01JAN2015-SCHEDJOB-VIEWJOURENT05MAR2015-RESCHD-LOAN-GRACEON-PRI-INT-3-RUNSCHEDJOB-VIEWJOURENT-06MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals1" details successfully 
+	  			|4672-DISB01JAN2015-SCHEDJOB-VIEWJOURENT05MAR2015-RESCHD-LOAN-GRACEON-PRI-INT-3-RUNSCHEDJOB-VIEWJOURENT-06MAR2015.xlsx|
+
+@4673-DISB01JAN2015-REPAY-LESS-ON-01FEB2015-RUNSCHEDJOB-VIEWJOURENT-ON-07MAR2015 
+	  Scenario:4673-DISB01JAN2015-REPAY-LESS-ON-01FEB2015-RUNSCHEDJOB-VIEWJOURENT-ON-07MAR2015 
+      
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4673-DISB01JAN2015-REPAY-LESS-ON-01FEB2015-RUNSCHEDJOB-VIEWJOURENT-ON-07MAR2015.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|4673-DISB01JAN2015-REPAY-LESS-ON-01FEB2015-RUNSCHEDJOB-VIEWJOURENT-ON-07MAR2015.xlsx|Repay1|
+      Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4673-DISB01JAN2015-REPAY-LESS-ON-01FEB2015-RUNSCHEDJOB-VIEWJOURENT-ON-07MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4673-DISB01JAN2015-REPAY-LESS-ON-01FEB2015-RUNSCHEDJOB-VIEWJOURENT-ON-07MAR2015.xlsx|
+	 				
+				
+@4674-DISB01JAN2015-EARLYREPAY-ON-15JAN2015-RUNSCHEDJOB-VIEWJOURENT-ON-08MAR2015 
+	  Scenario:4674-DISB01JAN2015-EARLYREPAY-ON-15JAN2015-RUNSCHEDJOB-VIEWJOURENT-ON-08MAR2015 
+      
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4674-DISB01JAN2015-EARLYREPAY-ON-15JAN2015-RUNSCHEDJOB-VIEWJOURENT-ON-08MAR2015.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|4674-DISB01JAN2015-EARLYREPAY-ON-15JAN2015-RUNSCHEDJOB-VIEWJOURENT-ON-08MAR2015.xlsx|Repay1|
+      Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4674-DISB01JAN2015-EARLYREPAY-ON-15JAN2015-RUNSCHEDJOB-VIEWJOURENT-ON-08MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4674-DISB01JAN2015-EARLYREPAY-ON-15JAN2015-RUNSCHEDJOB-VIEWJOURENT-ON-08MAR2015.xlsx|
+
+@4675-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT09MAR2015-WRITEOFFLOAN-RUNSCHEDJOB-VIEWJOURENT10MAR2015  
+	  Scenario:4675-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT09MAR2015-WRITEOFFLOAN-RUNSCHEDJOB-VIEWJOURENT10MAR2015 
+      
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4675-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT09MAR2015-WRITEOFFLOAN-RUNSCHEDJOB-VIEWJOURENT10MAR2015.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|4675-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT09MAR2015-WRITEOFFLOAN-RUNSCHEDJOB-VIEWJOURENT10MAR2015.xlsx|Repay1|
+      Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4675-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT09MAR2015-WRITEOFFLOAN-RUNSCHEDJOB-VIEWJOURENT10MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4675-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT09MAR2015-WRITEOFFLOAN-RUNSCHEDJOB-VIEWJOURENT10MAR2015.xlsx|
+	  Then I "WaiveInterest" and verified the following tabs
+	  			|4675-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT09MAR2015-WRITEOFFLOAN-RUNSCHEDJOB-VIEWJOURENT10MAR2015.xlsx|Modify Transaction|
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry1" Sheet
+	            |4675-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT09MAR2015-WRITEOFFLOAN-RUNSCHEDJOB-VIEWJOURENT10MAR2015.xlsx|
+      And I Verify "element" not visible
+	            |ProvisionEntries| 			
+				
+				
+@4676-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT11MAR2015-FORECLOSELOAN15FEB2015-RUNSCHEDJOB-VIEWJOURENT12MAR2015   
+	  Scenario:4676-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT11MAR2015-FORECLOSELOAN15FEB2015-RUNSCHEDJOB-VIEWJOURENT12MAR2015 
+      
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4676-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT11MAR2015-FORECLOSELOAN15FEB2015-RUNSCHEDJOB-VIEWJOURENT12MAR2015.xlsx|
+	  Then I make repayment and verified the following tabs
+       			|4676-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT11MAR2015-FORECLOSELOAN15FEB2015-RUNSCHEDJOB-VIEWJOURENT12MAR2015.xlsx|Repay1|
+      Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4676-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT11MAR2015-FORECLOSELOAN15FEB2015-RUNSCHEDJOB-VIEWJOURENT12MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4676-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT11MAR2015-FORECLOSELOAN15FEB2015-RUNSCHEDJOB-VIEWJOURENT12MAR2015.xlsx|
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4676-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT11MAR2015-FORECLOSELOAN15FEB2015-RUNSCHEDJOB-VIEWJOURENT12MAR2015.xlsx| Foreclosure |
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry1" Sheet
+	            |4676-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT11MAR2015-FORECLOSELOAN15FEB2015-RUNSCHEDJOB-VIEWJOURENT12MAR2015.xlsx|
+      And I Verify "element" not visible
+	            |ProvisionEntries| 	
+
+@4677-DISB01JAN2015-RUNSCHEDJOB-VIEWJOURENT13MAR2015-UNDODISBRSE-RUNSCHEDJOB-VIEWJOURENT14MAR2015   
+	  Scenario:4677-DISB01JAN2015-RUNSCHEDJOB-VIEWJOURENT13MAR2015-UNDODISBRSE-RUNSCHEDJOB-VIEWJOURENT14MAR2015
+      
+      
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4677-DISB01JAN2015-RUNSCHEDJOB-VIEWJOURENT13MAR2015-UNDODISBRSE-RUNSCHEDJOB-VIEWJOURENT14MAR2015.xlsx|
+      Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4677-DISB01JAN2015-RUNSCHEDJOB-VIEWJOURENT13MAR2015-UNDODISBRSE-RUNSCHEDJOB-VIEWJOURENT14MAR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4677-DISB01JAN2015-RUNSCHEDJOB-VIEWJOURENT13MAR2015-UNDODISBRSE-RUNSCHEDJOB-VIEWJOURENT14MAR2015.xlsx|
+	  Then I "Do Undo Disbursal" and verified the following tabs
+	            |4677-DISB01JAN2015-RUNSCHEDJOB-VIEWJOURENT13MAR2015-UNDODISBRSE-RUNSCHEDJOB-VIEWJOURENT14MAR2015.xlsx|Undo Disbursal|
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry1" Sheet
+	            |4677-DISB01JAN2015-RUNSCHEDJOB-VIEWJOURENT13MAR2015-UNDODISBRSE-RUNSCHEDJOB-VIEWJOURENT14MAR2015.xlsx|
+      And I Verify "element" not visible
+	            |ProvisionEntries| 						
+	            
+	            	
+@4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015    
+	  Scenario:4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015
+    
+      Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+ 	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015.xlsx|   
+      Given I Navigate and create Loan Provisioning "Criteria" from "Loan Provisioning Criteria" Sheet
+                |4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015.xlsx|
+      Then I make repayment and verified the following tabs
+       			|4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015.xlsx|Repay1|
+      Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry" Sheet
+	            |4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015.xlsx|
+      And I verified the "Loan Provisioning Journals" details successfully 
+	  			|4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015.xlsx|
+	  Then I "Make Pre Payment" and verified the following tabs
+	  			|4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015.xlsx|Prepay Loan|
+	  Then I navigate to scheduler job & execute "Generate Loan Loss Provisioning"
+	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry1" Sheet
+	            |4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015.xlsx|
+      And I Verify "element" not visible
+	            |ProvisionEntries| 				
