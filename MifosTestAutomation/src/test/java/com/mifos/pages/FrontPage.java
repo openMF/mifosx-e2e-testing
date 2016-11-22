@@ -312,6 +312,7 @@ public class FrontPage extends MifosWebPage {
 	public void groupNavigation() throws Throwable {
 		try {
 			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"creategroup");
+			Thread.sleep(getResourceKey("mediumWait"));
 			verifySuccessMessage("submitGroup", "Submit");
 			Thread.sleep(getResourceKey("mediumWait"));
 
@@ -1685,7 +1686,14 @@ public class FrontPage extends MifosWebPage {
 	}
 
 	public void navigateLoanAccounting() throws Throwable {
+		if(RememberTopupUrl=="")
+		{
 		MifosWebPage.navigateToUrl(currentUrl);	
+		}
+		else{
+			MifosWebPage.navigateToUrl(RememberTopupUrl);
+			RememberTopupUrl="";
+		}
 		Thread.sleep(getResourceKey("smallWait"));
 	}
 	
@@ -1758,6 +1766,7 @@ public class FrontPage extends MifosWebPage {
 		insertValues("Paymentsdueonnonworkingdays", value);
 		Thread.sleep(getResourceKey("smallWait"));
 		clickButton(getResource("clickOnSubmitWorkingDayButton"));
+		Thread.sleep(getResourceKey("largeWait"));
 		
 	}
 
