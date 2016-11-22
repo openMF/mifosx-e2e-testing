@@ -1,4 +1,4 @@
-Feature:Floating/Foreclosure
+Feature:Floating/Foreclosure/TopUP Loan
 Background:
 	Given I navigate to mifos using "default#/"
 	And I login into mifos site using "Login" excel sheet
@@ -2225,4 +2225,208 @@ Scenario:4649-EI-FL-DL-VARINST-DATE-15JAN2015-DISB-FC-25JAN2015
 	  Given I Navigate and create Loan Provisioning "Entries" from "Create Provisioning Entry1" Sheet
 	            |4678-DISB01JAN2015-REPAY01FEB2015-RUNSCHEDJOB-VIEWJOURENT15MAR2015-PREPAY15FEB2015-RUNSCHEDJOB-VIEWJOURENT01APR2015.xlsx|
       And I Verify "element" not visible
-	            |ProvisionEntries| 				
+	            |ProvisionEntries| 		
+	
+
+######### Top up Loans
+	
+	            
+	@4679-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015   
+	  Scenario:4679-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4679-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-1.xlsx|	
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4679-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-topup.xlsx|
+	  Then I navigate To Loan Account Page
+      Then I verified the following Tabs details successfully 
+	            |4679-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-1.xlsx|Repayment Schedule|Transactions|
+	  Then I navigate To Loan Account Page 
+      Then I verified the "Transactions" details and read the transaction Id 
+	            |4679-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-topup.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |4679-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-topup.xlsx|Acc_Disbursement|Acc_Disbursement1|
+				
+				
+@4680-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015   
+	  Scenario:4680-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4680-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015.xlsx|	
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4680-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+	  Then i validate and Verify from "error" sheet
+	 			|4680-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+	 			
+@4681-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015   
+	  Scenario:4681-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4681-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4681-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|Repay1|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4681-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+	  Then i validate and Verify from "error" sheet
+	 			|4681-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-15JAN2015.xlsx|
+				
+@4682-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015   
+	  Scenario:4682-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4682-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-1.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4682-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-1.xlsx|Repay1|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4682-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-topup.xlsx|
+	  Then I navigate To Loan Account Page
+      Then I verified the following Tabs details successfully 
+	            |4682-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-1.xlsx|Repayment Schedule|Transactions|
+	  Then I navigate To Loan Account Page 
+      Then I verified the "Transactions" details and read the transaction Id 
+	            |4682-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-topup.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |4682-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-topup.xlsx|Acc_Disbursement|Acc_Disbursement1|
+				
+				
+@4683-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-UNDO-TOPUPLOAN   
+	  Scenario:4683-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-UNDO-TOPUPLOAN
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4683-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-UNDO-TOPUPLOAN.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4683-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-UNDO-TOPUPLOAN.xlsx|Repay1|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4683-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-UNDO-TOPUPLOAN.xlsx|
+	  Then I "Do Undo Disbursal" and verified the following tabs
+	            |4683-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-UNDO-TOPUPLOAN.xlsx|Undo Disbursal|
+      Then i validate and Verify from "error" sheet
+	 			|4683-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-UNDO-TOPUPLOAN.xlsx|
+	
+@4684-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-FORECLOSURE-TOPUPLOAN-01FEB2015   
+	  Scenario:4684-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-FORECLOSURE-TOPUPLOAN-01FEB2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4684-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-FORECLOSURE-TOPUPLOAN-01FEB2015.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4684-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-FORECLOSURE-TOPUPLOAN-01FEB2015.xlsx|Repay1|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4684-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-FORECLOSURE-TOPUPLOAN-01FEB2015.xlsx|
+	  Then I navigate To Loan Account Page
+      Then I verified the following Tabs details successfully 
+	            |4684-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-FORECLOSURE-TOPUPLOAN-01FEB2015.xlsx|Repayment Schedule|
+	  Then I navigate To Loan Account Page 
+	  Then I "Foreclosure" and verified the following tabs
+	  			|4684-DISB01JAN2015-10000-amount-EARLYREPAY-on-15JAN2015-DISB-TOPUP-10000amount-01FEB2015-FORECLOSURE-TOPUPLOAN-01FEB2015.xlsx| Foreclosure | Transactions |
+
+@4685-DISB01JAN2015-10000amount-LATEREPAY-15FEB2015-DISB-TOPUP-10000amount-15FEB2015   
+	  Scenario:4685-DISB01JAN2015-10000amount-LATEREPAY-15FEB2015-DISB-TOPUP-10000amount-15FEB2015   
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4685-DISB01JAN2015-10000amount-LATEREPAY-15FEB2015-DISB-TOPUP-10000amount-15FEB2015.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4685-DISB01JAN2015-10000amount-LATEREPAY-15FEB2015-DISB-TOPUP-10000amount-15FEB2015.xlsx|Repay1|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4685-DISB01JAN2015-10000amount-LATEREPAY-15FEB2015-DISB-TOPUP-10000amount-15FEB2015.xlsx|
+	  Then I navigate To Loan Account Page
+      Then I verified the following Tabs details successfully 
+	            |4685-DISB01JAN2015-10000amount-LATEREPAY-15FEB2015-DISB-TOPUP-10000amount-15FEB2015.xlsx|Repayment Schedule|
+	  Then I navigate To Loan Account Page 
+	  Then I verified the "Transactions" details and read the transaction Id 
+	            |4685-DISB01JAN2015-10000amount-LATEREPAY-15FEB2015-DISB-TOPUP-10000amount-15FEB2015.xlsx|
+	  And I Navigate to Accounting web page          
+	  And I search with transaction id & verified the accounting entries
+                |4685-DISB01JAN2015-10000amount-LATEREPAY-15FEB2015-DISB-TOPUP-10000amount-15FEB2015.xlsx|Acc_Disbursement|Acc_Disbursement1|
+
+@4686-RECALC-DISBCHARGE-DISB01JAN2015-10000amount-REPAY01FEB2015-DISB-TOPUP-10000amount-15FEB2015-PREPAY-01MARCH2015   
+	  Scenario:4686-RECALC-DISBCHARGE-DISB01JAN2015-10000amount-REPAY01FEB2015-DISB-TOPUP-10000amount-15FEB2015-PREPAY-01MARCH2015   
+      
+       Given I setup the product loan "Setup"
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+				|4686-RECALC-DISBCHARGE-DISB01JAN2015-10000amount-REPAY01FEB2015-DISB-TOPUP-10000amount-15FEB2015-PREPAY-01MARCH2015.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4686-RECALC-DISBCHARGE-DISB01JAN2015-10000amount-REPAY01FEB2015-DISB-TOPUP-10000amount-15FEB2015-PREPAY-01MARCH2015.xlsx|
+	  Then I make repayment and verified the following tabs
+     			|4686-RECALC-DISBCHARGE-DISB01JAN2015-10000amount-REPAY01FEB2015-DISB-TOPUP-10000amount-15FEB2015-PREPAY-01MARCH2015.xlsx|Repay1|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4686-RECALC-DISBCHARGE-DISB01JAN2015-10000amount-REPAY01FEB2015-DISB-TOPUP-10000amount-15FEB2015-PREPAY-01MARCH2015.xlsx|
+	  Then I navigate To Loan Account Page
+      Then I verified the following Tabs details successfully 
+	            |4686-RECALC-DISBCHARGE-DISB01JAN2015-10000amount-REPAY01FEB2015-DISB-TOPUP-10000amount-15FEB2015-PREPAY-01MARCH2015.xlsx|Repayment Schedule|
+	  Then I navigate To Loan Account Page 
+	  Then I "Make Pre Payment" and verified the following tabs
+	  			|4686-RECALC-DISBCHARGE-DISB01JAN2015-10000amount-REPAY01FEB2015-DISB-TOPUP-10000amount-15FEB2015-PREPAY-01MARCH2015.xlsx|Prepay Loan|
+	  Then I verified the following Tabs details successfully 
+	            |4686-RECALC-DISBCHARGE-DISB01JAN2015-10000amount-REPAY01FEB2015-DISB-TOPUP-10000amount-15FEB2015-PREPAY-01MARCH2015.xlsx|Transactions|	
+
+@4687-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-WRITEOFF-15JAN2015   
+	  Scenario:4687-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-WRITEOFF-15JAN2015   
+      
+       
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4687-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-WRITEOFF-15JAN2015.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4687-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-WRITEOFF-15JAN2015.xlsx|
+	  Then I navigate To Loan Account Page
+      Then I verified the following Tabs details successfully 
+	            |4687-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-WRITEOFF-15JAN2015.xlsx|Repayment Schedule|
+	  Then I navigate To Loan Account Page 
+	  Then I "WaiveInterest" and verified the following tabs
+	  			|4687-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-WRITEOFF-15JAN2015.xlsx|Modify Transaction|
+	  Then I verified the following Tabs details successfully 
+	            |4687-DISB01JAN2015-10000amount-DISB-TOPUP-15000amount-15JAN2015-WRITEOFF-15JAN2015.xlsx|Transactions|				
+				
+				
+@4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015   
+	  Scenario:4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015   
+      
+       
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015-topup2.xlsx|
+	  Then I navigate To Loan Account Page
+      Then I verified the following Tabs details successfully 
+	            |4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015.xlsx|Repayment Schedule|
+	  Then I navigate To Loan Account Page
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015-topup2.xlsx|
+	  Then I navigate To Loan Account Page 
+	  Then I verified the following Tabs details successfully 
+	            |4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015-topup2.xlsx|Repayment Schedule|
+	  Then I navigate To Loan Account Page
+	  Then I verified the following Tabs details successfully 
+	            |4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015-topup2.xlsx|Transactions|            
+			

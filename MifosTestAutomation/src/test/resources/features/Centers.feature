@@ -2306,7 +2306,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	 Then I Make Repayment Through "Collection" sheet
 	 |4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET.xlsx|     			
 	 Then i validate and Verify from "error" sheet
-	 			|4607-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN-EDITTRANSACTIONDATETO15JAN.xlsx|
+	 |4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY15JAN-THROUGH-COLLECTION-SHEET.xlsx|
 	 	  			
 @4604-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-PREPAYON15JAN
 	  Scenario: 4604-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-PREPAYON15JAN  

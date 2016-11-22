@@ -68,6 +68,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public String currentJlgLoanUrl;
 	public String currentNewLoanUrl;
 	public String currentCenterUrl;
+	public String RememberTopupUrl;
 	/**
 	 * Gets the resource.
 	 *
@@ -700,6 +701,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				 {
 					 Thread.sleep(10000);
 				 }
+				if (key.equals("Submitbutton"))
+				{
+			 Thread.sleep(3000);
+		        }
 			if (key.equals("ClickOnADD")) {
 				By loc = null;
 				loc = getLocator(getResource(key));
@@ -713,7 +718,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 
 			}
-							
+			if(key.equals("ViewClientName")){
+				RememberTopupUrl = getWebDriver().getCurrentUrl();					
+			     }			
 				if (key.equals("clickonapprove")
 						|| key.equals("clickonModifyApplication")) {
 					((JavascriptExecutor) getWebDriver())
@@ -739,6 +746,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					if(key.equals("submitCenter")){
 						currentCenterUrl = getWebDriver().getCurrentUrl();					
 					}
+					
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
 				}
@@ -797,9 +805,16 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 				break;
 			case "dropDown":
-				
+				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
+				 {
+					 Thread.sleep(3000);
+				 }
 					clickButton(getLocator(getResource(key)));
 					By locator = null;
+					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
+					 {
+						 Thread.sleep(3000);
+					 }
 					locator = getLocator(getResource(key + ".input"));
 					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
@@ -849,7 +864,12 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				try {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
-					statusselect.selectByVisibleText(value);
+					if(key.equals("ChooseLoanToClose"))
+					{
+						statusselect.selectByValue(value);
+					}
+					else{statusselect.selectByVisibleText(value);}
+					
 				} catch (NoSuchElementException e) {
 					Assert.fail("Could not find the " + key);
 				}
