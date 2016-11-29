@@ -447,6 +447,14 @@ public class FrontPage extends MifosWebPage {
 		}
 	}
 
+	public void setupNewSaving(String clientExcelSheetPath,
+			String excelSheetName, String sheetName) throws Throwable {
+
+		Map<String, String> newLoanDetailsMap = parseExcelSheet(
+				clientExcelSheetPath, excelSheetName, sheetName);
+		insertValues(newLoanDetailsMap);
+		
+	}
 	/**
 	 * Method navigates to loan product page
 	 * 
@@ -1499,12 +1507,12 @@ public class FrontPage extends MifosWebPage {
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
 			Thread.sleep(getResourceKey("largeWait"));
-		} else if (sheetName.equals("Modify Transaction")) {
+		} else if (sheetName.contains("Modify Transaction")) {
 			Map<String, String> tabDetails = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
 			Thread.sleep(getResourceKey("largeWait"));
-		} else if (sheetName.equals("Prepay Loan")) {
+		}  else if (sheetName.equals("Prepay Loan")) {
 			Map<String, String> tabDetails = parseExcelSheet1(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
@@ -1686,17 +1694,24 @@ public class FrontPage extends MifosWebPage {
 	}
 
 	public void navigateLoanAccounting() throws Throwable {
-		if(RememberTopupUrl=="")
+		if(RememberTopupUrl!=null)
 		{
-		MifosWebPage.navigateToUrl(currentUrl);	
-		}
-		else{
 			MifosWebPage.navigateToUrl(RememberTopupUrl);
-			RememberTopupUrl="";
+			RememberTopupUrl=null;
+		}
+		
+		else{
+			MifosWebPage.navigateToUrl(currentUrl);
 		}
 		Thread.sleep(getResourceKey("smallWait"));
 	}
 	
+	public void navigateSavingAccounting() throws Throwable {
+		
+			MifosWebPage.navigateToUrl(CurrentSavingAccounturl);
+		
+		Thread.sleep(getResourceKey("smallWait"));
+	}
 	public void navigateToCurrentCenterPage(String excelSheetPath,
 			String excelSheetName, String sheetName) throws Throwable {
 

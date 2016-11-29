@@ -1,4 +1,4 @@
-Feature:Floating/Foreclosure/TopUP Loan
+Feature:Floating/Foreclosure/TopUPLoan
 Background:
 	Given I navigate to mifos using "default#/"
 	And I login into mifos site using "Login" excel sheet
@@ -2430,3 +2430,293 @@ Scenario:4649-EI-FL-DL-VARINST-DATE-15JAN2015-DISB-FC-25JAN2015
 	  Then I verified the following Tabs details successfully 
 	            |4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015-topup2.xlsx|Transactions|            
 			
+			
+@4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015   
+	  Scenario:4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015.xlsx|			
+	  
+	  Then i validate and Verify from "error" sheet
+	 			|4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015.xlsx|
+
+				
+@4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015   
+	  Scenario:4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015.xlsx|			
+	  Then I add Guarentor for loan application from "Self Guarentor" sheet
+	            |4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015.xlsx|
+	  Then I add Guarentor for loan application from "External Guarentor" sheet
+	            |4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015.xlsx|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4690-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015.xlsx|
+				
+				
+@4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc   
+	  Scenario:4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx|			
+	  Then I add Guarentor for loan application from "Self Guarentor" sheet
+	            |4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Then I add Guarentor for loan application from "External Guarentor" sheet
+	            |4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Then I navigate To Saving Account Page
+	  Then I "Withdraw" and verified the following tabs
+	            |4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx| Modify Transaction |
+	  Then i validate and Verify from "error" sheet
+	 			|4691-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+				
+				
+@4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc
+	  Scenario:4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|			
+	  Then I add Guarentor for loan application from "Self Guarentor" sheet
+	            |4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Then I add Guarentor for loan application from "External Guarentor" sheet
+	            |4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Then I "Make Pre Payment" and verified the following tabs
+	  			|4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|Prepay Loan|
+	  Then I navigate To Saving Account Page
+	  Then I "Withdraw" and verified the following tabs
+	            |4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx| Modify Transaction |
+	  Then i validate and Verify from "Validate" sheet
+	 			|4692-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Repayallloans-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+				
+@4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc
+	  Scenario:4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|			
+	  Then I add Guarentor for loan application from "Self Guarentor" sheet
+	            |4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Then I add Guarentor for loan application from "External Guarentor" sheet
+	            |4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Then I "WriteOff" and verified the following tabs
+	  			|4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|Modify Transaction|
+	  Then I navigate To Saving Account Page
+	  Then I "Withdraw" and verified the following tabs
+	            |4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx| Modify Transaction1 |
+	  Then i validate and Verify from "Validate" sheet
+	 			|4693-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-writeoffloan-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+				
+				
+@4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc
+	  Scenario:4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015-Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|			
+	  Then I add Guarentor for loan application from "Self Guarentor" sheet
+	            |4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Then I add Guarentor for loan application from "External Guarentor" sheet
+	            |4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+	  Then I "Do Undo Disbursal" and verified the following tabs
+	            |4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|Undo Disbursal|
+	  Then I navigate To Saving Account Page
+	  Then I "Withdraw" and verified the following tabs
+	            |4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx| Modify Transaction |
+	  Then i validate and Verify from "error" sheet
+	 			|4694-SUBMIT01JAN2015-ADDGUARANTOR-SELF+EXT-DISB01JAN2015- Undodisbruse-withdraw9000-fromSELFguarentorsavingsacc.xlsx|
+				
+				
+@4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage
+	  Scenario:4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|			
+	  Then I add Guarentor for loan application from "Self Guarentor" sheet
+	            |4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|
+	  Then I add Guarentor for loan application from "External Guarentor" sheet
+	            |4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|
+	  Then I "Remove External Guarantor" and verified the following tabs
+	            |4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|Modify Transaction|
+	  Then i validate and Verify from "error" sheet
+	 			|4695-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-DeleteExternalGuarentor-from-viewGuarentorpage.xlsx|
+				
+				
+@4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor
+	  Scenario:4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client3" sheet
+	  			|4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  When I set up the new create saving account from "NewSavingInput2" sheet
+	  			|4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|			
+	  Then I add Guarentor for loan application from "Self Guarentor" sheet
+	            |4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  Then I add Guarentor for loan application from "External Guarentor" sheet
+	            |4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  Then I add Guarentor for loan application from "Another Guarentor" sheet
+	            |4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+	  Then I "Remove External Guarantor" and verified the following tabs
+	            |4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|Modify Transaction|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4696-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor.xlsx|
+				
+				
+@4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor
+	  Scenario:4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client3" sheet
+	  			|4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  When I set up the new create saving account from "NewSavingInput2" sheet
+	  			|4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|			
+	  Then I add Guarentor for loan application from "Self Guarentor" sheet
+	            |4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  Then I add Guarentor for loan application from "External Guarentor" sheet
+	            |4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  Then I add Guarentor for loan application from "Another Guarentor" sheet
+	            |4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+	  Then I "Remove External Guarantor" and verified the following tabs
+	            |4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|Modify Transaction|
+	  Then i validate and Verify from "error" sheet
+	 			|4697-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeleteSelfGuarentor.xlsx|
+				
+				
+@4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-HideDeletedGuarentorCheckbox
+	  Scenario:4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-HideDeletedGuarentorCheckbox
+          
+      Given I setup the clients
+	  When I entered the values into client from "Create Client1" sheet
+	  			|4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client2" sheet
+	  			|4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  When I set up the new create saving account from "NewSavingInput1" sheet
+	  			|4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Create Client3" sheet
+	  			|4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  When I set up the new create saving account from "NewSavingInput2" sheet
+	  			|4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|			
+	  Then I add Guarentor for loan application from "Self Guarentor" sheet
+	            |4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  Then I add Guarentor for loan application from "External Guarentor" sheet
+	            |4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  When I set up the new create loan from "NewLoanInput1" sheet
+	  			|4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  Then I add Guarentor for loan application from "Another Guarentor" sheet
+	            |4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
+	  Then I "Remove External Guarantor" and verified the following tabs
+	            |4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|Modify Transaction|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4698-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-AddAnotherGuarentor-DeletePreviousGuarentor-Uncheck-DelCheckbox.xlsx|
