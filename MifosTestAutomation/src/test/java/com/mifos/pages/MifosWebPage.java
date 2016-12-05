@@ -705,11 +705,12 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "button":
 				if (key.equals("ClickOnADD")||key.equals("AddGroup"))
 				 {
-					 Thread.sleep(8000);
+					 Thread.sleep(10000);
 				 }
-				if (key.equals("Submitbutton"))
+				if (key.equals("Submitbutton")||key.equals("previewCollectionSheet")
+						||key.equals("clickonsubmit")|| key.equals("productiveCollectionSheet"))
 				{
-			 Thread.sleep(1500);
+			 Thread.sleep(3000);
 		        }
 			if (key.equals("ClickOnADD")) {
 				By loc = null;
@@ -776,7 +777,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "NavigatePage":
 			if (key.equals("NavigateToCurrentJLG")
 					|| key.equals("NavigateToCurrentJLG1")) {
-				Thread.sleep(getResourceKey("largeWait"));
+				
 				value = currentJlgLoanUrl.split("#/")[1];
 			}
 			if (key.equals("NavigateToLoan")){
@@ -806,7 +807,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					locator = getLocator(getResource(key));
 					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
-
+                    
 					locatorElement.sendKeys(value);
 					locatorElement.sendKeys(Keys.ESCAPE);
 					if(key.equals("Foreclosuretransactiondate")|| key.equals("repaymenttransactiondate"))
@@ -821,13 +822,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "dropDown":
 				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 				 {
-					 Thread.sleep(1500);
+					 Thread.sleep(2000);
 				 }
 					clickButton(getLocator(getResource(key)));
 					By locator = null;
 					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 					 {
-						 Thread.sleep(1500);
+						 Thread.sleep(2000);
 					 }
 					locator = getLocator(getResource(key + ".input"));
 					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
@@ -840,10 +841,16 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;
 			case "checkbox":
+				if(value.equals("unchecked"))
+					{
+					clickButton(getLocator(getResource(key)));
+					}
+				else{
 				boolean checked = value.equals("checked");
 				LazyWebElement check = getElement(getResource(key));
 				if (check.isSelected() != checked) {
 					clickButton(getLocator(getResource(key)));
+				}
 				}
 
 				break;
@@ -860,7 +867,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;
 			case "verify":
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				String bodyText = getWebDriver().findElement(By.tagName("body"))
 				.getText();
 				if (bodyText.contains("Error")|| bodyText.contains("field is required")) {
