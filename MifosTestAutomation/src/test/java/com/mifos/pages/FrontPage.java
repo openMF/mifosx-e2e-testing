@@ -447,6 +447,14 @@ public class FrontPage extends MifosWebPage {
 		}
 	}
 
+	public void setupNewSaving(String clientExcelSheetPath,
+			String excelSheetName, String sheetName) throws Throwable {
+
+		Map<String, String> newLoanDetailsMap = parseExcelSheet(
+				clientExcelSheetPath, excelSheetName, sheetName);
+		insertValues(newLoanDetailsMap);
+		
+	}
 	/**
 	 * Method navigates to loan product page
 	 * 
@@ -649,6 +657,7 @@ public class FrontPage extends MifosWebPage {
 						String expected = null;
 						String actual = null;
 						double screenVal = 0.0;
+						int counter=0;
 						DateFormat dateFormat = new SimpleDateFormat(
 								"dd MMMM yyyy");
 
@@ -661,13 +670,19 @@ public class FrontPage extends MifosWebPage {
 							
 							for (int appRow = 1; appRow <= rowCount; appRow++) {
 								
-								
+								do{
+									counter++;
+									if(counter==22){
+										Thread.sleep(2000);
+									}
 								applicationCol = getWebDriver()
 										.findElements(
 												By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div[3]/div[4]/div/div/div["
 														+ sheetIndex
 														+ "]/table/tbody/tr["
 														+ appRow + "]/td"));
+								}while(applicationCol.isEmpty() && counter<25);
+									
 								
 				if (!(applicationCol.get(2).getText().equals(dateFormat.format((Date) xlRow.get(0).value))
 				       && applicationCol.get(3).getText().equals((String) xlRow.get(1).value)
@@ -786,6 +801,7 @@ public class FrontPage extends MifosWebPage {
 				int failColCnt = 0;
 				String expected = null;
 				String actual = null;
+				int counter=0;
 				List<XLCellElement> xlRow =null;
 				if (sheetname.equals("Acc_Periodic")) {
 
@@ -818,13 +834,18 @@ public class FrontPage extends MifosWebPage {
 				
 				for (int appRow = 1; appRow <= rowCount; appRow++) {
 					
-				
+				do{
+					counter++;
+					if(counter==22){
+						Thread.sleep(2000);
+					}
 					applicationCol = getWebDriver()
 							.findElements(
 									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["
 										+ appRow + "]/td"));
 					
-					
+				}while(applicationCol.isEmpty() && counter<25);
+				
 					
 	if (!( applicationCol.get(6).getText().equals((String) xlRow.get(0).value)))
 	{
@@ -1499,12 +1520,12 @@ public class FrontPage extends MifosWebPage {
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
 			Thread.sleep(getResourceKey("largeWait"));
-		} else if (sheetName.equals("Modify Transaction")) {
+		} else if (sheetName.contains("Modify Transaction")) {
 			Map<String, String> tabDetails = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
 			Thread.sleep(getResourceKey("largeWait"));
-		} else if (sheetName.equals("Prepay Loan")) {
+		}  else if (sheetName.equals("Prepay Loan")) {
 			Map<String, String> tabDetails = parseExcelSheet1(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
@@ -1544,7 +1565,7 @@ public class FrontPage extends MifosWebPage {
 		Map<String, String> verifyMap = parseExcelSheet(excelSheetPath,
 				excelSheetName, sheetName);
 		for (Map.Entry<String, String> entry : verifyMap.entrySet()) {
-			Thread.sleep(getResourceKey("smallWait"));
+			Thread.sleep(getResourceKey("largeWait"));
 			verifySuccessMessage(entry.getKey(), entry.getValue());
 			Thread.sleep(getResourceKey("smallWait"));
 
@@ -1686,17 +1707,24 @@ public class FrontPage extends MifosWebPage {
 	}
 
 	public void navigateLoanAccounting() throws Throwable {
-		if(RememberTopupUrl=="")
+		if(RememberTopupUrl!=null)
 		{
-		MifosWebPage.navigateToUrl(currentUrl);	
-		}
-		else{
 			MifosWebPage.navigateToUrl(RememberTopupUrl);
-			RememberTopupUrl="";
+			RememberTopupUrl=null;
+		}
+		
+		else{
+			MifosWebPage.navigateToUrl(currentUrl);
 		}
 		Thread.sleep(getResourceKey("smallWait"));
 	}
 	
+	public void navigateSavingAccounting() throws Throwable {
+		
+			MifosWebPage.navigateToUrl(CurrentSavingAccounturl);
+		
+		Thread.sleep(getResourceKey("smallWait"));
+	}
 	public void navigateToCurrentCenterPage(String excelSheetPath,
 			String excelSheetName, String sheetName) throws Throwable {
 
@@ -1762,7 +1790,7 @@ public class FrontPage extends MifosWebPage {
 	}
 	public void createWorkingDays(String value) throws InterruptedException {
 		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+"workingdays");
-		Thread.sleep(getResourceKey("smallWait"));
+		Thread.sleep(getResourceKey("largeWait"));
 		insertValues("Paymentsdueonnonworkingdays", value);
 		Thread.sleep(getResourceKey("smallWait"));
 		clickButton(getResource("clickOnSubmitWorkingDayButton"));

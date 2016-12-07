@@ -182,6 +182,22 @@ public class ClientSteps {
 				sheetName);
 	}
 	
+	@When("^I set up the new create saving account from \"([^\"]*)\" sheet$")
+	public void I_set_up_the_new_create_Saving_account_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupNewSaving(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
+	
+	@Then("^I add Guarentor for loan application from \"([^\"]*)\" sheet$")
+	public void I_add_Guarentor_for_loan_application(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupNewSaving(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
+	
 	@When("^I modify New Loan Account from \"([^\"]*)\" sheet$")
 	public void I_modify_New_Loan_Account_from_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {
@@ -410,6 +426,11 @@ public class ClientSteps {
 	@Then("^I navigate To Loan Account Page$")
 	public void I_navigate_To_Loan_Account_Page() throws Throwable {
 		varFrontPage.navigateLoanAccounting();
+		}
+	
+	@Then("^I navigate To Saving Account Page$")
+	public void I_navigate_To_Saving_Account_Page() throws Throwable {
+		varFrontPage.navigateSavingAccounting();
 		}
 	
 	@Given("^I Navigate and create Loan Provisioning \"([^\"]*)\" from \"([^\"]*)\" Sheet$")

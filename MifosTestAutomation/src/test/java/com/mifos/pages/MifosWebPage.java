@@ -69,6 +69,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public String currentNewLoanUrl;
 	public String currentCenterUrl;
 	public String RememberTopupUrl;
+	public String RememberGuarantorUrl;
+	public String CurrentSavingAccounturl;
 	/**
 	 * Gets the resource.
 	 *
@@ -665,6 +667,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					}
 					Thread.sleep(getResourceKey("wait"));
 					locatorElement.sendKeys(value);
+					if(key.equals("GuarantorName"))
+					{
+						locatorElement.sendKeys(Keys.TAB);
+					}
 					Thread.sleep(getResourceKey("wait"));
 					/*switch (type) {
 					case "combobox":
@@ -701,7 +707,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				 {
 					 Thread.sleep(10000);
 				 }
-				if (key.equals("Submitbutton"))
+				if (key.equals("Submitbutton")||key.equals("previewCollectionSheet")
+						||key.equals("clickonsubmit")|| key.equals("productiveCollectionSheet"))
 				{
 			 Thread.sleep(3000);
 		        }
@@ -720,7 +727,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			}
 			if(key.equals("ViewClientName")){
 				RememberTopupUrl = getWebDriver().getCurrentUrl();					
-			     }			
+			     }	
+			
 				if (key.equals("clickonapprove")
 						|| key.equals("clickonModifyApplication")) {
 					((JavascriptExecutor) getWebDriver())
@@ -739,6 +747,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 						
 						new WebDriverWait(getWebDriver(), 120).until(
 						        ExpectedConditions.invisibilityOfElementLocated(locator));*/						
+					}
+					if(key.equals("SubmitActivate")){
+						CurrentSavingAccounturl = getWebDriver().getCurrentUrl();				
 					}
 					if(key.equals("submitdisburse")){
 						currentNewLoanUrl = getWebDriver().getCurrentUrl();				
@@ -766,7 +777,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "NavigatePage":
 			if (key.equals("NavigateToCurrentJLG")
 					|| key.equals("NavigateToCurrentJLG1")) {
-				Thread.sleep(getResourceKey("largeWait"));
+				
 				value = currentJlgLoanUrl.split("#/")[1];
 			}
 			if (key.equals("NavigateToLoan")){
@@ -796,9 +807,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					locator = getLocator(getResource(key));
 					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
-
+                    
 					locatorElement.sendKeys(value);
 					locatorElement.sendKeys(Keys.ESCAPE);
+					if(key.equals("Foreclosuretransactiondate")|| key.equals("repaymenttransactiondate"))
+					{
+					Thread.sleep(3000);
+					}
 
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
@@ -807,25 +822,35 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "dropDown":
 				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 				 {
-					 Thread.sleep(3000);
+					 Thread.sleep(2000);
 				 }
 					clickButton(getLocator(getResource(key)));
 					By locator = null;
 					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 					 {
-						 Thread.sleep(3000);
+						 Thread.sleep(2000);
 					 }
 					locator = getLocator(getResource(key + ".input"));
+					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
+					 {
+						 Thread.sleep(2000);
+					 }
 					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
 					locatorElement.sendKeys(value + Keys.TAB);
 
 				break;
 			case "checkbox":
+				if(value.equals("unchecked"))
+					{
+					clickButton(getLocator(getResource(key)));
+					}
+				else{
 				boolean checked = value.equals("checked");
 				LazyWebElement check = getElement(getResource(key));
 				if (check.isSelected() != checked) {
 					clickButton(getLocator(getResource(key)));
+				}
 				}
 
 				break;
@@ -842,7 +867,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;
 			case "verify":
-				
+				Thread.sleep(2000);
 				String bodyText = getWebDriver().findElement(By.tagName("body"))
 				.getText();
 				if (bodyText.contains("Error")|| bodyText.contains("field is required")) {
@@ -864,7 +889,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				try {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
-					if(key.equals("ChooseLoanToClose"))
+					if(key.equals("ChooseLoanToClose")||key.equals("GuarantorAccount"))
 					{
 						statusselect.selectByValue(value);
 					}
