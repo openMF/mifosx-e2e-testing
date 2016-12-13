@@ -10,7 +10,7 @@ Background:
 	  Scenario: 4615-DISB02JAN2013-NonWorkSatandSun
       Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
-	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+	  Then I entered the values into product from "ProductLoanInput" Sheet
 				|4615-WorkingNoNWorking-Loanproduct.xlsx|
 	  Given I create "same day" As Payments due on non working days
       Given I setup the clients

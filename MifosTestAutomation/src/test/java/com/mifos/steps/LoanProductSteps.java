@@ -21,8 +21,17 @@ public class LoanProductSteps {
 		varFrontPage.productNavigation(ExcelSheetPath, excelSheetName,
 				sheetName);
 	}
+	
+	@Given("^I setup the \"([^\"]*)\" product$")
+	public void I_setup_the_product_saving(String sheetName,
+			List<String> excelSheetName) throws Throwable {
+		ExcelSheetPath = varFrontPage.getProductExcelSheetPath();
+		
+		varFrontPage.productNavigation(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
 
-	@Then("^I entered the values into product loan from \"([^\"]*)\" Sheet$")
+	@Then("^I entered the values into product from \"([^\"]*)\" Sheet$")
 	public void I_entered_the_values_into_product_loan_from_Sheet_Verified(
 			String sheetName, List<String> excelSheet) throws Throwable {
 		String excelSheetName = excelSheet.get(0).toString();

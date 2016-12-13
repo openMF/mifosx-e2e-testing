@@ -10,7 +10,7 @@ Background:
 	Scenario: 2525-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2525-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -104,7 +104,7 @@ Background:
 	Scenario: 2530-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DATE-VAR-INST  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2530-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DATE-VAR-INST-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -198,7 +198,7 @@ Background:
 	Scenario: 2535-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2535-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-DATE-VAR-INST-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -292,7 +292,7 @@ Background:
 	Scenario: 2540-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DATE-VAR-INST  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2540-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-DATE-VAR-INST-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -386,7 +386,7 @@ Background:
 	Scenario: 2545-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2545-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -530,7 +530,7 @@ Background:
 	Scenario: 2550-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2550-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -656,7 +656,7 @@ Background:
 	Scenario: 2555-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2555-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -782,7 +782,7 @@ Background:
 	Scenario: 2560-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2560-MS-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -916,7 +916,7 @@ Background:
 	Scenario: 2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2565-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-NONE-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1060,7 +1060,7 @@ Background:
 	Scenario: 2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2570-MS-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-CASH-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1190,7 +1190,7 @@ Background:
 	Scenario: 2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2575-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-PERIODIC-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1324,7 +1324,7 @@ Background:
 	Scenario: 2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2580-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DATE-VAR-INST-UPFRONT-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1458,7 +1458,7 @@ Background:
 	Scenario: 2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2585-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-MIS-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1504,7 +1504,7 @@ Background:
 	Scenario: 2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2587-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1547,7 +1547,7 @@ Background:
 	Scenario: 2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2589-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1572,7 +1572,7 @@ Background:
 	Scenario: 2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2590-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1688,7 +1688,7 @@ Background:
 	Scenario: 2595-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-%INT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2595-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-%INT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1712,7 +1712,7 @@ Background:
  
   Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2596-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1739,7 +1739,7 @@ Background:
  
   Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2597-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-MORE-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1814,7 +1814,7 @@ Background:
 	Scenario: 2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2601-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -1937,7 +1937,7 @@ Background:
 	Scenario: 2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2609-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2001,7 +2001,7 @@ Background:
 	Scenario: 2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-LATE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2615-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-MIS-Loanproduct.xlsx|
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2047,7 +2047,7 @@ Background:
 	Scenario: 2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2617-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-FLAT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2090,7 +2090,7 @@ Background:
 	Scenario: 2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2619-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-FEE-%INT-MORE-AMT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2115,7 +2115,7 @@ Background:
 	Scenario: 2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2620-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%INT-LESS-AMT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2231,7 +2231,7 @@ Background:
 	Scenario: 2625-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-%INT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2625-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-DISBURSE-FEE-%INT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2255,7 +2255,7 @@ Background:
  
   Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2626-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-OVERDUE-FEE-%LOANAMT+INT-MORE-AMT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2282,7 +2282,7 @@ Background:
  
   Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2627-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-AMT-VAR-INST-FIX-INST-AMT-MORE-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2358,7 +2358,7 @@ Background:
 	Scenario: 2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2631-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-VALIDATE-RANGE-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
@@ -2481,7 +2481,7 @@ Background:
 	Scenario: 2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT  
  Given I setup the product loan "Setup"
 	| Productloannavigation.xlsx |
- Then I entered the values into product loan from "ProductLoanInput" Sheet
+ Then I entered the values into product from "ProductLoanInput" Sheet
 	|2639-MS-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-2-ADD-VAR-INST-OVERDUE-FEE-FLAT-Loanproduct.xlsx|	
  Given I setup the clients 
  Then I entered the values into client from "Input" sheet
