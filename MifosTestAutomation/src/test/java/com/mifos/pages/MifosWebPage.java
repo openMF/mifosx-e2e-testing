@@ -710,7 +710,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				if (key.equals("Submitbutton")||key.equals("previewCollectionSheet")
 						||key.equals("clickonsubmit")|| key.equals("productiveCollectionSheet"))
 				{
-			 Thread.sleep(3000);
+			 Thread.sleep(2000);
 		        }
 			if (key.equals("ClickOnADD")) {
 				By loc = null;
@@ -806,13 +806,32 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					By locator = null;
 					locator = getLocator(getResource(key));
 					waitForElementAndPoll(locator);
+					if(key.equals("Foreclosuretransactiondate")|| key.equals("repaymenttransactiondate")||
+							key.equals("Savinginsertdate"))
+					{
+						String Date= value.substring(0, 2);
+						String Month=value.substring(3, value.length()-5);
+						String Year=value.substring(value.length()-4, value.length());
+						By locator1,Date1,Month1,Year1 = null;
+						locator = getLocator(getResource(key));
+						waitForElementAndPoll(locator).click();
+						locator1 = getLocator(getResource(key)+"/following-sibling::ul//thead/tr[1]/th[2]/button/strong");
+						Year1=getLocator(getResource(key)+"/following-sibling::ul//span[contains(.,'"+Year+"')]");
+						Month1=getLocator(getResource(key)+"/following-sibling::ul//span[contains(.,'"+Month+"')]");
+						Date1=getLocator(getResource(key)+"/following-sibling::ul//span[contains(.,'"+Date+"')]");
+						
+						waitForElementAndPoll(locator1).click();
+						waitForElementAndPoll(locator1).click();
+						waitForElementAndPoll(Year1).click();
+						waitForElementAndPoll(Month1).click();
+						waitForElementAndPoll(Date1).click();
+						Thread.sleep(2000);
+					}
+					else{
 					LazyWebElement locatorElement = getElement(locator, clear);
                     
 					locatorElement.sendKeys(value);
 					locatorElement.sendKeys(Keys.ESCAPE);
-					if(key.equals("Foreclosuretransactiondate")|| key.equals("repaymenttransactiondate"))
-					{
-					Thread.sleep(3000);
 					}
 
 				} catch (NoSuchElementException exception) {
@@ -822,23 +841,23 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "dropDown":
 				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 				 {
-					 Thread.sleep(2000);
+					 Thread.sleep(1500);
 				 }
 					clickButton(getLocator(getResource(key)));
 					By locator = null;
 					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 					 {
-						 Thread.sleep(2000);
+						 Thread.sleep(1500);
 					 }
 					locator = getLocator(getResource(key + ".input"));
 					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 					 {
-						 Thread.sleep(2000);
+						 Thread.sleep(1500);
 					 }
 					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
 					locatorElement.sendKeys(value + Keys.TAB);
-
+					
 				break;
 			case "checkbox":
 				if(value.equals("unchecked"))

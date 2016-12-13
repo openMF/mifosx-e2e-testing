@@ -466,7 +466,14 @@ public class FrontPage extends MifosWebPage {
 	public void productNavigation(String productExcelSheetPath,
 			List<String> excelsheet, String sheetName) throws Throwable {
 		try {
+			if(sheetName.equals("Saving"))
+			{
+				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createsavingproduct");	
+			}
+			else
+			{
 			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createloanproduct");
+			}
 			Thread.sleep(getResourceKey("mediumWait"));
 			
 		} catch (Exception ioe) {
@@ -834,19 +841,18 @@ public class FrontPage extends MifosWebPage {
 				
 				for (int appRow = 1; appRow <= rowCount; appRow++) {
 					
-				do{
-					counter++;
-					if(counter==22){
-						Thread.sleep(2000);
-					}
+					do{
+						counter++;
+						if(counter==22){
+							Thread.sleep(2000);
+						}
 					applicationCol = getWebDriver()
 							.findElements(
 									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["
 										+ appRow + "]/td"));
 					
-				}while(applicationCol.isEmpty() && counter<25);
-				
-					
+					}while(applicationCol.isEmpty() && counter<25);
+						
 	if (!( applicationCol.get(6).getText().equals((String) xlRow.get(0).value)))
 	{
 		rowMatchSuccess=false;
@@ -963,6 +969,57 @@ public class FrontPage extends MifosWebPage {
 		}
 	}
 
+	public void verifySavingData(String clientExcelSheetPath,
+			String excelSheetName, String sheetname)throws InterruptedException, IOException, ParseException 
+	{
+		new WebDriverWait(getWebDriver(), 120).until(
+		        ExpectedConditions.elementToBeClickable(
+		            By.xpath("//a[contains(.,'" + sheetname.split(" ")[1] + "')]")))
+		                .click();
+		//.//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/ul//a[contains(.,'Transaction')]
+		int rowCount=0;
+		int xlColumnPointer=0;
+		int counter=0;
+	
+		try {
+			FileInputStream file = new FileInputStream(new File(
+					clientExcelSheetPath + "\\" + excelSheetName));
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+			XSSFSheet sheet = workbook.getSheet(sheetname);
+			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
+			
+			List<WebElement> applicationCol = null;
+			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
+				do{
+					counter++;
+					if(counter==22){
+						Thread.sleep(2000);
+					}
+				if(sheetname.contains("Saving Transaction"))
+				{
+				 xlColumnPointer=1;
+				 applicationCol=getWebDriver()
+							.findElements(
+									By.xpath("(.//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'])["+xlRowCount+"]/td"));
+				}
+				else if(sheetname.equals("Saving Charges"))
+				{
+				 xlColumnPointer=0;
+				 int row=xlRowCount+1;
+				 applicationCol=getWebDriver()
+							.findElements(
+									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
+				}
+				}while(applicationCol.isEmpty() && counter<25);
+		verifyColumnDetails(xlColumnPointer, xlRowCount,
+				applicationCol, sheet, sheetname);
+	}
+		}catch (FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		} catch (NoSuchElementException e) {
+			Assert.fail(" Unable to click \n");
+		}
+	}
 	
 	private List<XLCellElement> getColumnDetails(int xlColumnPointer, int xlRowCount,
 			List<WebElement> applicationCol, XSSFSheet sheet, String sheetname)
@@ -1044,6 +1101,11 @@ public class FrontPage extends MifosWebPage {
 		String strCellValue = "";
 
 		for (; xlColumnPointer < applicationCol.size(); xlColumnPointer++) {
+			if(sheetname.equals("Saving Charges")&&xlColumnPointer==7)
+				continue;
+			{
+				
+			}
 			double screenVal = 0.0;
 			String textVal = applicationCol.get(xlColumnPointer).getText();
 			DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
@@ -1307,6 +1369,17 @@ public class FrontPage extends MifosWebPage {
 			System.out.println("currentUrl "+ currentUrl);
 
 			break;	
+		case "Pay Due Savings Charges":
+			LazyWebElement SavingsCharges = getElement(getResource("PayDueSavingsCharges"));
+			if (!SavingsCharges.isSelected()) {
+				By locator = null;
+				locator = getLocator(getResource("PayDueSavingsCharges"));
+				clickButton(locator, 30);
+			}
+			
+			System.out.println("currentUrl "+ currentUrl);
+
+			break;	
 		case "Apply penalty to overdue loans":
 			LazyWebElement checkpenalty = getElement(getResource("addpenaltytooverdueloans"));
 			if (!checkpenalty.isSelected()) {
@@ -1382,7 +1455,10 @@ public class FrontPage extends MifosWebPage {
 		Thread.sleep(getResourceKey("largeWait"));
 
 		System.out.println(currentUrl);
+		if(!currentUrl.equals(""))
+		{
 		MifosWebPage.navigateToUrl(currentUrl);
+		}
 
 	}
 
@@ -1535,7 +1611,7 @@ public class FrontPage extends MifosWebPage {
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
 			Thread.sleep(getResourceKey("largeWait"));
-		} else if (sheetName.equals("Foreclosure")) {
+		} else if (sheetName.equals("Foreclosure")||sheetName.contains("Savings")) {
 			Map<String, String> tabDetails = parseExcelSheet1(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
@@ -1720,8 +1796,8 @@ public class FrontPage extends MifosWebPage {
 	}
 	
 	public void navigateSavingAccounting() throws Throwable {
-		
-			MifosWebPage.navigateToUrl(CurrentSavingAccounturl);
+		value = CurrentSavingAccounturl.split("#/")[1];
+			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+value);
 		
 		Thread.sleep(getResourceKey("smallWait"));
 	}

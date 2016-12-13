@@ -10,7 +10,7 @@ Background:
 Scenario:4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate
 	 Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4350-Simple-Group-Loan-Product-Loanproduct.xlsx|
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -22,7 +22,7 @@ Scenario:4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETIN
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate.xlsx|
-	 And I modify New Loan Account from "ModifyLoan" sheet
+	 And I modify New Account from "ModifyLoan" sheet
 	    |4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate.xlsx|
 	 Then I verified the following Tabs details successfully 
 	    |4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate.xlsx|Summary|Repayment Schedule|
@@ -735,7 +735,7 @@ Scenario:4490-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-C
 Scenario:4491-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN
 	 Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4351-Simple-Group-Loan-Product-Loanproduct-OVERDUEFEEFLAT.xlsx|
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -818,7 +818,7 @@ Scenario:4494-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-REPAYONTI
 Scenario:4495-MS-ACTCTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-COLLSHEETON09JAN
 	  Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4352-MS-Simple-Group-Loan-Product-Loanproduct.xlsx|
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -1181,7 +1181,7 @@ Scenario:4515-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-INSTFEE-CO
 Scenario:4516-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-OVERDUEFEEFLAT-COLLSHEETON09JAN
 	 Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4353-MS-Simple-Group-Loan-Product-Loanproduct-OVERDUEFEEFLAT.xlsx|
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
@@ -2253,7 +2253,7 @@ Scenario:4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-less
 
       Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
-	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+	  Then I entered the values into product from "ProductLoanInput" Sheet
 				|4600-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Holiday-Loanproduct.xlsx|
       Given I setup the clients
 	  When I entered the values into client from "Input" sheet
@@ -2445,7 +2445,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  
 	  Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
-	  Then I entered the values into product loan from "ProductLoanInput" Sheet
+	  Then I entered the values into product from "ProductLoanInput" Sheet
 				|4580-RBI-SUBMITLOANON02JAN-INDCOLLSHEETON09JAN.xlsx|
 	  Given I setup the clients
 	  When I entered the values into client from "Input" sheet

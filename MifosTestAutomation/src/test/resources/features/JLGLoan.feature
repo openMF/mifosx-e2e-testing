@@ -10,7 +10,7 @@ Background:
 Scenario:4130-RBI-EI-DB-DL-NOREC-MOREREPAY
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4130-RBI-EI-DB-DL-NOREC-MOREREPAY-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -28,7 +28,7 @@ Scenario:4130-RBI-EI-DB-DL-NOREC-MOREREPAY
 Scenario:4131-RBI-EI-FL-DL-NOREC-MOREREPAY
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4131-RBI-EI-FL-DL-NOREC-MOREREPAY-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -46,7 +46,7 @@ Scenario:4131-RBI-EI-FL-DL-NOREC-MOREREPAY
 Scenario:4132-RBI-EPP-DB-DL-NOREC-MOREREPAY
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4132-RBI-EPP-DB-DL-NOREC-MOREREPAY-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -64,7 +64,7 @@ Scenario:4132-RBI-EPP-DB-DL-NOREC-MOREREPAY
 Scenario:4133-RBI-EPP-FL-DL-NOREC-MOREREPAY
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4133-RBI-EPP-FL-DL-NOREC-MOREREPAY-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -82,7 +82,7 @@ Scenario:4133-RBI-EPP-FL-DL-NOREC-MOREREPAY
 Scenario:4134-RBI-EI-DB-SAR-NOREC-MOREREPAY
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4134-RBI-EI-DB-SAR-NOREC-MOREREPAY-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -100,7 +100,7 @@ Scenario:4134-RBI-EI-DB-SAR-NOREC-MOREREPAY
 Scenario:4135-RBI-EI-FL-SAR-NOREC-MOREREPAY
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4135-RBI-EI-FL-SAR-NOREC-MOREREPAY-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -118,7 +118,7 @@ Scenario:4135-RBI-EI-FL-SAR-NOREC-MOREREPAY
 Scenario:4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -136,7 +136,7 @@ Scenario:4136-RBI-EPP-DB-SAR-NOREC-MOREREPAY
 Scenario:4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -154,7 +154,7 @@ Scenario:4137-RBI-EPP-FL-SAR-NOREC-MOREREPAY
 Scenario:4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -176,7 +176,7 @@ Scenario:4200-RBI-EI-DB-DL-REC-FEE-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIM
 Scenario:4201-RBI-EI-DB-DL-REC-INT-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4201-RBI-EI-DB-DL-REC-INT-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -198,7 +198,7 @@ Scenario:4201-RBI-EI-DB-DL-REC-INT-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIM
 Scenario:4202-RBI-EI-DB-DL-REC-FEE+INTEREST-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4202-RBI-EI-DB-DL-REC-FEE+INTEREST-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-TR-1-ONTIME-PERIODIC-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -328,7 +328,7 @@ Scenario:4208-RBI-EI-DB-DL-REC-FEE+INTEREST-RNI-FFC-SAR-FFROP-DAILY-1-CTRFD-MD-T
 Scenario:4209-RBI-EI-DB-DL-REC-CTRFD-RNI-FEE-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PERIODIC
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4209-RBI-EI-DB-DL-REC-RNI-FEE-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -351,7 +351,7 @@ Scenario:4210-RBI-EI-DB-DL-REC-CTRFD-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DA
      
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4210-RBI-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -373,7 +373,7 @@ Scenario:4210-RBI-EI-DB-DL-REC-CTRFD-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DA
 Scenario:4211-RBI-EI-DB-DL-REC-CTRFD-RNI-FEE+INTEREST-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PERIODIC
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4211-RBI-EI-DB-DL-REC-RNI-FEE+INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -503,7 +503,7 @@ Scenario:4217-RBI-EI-DB-DL-REC-CTRFD-RNI-FEE+INTEREST-FFConMONTHLYonDAY25-FIFC-1
 Scenario:4218-RBI-EI-DB-DL-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4218-RBI-EI-DB-DL-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -525,7 +525,7 @@ Scenario:4218-RBI-EI-DB-DL-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAI
 Scenario:4219-RBI-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4219-RBI-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -547,7 +547,7 @@ Scenario:4219-RBI-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAI
 Scenario:4220-RBI-EI-DB-DL-REC-RNI-FEE+INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DLY-FIFR-1-MD-TR1-ONTIM-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4220-RBI-EI-DB-DL-REC-RNI-FEE+INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DLY-FIFR-1-MD-TR1-ONTIM-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -677,7 +677,7 @@ Scenario:4226-RBI-EI-DB-DL-REC-RNI-FEE+INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP
 Scenario:4227-RBI-EI-DB-SAR-REC-CTRFD-RNI-FEE-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4227-RBI-EI-DB-SAR-REC-CTRFD-RNI-FEE-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -699,7 +699,7 @@ Scenario:4227-RBI-EI-DB-SAR-REC-CTRFD-RNI-FEE-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1
 Scenario:4228-RBI-EI-DB-SAR-REC-CTRFD-RNI-INT-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4228-RBI-EI-DB-SAR-REC-CTRFD-RNI-INT-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -721,7 +721,7 @@ Scenario:4228-RBI-EI-DB-SAR-REC-CTRFD-RNI-INT-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1
 Scenario:4229-RBI-EI-DB-SAR-REC-CTRFD-RNI-FEE+INTEREST-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4229-RBI-EI-DB-SAR-REC-CTRFD-RNI-FEE+INTEREST-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -851,7 +851,7 @@ Scenario:4235-RBI-EI-DB-SAR-REC-CTRFD-RNI-FEE+INTEREST-FFC-SAR-FFROP-DAILY-FIFR-
 Scenario:4236-RBI-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4236-RBI-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -874,7 +874,7 @@ Scenario:4237-RBI-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-F
      
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4237-RBI-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -896,7 +896,7 @@ Scenario:4237-RBI-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-F
 Scenario:4238-RBI-EI-DB-SAR-REC-RNI-FEE+INTEREST-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4238-RBI-EI-DB-SAR-REC-RNI-FEE+INTEREST-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1026,7 +1026,7 @@ Scenario:4244-RBI-EI-DB-SAR-REC-RNI-FEE+INTEREST-FFConMONTHLYonDAY25-FIFC-1-FFRO
 Scenario:4245-RBI-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4245-RBI-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1048,7 +1048,7 @@ Scenario:4245-RBI-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DA
 Scenario:4246-RBI-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4246-RBI-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1070,7 +1070,7 @@ Scenario:4246-RBI-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DA
 Scenario:4247-RBI-EI-DB-SAR-REC-RNI-FEE+INTEREST-FFConMONTHLYonLASTSUN-FIFC-1-FFROP-DL-FIFR-1-MD-TR-1-ONT-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4247-RBI-EI-DB-SAR-REC-RNI-FEE+INTEREST-FFConMONTHLYonLASTSUN-FIFC-1-FFROP-DL-FIFR-1-MD-TR-1-ONT-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1201,7 +1201,7 @@ Scenario:4253-RBI-EI-DB-SAR-REC-RNI-FEE+INTEREST-FFConMONTHLYonLASTSUN-FIFC-1-FF
 Scenario:4254-MS-EI-DB-DL-REC-CTRFD-RNI-FEE-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4254-MS-EI-DB-DL-REC-CTRFD-RNI-FEE-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1223,7 +1223,7 @@ Scenario:4254-MS-EI-DB-DL-REC-CTRFD-RNI-FEE-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-O
 Scenario:4255-MS-EI-DB-DL-REC-CTRFD-RNI-INT-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4255-MS-EI-DB-DL-REC-CTRFD-RNI-INT-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1245,7 +1245,7 @@ Scenario:4255-MS-EI-DB-DL-REC-CTRFD-RNI-INT-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-O
 Scenario:4256-MS-EI-DB-DL-REC-CTRFD-RNI-FEE+INTEREST-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4256-MS-EI-DB-DL-REC-CTRFD-RNI-FEE+INTEREST-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1375,7 +1375,7 @@ Scenario:4262-MS-EI-DB-DL-REC-CTRFD-RNI-FEE+INTEREST-FFC-SAR-FFROP-DAILY-FIFR-1-
 Scenario:4263-MS-EI-DB-DL-REC-RNI-FEE-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4263-MS-EI-DB-DL-REC-RNI-FEE-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1398,7 +1398,7 @@ Scenario:4264-MS-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIF
      
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4264-MS-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1420,7 +1420,7 @@ Scenario:4264-MS-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIF
 Scenario:4265-MS-EI-DB-DL-REC-RNI-FEE+INTEREST-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4265-MS-EI-DB-DL-REC-RNI-FEE+INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DL-FIFR-1-MD-TR-1-ONT-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1550,7 +1550,7 @@ Scenario:4271-MS-EI-DB-DL-REC-RNI-FEE+INTEREST-FFConMONTHLYonDAY25-FIFC-1-FFROP-
 Scenario:4272-MS-EI-DB-DL-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4272-MS-EI-DB-DL-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1572,7 +1572,7 @@ Scenario:4272-MS-EI-DB-DL-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAIL
 Scenario:4273-MS-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4273-MS-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1594,7 +1594,7 @@ Scenario:4273-MS-EI-DB-DL-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAIL
 Scenario:4274-MS-EI-DB-DL-REC-RNI-FEE+INTEREST-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4274-MS-EI-DB-DL-REC-RNI-FEE+INT-FFConMONTHLYonLASTSUN-FIFC-1-FFROP-DL-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1724,7 +1724,7 @@ Scenario:4280-MS-EI-DB-DL-REC-RNI-FEE+INTEREST-FFConMONTHLYonLASTSUNDAY-FIFC-1-F
 Scenario:4281-MS-EI-DB-SAR-REC-CTRFD-RNI-FEE-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4281-MS-EI-DB-SAR-REC-CTRFD-RNI-FEE-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1746,7 +1746,7 @@ Scenario:4281-MS-EI-DB-SAR-REC-CTRFD-RNI-FEE-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-
 Scenario:4282-MS-EI-DB-SAR-REC-CTRFD-RNI-INT-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4282-MS-EI-DB-SAR-REC-CTRFD-RNI-INT-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1768,7 +1768,7 @@ Scenario:4282-MS-EI-DB-SAR-REC-CTRFD-RNI-INT-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-
 Scenario:4283-MS-EI-DB-SAR-REC-CTRFD-RNI-FEE+INTEREST-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4283-MS-EI-DB-SAR-REC-CTRFD-RNI-FEE+INTEREST-FFC-SAR-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1898,7 +1898,7 @@ Scenario:4289-MS-EI-DB-SAR-REC-CTRFD-RNI-FEE+INTEREST-FFC-SAR-FFROP-DAILY-FIFR-1
 Scenario:4290-MS-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4290-MS-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1921,7 +1921,7 @@ Scenario:4291-MS-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FI
      
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4291-MS-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -1943,7 +1943,7 @@ Scenario:4291-MS-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FI
 Scenario:4292-MS-EI-DB-SAR-REC-RNI-FEE+INTEREST-FFConMONTHLYonDAY25-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4292-MS-EI-DB-SAR-REC-RNI-FEE+INT-FFConMONTHLYonDAY25-FIFC-1-FFROP-DL-FIFR-1-MD-TR-1-ONT-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -2073,7 +2073,7 @@ Scenario:4298-MS-EI-DB-SAR-REC-RNI-FEE+INTEREST-FFConMONTHLYonDAY25-FIFC-1-FFROP
 Scenario:4299-MS-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4299-MS-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -2095,7 +2095,7 @@ Scenario:4299-MS-EI-DB-SAR-REC-RNI-FEE-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAI
 Scenario:4300-MS-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4300-MS-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -2117,7 +2117,7 @@ Scenario:4300-MS-EI-DB-SAR-REC-RNI-INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAI
 Scenario:4301-MS-EI-DB-SAR-REC-RNI-FEE+INTEREST-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DAILY-FIFR-1-MD-TR-1-ONTIME-PER
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4301-MS-EI-DB-SAR-REC-RNI-FEE+INT-FFConMONTHLYonLASTSUNDAY-FIFC-1-FFROP-DL-FIFR-1-MD-TR-1-ONT-PER-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -2248,7 +2248,7 @@ Scenario:4350-ACTGRP-DISBURSE-NEWJLGLOAN-NOMEETING
      
      Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
-	 Then I entered the values into product loan from "ProductLoanInput" Sheet
+	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4350-Simple-Group-Loan-Product-Loanproduct.xlsx|
      Given I setup the group
 	 When I entered the values into group from "Input" sheet
@@ -2560,7 +2560,7 @@ Scenario:4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloane
 	 	|Createclient.xlsx|	 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	  	|4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|
-	 And I modify New Loan Account from "ModifyLoan" sheet
+	 And I modify New Account from "ModifyLoan" sheet
 	    |4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|
 	 Then I verified the following Tabs details successfully 
 	    |4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|Summary|Repayment Schedule|

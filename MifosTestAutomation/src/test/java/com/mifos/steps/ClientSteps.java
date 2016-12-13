@@ -206,6 +206,14 @@ public class ClientSteps {
 				sheetName);
 	}
 	
+	@When("^I modify New Account from \"([^\"]*)\" sheet$")
+	public void I_modify_New_Account_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupNewSaving(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
+	
 	@Then("^I disburse loan from \"([^\"]*)\" sheet$")
 	public void I_disburse_loan_from_sheet(String sheetName,
 			List<String> excelSheet) throws Throwable {
@@ -221,6 +229,10 @@ public class ClientSteps {
 		if(sheetName.contains("Loan Provisioning Journals"))
 		{
 			varFrontPage.verifyProvisionData(ExcelSheetPath, excelSheetName, sheetName);
+		}
+		else if(sheetName.contains("Saving"))
+		{
+			varFrontPage.verifySavingData(ExcelSheetPath, excelSheetName, sheetName);
 		}
 		else
 		{
