@@ -54,6 +54,7 @@ public class FrontPage extends MifosWebPage {
 //	Set<String> setAccuralTransactionType = new TreeSet<String>();
 	Set<String> setAccuralTransactionID = new LinkedHashSet<String>();
 	Set<String> setAccuralTransactionType = new LinkedHashSet<String>();
+	Set<String> setSavingTransactionID = new LinkedHashSet<String>();
 	static String value = "";
 	public String rowval;
 	public boolean ishideAccuralsChecked = true;
@@ -62,7 +63,7 @@ public class FrontPage extends MifosWebPage {
 	int transactionIDIndex = 0;
 	public String currentUrl ="";
 	public String currentJlgLoanUrl ="";
-	private boolean istransactionIdIndexAssigned = true;
+    private boolean istransactionIdIndexAssigned = true;
 
 	// WebDriver driver = new ChromeDriver();
 
@@ -470,6 +471,10 @@ public class FrontPage extends MifosWebPage {
 			{
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createsavingproduct");	
 			}
+			else if(sheetName.equals("FixedDeposit"))
+			{		
+				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createfixeddepositproduct");
+			}
 			else
 			{
 			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createloanproduct");
@@ -796,7 +801,11 @@ public class FrontPage extends MifosWebPage {
 						|| sheetname.equals("Acc_Upfront2")
 						|| sheetname.equals("Acc_Upfront3")
 						|| sheetname.equals("Acc_Periodic")
-						|| sheetname.equals("Acc_Upfront")) {
+						|| sheetname.equals("Acc_Upfront")
+						||sheetname.contains("Interst_Posting")
+						|| sheetname.contains("Deposit")
+						|| sheetname.contains("Withdraw")
+						|| sheetname.contains("Pay_charge")) {
 					
 					applicationCol = getWebDriver()
 						.findElements(
@@ -995,20 +1004,53 @@ public class FrontPage extends MifosWebPage {
 					if(counter==22){
 						Thread.sleep(2000);
 					}
-				if(sheetname.contains("Saving Transaction"))
+					
+					if(sheetname.contains("TransID"))
+					{
+						setSavingTransactionID.add(getWebDriver()
+								.findElement(
+										By.xpath("(.//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'])["+xlRowCount+"]/td[1]")).getText());
+					}
+				if(sheetname.contains("Transaction"))
 				{
+					if(sheetname.contains("FixedDeposit"))
+					{
+						 xlColumnPointer=1;
+						 applicationCol=getWebDriver()
+									.findElements(
+											By.xpath("(//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/table/tbody/tr)["+xlRowCount+"]/td"));
+					}
+					else
+					{
 				 xlColumnPointer=1;
 				 applicationCol=getWebDriver()
 							.findElements(
 									By.xpath("(.//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'])["+xlRowCount+"]/td"));
-				}
-				else if(sheetname.equals("Saving Charges"))
+				
+					}}
+				else if(sheetname.contains("Charges"))
 				{
+					if(sheetname.contains("FixedDeposit"))
+					{
+						xlColumnPointer=0;
+						 int row=xlRowCount+1;
+						 applicationCol=getWebDriver()
+									.findElements(
+											By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
+					}else
+					{
 				 xlColumnPointer=0;
 				 int row=xlRowCount+1;
 				 applicationCol=getWebDriver()
 							.findElements(
 									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
+				}}
+				else if(sheetname.equals("FixedDeposit Summary"))
+				{
+				 xlColumnPointer=0;
+				 applicationCol=getWebDriver()
+							.findElements(
+									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div/div/div[1]/div[1]/div[1]/table/tbody/tr["+xlRowCount+"]/td"));
 				}
 				}while(applicationCol.isEmpty() && counter<25);
 		verifyColumnDetails(xlColumnPointer, xlRowCount,
@@ -1299,7 +1341,43 @@ public class FrontPage extends MifosWebPage {
 				Thread.sleep(getResourceKey("mediumWait"));
 			}
 		}
-
+		if(sheetName.contains("Interst_Posting")
+				|| sheetName.contains("Deposit")
+				|| sheetName.contains("Withdrawal")
+				|| sheetName.contains("Pay_charge"))
+		{
+			if (istransactionIdIndexAssigned) {
+				transactionIDIndex = setSavingTransactionID.size() - 1;
+				istransactionIdIndexAssigned = false;
+			}
+				if (transactionIDIndex >= 0) {
+					isTransactionTabSelected = true;
+					getWebDriver()
+							.findElement(
+									By.xpath("//input[@placeholder='Search by transaction']"))
+							.sendKeys(
+									Keys.chord(Keys.CONTROL, "a"),
+									"S"
+											+ setSavingTransactionID.toArray()[transactionIDIndex--]);
+					Thread.sleep(getResourceKey("smallWait"));
+					clickButton(
+							getResource("frontend.accounting.searchjournal.transactionid.submit"),
+							"xpath");
+					Thread.sleep(getResourceKey("mediumWait"));
+					verifyLoanTabData(clientExcelSheetPath, excelSheetName,
+							sheetName);
+					clickButton(
+							getResource("frontend.accounting.searchjournal.transactionid.Parameters"),
+							"xpath");
+					Thread.sleep(getResourceKey("mediumWait"));
+				}
+				if(transactionIDIndex==-1)
+				{
+					istransactionIdIndexAssigned=true;
+					setSavingTransactionID.clear();
+					isTransactionTabSelected = false;
+				}
+				}
 		if (sheetName.equals("Acc_Periodic") ) {
 
 			for (int i = setAccuralTransactionType.size()-1; i>=0; i-- ) {
@@ -1796,8 +1874,14 @@ public class FrontPage extends MifosWebPage {
 	}
 	
 	public void navigateSavingAccounting() throws Throwable {
-		value = CurrentSavingAccounturl.split("#/")[1];
-			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+value);
+		if(RememberPreviousUrl!=null)
+		{
+			MifosWebPage.navigateToUrl(RememberPreviousUrl);
+			RememberPreviousUrl=null;
+		}
+		else{
+			MifosWebPage.navigateToUrl(CurrentSavingAccounturl);
+		}
 		
 		Thread.sleep(getResourceKey("smallWait"));
 	}

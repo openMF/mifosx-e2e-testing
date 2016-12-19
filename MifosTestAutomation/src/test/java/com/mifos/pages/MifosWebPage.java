@@ -69,7 +69,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public String currentNewLoanUrl;
 	public String currentCenterUrl;
 	public String RememberTopupUrl;
-	public String RememberGuarantorUrl;
+	public String RememberPreviousUrl;
 	public String CurrentSavingAccounturl;
 	/**
 	 * Gets the resource.
@@ -667,7 +667,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					}
 					Thread.sleep(getResourceKey("wait"));
 					locatorElement.sendKeys(value);
-					if(key.equals("GuarantorName"))
+					if(key.equals("GuarantorName")||key.equals("SavingTranferToClient"))
 					{
 						locatorElement.sendKeys(Keys.TAB);
 					}
@@ -708,7 +708,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					 Thread.sleep(10000);
 				 }
 				if (key.equals("Submitbutton")||key.equals("previewCollectionSheet")
-						||key.equals("clickonsubmit")|| key.equals("productiveCollectionSheet"))
+						||key.equals("clickonsubmit")|| key.equals("productiveCollectionSheet")
+                        ||key.equals("clickonapproveSaving"))
 				{
 			 Thread.sleep(2000);
 		        }
@@ -727,6 +728,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			}
 			if(key.equals("ViewClientName")){
 				RememberTopupUrl = getWebDriver().getCurrentUrl();					
+			     }	
+			if(key.equals("SavingAcoountholderName1")){
+				RememberPreviousUrl = getWebDriver().getCurrentUrl();					
 			     }	
 			
 				if (key.equals("clickonapprove")
@@ -806,8 +810,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					By locator = null;
 					locator = getLocator(getResource(key));
 					waitForElementAndPoll(locator);
-					if(key.equals("Foreclosuretransactiondate")|| key.equals("repaymenttransactiondate")||
-							key.equals("Savinginsertdate"))
+					if(key.equals("Savinginsertdate"))
 					{
 						String Date= value.substring(0, 2);
 						String Month=value.substring(3, value.length()-5);
@@ -832,6 +835,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
                     
 					locatorElement.sendKeys(value);
 					locatorElement.sendKeys(Keys.ESCAPE);
+					if(key.equals("Foreclosuretransactiondate")|| key.equals("repaymenttransactiondate"))
+                    {
+                    Thread.sleep(3000);
+                    }
 					}
 
 				} catch (NoSuchElementException exception) {
@@ -908,7 +915,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				try {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
-					if(key.equals("ChooseLoanToClose")||key.equals("GuarantorAccount"))
+					if(key.equals("ChooseLoanToClose")||key.equals("GuarantorAccount")
+							|| key.equals("SavingTranferToAccountNum"))
 					{
 						statusselect.selectByValue(value);
 					}
