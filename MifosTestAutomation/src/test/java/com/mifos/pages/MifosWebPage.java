@@ -828,7 +828,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 						waitForElementAndPoll(Year1).click();
 						waitForElementAndPoll(Month1).click();
 						waitForElementAndPoll(Date1).click();
-						Thread.sleep(2000);
+						Thread.sleep(1000);
 					}
 					else{
 					LazyWebElement locatorElement = getElement(locator, clear);
@@ -916,7 +916,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
 					if(key.equals("ChooseLoanToClose")||key.equals("GuarantorAccount")
-							|| key.equals("SavingTranferToAccountNum"))
+					|| key.equals("SavingTranferToAccountNum")|| key.equals("FdTranferToAccountNumber"))
 					{
 						statusselect.selectByValue(value);
 					}
