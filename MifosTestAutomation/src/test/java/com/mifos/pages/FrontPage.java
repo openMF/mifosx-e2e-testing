@@ -475,6 +475,10 @@ public class FrontPage extends MifosWebPage {
 			{		
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createfixeddepositproduct");
 			}
+			else if(sheetName.equals("RecurringDeposit"))
+			{		
+				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createrecurringdepositproduct");
+			}
 			else
 			{
 			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createloanproduct");
@@ -1013,7 +1017,7 @@ public class FrontPage extends MifosWebPage {
 					}
 				if(sheetname.contains("Transaction"))
 				{
-					if(sheetname.contains("FixedDeposit"))
+					if(sheetname.contains("FixedDeposit") || sheetname.contains("RecurringDeposit"))
 					{
 						 xlColumnPointer=1;
 						 applicationCol=getWebDriver()
@@ -1030,7 +1034,7 @@ public class FrontPage extends MifosWebPage {
 					}}
 				else if(sheetname.contains("Charges"))
 				{
-					if(sheetname.contains("FixedDeposit"))
+					if(sheetname.contains("FixedDeposit") || sheetname.contains("RecurringDeposit"))
 					{
 						xlColumnPointer=0;
 						 int row=xlRowCount+1;
@@ -1045,7 +1049,7 @@ public class FrontPage extends MifosWebPage {
 							.findElements(
 									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
 				}}
-				else if(sheetname.equals("FixedDeposit Summary"))
+				else if(sheetname.equals("FixedDeposit Summary") || sheetname.equals("RecurringDeposit Summary"))
 				{
 				 xlColumnPointer=0;
 				 applicationCol=getWebDriver()
@@ -1689,7 +1693,7 @@ public class FrontPage extends MifosWebPage {
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
 			Thread.sleep(getResourceKey("largeWait"));
-		} else if (sheetName.equals("Foreclosure")||sheetName.contains("Savings")) {
+		} else if (sheetName.equals("Foreclosure")||sheetName.contains("Savings")||sheetName.contains("Recurring")) {
 			Map<String, String> tabDetails = parseExcelSheet1(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);

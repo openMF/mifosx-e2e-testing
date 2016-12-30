@@ -886,4 +886,266 @@ Background:
 	  Then I navigate To Saving Account Page
 	  And I verified the "Saving Transaction" details successfully 
 	  			|4756-SUBMITFD01SEPT2014(AMT5000-PRD06MNTH)-ACT01SEPT2014-POSTINTEREST-CLOSEon01APR2015-ACTIONTransfersavings.xlsx|
-					
+		
+@RunnerClass8
+	  Scenario: 4757-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01FEB2015
+      
+      Given I setup the "RecurringDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductRDInput" Sheet
+				|4757-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01FEB2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4757-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01FEB2015.xlsx|
+	  And I verified the "RecurringDeposit Summary" details successfully 
+	  			|4757-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01FEB2015.xlsx|
+	 
+@RunnerClass8
+	  Scenario: 4758-SUBMITRDS01JAN2015(AMT5000-DEPOPRD06MNTH)-MODIFYAPP-LOCKPRD&DEPOPRD3MNTH-ACT01JAN2015
+      
+      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4758-SUBMITRDS01JAN2015(AMT5000-DEPOPRD06MNTH)-MODIFYAPP-LOCKPRD&DEPOPRD3MNTH-ACT01JAN2015.xlsx|
+	  And I modify New Account from "ModifyApplication" sheet 
+	  			|4758-SUBMITRDS01JAN2015(AMT5000-DEPOPRD06MNTH)-MODIFYAPP-LOCKPRD&DEPOPRD3MNTH-ACT01JAN2015.xlsx|
+	  Then i validate and Verify from "error" sheet
+	  			|4758-SUBMITRDS01JAN2015(AMT5000-DEPOPRD06MNTH)-MODIFYAPP-LOCKPRD&DEPOPRD3MNTH-ACT01JAN2015.xlsx|
+				
+@RunnerClass8
+	  Scenario: 4759-SUBMIT01SEP2014(AMT5000-LCKIN12MNT-DEPPRD6MNT)-ACT01SEP2014-MKEPAYMENT01FEB2015-PREMATURECLOSE2MAR2015
+      
+      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4759-SUBMIT01SEP2014(AMT5000-LCKIN12MNT-DEPPRD6MNT)-ACT01SEP2014-MKEPAYMENT02FEB2015-PREMATURECLOSE2MAR2015.xlsx|
+	  Then I "Do Transaction" and verified the following tabs 
+	  			|4759-SUBMIT01SEP2014(AMT5000-LCKIN12MNT-DEPPRD6MNT)-ACT01SEP2014-MKEPAYMENT02FEB2015-PREMATURECLOSE2MAR2015.xlsx| RecurringDeposit |
+	  And I verified the "RecurringDeposit Summary" details successfully 
+	  			|4759-SUBMIT01SEP2014(AMT5000-LCKIN12MNT-DEPPRD6MNT)-ACT01SEP2014-MKEPAYMENT02FEB2015-PREMATURECLOSE2MAR2015.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4759-SUBMIT01SEP2014(AMT5000-LCKIN12MNT-DEPPRD6MNT)-ACT01SEP2014-MKEPAYMENT02FEB2015-PREMATURECLOSE2MAR2015.xlsx|
+	  Then I "Do PreMature Close" and verified the following tabs 
+	  			|4759-SUBMIT01SEP2014(AMT5000-LCKIN12MNT-DEPPRD6MNT)-ACT01SEP2014-MKEPAYMENT02FEB2015-PREMATURECLOSE2MAR2015.xlsx| Modify Transaction |
+	  Then i validate and Verify from "error" sheet
+	  			|4759-SUBMIT01SEP2014(AMT5000-LCKIN12MNT-DEPPRD6MNT)-ACT01SEP2014-MKEPAYMENT02FEB2015-PREMATURECLOSE2MAR2015.xlsx|
+	 
+@RunnerClass8
+	  Scenario: 4760-SUBMITRD01JAN2015(AMT5000-LCKIN6MNT-DEPOPRD6MNTH)-ACT01JAN2015-MakePayment01FEB2015-POSTINT01APR2015
+      
+      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4760-SUBMITRD01JAN2015(AMT5000-LCKIN6MNT-DEPOPRD6MNTH)-ACT01JAN2015-MakePayment01FEB2015-POSTINT01APR2015.xlsx|
+	  Then I "Do Transaction" and verified the following tabs 
+	  			|4760-SUBMITRD01JAN2015(AMT5000-LCKIN6MNT-DEPOPRD6MNTH)-ACT01JAN2015-MakePayment01FEB2015-POSTINT01APR2015.xlsx| RecurringDeposit |
+	  Then I "Do Post Interest" and verified the following tabs 
+	  			|4760-SUBMITRD01JAN2015(AMT5000-LCKIN6MNT-DEPOPRD6MNTH)-ACT01JAN2015-MakePayment01FEB2015-POSTINT01APR2015.xlsx| Modify Transaction |
+	  And I verified the "RecurringDeposit Summary" details successfully 
+	  			|4760-SUBMITRD01JAN2015(AMT5000-LCKIN6MNT-DEPOPRD6MNTH)-ACT01JAN2015-MakePayment01FEB2015-POSTINT01APR2015.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4760-SUBMITRD01JAN2015(AMT5000-LCKIN6MNT-DEPOPRD6MNTH)-ACT01JAN2015-MakePayment01FEB2015-POSTINT01APR2015.xlsx|
+				
+@RunnerClass8
+	  Scenario: 4761-SUBMITRD01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APR01JAN2015-REJECT05JAN2015
+      
+      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4761-SUBMITRD01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APR01JAN2015-REJECT05JAN2015.xlsx|
+	  Then I "Undo Approve and Reject Application" and verified the following tabs 
+	  			|4761-SUBMITRD01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APR01JAN2015-REJECT05JAN2015.xlsx| Modify Transaction |
+	  And I verified the "RecurringDeposit Summary" details successfully 
+	  			|4761-SUBMITRD01JAN2015(AMT5000-LCKPRD6MNTH-DEPOPRD6MNTH)-APR01JAN2015-REJECT05JAN2015.xlsx|
+
+@RunnerClass8
+	  Scenario: 4762-SUBMITRD01JAN2015(DEPOPRD06MNTH)-ADDCHRGE(savings-activation)-APRACT01FEB2015
+      
+      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4762-SUBMITRD01JAN2015(DEPOPRD06MNTH)-ADDCHRGE(savings-activation)-APRACT01FEB2015.xlsx|
+	  And I verified the "RecurringDeposit Summary" details successfully 
+	  			|4762-SUBMITRD01JAN2015(DEPOPRD06MNTH)-ADDCHRGE(savings-activation)-APRACT01FEB2015.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4762-SUBMITRD01JAN2015(DEPOPRD06MNTH)-ADDCHRGE(savings-activation)-APRACT01FEB2015.xlsx|
+	  And I verified the "RecurringDeposit Charges" details successfully 
+	  			|4762-SUBMITRD01JAN2015(DEPOPRD06MNTH)-ADDCHRGE(savings-activation)-APRACT01FEB2015.xlsx|
+
+				
+@RunnerClass8
+	  Scenario: 4763-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-duedate-flat)-ACT01JAN2015
+      
+      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4763-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-duedate-flat)-ACT01JAN2015.xlsx|
+	  Then I "Pay Charge" and verified the following tabs	
+	  			|4763-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-duedate-flat)-ACT01JAN2015.xlsx| Modify Transaction |
+	  And I verified the "RecurringDeposit Summary" details successfully 
+	  			|4763-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-duedate-flat)-ACT01JAN2015.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4763-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-duedate-flat)-ACT01JAN2015.xlsx|
+	  And I verified the "RecurringDeposit Charges" details successfully 
+	  			|4763-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-duedate-flat)-ACT01JAN2015.xlsx|
+
+				
+@RunnerClass8
+	  Scenario: 4764-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH)-APRACT01JAN2015-ADDCHARGE(RD-SpecifiedDueDate-Flat)
+      
+      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4764-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH)-APRACT01JAN2015-ADDCHARGE(RD-SpecifiedDueDate-Flat).xlsx|
+	  Then I "Add SpecifiedDueDate Charge" and verified the following tabs	
+	  			|4764-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH)-APRACT01JAN2015-ADDCHARGE(RD-SpecifiedDueDate-Flat).xlsx| Modify Transaction |
+	  Then I "Pay Charge" and verified the following tabs	
+	  			|4764-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH)-APRACT01JAN2015-ADDCHARGE(RD-SpecifiedDueDate-Flat).xlsx| Modify Transaction1 |
+	  And I verified the "RecurringDeposit Summary" details successfully 
+	  			|4764-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH)-APRACT01JAN2015-ADDCHARGE(RD-SpecifiedDueDate-Flat).xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4764-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH)-APRACT01JAN2015-ADDCHARGE(RD-SpecifiedDueDate-Flat).xlsx|
+	  And I verified the "RecurringDeposit Charges" details successfully 
+	  			|4764-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH)-APRACT01JAN2015-ADDCHARGE(RD-SpecifiedDueDate-Flat).xlsx|
+
+@RunnerClass8
+	  Scenario: 4765-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge
+      
+      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4765-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge.xlsx|
+	  Then I "Waive Charge" and verified the following tabs	
+	  			|4765-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge.xlsx| Modify Transaction |
+	  And I verified the "RecurringDeposit Summary" details successfully 
+	  			|4765-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4765-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge.xlsx|
+	  And I verified the "RecurringDeposit Charges" details successfully 
+	  			|4765-SUBMITRD01JAN2015(AMT5000-DEPOPRD06MNTH-SavingsActivation-Flat)-ACT01JAN2015-WaiveCharge.xlsx|
+
+@RunnerClass8
+	  Scenario: 4766-SUBMIT01JAN2015(AMT5000-DEPOPRD06MNTH)-ACT01JAN2015-makepay01FEB2015-POSTINTEREST01APR2015
+      
+      
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4766-SUBMIT01JAN2015(AMT5000-DEPOPRD06MNTH)-ACT01JAN2015-makepay01FEB2015-POSTINTEREST01APR2015.xlsx|
+	  Then I "Do Transaction" and verified the following tabs 
+	  			|4766-SUBMIT01JAN2015(AMT5000-DEPOPRD06MNTH)-ACT01JAN2015-makepay01FEB2015-POSTINTEREST01APR2015.xlsx| RecurringDeposit |
+	  Then I "Do Post Interest" and verified the following tabs 
+	  			|4766-SUBMIT01JAN2015(AMT5000-DEPOPRD06MNTH)-ACT01JAN2015-makepay01FEB2015-POSTINTEREST01APR2015.xlsx| Modify Transaction |
+	  And I verified the "RecurringDeposit Summary" details successfully 
+	  			|4766-SUBMIT01JAN2015(AMT5000-DEPOPRD06MNTH)-ACT01JAN2015-makepay01FEB2015-POSTINTEREST01APR2015.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4766-SUBMIT01JAN2015(AMT5000-DEPOPRD06MNTH)-ACT01JAN2015-makepay01FEB2015-POSTINTEREST01APR2015.xlsx|
+	
+@RunnerClass8
+	  Scenario: 4767-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-1)-APRACT01JAN2015
+     
+	  Given I setup the "RecurringDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductRDInput" Sheet
+				|4767-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-1)-APRACT01JAN2015.xlsx|
+        Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|4767-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-1)-APRACT01JAN2015.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4767-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-1)-APRACT01JAN2015.xlsx|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4767-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-1)-APRACT01JAN2015.xlsx|				
+	  
+@RunnerClass8
+	  Scenario: 4768-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-2)-APRACT01JAN2015
+     
+	  Given I setup the "RecurringDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductRDInput" Sheet
+				|4768-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-2)-APRACT01JAN2015.xlsx|
+        Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|4768-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-2)-APRACT01JAN2015.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4768-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-2)-APRACT01JAN2015.xlsx|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4768-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-2)-APRACT01JAN2015.xlsx|	
+				
+@RunnerClass8
+	  Scenario: 4769-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-3)-APRACT01JAN2015
+     
+	  Given I setup the "RecurringDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductRDInput" Sheet
+				|4769-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-3)-APRACT01JAN2015.xlsx|
+	   Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|4769-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-3)-APRACT01JAN2015.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4769-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-3)-APRACT01JAN2015.xlsx|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4769-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-3)-APRACT01JAN2015.xlsx|	
+	  
+@RunnerClass8
+	  Scenario: 4770-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-4)-APRACT01JAN2015
+     
+	  Given I setup the "RecurringDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductRDInput" Sheet
+				|4770-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-4)-APRACT01JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|4770-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-4)-APRACT01JAN2015.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4770-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-4)-APRACT01JAN2015.xlsx|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4770-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-4)-APRACT01JAN2015.xlsx|
+				
+@RunnerClass8
+	  Scenario: 4771-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-5)-APRACT01JAN2015
+     
+	  Given I setup the "RecurringDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductRDInput" Sheet
+				|4771-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-5)-APRACT01JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|4771-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-5)-APRACT01JAN2015.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4771-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-5)-APRACT01JAN2015.xlsx|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4771-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-5)-APRACT01JAN2015.xlsx|	
+				
+@RunnerClass8
+	  Scenario: 4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015
+     
+	  Given I setup the "RecurringDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductRDInput" Sheet
+				|4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015.xlsx|
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015.xlsx|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015.xlsx|				
