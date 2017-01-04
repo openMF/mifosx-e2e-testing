@@ -6,7 +6,7 @@ Background:
 		|Login.xlsx|
 	Then I should see logged in successfully
 	
-@4615-DISB02JAN2013-NonWorkSatandSun
+@RunnerClass8
 	  Scenario: 4615-DISB02JAN2013-NonWorkSatandSun
       Given I setup the product loan "Setup"
 				| Productloannavigation.xlsx |
@@ -23,7 +23,7 @@ Background:
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4615-DISB02JAN2013-NonWorkSatandSun.xlsx|
 
-@4616-NonWorkSatandSun-DISB03JAN2013
+@RunnerClass8
 	  Scenario: 4616-NonWorkSatandSun-DISB03JAN2013
 	  Given I create "same day" As Payments due on non working days
       Given I setup the clients
@@ -36,7 +36,7 @@ Background:
 	  Then i validate and Verify from "error" sheet	
 	  |4616-NonWorkSatandSun-DISB03JAN2013.xlsx|		
 	  			
-@4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013
+@RunnerClass8
 	  Scenario: 4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013
 	  Given I create "same day" As Payments due on non working days
       Given I setup the clients
@@ -51,7 +51,7 @@ Background:
       Then i validate and Verify from "error" sheet
 	  			|4617-NonWorkSatandSun-REPAYDUE-SAMEDAY-DISBDAILYLOANon02JAN2013-REPAY05JAN2013.xlsx|
                 
-@4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013
+@RunnerClass8
 	  Scenario: 4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013
 	  Given I create "move to next working day" As Payments due on non working days
       Given I setup the clients
@@ -64,7 +64,7 @@ Background:
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4618-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|	  			  			
 
-@4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013
+@RunnerClass8
 	  Scenario: 4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013
 	  Given I create "move to previous working day" As Payments due on non working days
       Given I setup the clients
@@ -77,7 +77,7 @@ Background:
 	  And I verified the "Repayment Schedule" details successfully 
 	  			|4619-NonWorkSatandSun-REPAYDUE-MOVEtoPREVIOUSWORKINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
 	  			
-@4620-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013
+@RunnerClass8
 	  Scenario: 4620-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013
 	 Given I create "move to next repayment meeting day" As Payments due on non working days
      Given I setup the group
@@ -90,7 +90,7 @@ Background:
 	 And I verified the "Repayment Schedule" details successfully 
 	  |4620-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013.xlsx|
 	 	
-@4621-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013-MAKEREPAYon5th
+@RunnerClass8
 	  Scenario: 4621-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013-MAKEREPAYon5th
 	 Given I create "move to next repayment meeting day" As Payments due on non working days
      Given I setup the group
@@ -105,7 +105,7 @@ Background:
      Then i validate and Verify from "error" sheet
 	 |4621-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon02JAN2013-MAKEREPAYon5th.xlsx|
 	
-@4622-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon08JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13
+@RunnerClass8
 	  Scenario: 4622-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon08JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13
 	 Given I create "move to next repayment meeting day" As Payments due on non working days
      Given I setup the group
@@ -118,7 +118,7 @@ Background:
 	 Then i validate and Verify from "error" sheet
 	    |4622-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBDAILYLOANon08JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13.xlsx|
 
-@4623-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBWeeklyLOANon01JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13
+@RunnerClass8
 	  Scenario: 4623-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBWeeklyLOANon01JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13
 	 Given I create "move to next repayment meeting day" As Payments due on non working days
      Given I setup the group
@@ -129,7 +129,7 @@ Background:
 	 When I set up the new create loan from "NewLoanInput" sheet
 	  	|4623-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-DISBWeeklyLOANon01JAN2013-HOLIDAYON15JAN2013RESchedule20thJAN13.xlsx|	
 
-@4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013
+@RunnerClass8
 	  Scenario: 4624-NonWorkSatandSun-REPAYDUE-MOVEtoNEXTREPAYMENTMEETINGDAY-CENTER-DISBWeeklyLOANon01JAN2013-Collectionsheeton08JAN2013
 	 Given I create "move to next repayment meeting day" As Payments due on non working days
      Given I setup the center

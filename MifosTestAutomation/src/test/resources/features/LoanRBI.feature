@@ -5,7 +5,7 @@ Background:
 		| Login.xlsx  |
 	Then I should see logged in successfully
 	
-@scenario1-Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment  
+@RunnerClass3
 	  Scenario: Loan-389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -26,7 +26,7 @@ Background:
 	  Then I make repayment and verified the following tabs
        			|389-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	 	 		
-@scenario2-Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -48,7 +48,7 @@ Background:
 	  			|390-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  				
 	  
-@scenario3-Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -70,7 +70,7 @@ Background:
 	  			|391-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  				
 	  
-@scenario4-Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -92,7 +92,7 @@ Background:
 	  			|392-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  								
 	  								
-@scenario5-Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment
+@RunnerClass3
 	  Scenario: Loan-437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -113,7 +113,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|437-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  			 
-@scenario6-Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -134,7 +134,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|438-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  
-@scenario7-Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -155,7 +155,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|439-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-B-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  
-@scenario8-Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-B-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -177,7 +177,7 @@ Background:
 	  			|440-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  
 	  				
-@scenario9-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
+@RunnerClass3
       Scenario: Loan-485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -199,7 +199,7 @@ Background:
 	  			|485-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  			
 	   		 		 		 		 		 		 		 		 		 		 		 		 		 		 		 		
-@scenario10-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -221,7 +221,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|486-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  	 		 		 		 		 		 		 		 		 		 		
-@scenario11-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -242,7 +242,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|487-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  	
-@scenario12-Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -263,7 +263,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|488-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  			 		
-@scenario13-Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	 Scenario: Loan-533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -284,7 +284,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|533-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  	
-@scenario14-Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -305,7 +305,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|534-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  	
-@scenario15-Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -326,7 +326,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|535-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  	
-@scenario16-Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
+@RunnerClass3
 	  Scenario: Loan-536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -347,7 +347,7 @@ Background:
 	  Then I make repayment and verified the following tabs
 	  			|536-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  			
-@scenario17-Loan-5-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME
+@RunnerClass3
 	  Scenario:  Loan-5-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -368,7 +368,7 @@ Background:
 	  Then I make repayment and verified the following tabs
    		        |5-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
     
-@scenario18-Loan-6-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ONTIME
+@RunnerClass3
 	 Scenario: Loan-6-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ONTIME
 	 
 	 Given I setup the product loan "Setup"
@@ -389,7 +389,7 @@ Background:
 	 Then I make repayment and verified the following tabs
      			|6-RBI-EI-DB-DL-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario19-Loan-7-RBI-EI-DB-DL-REC-NOCOM-RNI-CTRFD-SAR-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan7-RBI-EI-DB-DL-REC-NOCOM-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -410,7 +410,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|7-RBI-EI-DB-DL-REC-NOCOM-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario20-Loan-8-RBI-EI-DB-DL-REC-NOCOM-RNI-CTRFD-DL-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-8-RBI-EI-DB-DL-REC-NOCOM-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -431,7 +431,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|8-RBI-EI-DB-DL-REC-NOCOM-RNI-CTRFD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario21-Loan-53-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-53-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -452,7 +452,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|53-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario22-Loan-54-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-54-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -473,7 +473,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|54-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTPD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|     
 
-@scenario23-Loan-55-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTRFD-SAR-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-55-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -494,7 +494,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|55-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario24-Loan-56-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTRFD-DL-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-56-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -515,7 +515,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|56-RBI-EI-DB-SAR-REC-NOCOM-RNI-CTRFD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
       
-@scenario25-Loan-101-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-101-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -536,7 +536,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|101-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario26-Loan-102-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-102-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -557,7 +557,7 @@ Background:
 	     Then I make repayment and verified the following tabs
          |102-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario27-Loan-103-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-103-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -578,7 +578,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|103-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario28-Loan-104-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-104-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -599,7 +599,7 @@ Background:
 	Then I make repayment and verified the following tabs
     	 		|104-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario29-Loan-149-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-149-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -620,7 +620,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|149-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario30-Loan-150-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-150-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -641,7 +641,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|150-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario31-Loan-151-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-151-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -662,7 +662,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|151-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario32-Loan-152-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
+@RunnerClass3
 	Scenario: Loan-152-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	
 	Given I setup the product loan "Setup"
@@ -683,7 +683,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|152-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	
-@scenario33-Loan-773-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario:  Loan-773-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -704,7 +704,7 @@ Background:
 	Then I make repayment and verified the following tabs
          		|773-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
   
-@scenario34-Loan-774-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateLateRepayment
+@RunnerClass3
 	Scenario: Loan-774-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -725,7 +725,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|774-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario35-Loan-775-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-775-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -746,7 +746,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|775-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario36-Loan-776-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-776-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -767,7 +767,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|776-RBI-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario37-Loan-821-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-821-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -788,7 +788,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|821-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario38-Loan-822-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-822-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -809,7 +809,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|822-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|     
 
-@scenario39-Loan-823-RBI-EI-DB-SAR-Y-NON-RNI-CTRFD-SAR-MD-Y-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-823-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -830,7 +830,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|823-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario40-Loan-824-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment   
+@RunnerClass3  
 	Scenario: Loan-824-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -851,7 +851,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|824-RBI-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario41-Loan-869-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-869-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -872,7 +872,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|869-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario42-Loan-870-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-870-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment
 	
 	Given I setup the product loan "Setup"
@@ -893,7 +893,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|870-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-Late Repayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario43-Loan-871-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-871-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	
 	Given I setup the product loan "Setup"
@@ -914,7 +914,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|871-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario44-Loan-872-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-872-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	
 	Given I setup the product loan "Setup"
@@ -935,7 +935,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|872-RBI-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|     
      
-@scenario45-Loan-917-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-917-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
 	
 	Given I setup the product loan "Setup"
@@ -956,7 +956,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|917-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario46-Loan-918-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-918-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
 	
 	Given I setup the product loan "Setup"
@@ -977,7 +977,7 @@ Background:
 	Then I make repayment and verified the following tabs
      			|918-RBI-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
-@scenario47-Loan-919-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-919-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	
 	Given I setup the product loan "Setup"
@@ -1000,7 +1000,7 @@ Background:
      
 
      
-@scenario48-Loan-920-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
+@RunnerClass3
 	Scenario: Loan-920-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	
 	Given I setup the product loan "Setup"
@@ -1022,7 +1022,7 @@ Background:
      			|920-RBI-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
      
 
-@scenario49-Loan-1157-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME   
+@RunnerClass3  
 	  Scenario: Loan-1157-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME
 		
 	  Given I setup the product loan "Setup"
@@ -1051,7 +1051,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1157-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
 					 	
-@scenario50-Loan-1158-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME	   
+@RunnerClass3	   
 	  Scenario: Loan-1158-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME
 	 
 	  Given I setup the product loan "Setup"
@@ -1080,7 +1080,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1158-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx|  
 
-@scenario51-Loan-1205-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME
+@RunnerClass3
 	  Scenario: Loan-1205-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1109,7 +1109,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1205-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
 				
-@scenario52-Loan-1206-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME
+@RunnerClass3
 	  Scenario: Loan-1206-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1138,7 +1138,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1206-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
 				
-@scenario53-Loan-1541-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY
+@RunnerClass3
 	  Scenario: Loan-1541-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY
 	  
 	  Given I setup the product loan "Setup"
@@ -1167,7 +1167,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1541-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
 				
-@scenario54-Loan-1542-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY	   
+@RunnerClass3	   
 	  Scenario: Loan-1542-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY
 	  
 	  Given I setup the product loan "Setup"
@@ -1196,7 +1196,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1542-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
 				
-@scenario55-Loan-1589-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY
+@RunnerClass3
 	  Scenario: Loan-1589-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY
 	  
 	  Given I setup the product loan "Setup"
@@ -1225,7 +1225,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1589-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
 				
-@scenario56-Loan-1590-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY	   
+@RunnerClass3   
 	  Scenario: Loan-1590-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY
 	  
 	  Given I setup the product loan "Setup"
@@ -1254,7 +1254,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1590-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
 				
-@scenario57-Loan-1925-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE
+@RunnerClass3
 	  Scenario: Loan-1925-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE
 	  
 	  Given I setup the product loan "Setup"
@@ -1283,7 +1283,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1925-RBI-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx| 
 				
-@scenario58-Loan-1926-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE 
+@RunnerClass3
 	  Scenario: Loan-1926-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE
 	  
 	  Given I setup the product loan "Setup"
@@ -1312,7 +1312,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1926-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx| 
 				
-@scenario59-Loan-1973-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE
+@RunnerClass3
 	  Scenario: Loan-1973-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE
 	  
 	  Given I setup the product loan "Setup"
@@ -1341,7 +1341,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1973-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx| 
 				
-@scenario60-Loan-1974-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE
+@RunnerClass3
 	  Scenario: Loan-1974-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE
 	  
 	  Given I setup the product loan "Setup"
@@ -1370,7 +1370,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1974-RBI-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx|      
 				
-@scenario1-Loan-581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment	   
+@RunnerClass3  
 	  Scenario: Loan-581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1391,7 +1391,7 @@ Background:
 	  Then I make repayment and verified the following tabs
        			|581-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  
-@scenario2-Loan-582-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment		   
+@RunnerClass3		   
 	  Scenario: Loan-582-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1412,7 +1412,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|582-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario3-Loan-583-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment		   
+@RunnerClass3		   
 	  Scenario: Loan-583-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1433,7 +1433,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|583-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario4-Loan-584-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment		   
+@RunnerClass3	   
 	  Scenario: Loan-584-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1454,7 +1454,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|584-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  
-@scenario5-Loan-629-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment		   
+@RunnerClass3		   
 	  Scenario: Loan-629-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1475,7 +1475,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|629-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario6-Loan-630-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment		   
+@RunnerClass3	   
 	  Scenario: Loan-630-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1496,7 +1496,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|630-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario7-Loan-631-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment		   
+@RunnerClass3		   
 	  Scenario: Loan-631-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1517,7 +1517,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|631-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 
-@scenario8-Loan-632-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment		   
+@RunnerClass3		   
 	  Scenario: Loan-632-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1538,7 +1538,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|632-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario9-Loan-677-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment	   
+@RunnerClass3	   
 	  Scenario: Loan-677-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-
 	  
 	  Given I setup the product loan "Setup"
@@ -1560,7 +1560,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|677-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario10-Loan-678-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment		   
+@RunnerClass3		   
 	  Scenario: Loan-678-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1581,7 +1581,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|678-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario11-Loan-679-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment		   
+@RunnerClass3	   
 	  Scenario: Loan-679-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1602,7 +1602,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|679-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario12-Loan-680-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment		   
+@RunnerClass3		   
 	  Scenario: Loan-680-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1623,7 +1623,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|680-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario13-Loan-725-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment		   
+@RunnerClass3	   
 	  Scenario: Loan-725-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1644,7 +1644,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|725-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario14-Loan-726-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment		   
+@RunnerClass3		   
 	  Scenario: Loan-726-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1665,7 +1665,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|726-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario15-Loan-727-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment		   
+@RunnerClass3	   
 	  Scenario: Loan-727-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1686,7 +1686,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|727-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario16-Loan-728-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment		   
+@RunnerClass3	   
 	  Scenario: Loan-728-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment
 	  
 	  Given I setup the product loan "Setup"
@@ -1707,7 +1707,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|728-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-EarlyRePayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario17-Loan-197-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME		   
+@RunnerClass3		   
 	  Scenario: Loan-197-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1728,7 +1728,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|197-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario18-Loan-198-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-198-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1749,7 +1749,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|198-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario19-Loan-199-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME		   
+@RunnerClass3		   
 	  Scenario: Loan-199-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1770,7 +1770,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|199-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario20-Loan-200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME		   
+@RunnerClass3		   
 	  Scenario: Loan-200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1791,7 +1791,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario21-Loan-245-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-245-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1812,7 +1812,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|245-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario22-Loan-246-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME		   
+@RunnerClass3		   
 	  Scenario: Loan-246-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1833,7 +1833,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|246-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario23-Loan-247-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-247-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1854,7 +1854,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|247-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario24-Loan-248-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-248-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1875,7 +1875,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|248-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario25-Loan-293-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-293-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1896,7 +1896,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|293-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario26-Loan-294-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-294-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1917,7 +1917,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|294-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario27-Loan-295-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-295-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1938,7 +1938,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|295-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario28-Loan-296-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME		   
+@RunnerClass3		   
 	  Scenario: Loan-296-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -1959,7 +1959,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|296-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario29-Loan-341-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-341-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME
 	  
 	   Given I setup the product loan "Setup"
@@ -1980,7 +1980,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|341-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario30-Loan-342-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-342-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -2001,7 +2001,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|342-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario31-Loan-343-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME		   
+@RunnerClass3	   
 	  Scenario: Loan-343-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -2022,7 +2022,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|343-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario32-Loan-344-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME		   
+@RunnerClass3   
 	  Scenario: Loan-344-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
 	  
 	  Given I setup the product loan "Setup"
@@ -2043,7 +2043,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|344-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario33-Loan-965-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment		   
+@RunnerClass3	   
 	  Scenario: Loan-965-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2064,7 +2064,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|965-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
       
-@scenario34-Loan-966-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
+@RunnerClass3
 	  Scenario: Loan-966-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2086,7 +2086,7 @@ Background:
        			|966-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			 			
 			
-@scenario35-Loan-967-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment		   
+@RunnerClass3	   
 	  Scenario: Loan-967-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2107,7 +2107,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|967-MS-EI-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario36-Loan-968-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment		   
+@RunnerClass3   
 	  Scenario: Loan-968-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2128,7 +2128,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|968-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario37-Loan-1013-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment		   
+@RunnerClass3	   
 	  Scenario: Loan-1013-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2149,7 +2149,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1013-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario38-Loan-1014-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment		   
+@RunnerClass3		   
 	  Scenario: Loan-1014-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2170,7 +2170,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1014-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario39-Loan-1015-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment		   
+@RunnerClass3		   
 	  Scenario: Loan-1015-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2191,7 +2191,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1015-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario40-Loan-1016-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment		   
+@RunnerClass3	   
 	  Scenario: Loan-1016-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2212,7 +2212,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1016-MS-EI-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario41-Loan-1061-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment		   
+@RunnerClass3	   
 	  Scenario: Loan-1061-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2233,7 +2233,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1061-MS-EPP-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario42-Loan-1062-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment		   
+@RunnerClass3   
 	  Scenario: Loan-1062-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2254,7 +2254,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1062-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario43-Loan-1063-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment		   
+@RunnerClass3	   
 	  Scenario: Loan-1063-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2275,7 +2275,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1063-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario44-Loan-1064-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment		   
+@RunnerClass3		   
 	  Scenario: Loan-1064-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2296,7 +2296,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1064-MS-EPP-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario45-Loan-1109-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment		   
+@RunnerClass3	   
 	  Scenario: Loan-1109-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2317,7 +2317,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1109-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario46-Loan-1110-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment		   
+@RunnerClass3	   
 	  Scenario: Loan-1110-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2338,7 +2338,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1110-MS-EPP-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario47-Loan-1111-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment   
+@RunnerClass3
 	  Scenario: Loan-1111-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2359,7 +2359,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1111-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-SAR-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			 			
-@scenario48-Loan-1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment 
+@RunnerClass3
 	  Scenario: Loan-1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment
 	  
 	  Given I setup the product loan "Setup"
@@ -2380,7 +2380,7 @@ Background:
 	  When I make repayment and verified the following tabs
        			|1112-MS-EPP-DB-SAR-REC-NON-RNI-CTRFD-DL-MD-TR-1-LateRepayment-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
        			
-@scenario49-Loan-1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME	   
+@RunnerClass3   
 	  Scenario: Loan-1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME
 	
 	  Given I setup the product loan "Setup"
@@ -2409,7 +2409,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1349-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
 				
-@scenario50-Loan-1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME	   
+@RunnerClass3   
 	  Scenario: Loan-1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME
 	
 	  Given I setup the product loan "Setup"
@@ -2438,7 +2438,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1350-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
 				
-@scenario51-Loan-1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME	   
+@RunnerClass3 
 	  Scenario: Loan-1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME
 	
 	  Given I setup the product loan "Setup"
@@ -2467,7 +2467,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1397-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
 				
-@scenario52-Loan-1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME	   
+@RunnerClass3   
 	  Scenario: Loan-1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME
 	
 	  Given I setup the product loan "Setup"
@@ -2496,7 +2496,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1398-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-ONTIME-Newcreateloan2.xlsx| 
 				
-@scenario53-Loan-1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY	   
+@RunnerClass3  
 	  Scenario: Loan-1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY
 	
 	  Given I setup the product loan "Setup"
@@ -2525,7 +2525,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1733-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
 				
-@scenario54-Loan-1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY
+@RunnerClass3
 	  Scenario: Loan-1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY
 	
 	  Given I setup the product loan "Setup"
@@ -2554,7 +2554,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1734-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
 				
-@scenario55-Loan-1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY	   
+@RunnerClass3   
 	  Scenario: Loan-1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY
 	  
 	  Given I setup the product loan "Setup"
@@ -2583,7 +2583,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1781-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
 				
-@scenario56-Loan-1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY	   
+@RunnerClass3	   
 	  Scenario: Loan-1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY
 	  
 	  Given I setup the product loan "Setup"
@@ -2612,7 +2612,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 1782-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-EARLY-Newcreateloan2.xlsx| 
 
-@scenario57-Loan-2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE	   
+@RunnerClass3   
 	  Scenario: Loan-2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE
 	  
 	  Given I setup the product loan "Setup"
@@ -2641,7 +2641,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 2117-MS-EI-DB-DL-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx| 
 
-@scenario58-Loan-2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE	   
+@RunnerClass3	   
 	  Scenario: Loan-2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE
 	  
 	  Given I setup the product loan "Setup"
@@ -2670,7 +2670,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 2118-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE-Newcreateloan2.xlsx| 
 
-@scenario59-Loan-2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE	   
+@RunnerClass3	   
 	  Scenario: Loan-2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE
 	
 	  Given I setup the product loan "Setup"
@@ -2699,7 +2699,7 @@ Background:
 	  And I verified the "Transactions" details successfully	
 				| 2165-MS-EI-DB-SAR-REC-NON-RNI-CTPD-SAR-MD-TR-2-LATE-Newcreateloan2.xlsx| 
 
-@scenario60-Loan-2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE	   
+@RunnerClass3  
 	  Scenario: Loan-2166-MS-EI-DB-SAR-REC-NON-RNI-CTPD-DL-MD-TR-2-LATE
 	
 	  Given I setup the product loan "Setup"

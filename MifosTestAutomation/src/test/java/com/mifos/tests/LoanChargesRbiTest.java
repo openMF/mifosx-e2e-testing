@@ -1,4 +1,4 @@
-package com.mifos.tests;
+/*package com.mifos.tests;
 
 import org.junit.runner.RunWith;
 import cucumber.api.junit.Cucumber;
@@ -11,4 +11,4 @@ import cucumber.api.junit.Cucumber;
 		glue = { "com.mifos.steps" })
 public class LoanChargesRbiTest {
 
-}
+}*/
