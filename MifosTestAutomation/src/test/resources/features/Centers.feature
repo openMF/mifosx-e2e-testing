@@ -2276,7 +2276,7 @@ Scenario:4579-MS-ACT2CTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JAN-Make-less
 	  When I set up the new create loan from "NewLoanInput" sheet
 	  			|4601-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon15JAN.xlsx|
 	  Then i validate and Verify from "error" sheet
-	 			|4607-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN-EDITTRANSACTIONDATETO15JAN.xlsx|
+	 			|4601-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon15JAN.xlsx|
 	  
 @RunnerClass1
 	  Scenario: 4602-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-REPAY09JAN  

@@ -790,6 +790,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			if (key.equals("NavigateToCurrentCenterPage")){
 				value = currentCenterUrl.split("#/")[1];
 			}
+			if (key.equals("NavigateToCurrentSavingPage")){
+				value = CurrentSavingAccounturl.split("#/")[1];
+			}
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
 				
 				Thread.sleep(getResourceKey("largeWait"));
@@ -899,8 +902,14 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				if (bodyText.contains("Error")|| bodyText.contains("field is required")) {
 					verifySuccessMessage(key , value);
 					Thread.sleep(getResourceKey("wait"));
-				}else 
-				Assert.fail("Expected result:" + value );
+				}
+				else if(key.equals("VerifyRDMaturityAmount"))
+					{
+					verifySuccessMessage(key , value);
+					Thread.sleep(getResourceKey("wait"));
+					}
+				else
+					Assert.fail("Expected result:" + value );
 		
 				
 				break;
