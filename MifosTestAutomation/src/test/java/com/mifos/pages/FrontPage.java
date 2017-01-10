@@ -158,7 +158,13 @@ public class FrontPage extends MifosWebPage {
 										cell2.getNumericCellValue())
 										.toPlainString();
 
-							}else 
+							}
+							if (key.equals("VerifyRDMaturityAmount"))
+							{
+								value = String.valueOf((double) cell2.getNumericCellValue());
+							
+							}
+							else 
 							value = String.valueOf(i);
 							// System.out.println("Cell Two ... value=" +
 							// value);
@@ -1011,13 +1017,25 @@ public class FrontPage extends MifosWebPage {
 					
 					if(sheetname.contains("TransID"))
 					{
+						if(sheetname.contains("FD") || sheetname.contains("RD"))
+						{
+							 
+							 setSavingTransactionID.add(getWebDriver()
+										.findElement(
+												By.xpath("(//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/table/tbody/tr)["+xlRowCount+"]/td[1]")).getText());
+						}
+						else
+						{
 						setSavingTransactionID.add(getWebDriver()
 								.findElement(
 										By.xpath("(.//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'])["+xlRowCount+"]/td[1]")).getText());
-					}
+					
+						}
+						}
 				if(sheetname.contains("Transaction"))
 				{
-					if(sheetname.contains("FixedDeposit") || sheetname.contains("RecurringDeposit"))
+					if(sheetname.contains("FixedDeposit") || sheetname.contains("RecurringDeposit") 
+							|| sheetname.contains("RD") || sheetname.contains("FD"))
 					{
 						 xlColumnPointer=1;
 						 applicationCol=getWebDriver()
@@ -1049,7 +1067,7 @@ public class FrontPage extends MifosWebPage {
 							.findElements(
 									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
 				}}
-				else if(sheetname.equals("FixedDeposit Summary") || sheetname.equals("RecurringDeposit Summary"))
+				else if(sheetname.equals("FixedDeposit Summary") || sheetname.contains("RecurringDeposit Summary"))
 				{
 				 xlColumnPointer=0;
 				 applicationCol=getWebDriver()
@@ -1462,7 +1480,7 @@ public class FrontPage extends MifosWebPage {
 			System.out.println("currentUrl "+ currentUrl);
 
 			break;	
-		case "Apply penalty to overdue loans":
+		case "Apply penalty to overdue loans": 
 			LazyWebElement checkpenalty = getElement(getResource("addpenaltytooverdueloans"));
 			if (!checkpenalty.isSelected()) {
 				By locator = null;
@@ -1470,6 +1488,15 @@ public class FrontPage extends MifosWebPage {
 				clickButton(locator, 30);
 			}
 			break;
+			
+		case "Update Deposit Accounts Maturity details": 
+		LazyWebElement AccountMaturity = getElement(getResource("UpdateDepositAccountsMaturity"));
+		if (!AccountMaturity.isSelected()) {
+			By locator = null;
+			locator = getLocator(getResource("UpdateDepositAccountsMaturity"));
+			clickButton(locator, 30);
+		}
+		break;
 		case "Periodic & penalty to overdue loans":
 
 			LazyWebElement checkpenalty1 = getElement(getResource("addpenaltytooverdueloans"));

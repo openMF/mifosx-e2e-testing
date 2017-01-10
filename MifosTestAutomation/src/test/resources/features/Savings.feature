@@ -1,4 +1,4 @@
-Feature:Savings
+Feature:Savings/FixedDeposit/RecurringDeposit
 
 Background:
 	Given I navigate to mifos using "default9#/"
@@ -1148,4 +1148,284 @@ Background:
 	  When I set up the new create RD account from "NewRDInput" sheet
 	  			|4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015.xlsx|
 	  And I verified the "RecurringDeposit Summary" details successfully
-	  			|4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015.xlsx|				
+	  			|4772-SUBMITRD01JAN2015(AMT5000-PRD06MNTHwithINCT-6)-APRACT01JAN2015.xlsx|		
+	  			
+@RunnerClass8
+	  Scenario: 4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015
+     
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015.xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015.xlsx| RecurringDeposit |
+	  Then I "Do Feb Deposit Transaction" and verified the following tabs 
+	            |4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015.xlsx| RecurringDeposit1 |
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015.xlsx|	
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015.xlsx|
+	  Then I "Do March Deposit Transaction" and verified the following tabs 
+	            |4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015.xlsx| RecurringDeposit2 | 
+	  Then i validate and Verify from "error" sheet
+	  			|4773-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB&01MAR2015.xlsx|	
+				
+@RunnerClass8
+	  Scenario: 4774-SUBMITRD01JAN2015(5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-SCHEDjOB-CLOSEACCOUNT
+     
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4774-SUBMITRD01JAN2015(5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-SCHEDjOB-CLOSEACCOUNT.xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4774-SUBMITRD01JAN2015(5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-SCHEDjOB-CLOSEACCOUNT.xlsx| RecurringDeposit |
+	  Then I "Do Feb Deposit Transaction" and verified the following tabs 
+	            |4774-SUBMITRD01JAN2015(5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-SCHEDjOB-CLOSEACCOUNT.xlsx| RecurringDeposit1 |
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I navigate To Saving Account Page
+	  Then I "Close Recurring Deposit Account" and verified the following tabs
+	  			|4774-SUBMITRD01JAN2015(5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-SCHEDjOB-CLOSEACCOUNT.xlsx|Modify Transaction|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4774-SUBMITRD01JAN2015(5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-SCHEDjOB-CLOSEACCOUNT.xlsx|	
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4774-SUBMITRD01JAN2015(5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-SCHEDjOB-CLOSEACCOUNT.xlsx|
+				
+				
+@RunnerClass8
+	  Scenario: 4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings)
+     
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx| RecurringDeposit |
+	  Then I "Do Feb Deposit Transaction" and verified the following tabs 
+	            |4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx| RecurringDeposit1 |
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I "Navigate to RD account" and verified the following tabs 
+	            |4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx| Recurring Navigate |
+	  Then I "Close Recurring Deposit Account" and verified the following tabs
+	  			|4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx|Modify Transaction|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx|
+	  Then I navigate To Saving Account Page
+	  And I verified the "Saving Transaction" details successfully 
+	  			|4775-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(TrasferToSavings).xlsx|
+				
+				
+@RunnerClass8
+	  Scenario: 4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest)
+     
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	   When I set up the new create RD account from "NewRDInput" sheet
+	  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx| RecurringDeposit |
+	  Then I "Do Feb Deposit Transaction" and verified the following tabs 
+	            |4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx| RecurringDeposit1 |
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I navigate To Saving Account Page
+	  Then I "Close Recurring Deposit Account" and verified the following tabs
+	  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|Modify Transaction|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
+	  Then I "Navigate to newly Created RD account" and verified the following tabs 
+	            |4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx| Recurring Navigate |
+	  And I verified the "RecurringDeposit Transaction 1" details successfully 
+	  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
+	  And I verified the "RecurringDeposit Summary 1" details successfully
+	  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
+				
+				
+@RunnerClass8
+	  Scenario: 4777-SUBMITRD01JAN2015(AMT5000-PRD02MNTH-ALLOWwithdraw)-APRACT01JAN2015-DPT01JAN01FEB2015-ClickWithdraw
+     
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	   When I set up the new create RD account from "NewRDInput" sheet
+	  			|4777-SUBMITRD01JAN2015(AMT5000-PRD02MNTH-ALLOWwithdraw)-APRACT01JAN2015-DPT01JAN01FEB2015-ClickWithdraw.xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4777-SUBMITRD01JAN2015(AMT5000-PRD02MNTH-ALLOWwithdraw)-APRACT01JAN2015-DPT01JAN01FEB2015-ClickWithdraw.xlsx| RecurringDeposit |
+	  Then I "Do Feb Deposit Transaction" and verified the following tabs 
+	            |4777-SUBMITRD01JAN2015(AMT5000-PRD02MNTH-ALLOWwithdraw)-APRACT01JAN2015-DPT01JAN01FEB2015-ClickWithdraw.xlsx| RecurringDeposit1 |
+      Then I "Withdraw" and verified the following tabs
+	  			|4777-SUBMITRD01JAN2015(AMT5000-PRD02MNTH-ALLOWwithdraw)-APRACT01JAN2015-DPT01JAN01FEB2015-ClickWithdraw.xlsx|Modify Transaction|
+				
+@RunnerClass8
+	  Scenario: 4778-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-ClickTransferFunds
+     
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	   When I set up the new create RD account from "NewRDInput" sheet
+	  			|4778-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-ClickTransferFunds.xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4778-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-ClickTransferFunds.xlsx| RecurringDeposit |
+	  Then I "Do Feb Deposit Transaction" and verified the following tabs 
+	            |4778-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-ClickTransferFunds.xlsx| RecurringDeposit1 |
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I navigate To Saving Account Page
+	  Then I "Transfer Funds" and verified the following tabs
+	  			|4778-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-ClickTransferFunds.xlsx| Modify Transaction |
+				
+@RunnerClass8
+	  Scenario: 4779-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015(AMOUNT7000)-ClickOnDepositAgain
+     
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	   When I set up the new create RD account from "NewRDInput" sheet
+	  			|4779-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015(AMOUNT7000)-ClickOnDepositAgain.xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4779-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015(AMOUNT7000)-ClickOnDepositAgain.xlsx| RecurringDeposit |
+	  Then I "check and Do Feb Transaction" and verified the following tabs 
+	            |4779-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015(AMOUNT7000)-ClickOnDepositAgain.xlsx| RecurringDeposit1 |
+	   And I verified the "RecurringDeposit Summary" details successfully
+	  			|4779-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015(AMOUNT7000)-ClickOnDepositAgain.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4779-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015(AMOUNT7000)-ClickOnDepositAgain.xlsx|
+	  
+@RunnerClass8
+	  Scenario: 4780-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015-PrematureCloseOn01FEB2015
+     
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	   When I set up the new create RD account from "NewRDInput" sheet
+	  			|4780-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015-PrematureCloseOn01FEB2015.xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4780-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015-PrematureCloseOn01FEB2015.xlsx| RecurringDeposit |
+	  Then I "Do Premature Close" and verified the following tabs 
+	            |4780-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015-PrematureCloseOn01FEB2015.xlsx| Modify Transaction |
+	   And I verified the "RecurringDeposit Summary" details successfully
+	  			|4780-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015-PrematureCloseOn01FEB2015.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4780-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN2015-PrematureCloseOn01FEB2015.xlsx|
+				
+@RunnerClass8
+	  Scenario: 4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions
+     
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	   When I set up the new create RD account from "NewRDInput" sheet
+	  			|4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions.xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions.xlsx| RecurringDeposit |
+	  Then I "Undo Transaction" and verified the following tabs 
+	            |4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions.xlsx| Modify Transaction |
+	   And I verified the "RecurringDeposit Summary" details successfully
+	  			|4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions.xlsx|
+				
+@RunnerClass8
+	  Scenario: 4782-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01JAN2015-DPT01APR2015
+     
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	   When I set up the new create RD account from "NewRDInput" sheet
+	  			|4782-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01JAN2015-DPT01APR2015.xlsx|
+	  Then I "Do Apr Deposit Transaction" and verified the following tabs 
+	            |4782-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01JAN2015-DPT01APR2015.xlsx| RecurringDeposit |
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4782-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01JAN2015-DPT01APR2015.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4782-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01JAN2015-DPT01APR2015.xlsx|
+				
+				
+@RunnerClass8
+	  Scenario: 4783-SUBMITRD01JAN2015(AMT5000-PRD03MNT)-ACT01JAN2015-DPT01JAN2015-RUNSCHEDjOB-CloseRDAcc01April2015
+     
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4783-SUBMITRD01JAN2015(AMT5000-PRD03MNT)-ACT01JAN2015-DPT01JAN2015-RUNSCHEDjOB-CloseRDAcc01April2015.xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4783-SUBMITRD01JAN2015(AMT5000-PRD03MNT)-ACT01JAN2015-DPT01JAN2015-RUNSCHEDjOB-CloseRDAcc01April2015.xlsx| RecurringDeposit |
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I navigate To Saving Account Page
+	  Then I "Close Recurring Deposit Account" and verified the following tabs
+	  			|4783-SUBMITRD01JAN2015(AMT5000-PRD03MNT)-ACT01JAN2015-DPT01JAN2015-RUNSCHEDjOB-CloseRDAcc01April2015.xlsx|Modify Transaction|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4783-SUBMITRD01JAN2015(AMT5000-PRD03MNT)-ACT01JAN2015-DPT01JAN2015-RUNSCHEDjOB-CloseRDAcc01April2015.xlsx|
+	  And I verified the "RecurringDeposit Transaction" details successfully 
+	  			|4783-SUBMITRD01JAN2015(AMT5000-PRD03MNT)-ACT01JAN2015-DPT01JAN2015-RUNSCHEDjOB-CloseRDAcc01April2015.xlsx|
+	 
+@RunnerClass8
+	  Scenario: 4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT
+     
+	  Given I setup the "FixedDeposit" product
+				| Productloannavigation.xlsx |
+	  Then I entered the values into product from "ProductFDInput" Sheet
+				|4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT.xlsx|
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT.xlsx|
+	  When I set up the new create FD account from "NewFDInput" sheet
+	  			|4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT.xlsx|
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I "Navigate to FD account" and verified the following tabs 
+	            |4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT.xlsx| Recurring Navigate |
+	  Then I "Close Fixed Deposit Account" and verified the following tabs
+	  			|4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT.xlsx|Modify Transaction|
+	  And I verified the "FixedDeposit Summary" details successfully
+	  			|4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT.xlsx|
+	  And I verified the "FD Transaction & TransID" details successfully 
+	  			|4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT.xlsx|
+	   And I Navigate to Accounting web page
+	   Then I search with transaction id & verified the accounting entries
+	   			|4784-SUBMITFD01JAN2015(AMT5000-PRD06MNTH)-ACT01JAN2015-RUNSCHEDjOB-CloseFD01August2015(Trans2SavingsAcc)-JourENT.xlsx| Deposit1 | Interst_Posting1 | Interst_Posting2 |Withdrawal |
+	 				
+
+@RunnerClass8
+	  Scenario: 4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT
+     
+	  
+	  Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx|
+	  When I set up the new create RD account from "NewRDInput" sheet
+	  			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx|
+	  Then I "Do Jan Deposit Transaction" and verified the following tabs 
+	            |4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx| RecurringDeposit |
+	  Then I "Do Feb Deposit Transaction" and verified the following tabs 
+	            |4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx| RecurringDeposit2 |
+	  Then I navigate to scheduler job & execute "Update Deposit Accounts Maturity details"
+	  Then I "Navigate to RD account" and verified the following tabs 
+	            |4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx| Recurring Navigate |
+	  Then I "Close Recurring Deposit Account" and verified the following tabs
+	  			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx|Modify Transaction|
+	  And I verified the "RecurringDeposit Summary" details successfully
+	  			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx|
+	  And I verified the "RD Transaction & TransID" details successfully 
+	  			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx|
+	   And I Navigate to Accounting web page
+	   Then I search with transaction id & verified the accounting entries
+	   			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx| Deposit1 | Interst_Posting1 |Deposit2 | Interst_Posting2 |Withdrawal |
+		

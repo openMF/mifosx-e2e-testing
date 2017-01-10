@@ -246,7 +246,8 @@ public class ClientSteps {
 		{
 			varFrontPage.verifyProvisionData(ExcelSheetPath, excelSheetName, sheetName);
 		}
-		else if(sheetName.contains("Saving")||sheetName.contains("FixedDeposit")||sheetName.contains("RecurringDeposit"))
+		else if(sheetName.contains("Saving")||sheetName.contains("FixedDeposit")||sheetName.contains("RecurringDeposit")
+				||sheetName.contains("RD") ||sheetName.contains("FD"))
 		{
 			varFrontPage.verifySavingData(ExcelSheetPath, excelSheetName, sheetName);
 		}
