@@ -667,8 +667,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					}
 					Thread.sleep(getResourceKey("wait"));
 					locatorElement.sendKeys(value);
-					if(key.equals("GuarantorName")||key.equals("SavingTranferToClient"))
+					if(key.equals("GuarantorName")||key.equals("SavingTranferToClient")
+							||key.equals("AddClientMember"))
 					{
+						Thread.sleep(1000);
 						locatorElement.sendKeys(Keys.TAB);
 					}
 					Thread.sleep(getResourceKey("wait"));
@@ -709,7 +711,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				 }
 				if (key.equals("Submitbutton")||key.equals("previewCollectionSheet")
 						||key.equals("clickonsubmit")|| key.equals("productiveCollectionSheet")
-                        ||key.equals("clickonapproveSaving"))
+                        ||key.equals("clickonapproveSaving") ||key.equals("GroupAddClient"))
 				{
 			 Thread.sleep(2000);
 		        }
@@ -851,18 +853,18 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			case "dropDown":
 				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 				 {
-					 Thread.sleep(1500);
+					 Thread.sleep(1000);
 				 }
 					clickButton(getLocator(getResource(key)));
 					By locator = null;
 					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 					 {
-						 Thread.sleep(1500);
+						 Thread.sleep(1000);
 					 }
 					locator = getLocator(getResource(key + ".input"));
 					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
 					 {
-						 Thread.sleep(1500);
+						 Thread.sleep(1000);
 					 }
 					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
@@ -925,7 +927,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
 					if(key.equals("ChooseLoanToClose")||key.equals("GuarantorAccount")
-					|| key.equals("SavingTranferToAccountNum")|| key.equals("FdTranferToAccountNumber"))
+					|| key.equals("SavingTranferToAccountNum")|| key.equals("FdTranferToAccountNumber")
+					|| key.equals("ShareLinkToSavingAccount"))
 					{
 						statusselect.selectByValue(value);
 					}
