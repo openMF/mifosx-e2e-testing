@@ -115,6 +115,15 @@ public class ClientSteps {
 
 	}
 
+	
+	@Given("^I navigate to Teller/Cashier Management Sheet$")
+	public void I_navigate_to_Teller_Cashier_Sheet() throws Throwable {
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()
+				+ "tellers");
+		Thread.sleep(FrontPage.getResourceKey("mediumWait"));
+		varFrontPage.verifySuccessMessage("CreateTeller", "New Teller");
+		
+	}
 	@Given("^I create \"([^\"]*)\" As Payments due on non working days$")
 	public void I_create_As_Payments_due_on_non_working_days(String arg1) throws Throwable {
 		varFrontPage.createWorkingDays(arg1);
@@ -262,6 +271,10 @@ public class ClientSteps {
 		else if(sheetName.contains("Share"))
 		{
 			varFrontPage.verifyShareData(ExcelSheetPath, excelSheetName, sheetName);
+		}
+		else if(sheetName.contains("Teller"))
+		{
+			varFrontPage.verifyTellerData(ExcelSheetPath, excelSheetName, sheetName);
 		}
 		else
 		{

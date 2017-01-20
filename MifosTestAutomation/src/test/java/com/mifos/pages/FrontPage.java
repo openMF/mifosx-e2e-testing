@@ -64,6 +64,7 @@ public class FrontPage extends MifosWebPage {
 	int transactionIDIndex = 0;
 	public String currentUrl ="";
 	public String currentJlgLoanUrl ="";
+	public static String ProductCreatedURL="";
     private boolean istransactionIdIndexAssigned = true;
 
 	// WebDriver driver = new ChromeDriver();
@@ -526,6 +527,7 @@ public class FrontPage extends MifosWebPage {
 			((JavascriptExecutor) getWebDriver())
 					.executeScript("scroll(500,0);");
 			verifySuccessMessage("editloanproduct", "Edit");
+			ProductCreatedURL=getWebDriver().getCurrentUrl();
 			Thread.sleep(getResourceKey("mediumWait"));
 
 	}
@@ -1155,6 +1157,15 @@ public class FrontPage extends MifosWebPage {
 							.findElements(
 									By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div/div/div[2]/table/tbody/tr["+row+"]/td"));
 				}
+					 
+					 if(sheetname.contains("dividend"))
+						{
+					 xlColumnPointer=0;
+					 int row=xlRowCount+1;
+					 applicationCol=getWebDriver()
+								.findElements(
+										By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
+					}
 				
 			
 				 if(sheetname.contains("Other"))
@@ -1171,7 +1182,7 @@ public class FrontPage extends MifosWebPage {
 				}
 				
 				}while(applicationCol.isEmpty() && counter<25);
-				 if(sheetname.contains("Other")|| sheetname.contains("Charge")){
+				 if(!(sheetname.contains("Transaction"))){
 		verifyColumnDetails(xlColumnPointer, xlRowCount,
 				applicationCol, sheet, sheetname);}
 	}
@@ -1182,6 +1193,73 @@ public class FrontPage extends MifosWebPage {
 		}
 	}
 	
+	
+	public void verifyTellerData(String clientExcelSheetPath,
+			String excelSheetName, String sheetname)throws InterruptedException, IOException, ParseException 
+	{
+		
+		
+		int rowCount=0;
+		int xlColumnPointer=0;
+		int counter=0;
+	
+		try {
+			FileInputStream file = new FileInputStream(new File(
+					clientExcelSheetPath + "\\" + excelSheetName));
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+			XSSFSheet sheet = workbook.getSheet(sheetname);
+			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
+			
+			List<WebElement> applicationCol = null;
+			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
+				do{
+					counter++;
+					if(counter==22){
+						Thread.sleep(2000);
+					}
+					
+				
+				
+					 if(sheetname.contains("Cashier-Details"))
+					{
+						 
+						 applicationCol = getWebDriver()
+									.findElements(
+											By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[3]/table/tbody/tr["+ xlRowCount + "]/td"));
+						 
+					}
+				
+			
+					 if(sheetname.contains("Transaction"))
+					{
+				 applicationCol=getWebDriver()
+							.findElements(
+									By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["+xlRowCount+"]/td"));
+				}
+					 
+					 if(sheetname.contains("dividend"))
+						{
+					 xlColumnPointer=0;
+					 int row=xlRowCount+1;
+					 applicationCol=getWebDriver()
+								.findElements(
+										By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
+					}
+				
+			
+				 
+				
+				}while(applicationCol.isEmpty() && counter<25);
+				 
+		verifyColumnDetails(xlColumnPointer, xlRowCount,
+				applicationCol, sheet, sheetname);
+	}
+		}catch (FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		} catch (NoSuchElementException e) {
+			Assert.fail(" Unable to click \n");
+		}
+	}
 	public void verifyTransactionData(String clientExcelSheetPath,
 			String excelSheetName, String sheetname,List<XLCellElement> xlRow,int rowCount,List<WebElement> applicationCol)throws InterruptedException, IOException, ParseException 
 	{
@@ -1381,7 +1459,8 @@ rowMatchSuccess=true;
 
 		for (; xlColumnPointer < applicationCol.size(); xlColumnPointer++) {
 			if((sheetname.equals("Saving Charges")&&xlColumnPointer==7)
-			 ||(sheetname.equals("Share Other Details1")&& xlColumnPointer==1 && xlRowCount==4 ))
+			 ||(sheetname.equals("Share Other Details1")&& xlColumnPointer==1 && xlRowCount==4 )
+			 ||(sheetname.equals("Share dividend")&& xlColumnPointer==2 && xlRowCount==1 ))
 				
 			{
 				continue;
@@ -1714,6 +1793,16 @@ rowMatchSuccess=true;
 			clickButton(locator, 30);
 		}
 		break;
+		
+		case "Post Dividends For Shares": 
+			LazyWebElement PostDivided = getElement(getResource("PostDividendsForShares"));
+			if (!PostDivided.isSelected()) {
+				By locator = null;
+				locator = getLocator(getResource("PostDividendsForShares"));
+				clickButton(locator, 30);
+			}
+			break;
+			
 		case "Periodic & penalty to overdue loans":
 
 			LazyWebElement checkpenalty1 = getElement(getResource("addpenaltytooverdueloans"));

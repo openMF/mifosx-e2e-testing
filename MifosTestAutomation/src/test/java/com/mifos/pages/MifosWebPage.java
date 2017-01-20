@@ -71,6 +71,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public String RememberTopupUrl;
 	public String RememberPreviousUrl;
 	public String CurrentSavingAccounturl;
+	public String currentShareUrl;
 	/**
 	 * Gets the resource.
 	 *
@@ -763,6 +764,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					if(key.equals("submitCenter")){
 						currentCenterUrl = getWebDriver().getCurrentUrl();					
 					}
+					if(key.equals("SubmitShareActivate")){
+					currentShareUrl = getWebDriver().getCurrentUrl();					
+					}
 					
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
@@ -794,6 +798,12 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			}
 			if (key.equals("NavigateToCurrentSavingPage")){
 				value = CurrentSavingAccounturl.split("#/")[1];
+			}
+			if (key.equals("NavigateToCurrentSharePage")){
+				value = currentShareUrl.split("#/")[1];
+			}
+			if (key.equals("NavigateProductCreatedURL")){
+			value = FrontPage.ProductCreatedURL.split("#/")[1];
 			}
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
 				
@@ -851,18 +861,18 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 				break;
 			case "dropDown":
-				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
+				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office")||key.equals("staff"))
 				 {
 					 Thread.sleep(1000);
 				 }
 					clickButton(getLocator(getResource(key)));
 					By locator = null;
-					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
+					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office")||key.equals("staff"))
 					 {
 						 Thread.sleep(1000);
 					 }
 					locator = getLocator(getResource(key + ".input"));
-					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
+					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office")||key.equals("staff"))
 					 {
 						 Thread.sleep(1000);
 					 }

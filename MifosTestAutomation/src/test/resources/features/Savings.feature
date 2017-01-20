@@ -1755,4 +1755,245 @@ Scenario: 4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-A
   And I verified the "Share Transaction" details successfully 
 	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|
   And I verified the "Share Charge" details successfully 
-	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|	
+	  			|4801-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15&CHG'share-redeem-flat')-APRACT01JAN2015-REDEEMShare01MAR2015.xlsx|
+	  			
+@RunnerClass8
+Scenario: 4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES
+  
+   
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+  Then I "Apply Additional Share" and verified the following tabs
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|Modify Transaction|
+  Then I "Reject Additional Share" and verified the following tabs
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|Modify Transaction1|
+  And I verified the "Share Other Details1" details successfully 
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+  And I verified the "Share Other Details2" details successfully 
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+  And I verified the "Share Transaction" details successfully 
+	  			|4802-SUBMITSA01JAN2015(ACTPRD-30&LCKINPRD-15)-ACT01JAN2015-Addshares15on01FEB2015-RJCTADDSHARES.xlsx|
+ 
+@RunnerClass8
+Scenario: 4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015
+  
+   
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015.xlsx|
+  Then I "Close Share Account" and verified the following tabs
+	  			|4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015.xlsx|Modify Transaction|
+  Then i validate and Verify from "error" sheet 
+	  			|4803-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015-CloseSAon15January2015.xlsx|
+  
+ 
+@RunnerClass8
+Scenario: 4804-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015
+  
+   
+   Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4804-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4804-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015.xlsx|
+  Then i validate and Verify from "error" sheet 
+	  			|4804-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-30DAYS)-APRACT01JAN2015.xlsx|
+  
+@RunnerClass8
+Scenario: 4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD
+  
+  Given I setup the "Share" product
+		        | Productloannavigation.xlsx |
+  Then I entered the values into product from "ProductShareInput" Sheet
+		        |4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+  Then I "Apply Dividend to Product" and verified the following tabs
+	  			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|Modify Transaction|
+  Then I navigate to scheduler job & execute "Post Dividends For Shares"
+  Then I "Navigate to Share account" and verified the following tabs 
+	            |4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx| Modify Transaction1 |
+  And I verified the "Share dividend" details successfully 
+	  			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+  Then I "Navigate to Saving account" and verified the following tabs
+                |4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx| Modify Transaction2 |
+  And I verified the "Saving Transaction" details successfully
+	 			|4805-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INIT&PSTDVD.xlsx|
+
+				
+@RunnerClass8
+Scenario: 4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA
+  
+  Given I setup the "Share" product
+		        | Productloannavigation.xlsx |
+  Then I entered the values into product from "ProductShareInput" Sheet
+		        |4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|
+  Given I setup the clients 
+  Then I entered the values into client from "Input" sheet
+	            |Createclient.xlsx|
+  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|
+  When I set up the new create share account from "NewShareInput" sheet
+	  			|4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|
+  Then I "Apply Dividend to Product" and verified the following tabs
+	  			|4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|Modify Transaction|
+ 
+  Then I "Navigate to Share account" and verified the following tabs 
+	            |4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx| Modify Transaction1 |
+  
+  Then I "Close Share account" and verified the following tabs
+                |4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx| Modify Transaction2 |
+  And I verified the "Share Transaction" details successfully 
+	  			|4806-SUBMITSA01JAN2015(MINACTPRD-30DAYS)-APRACT01JAN2015-INITDVD-closeSA.xlsx|
+   
+
+@RunnerClass8
+Scenario: 4807-CREATTLR TELLER-A(headOffice-01MAR2015-ACTIVE)
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4807-CREATTLR TELLER-A(headOffice-01MAR2015-ACTIVE).xlsx|Modify Transaction|
+  Then i validate and Verify from "Validate" sheet
+	  			|4807-CREATTLR TELLER-A(headOffice-01MAR2015-ACTIVE).xlsx|
+   
+ @RunnerClass8
+Scenario: 4808-CREATETLR(branchoffice-01JAN2015-Active)-EDITTLR(CHANGEtoTELLER-B,01APR2015)
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4808-CREATETLR(branchoffice-01JAN2015-Active)-EDITTLR(CHANGEtoTELLER-B,01APR2015).xlsx|Modify Transaction|
+  Then I "Edit Created Teller" and verified the following tabs
+	  			|4808-CREATETLR(branchoffice-01JAN2015-Active)-EDITTLR(CHANGEtoTELLER-B,01APR2015).xlsx|Modify Transaction1|
+  Then i validate and Verify from "Validate" sheet
+	  			|4808-CREATETLR(branchoffice-01JAN2015-Active)-EDITTLR(CHANGEtoTELLER-B,01APR2015).xlsx|
+ 
+@RunnerClass8
+Scenario: 4809-CREATTLR TELLER-A(headOffice-01APR2015-ACTIVE)-DELETE
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4809-CREATTLR TELLER-A(headOffice-01APR2015-ACTIVE)-DELETE.xlsx|Modify Transaction|
+  Then I "Create Cashier For Teller" and verified the following tabs
+	  			|4809-CREATTLR TELLER-A(headOffice-01APR2015-ACTIVE)-DELETE.xlsx|Modify Transaction1|
+  Then I "Delete Teller" and verified the following tabs
+	  			|4809-CREATTLR TELLER-A(headOffice-01APR2015-ACTIVE)-DELETE.xlsx|Modify Transaction2|
+  Then i validate and Verify from "error" sheet
+	  			|4809-CREATTLR TELLER-A(headOffice-01APR2015-ACTIVE)-DELETE.xlsx|
+ 
+@RunnerClass8
+Scenario: 4810-CREATTLR(headOffice-01MAR2015-ACTIVE)-CREATECSHR(01MAR2015-01JUNE2015,FULLDAY)
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4810-CREATTLR(headOffice-01MAR2015-ACTIVE)-CREATECSHR(01MAR2015-01JUNE2015,FULLDAY).xlsx|Modify Transaction|
+  Then I "Create Cashier For Teller" and verified the following tabs
+	  			|4810-CREATTLR(headOffice-01MAR2015-ACTIVE)-CREATECSHR(01MAR2015-01JUNE2015,FULLDAY).xlsx|Modify Transaction1|
+  And I verified the "Teller-Cashier-Details" details successfully 
+	  			|4810-CREATTLR(headOffice-01MAR2015-ACTIVE)-CREATECSHR(01MAR2015-01JUNE2015,FULLDAY).xlsx|
+
+				
+@RunnerClass8
+Scenario: 4811-CREATTLR-01MAR2015-CREATECSHR01MAR2015-01JUNE2015-ALCTCASH(50,000-01APR2015)
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4811-CREATTLR-01MAR2015-CREATECSHR01MAR2015-01JUNE2015-ALCTCASH(50,000-01APR2015).xlsx|Modify Transaction|
+  Then I "Create Cashier For Teller" and verified the following tabs
+	  			|4811-CREATTLR-01MAR2015-CREATECSHR01MAR2015-01JUNE2015-ALCTCASH(50,000-01APR2015).xlsx|Modify Transaction1|
+  Then I "Allocate Cash For Cashier" and verified the following tabs
+	  			|4811-CREATTLR-01MAR2015-CREATECSHR01MAR2015-01JUNE2015-ALCTCASH(50,000-01APR2015).xlsx|Modify Transaction2|
+  And I verified the "Teller-Cashier-Transaction" details successfully 
+	  			|4811-CREATTLR-01MAR2015-CREATECSHR01MAR2015-01JUNE2015-ALCTCASH(50,000-01APR2015).xlsx|
+  Then i validate and Verify from "Validate" sheet
+	  			|4811-CREATTLR-01MAR2015-CREATECSHR01MAR2015-01JUNE2015-ALCTCASH(50,000-01APR2015).xlsx|
+ 
+ 
+@RunnerClass8
+Scenario: 4812-CREATTLR-01JAN2015-CREATECSHR(01JANC2015-01FEB2015)-ALCTCASH(50,000-01APR2015)
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4812-CREATTLR-01JAN2015-CREATECSHR(01JANC2015-01FEB2015)-ALCTCASH(50,000-01APR2015).xlsx|Modify Transaction|
+  Then I "Create Cashier For Teller" and verified the following tabs
+	  			|4812-CREATTLR-01JAN2015-CREATECSHR(01JANC2015-01FEB2015)-ALCTCASH(50,000-01APR2015).xlsx|Modify Transaction1|
+  Then I "Allocate Cash For Cashier" and verified the following tabs
+	  			|4812-CREATTLR-01JAN2015-CREATECSHR(01JANC2015-01FEB2015)-ALCTCASH(50,000-01APR2015).xlsx|Modify Transaction2|
+  Then i validate and Verify from "error" sheet
+	  			|4812-CREATTLR-01JAN2015-CREATECSHR(01JANC2015-01FEB2015)-ALCTCASH(50,000-01APR2015).xlsx|
+
+				
+@RunnerClass8
+Scenario: 4813-CREATTLR-01MAR2015-CREATECSHR(01MAR2015to01JUNE2015)-EDITcashier(01APRto01JUN2015,time9to1)
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4813-CREATTLR-01MAR2015-CREATECSHR(01MAR2015to01JUNE2015)-EDITcashier(01APRto01JUN2015,time9to1).xlsx|Modify Transaction|
+  Then I "Create Cashier For Teller" and verified the following tabs
+	  			|4813-CREATTLR-01MAR2015-CREATECSHR(01MAR2015to01JUNE2015)-EDITcashier(01APRto01JUN2015,time9to1).xlsx|Modify Transaction1|
+  Then I "Edit Created Cashier" and verified the following tabs
+	  			|4813-CREATTLR-01MAR2015-CREATECSHR(01MAR2015to01JUNE2015)-EDITcashier(01APRto01JUN2015,time9to1).xlsx|Modify Transaction2|
+  And I verified the "Teller-Cashier-Details" details successfully
+	  			|4813-CREATTLR-01MAR2015-CREATECSHR(01MAR2015to01JUNE2015)-EDITcashier(01APRto01JUN2015,time9to1).xlsx|
+
+				
+@RunnerClass8
+Scenario: 4814-CREATTLR-01MAR2015-CREATECSHR1(01APR2015-01JUNE2015,9to1)-CREATECSHR2(01APR2015-01JUNE2015,1-4)
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4814-CREATTLR-01MAR2015-CREATECSHR1(01APR2015-01JUNE2015,9to1)-CREATECSHR2(01APR2015-01JUNE2015,1-4).xlsx|Modify Transaction|
+  Then I "Create Cashier For Teller" and verified the following tabs
+	  			|4814-CREATTLR-01MAR2015-CREATECSHR1(01APR2015-01JUNE2015,9to1)-CREATECSHR2(01APR2015-01JUNE2015,1-4).xlsx|Modify Transaction1|
+  Then I "Create Another Cashier For Teller" and verified the following tabs
+	  			|4814-CREATTLR-01MAR2015-CREATECSHR1(01APR2015-01JUNE2015,9to1)-CREATECSHR2(01APR2015-01JUNE2015,1-4).xlsx|Modify Transaction2|
+  And I verified the "Teller-Cashier-Details" details successfully
+	  			|4814-CREATTLR-01MAR2015-CREATECSHR1(01APR2015-01JUNE2015,9to1)-CREATECSHR2(01APR2015-01JUNE2015,1-4).xlsx|
+
+@RunnerClass8
+Scenario: 4815-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-ALLOCATECASH(50,000-01APR2015)-SETTLECASH(25,000-01APR2015)
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4815-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-ALLOCATECASH(50,000-01APR2015)-SETTLECASH(25,000-01APR2015).xlsx|Modify Transaction|
+  Then I "Create Cashier For Teller" and verified the following tabs
+	  			|4815-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-ALLOCATECASH(50,000-01APR2015)-SETTLECASH(25,000-01APR2015).xlsx|Modify Transaction1|
+  Then I "Allocate Cash For Cashier" and verified the following tabs
+	  			|4815-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-ALLOCATECASH(50,000-01APR2015)-SETTLECASH(25,000-01APR2015).xlsx|Modify Transaction2|
+  Then I "Settle Cash of Cashier" and verified the following tabs
+	  			|4815-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-ALLOCATECASH(50,000-01APR2015)-SETTLECASH(25,000-01APR2015).xlsx|Modify Transaction3|
+  And I verified the "Teller-Cashier-Transaction" details successfully
+	  			|4815-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-ALLOCATECASH(50,000-01APR2015)-SETTLECASH(25,000-01APR2015).xlsx|
+  Then i validate and Verify from "Validate" sheet
+	  			|4815-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-ALLOCATECASH(50,000-01APR2015)-SETTLECASH(25,000-01APR2015).xlsx|
+
+				
+@RunnerClass8
+Scenario: 4816-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-SETTLECASH(25,000-01APR2015)
+  
+  Given I navigate to Teller/Cashier Management Sheet
+  Then I "Create New Teller" and verified the following tabs
+	  			|4816-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-SETTLECASH(25,000-01APR2015).xlsx|Modify Transaction|
+  Then I "Create Cashier For Teller" and verified the following tabs
+	  			|4816-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-SETTLECASH(25,000-01APR2015).xlsx|Modify Transaction1|
+  Then I "Settle Cash of Cashier" and verified the following tabs
+	  			|4816-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-SETTLECASH(25,000-01APR2015).xlsx|Modify Transaction2|
+  And I verified the "Teller-Cashier-Transaction" details successfully
+	  			|4816-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-SETTLECASH(25,000-01APR2015).xlsx|
+  Then i validate and Verify from "Validate" sheet
+	  			|4816-CREATTLR-01MAR2015-CREATECSHR(01MARC2015-01JUNE2015,FULLDAY)-SETTLECASH(25,000-01APR2015).xlsx|	
