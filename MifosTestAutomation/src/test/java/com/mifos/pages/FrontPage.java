@@ -65,6 +65,7 @@ public class FrontPage extends MifosWebPage {
 	public String currentUrl ="";
 	public String currentJlgLoanUrl ="";
 	public static String ProductCreatedURL="";
+	public static String DataTableCreatedURL="";
     private boolean istransactionIdIndexAssigned = true;
 
 	// WebDriver driver = new ChromeDriver();
@@ -495,6 +496,14 @@ public class FrontPage extends MifosWebPage {
 			{		
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createshareproduct");
 			}
+			else if(sheetName.equals("Product Mix"))
+			{		
+				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "productmix");
+			}
+			else if(sheetName.equals("Data Table"))
+			{		
+				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "datatables");
+			}
 			else
 			{
 			MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "createloanproduct");
@@ -526,8 +535,10 @@ public class FrontPage extends MifosWebPage {
 			Thread.sleep(getResourceKey("mediumWait"));
 			((JavascriptExecutor) getWebDriver())
 					.executeScript("scroll(500,0);");
+			if(!(sheetName.equals("ProductMixInput")||sheetName.equals("DataTable Input"))){
 			verifySuccessMessage("editloanproduct", "Edit");
-			ProductCreatedURL=getWebDriver().getCurrentUrl();
+			ProductCreatedURL=getWebDriver().getCurrentUrl();}
+			DataTableCreatedURL=getWebDriver().getCurrentUrl();
 			Thread.sleep(getResourceKey("mediumWait"));
 
 	}
@@ -1218,8 +1229,25 @@ public class FrontPage extends MifosWebPage {
 						Thread.sleep(2000);
 					}
 					
+					if(sheetname.contains("Allowed Product"))
+					{
+						 
+						 applicationCol = getWebDriver()
+									.findElements(
+											By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div/div[2]/div[1]/table/tbody/tr["+ xlRowCount + "]/td"));
+						 
+					}
+					
+					if(sheetname.contains("Restricted Product"))
+					{
+						 
+						 applicationCol = getWebDriver()
+									.findElements(
+											By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div/div[2]/div[2]/table/tbody/tr["+ xlRowCount + "]/td"));
+						 
+					}
 				
-				
+					
 					 if(sheetname.contains("Cashier-Details"))
 					{
 						 
@@ -1458,9 +1486,7 @@ rowMatchSuccess=true;
 		String strCellValue = "";
 
 		for (; xlColumnPointer < applicationCol.size(); xlColumnPointer++) {
-			if((sheetname.equals("Saving Charges")&&xlColumnPointer==7)
-			 ||(sheetname.equals("Share Other Details1")&& xlColumnPointer==1 && xlRowCount==4 )
-			 ||(sheetname.equals("Share dividend")&& xlColumnPointer==2 && xlRowCount==1 ))
+			if((sheetname.equals("Saving Charges")&&xlColumnPointer==7))
 				
 			{
 				continue;

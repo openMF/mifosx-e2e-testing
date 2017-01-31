@@ -805,6 +805,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			if (key.equals("NavigateProductCreatedURL")){
 			value = FrontPage.ProductCreatedURL.split("#/")[1];
 			}
+			if (key.equals("NavigateDataTableCreatedURL")){
+				value = FrontPage.DataTableCreatedURL.split("#/")[1];
+				}
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
 				
 				Thread.sleep(getResourceKey("largeWait"));

@@ -272,7 +272,7 @@ public class ClientSteps {
 		{
 			varFrontPage.verifyShareData(ExcelSheetPath, excelSheetName, sheetName);
 		}
-		else if(sheetName.contains("Teller"))
+		else if(sheetName.contains("Teller") || sheetName.contains("Product"))
 		{
 			varFrontPage.verifyTellerData(ExcelSheetPath, excelSheetName, sheetName);
 		}
