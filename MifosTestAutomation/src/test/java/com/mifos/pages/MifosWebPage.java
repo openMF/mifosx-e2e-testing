@@ -71,6 +71,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public String RememberTopupUrl;
 	public String RememberPreviousUrl;
 	public String CurrentSavingAccounturl;
+	public String currentShareUrl;
 	/**
 	 * Gets the resource.
 	 *
@@ -667,8 +668,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					}
 					Thread.sleep(getResourceKey("wait"));
 					locatorElement.sendKeys(value);
-					if(key.equals("GuarantorName")||key.equals("SavingTranferToClient"))
+					if(key.equals("GuarantorName")||key.equals("SavingTranferToClient")
+							||key.equals("AddClientMember"))
 					{
+						Thread.sleep(1000);
 						locatorElement.sendKeys(Keys.TAB);
 					}
 					Thread.sleep(getResourceKey("wait"));
@@ -709,7 +712,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				 }
 				if (key.equals("Submitbutton")||key.equals("previewCollectionSheet")
 						||key.equals("clickonsubmit")|| key.equals("productiveCollectionSheet")
-                        ||key.equals("clickonapproveSaving"))
+                        ||key.equals("clickonapproveSaving") ||key.equals("GroupAddClient"))
 				{
 			 Thread.sleep(2000);
 		        }
@@ -761,6 +764,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					if(key.equals("submitCenter")){
 						currentCenterUrl = getWebDriver().getCurrentUrl();					
 					}
+					if(key.equals("SubmitShareActivate")){
+					currentShareUrl = getWebDriver().getCurrentUrl();					
+					}
 					
 				} catch (NoSuchElementException exception) {
 					Assert.fail("Could not find the " + key);
@@ -793,6 +799,15 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 			if (key.equals("NavigateToCurrentSavingPage")){
 				value = CurrentSavingAccounturl.split("#/")[1];
 			}
+			if (key.equals("NavigateToCurrentSharePage")){
+				value = currentShareUrl.split("#/")[1];
+			}
+			if (key.equals("NavigateProductCreatedURL")){
+			value = FrontPage.ProductCreatedURL.split("#/")[1];
+			}
+			if (key.equals("NavigateDataTableCreatedURL")){
+				value = FrontPage.DataTableCreatedURL.split("#/")[1];
+				}
 				MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ value);
 				
 				Thread.sleep(getResourceKey("largeWait"));
@@ -849,20 +864,20 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 				break;
 			case "dropDown":
-				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
+				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office")||key.equals("staff"))
 				 {
-					 Thread.sleep(1500);
+					 Thread.sleep(1000);
 				 }
 					clickButton(getLocator(getResource(key)));
 					By locator = null;
-					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
+					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office")||key.equals("staff"))
 					 {
-						 Thread.sleep(1500);
+						 Thread.sleep(1000);
 					 }
 					locator = getLocator(getResource(key + ".input"));
-					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office"))
+					if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office")||key.equals("staff"))
 					 {
-						 Thread.sleep(1500);
+						 Thread.sleep(1000);
 					 }
 					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
@@ -925,7 +940,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
 					if(key.equals("ChooseLoanToClose")||key.equals("GuarantorAccount")
-					|| key.equals("SavingTranferToAccountNum")|| key.equals("FdTranferToAccountNumber"))
+					|| key.equals("SavingTranferToAccountNum")|| key.equals("FdTranferToAccountNumber")
+					|| key.equals("ShareLinkToSavingAccount"))
 					{
 						statusselect.selectByValue(value);
 					}

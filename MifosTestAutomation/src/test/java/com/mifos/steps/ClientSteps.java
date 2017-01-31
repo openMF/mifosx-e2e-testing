@@ -115,6 +115,15 @@ public class ClientSteps {
 
 	}
 
+	
+	@Given("^I navigate to Teller/Cashier Management Sheet$")
+	public void I_navigate_to_Teller_Cashier_Sheet() throws Throwable {
+		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()
+				+ "tellers");
+		Thread.sleep(FrontPage.getResourceKey("mediumWait"));
+		varFrontPage.verifySuccessMessage("CreateTeller", "New Teller");
+		
+	}
 	@Given("^I create \"([^\"]*)\" As Payments due on non working days$")
 	public void I_create_As_Payments_due_on_non_working_days(String arg1) throws Throwable {
 		varFrontPage.createWorkingDays(arg1);
@@ -206,6 +215,14 @@ public class ClientSteps {
 				sheetName);
 	}
 	
+	@When("^I set up the new create share account from \"([^\"]*)\" sheet$")
+	public void I_set_up_the_new_create_share_account_from_sheet(String sheetName,
+			List<String> excelSheet) throws Throwable {
+		String excelSheetName = excelSheet.get(0).toString();
+		varFrontPage.setupNewSaving(ExcelSheetPath, excelSheetName,
+				sheetName);
+	}
+	
 	@Then("^I add Guarentor for loan application from \"([^\"]*)\" sheet$")
 	public void I_add_Guarentor_for_loan_application(String sheetName,
 			List<String> excelSheet) throws Throwable {
@@ -250,6 +267,14 @@ public class ClientSteps {
 				||sheetName.contains("RD") ||sheetName.contains("FD"))
 		{
 			varFrontPage.verifySavingData(ExcelSheetPath, excelSheetName, sheetName);
+		}
+		else if(sheetName.contains("Share"))
+		{
+			varFrontPage.verifyShareData(ExcelSheetPath, excelSheetName, sheetName);
+		}
+		else if(sheetName.contains("Teller") || sheetName.contains("Product"))
+		{
+			varFrontPage.verifyTellerData(ExcelSheetPath, excelSheetName, sheetName);
 		}
 		else
 		{
