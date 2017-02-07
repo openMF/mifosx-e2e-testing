@@ -752,3 +752,177 @@ Background:
 	  			|4706-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-RepaymentALL-WithdrawAllfromSavings-undoLastTransactionLoan.xlsx|Modify Transaction1|
 	   Then i validate and Verify from "error" sheet
 	 			|4706-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-RepaymentALL-WithdrawAllfromSavings-undoLastTransactionLoan.xlsx|
+	 			
+@RunnerClass4      
+	  Scenario:4837-SUBMITLOAN-APR01JAN2015-UNDOAPPROVAL
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4837-SUBMITLOAN-APR01JAN2015-UNDOAPPROVAL.xlsx|	
+	 Then I "Undo Approval" and verified the following tabs
+	  			|4837-SUBMITLOAN-APR01JAN2015-UNDOAPPROVAL.xlsx|Modify Transaction|
+	 Then i validate and Verify from "Validate" sheet
+	 			|4837-SUBMITLOAN-APR01JAN2015-UNDOAPPROVAL.xlsx|
+
+				
+@RunnerClass4      
+	  Scenario: 4838-SUBMITLOAN01JAN2015-REJECT01JAN2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4838-SUBMITLOAN01JAN2015-REJECT01JAN2015.xlsx|	
+	 Then I "Reject Loan Application" and verified the following tabs
+	  			|4838-SUBMITLOAN01JAN2015-REJECT01JAN2015.xlsx|Modify Transaction|
+	 Then I verified the following Tabs details successfully
+	 			|4838-SUBMITLOAN01JAN2015-REJECT01JAN2015.xlsx|Summary|
+
+				
+@RunnerClass4      
+	  Scenario: 4839-SUBMITLOAN01JAN2015-WITHDRAWNBYCLIENT01FEB2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4839-SUBMITLOAN01JAN2015-WITHDRAWNBYCLIENT01FEB2015.xlsx|	
+	 Then I "Reject Loan Application" and verified the following tabs
+	  			|4839-SUBMITLOAN01JAN2015-WITHDRAWNBYCLIENT01FEB2015.xlsx|Modify Transaction|
+	 Then I verified the following Tabs details successfully
+	 			|4839-SUBMITLOAN01JAN2015-WITHDRAWNBYCLIENT01FEB2015.xlsx|Summary|
+
+				
+@RunnerClass4      
+	  Scenario: 4840-SUBMITLOAN01JAN2015-DELETE
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4840-SUBMITLOAN01JAN2015-DELETE.xlsx|	
+	  Then I "Delete Loan Application" and verified the following tabs
+	  			|4840-SUBMITLOAN01JAN2015-DELETE.xlsx| Modify Transaction |
+	  Then i validate and Verify from "Validate" sheet
+	 			|4840-SUBMITLOAN01JAN2015-DELETE.xlsx|
+
+@RunnerClass4      
+	  Scenario: 4841-SUBMITLOAN01JAN2015-ADDcollateral
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4841-SUBMITLOAN01JAN2015-ADDcollateral.xlsx|	
+	  Then I "Delete Loan Application" and verified the following tabs
+	  			|4841-SUBMITLOAN01JAN2015-ADDcollateral.xlsx| Modify Transaction |
+	  Then i validate and Verify from "Validate" sheet
+	 			|4841-SUBMITLOAN01JAN2015-ADDcollateral.xlsx|Summary|
+
+				
+@RunnerClass4      
+	  Scenario: 4843-SUBMITLOAN01JAN2015(withLinkedSavingsAccount)-APR01JAN2015-DISBURSEtoSavings
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create saving account from "NewSavingInput" sheet
+	  			|4843-SUBMITLOAN01JAN2015(withLinkedSavingsAccount)-APR01JAN2015-DISBURSEtoSavings.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4843-SUBMITLOAN01JAN2015(withLinkedSavingsAccount)-APR01JAN2015-DISBURSEtoSavings.xlsx|	
+	  Then I "Disburse to Saving" and verified the following tabs
+	  			|4843-SUBMITLOAN01JAN2015(withLinkedSavingsAccount)-APR01JAN2015-DISBURSEtoSavings.xlsx| Modify Transaction |
+	  Then I navigate To Saving Account Page
+	  And I verified the "Saving Transaction" details successfully
+	 			|4843-SUBMITLOAN01JAN2015(withLinkedSavingsAccount)-APR01JAN2015-DISBURSEtoSavings.xlsx|
+
+@RunnerClass4      
+	  Scenario: 4844-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15JANUARY2015(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4844-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4844-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4      
+	  Scenario: 4845-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15JANUARY2015-Amount-1000(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4845-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15JANUARY2015-Amount-1000(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4845-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15JANUARY2015-Amount-1000(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4      
+	  Scenario: 4846-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15FEB2015(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4846-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15FEB2015(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4846-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15FEB2015(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4      
+	  Scenario: 4847-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4847-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4847-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4      
+	  Scenario: 4848-DISBLOAN01JAN2015(Addcharge)-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4848-DISBLOAN01JAN2015(Addcharge)-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4848-DISBLOAN01JAN2015(Addcharge)-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4      
+	  Scenario: 4849-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15FEB2015-Amount-500(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4849-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15FEB2015-Amount-500(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4849-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon15FEB2015-Amount-500(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4      
+	  Scenario: 4850-DISBLOAN01JAN2015(Addcharge)-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4850-DISBLOAN01JAN2015(Addcharge)-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4850-DISBLOAN01JAN2015(Addcharge)-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4      
+	  Scenario: 4851-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4851-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4851-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+	 			
