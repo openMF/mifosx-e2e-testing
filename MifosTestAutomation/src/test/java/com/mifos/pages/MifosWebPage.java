@@ -299,7 +299,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 */
 	protected static WebElement waitForElementAndPoll(final By locator) {
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver())
-				.withTimeout(120, TimeUnit.SECONDS)
+				.withTimeout(30, TimeUnit.SECONDS)
 				.pollingEvery(2000, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class);
 
@@ -941,7 +941,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					Select statusselect = new Select(selectelement);
 					if(key.equals("ChooseLoanToClose")||key.equals("GuarantorAccount")
 					|| key.equals("SavingTranferToAccountNum")|| key.equals("FdTranferToAccountNumber")
-					|| key.equals("ShareLinkToSavingAccount"))
+					|| key.equals("ShareLinkToSavingAccount")|| key.equals("GroupLoanLinkingSavingAccount"))
 					{
 						statusselect.selectByValue(value);
 					}

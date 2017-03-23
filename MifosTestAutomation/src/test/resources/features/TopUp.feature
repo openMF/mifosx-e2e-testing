@@ -6,6 +6,9 @@ Background:
 	Then I should see logged in successfully
 
 
+
+################################################### 	TOP-UP   #############################################################
+
 	
 	            
 	@RunnerClass4   
@@ -206,7 +209,15 @@ Background:
 	  Then I navigate To Loan Account Page
 	  Then I verified the following Tabs details successfully 
 	            |4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015-topup2.xlsx|Transactions|            
+	
+	
+	
+	
 			
+###########################################################  GUARANTOR  ######################################################################
+	
+	
+	
 			
 @RunnerClass4   
 	  Scenario:4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015
@@ -752,6 +763,14 @@ Background:
 	  			|4706-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-RepaymentALL-WithdrawAllfromSavings-undoLastTransactionLoan.xlsx|Modify Transaction1|
 	   Then i validate and Verify from "error" sheet
 	 			|4706-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-RepaymentALL-WithdrawAllfromSavings-undoLastTransactionLoan.xlsx|
+
+
+
+
+################################################ OTHER SCENARIOS  ###############################################################3
+
+
+
 	 			
 @RunnerClass4      
 	  Scenario:4837-SUBMITLOAN-APR01JAN2015-UNDOAPPROVAL
