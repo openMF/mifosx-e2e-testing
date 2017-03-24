@@ -65,6 +65,8 @@ Scenario:4448-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 	|Createclient.xlsx|		 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4448-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-otherthanmeetingdate.xlsx|
+	 Then I verified the following Tabs details successfully 
+	 |4448-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-otherthanmeetingdate.xlsx|Summary|Repayment Schedule|	Transactions|
 
 @RunnerClass1
 Scenario:4449-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringDIS-Change-EX-DISDATE-othermeetingdate

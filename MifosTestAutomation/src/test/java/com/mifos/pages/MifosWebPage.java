@@ -918,7 +918,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					verifySuccessMessage(key , value);
 					Thread.sleep(getResourceKey("wait"));
 				}
-				else if(key.equals("VerifyRDMaturityAmount"))
+				else if(bodyText.contains(value))
 					{
 					verifySuccessMessage(key , value);
 					Thread.sleep(getResourceKey("wait"));

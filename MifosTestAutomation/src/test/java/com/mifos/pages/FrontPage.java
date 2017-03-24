@@ -599,6 +599,7 @@ public class FrontPage extends MifosWebPage {
 		int rowCount = 0;
 		int firstrow=1;
 		int lastrow=1;
+		int Transactioncounter = 0;
 		try {
 			FileInputStream file = new FileInputStream(new File(
 					clientExcelSheetPath + "\\" + excelSheetName));
@@ -627,11 +628,10 @@ public class FrontPage extends MifosWebPage {
 				// hideAccurals
 				// button for periodic scenarios
 				if (sheetname.equals("Transactions") && !ishideAccuralsChecked) {
-					LazyWebElement accrualCheck = getElement(getResource("hideaccruals"));
-					if (accrualCheck.isSelected()) {
+					
 						clickButton(getResource("hideaccruals"));
 						Thread.sleep(getResourceKey("largeWait"));
-					}
+					
 				}
 			}
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
@@ -686,14 +686,20 @@ public class FrontPage extends MifosWebPage {
 						}
 					}
 
+					do{
+						Transactioncounter++;
+						if(Transactioncounter==22){
+							Thread.sleep(5000);
+						}
 					applicationCol = getWebDriver()
 							.findElements(
 									By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[3]/div[4]/div/div/div["
 											+ sheetIndex
 											+ "]/table/tbody/tr["
 											+ xlRowCount + "]/td"));
-					// System.out.println("Col count  " +
-					// applicationCol.size());
+					}while(applicationCol.isEmpty() && Transactioncounter<25);
+					
+					
 					if (sheetname.equals("Transactions")) {
 						boolean rowMatchSuccess = true;
 						int failRowCnt = 0;
@@ -840,7 +846,7 @@ public class FrontPage extends MifosWebPage {
 					
 					applicationCol = getWebDriver()
 						.findElements(
-								By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["
+								By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[4]/table/tbody/tr["
 										+ xlRowCount +"]/td"));
 				xlColumnPointer = 6;
 				boolean rowMatchSuccess = true;
@@ -888,7 +894,7 @@ public class FrontPage extends MifosWebPage {
 						}
 					applicationCol = getWebDriver()
 							.findElements(
-									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr["
+									By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[4]/table/tbody/tr["
 										+ appRow + "]/td"));
 					
 					}while(applicationCol.isEmpty() && counter<25);
@@ -1756,12 +1762,11 @@ rowMatchSuccess=true;
 		case "Periodic Accrual Transactions":
 			LazyWebElement checkPeriodic = getElement(getResource("addperiodicaccrualtransactions"));
 			if (!checkPeriodic.isSelected()) {
-				By locator = null;
-				locator = getLocator(getResource("addperiodicaccrualtransactions"));
-				clickButton(locator, 30);
+				RunPeriodicAccural();
+				clickButton(getResource("addperiodicaccrualtransactions"));
+				Thread.sleep(getResourceKey("smallWait"));
 			}
 			ishideAccuralsChecked = false;
-			System.out.println("currentUrl "+ currentUrl);
 
 			break;
 		case "Apply Holidays To Loans":
@@ -1898,6 +1903,28 @@ rowMatchSuccess=true;
 
 	}
 
+	public void RunPeriodicAccural() throws InterruptedException
+	{
+		
+		if (!(getElement(getResource("UpdateLoanArrearsAgeing"))).isSelected()) {
+			clickButton(getResource("UpdateLoanArrearsAgeing"));
+			Thread.sleep(getResourceKey("smallWait"));
+			clickButton(getResource("runSelectedJobs"));
+			Thread.sleep(getResourceKey("smallWait"));
+			clickButton(getResource("refresh"));
+			Thread.sleep(getResourceKey("smallWait"));
+		}
+		
+		 if (!(getElement(getResource("UpdateNonPerformingAssets"))).isSelected()) {
+			clickButton(getResource("UpdateNonPerformingAssets"));
+			Thread.sleep(getResourceKey("smallWait"));
+			clickButton(getResource("runSelectedJobs"));
+			Thread.sleep(getResourceKey("smallWait"));
+			clickButton(getResource("refresh"));
+			Thread.sleep(getResourceKey("smallWait"));
+		}
+	}
+	
 	private int[] verifyAccrualData(String clientExcelSheetPath,
 			String excelSheetName, String sheetname)
 			throws InterruptedException, IOException, ParseException {
@@ -1926,7 +1953,7 @@ rowMatchSuccess=true;
 
 			applicationCol = getWebDriver()
 					.findElements(
-							By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/table/tbody/tr[1]/td"));
+							By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[4]/table/tbody/tr[1]/td"));
 
 			for (int row = 1; row <= excelRowCount; row++) {
 
@@ -2025,7 +2052,7 @@ rowMatchSuccess=true;
 		} else if (sheetName.equals("Charges")) {
 			getWebDriver()
 					.findElement(
-							By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div[3]/div[4]/div/ul/li[11]/a"))
+							By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[3]/div[4]/div/ul/li[11]/a"))
 					.click();
 			Thread.sleep(getResourceKey("largeWait"));
 			Map<String, String> tabDetails = parseExcelSheet(
