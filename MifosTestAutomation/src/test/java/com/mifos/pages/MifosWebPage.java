@@ -712,7 +712,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				 }
 				if (key.equals("Submitbutton")||key.equals("previewCollectionSheet")
 						||key.equals("clickonsubmit")|| key.equals("productiveCollectionSheet")
-                        ||key.equals("clickonapproveSaving") ||key.equals("GroupAddClient"))
+                        ||key.equals("clickonapproveSaving") ||key.equals("GroupAddClient") ||key.equals("clickondeletetranche"))
 				{
 			 Thread.sleep(2000);
 		        }

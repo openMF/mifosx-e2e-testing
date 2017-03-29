@@ -1855,6 +1855,7 @@ rowMatchSuccess=true;
 		case "Add Upfront Accrual Transactions":
 			LazyWebElement addupfrontaccrual = getElement(getResource("addupfrontaccrualtransactions"));
 			if (!addupfrontaccrual.isSelected()) {
+				RunPeriodicAccural();
 				By locator1 = null;
 				locator1 = getLocator(getResource("addupfrontaccrualtransactions"));
 				clickButton(locator1, 30);
@@ -2052,7 +2053,7 @@ rowMatchSuccess=true;
 		} else if (sheetName.equals("Charges")) {
 			getWebDriver()
 					.findElement(
-							By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[3]/div[4]/div/ul/li[11]/a"))
+							By.xpath(".//*[@heading='Charges']/a"))
 					.click();
 			Thread.sleep(getResourceKey("largeWait"));
 			Map<String, String> tabDetails = parseExcelSheet(
@@ -2206,7 +2207,7 @@ rowMatchSuccess=true;
 			Thread.sleep(getResourceKey("largeWait"));
 			insertValues(newLoanDetailsMap);
 			try {
-				verifySuccessMessage("VerifyPageLoaded", "  Accruals");
+				verifySuccessMessage("VerifyPageLoaded", "Execute Periodic Accrual Accounting");
 			} catch (Exception e) {
 				System.out.println("Page is not Loaded");
 			}

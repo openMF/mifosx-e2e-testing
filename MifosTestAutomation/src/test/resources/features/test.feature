@@ -8,17 +8,21 @@ Background:
 
 
 @RunnerClass1
-Scenario:4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate
-     
-     Given I setup the group
-	 When I entered the values into group from "Input" sheet
-	  	|4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|	 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	  	|4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|
-	 And I modify New Account from "ModifyLoan" sheet
-	    |4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|
-	 Then I verified the following Tabs details successfully 
-	    |4376-ACTGRP-MEET-WEEKLYonFRI-SUBJLG-SYNK-DISP+REPAYwithMEET-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeet-Changedisbdate-Newcreateloan1.xlsx|Summary|Repayment Schedule|
-	
+	Scenario: Loan-200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME
+	  
+	  
+	  Given I setup the clients 
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  Then I should see client created successfully from "Output" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			| 200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
+	  Then I verified the "Summary" details successfully 
+	  			| 200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+	  			| 200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Newcreateloan.xlsx|
+	  When I make repayment and verified the following tabs
+       			|200-MS-EI-DB-DL-REC-NON-RNI-CTRFD-DL-MD-TR-1-ONTIME-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+       			
+  
