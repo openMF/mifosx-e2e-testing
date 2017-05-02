@@ -36,8 +36,8 @@
 						<includes>
 							<include>**/*Test.java</include>
 						</includes>
-						<parallel>classes</parallel>
-							<threadCount>15</threadCount>
+						<forkCount>2.5C</forkCount>
+                           <reuseForks>true</reuseForks>
 						
 						<testFailureIgnore>true</testFailureIgnore>
 						<systemPropertyVariables>

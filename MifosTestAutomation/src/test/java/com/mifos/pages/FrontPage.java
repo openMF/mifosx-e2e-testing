@@ -635,6 +635,10 @@ public class FrontPage extends MifosWebPage {
 				}
 			}
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
+			if(sheetname.equals("Summary"))
+            {
+                System.out.println(excelSheetName+" has rowcount "+rowCount);
+            }
 			boolean iteration = true;
 			int rowNo = 1;
 			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
@@ -744,26 +748,36 @@ public class FrontPage extends MifosWebPage {
 				rowMatchSuccess=true;
 								for (int xlCol = 2; xlCol < applicationCol
 										.size(); xlCol++) {
-									String a= ((String) xlRow
-											.get(1).value);
-									
+									int xlRowCol;
+									if(xlCol<9)
+									{
+									 xlRowCol=xlCol-2;
+									}
+									else
+									{
+										if(xlCol==9)
+										{
+											continue;
+										}
+										xlRowCol=xlCol-3;
+									}
 									
 									String textVal = applicationCol.get(xlCol)
 											.getText();
 
-									switch (xlRow.get(xlCol - 2).type) {
+									switch (xlRow.get(xlRowCol).type) {
 									case "null":
 										break;
 									case "date":
 										if (!textVal.equals(dateFormat
 												.format((Date) xlRow
-														.get(xlCol - 2).value))) {
+														.get(xlRowCol).value))) {
 											rowMatchSuccess = false;
 											failRowCnt = appRow;
 											failColCnt = xlCol;
 											expected = dateFormat
 													.format((Date) xlRow
-															.get(xlCol - 2).value);
+															.get(xlRowCol).value);
 											actual = textVal;
 										}
 										break;
@@ -773,12 +787,12 @@ public class FrontPage extends MifosWebPage {
 												&& !(textVal.trim().equals("")))
 											screenVal = parseDecimal(textVal);
 										if (screenVal != parseDecimal((String) xlRow
-												.get(xlCol - 2).value)) {
+												.get(xlRowCol).value)) {
 											rowMatchSuccess = false;
 											failRowCnt = appRow;
 											failColCnt = xlCol;
 											expected = (String) xlRow
-													.get(xlCol - 2).value;
+													.get(xlRowCol).value;
 											actual = textVal;
 										}
 										break;
@@ -789,12 +803,12 @@ public class FrontPage extends MifosWebPage {
 													textVal.length());
 										}
 										if (!textVal.equals((String) xlRow
-												.get(xlCol - 2).value)) {
+												.get(xlRowCol).value)) {
 											rowMatchSuccess = false;
 											failRowCnt = appRow;
 											failColCnt = xlCol;
 											expected = (String) xlRow
-													.get(xlCol - 2).value;
+													.get(xlRowCol).value;
 											actual = textVal;
 
 										}
@@ -899,7 +913,7 @@ public class FrontPage extends MifosWebPage {
 					
 					}while(applicationCol.isEmpty() && counter<25);
 						
-	if (!( applicationCol.get(6).getText().equals((String) xlRow.get(0).value)))
+	if (!( applicationCol.get(5).getText().equals((String) xlRow.get(0).value)))
 	{
 		rowMatchSuccess=false;
 		continue;
@@ -907,23 +921,23 @@ public class FrontPage extends MifosWebPage {
 					}
 
 	                rowMatchSuccess=true;
-					for (int xlCol = 7; xlCol < applicationCol.size(); xlCol++) {
+					for (int xlCol = 6; xlCol < applicationCol.size()-1; xlCol++) {
 						String textVal = applicationCol.get(xlCol)
 								.getText();
 						DateFormat dateFormat = new SimpleDateFormat(
 								"dd MMMM yyyy");
-						switch (xlRow.get(xlCol - 6).type) {
+						switch (xlRow.get(xlCol - 5).type) {
 						case "null":
 							break;
 						case "date":
 							if (!textVal
 									.equals(dateFormat.format((Date) xlRow
-											.get(xlCol - 6).value))) {
+											.get(xlCol - 5).value))) {
 								rowMatchSuccess = false;
 								failRowCnt = appRow;
 								failColCnt = xlCol;
 								expected = dateFormat.format((Date) xlRow
-										.get(xlCol - 6).value);
+										.get(xlCol - 5).value);
 								actual = textVal;
 							}
 							break;
@@ -933,11 +947,11 @@ public class FrontPage extends MifosWebPage {
 									&& !(textVal.trim().equals("")))
 								screenVal = parseDecimal(textVal);
 							if (screenVal != parseDecimal((String) xlRow
-									.get(xlCol - 6).value)) {
+									.get(xlCol - 5).value)) {
 								rowMatchSuccess = false;
 								failRowCnt = appRow;
 								failColCnt = xlCol;
-								expected = (String) xlRow.get(xlCol - 6).value;
+								expected = (String) xlRow.get(xlCol - 5).value;
 								actual = textVal;
 							}
 							break;
@@ -948,11 +962,11 @@ public class FrontPage extends MifosWebPage {
 										textVal.length());
 							}
 							if (!textVal.equals((String) xlRow
-									.get(xlCol - 6).value)) {
+									.get(xlCol - 5).value)) {
 								rowMatchSuccess = false;
 								failRowCnt = appRow;
 								failColCnt = xlCol;
-								expected = (String) xlRow.get(xlCol - 6).value;
+								expected = (String) xlRow.get(xlCol - 5).value;
 								actual = textVal;
 								
 							}
@@ -1805,6 +1819,7 @@ rowMatchSuccess=true;
 		case "Apply penalty to overdue loans": 
 			LazyWebElement checkpenalty = getElement(getResource("addpenaltytooverdueloans"));
 			if (!checkpenalty.isSelected()) {
+				RunPeriodicAccural();
 				By locator = null;
 				locator = getLocator(getResource("addpenaltytooverdueloans"));
 				clickButton(locator, 30);
@@ -1833,6 +1848,7 @@ rowMatchSuccess=true;
 
 			LazyWebElement checkpenalty1 = getElement(getResource("addpenaltytooverdueloans"));
 			if (!checkpenalty1.isSelected()) {
+				RunPeriodicAccural();
 				By locator = null;
 				locator = getLocator(getResource("addpenaltytooverdueloans"));
 				clickButton(locator, 30);
@@ -1867,6 +1883,7 @@ rowMatchSuccess=true;
 		case "Upfront & penalty to overdue loans":
 			LazyWebElement addupfrontaccrual1 = getElement(getResource("addupfrontaccrualtransactions"));
 			if (!addupfrontaccrual1.isSelected()) {
+				RunPeriodicAccural();
 				By locator1 = null;
 				locator1 = getLocator(getResource("addupfrontaccrualtransactions"));
 				clickButton(locator1, 30);
@@ -2046,15 +2063,13 @@ rowMatchSuccess=true;
 		if (sheetName.equals("Loan Tranche Details")) {
 
 			StaleElementHandle("//a[contains(.,'" + sheetName + "')]");
+			Thread.sleep(getResourceKey("largeWait"));
 			Map<String, String> tabDetails = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
 			insertValues(tabDetails);
 			Thread.sleep(getResourceKey("largeWait"));
 		} else if (sheetName.equals("Charges")) {
-			getWebDriver()
-					.findElement(
-							By.xpath(".//*[@heading='Charges']/a"))
-					.click();
+			getWebDriver().findElement(By.xpath(".//*[@heading='Charges']/a")).click();
 			Thread.sleep(getResourceKey("largeWait"));
 			Map<String, String> tabDetails = parseExcelSheet(
 					clientExcelSheetPath, excelSheetName, sheetName);
@@ -2173,21 +2188,20 @@ rowMatchSuccess=true;
 	 * Method Delete Account Closures Entry  from targeted excel sheets
 	 */
 	public void deleteAccountClosuresEntry(String excelSheetPath,
-			String excelSheetName, String sheetName) throws Throwable {
-		Map<String, String> newLoanDetailsMap;
-		MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "accounts_closure");
-		Thread.sleep(getResourceKey("largeWait"));
-		String bodyText = getWebDriver().findElement(By.tagName("body"))
-				.getText();
-		if (bodyText.contains("Head Office")) {
-			newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
-					sheetName);
-			Thread.sleep(getResourceKey("mediumWait"));
-			insertValues(newLoanDetailsMap);
-			Thread.sleep(getResourceKey("mediumWait"));
-		}
-
-	}
+			String excelSheetName, String sheetName) throws Throwable {Map<String, String> newLoanDetailsMap;
+	        MifosWebPage.navigateToUrl(TenantsUtils.getLocalTenantUrl()+ "accounts_closure");
+	        Thread.sleep(getResourceKey("largeWait"));
+	        insertValues("office", "Head Office");
+	        insertValues("clickOnCLOSURESubmit", "click");
+	        String bodyText = getWebDriver().findElement(By.tagName("table"))
+	                .getText();
+	        if (bodyText.contains("Head Office")) {
+	            newLoanDetailsMap = parseExcelSheet(excelSheetPath, excelSheetName,
+	                    sheetName);
+	            Thread.sleep(getResourceKey("mediumWait"));
+	            insertValues(newLoanDetailsMap);
+	            Thread.sleep(getResourceKey("mediumWait"));
+	        }}
 
 	/*
 	 * Method runs periodic accrual from the targeted excels sheets
@@ -2206,11 +2220,7 @@ rowMatchSuccess=true;
 					sheetName);
 			Thread.sleep(getResourceKey("largeWait"));
 			insertValues(newLoanDetailsMap);
-			try {
-				verifySuccessMessage("VerifyPageLoaded", "Execute Periodic Accrual Accounting");
-			} catch (Exception e) {
-				System.out.println("Page is not Loaded");
-			}
+			
 			Thread.sleep(getResourceKey("largeWait"));
 			MifosWebPage.navigateToUrl(currentUrl);
 		} else if (sheetName.equals("Transactions")) {

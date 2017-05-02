@@ -179,7 +179,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 */
 	protected static WebElement waitForElement(final By locator) {
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver())
-				.withTimeout(30, TimeUnit.SECONDS)
+				.withTimeout(120, TimeUnit.SECONDS)
 				.pollingEvery(500, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class);
 
@@ -201,7 +201,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 */
 	protected static List<WebElement> waitForElements(final By locator) {
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver())
-				.withTimeout(30, TimeUnit.SECONDS)
+				.withTimeout(120, TimeUnit.SECONDS)
 				.pollingEvery(500, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class);
 
@@ -299,7 +299,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 */
 	protected static WebElement waitForElementAndPoll(final By locator) {
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(getWebDriver())
-				.withTimeout(30, TimeUnit.SECONDS)
+				.withTimeout(80, TimeUnit.SECONDS)
 				.pollingEvery(2000, TimeUnit.MILLISECONDS)
 				.ignoring(NoSuchElementException.class);
 
@@ -583,7 +583,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	 * @throws InterruptedException 
 	 * 
 	 */
-	public boolean checkPageIsReady() throws InterruptedException {
+	public boolean checkPageIsReady(String Key) throws InterruptedException {
 		  boolean check = false;
 		  JavascriptExecutor js = (JavascriptExecutor)getWebDriver();
 		  
@@ -602,14 +602,17 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 		    }catch (InterruptedException e) {} */
 		   //To check page ready state.
 		   if (js.executeScript("return document.readyState").toString().equals("complete")){ 
-			   System.out.println("Waited " + i + "to page load");
+			   
 			   check=true;
 			   break; 
 		   }  
 		   else
 		   {
-			   
 			   Thread.sleep(1000);
+			   if (i>10)
+			   {
+				   System.out.println("Waited for" +i+" seconds"+ " to load "+Key);
+			   }
 		   }
 		  }
 		  return check;
@@ -633,7 +636,9 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	}
 
 	public void insertValues(String key, String value ) throws InterruptedException {
+		
 		insertValues(key, value, "",true);
+		
 	}
 
 	/**
