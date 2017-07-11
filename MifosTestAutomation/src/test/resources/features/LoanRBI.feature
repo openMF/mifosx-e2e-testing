@@ -1,4 +1,4 @@
-Feature:Loan-RBI-MIFOS
+Feature:Loan-RBI-FINFLUX
 Background:
 	Given I navigate to mifos using "default2#/"
 	And I login into mifos site using "Login" excel sheet

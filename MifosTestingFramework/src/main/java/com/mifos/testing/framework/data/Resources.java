@@ -17,7 +17,7 @@ public class Resources {
 	private static final String SYS_PROP_RES_FILE_PATH = "resources.file.path";
 
 	/** The singleton instance. */
-	private static Resources singletonInstance = new Resources();
+	//private static Resources singletonInstance = new Resources();
 
 	/** The props. */
 	private Properties props = new Properties();
@@ -26,11 +26,12 @@ public class Resources {
 	 * Instantiates a new resources.
 	 */
 	private Resources() {
-		final String resourceFilePath = System
+		/*final String resourceFilePath = System
 				.getProperty(SYS_PROP_RES_FILE_PATH);
+		*/final String resourceFilePath = "/root/Desktop/mifosx-e2e-testing/MifosTestAutomation/src/test/resources/mifos.properties";
+		
 		if (resourceFilePath != null) {
 			try {
-				System.out.println(resourceFilePath);
 				// this.props.load(new FileReader(new
 				// File(this.getClass().getClassLoader().getResource(resourceFilePath).toURI())));
 				this.props.load(new FileReader(new File(resourceFilePath)));
@@ -46,7 +47,7 @@ public class Resources {
 	 * @return single instance of Resources
 	 */
 	public static Resources getInstance() {
-		return singletonInstance;
+		return new Resources();
 	}
 
 	/**

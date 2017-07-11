@@ -24,6 +24,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -67,6 +68,7 @@ public class FrontPage extends MifosWebPage {
 	public static String ProductCreatedURL="";
 	public static String DataTableCreatedURL="";
     private boolean istransactionIdIndexAssigned = true;
+	public static String sheetName="";
 
 	// WebDriver driver = new ChromeDriver();
 
@@ -202,7 +204,7 @@ public class FrontPage extends MifosWebPage {
 
 		} catch (Exception e) {
 			throw new Exception("invalid excel sheet or sheet name \n"
-					+ excelsheet + sheetname);
+					+ excelsheet +" "+ sheetname);
 
 		}
 		return excelVlaue;
@@ -466,6 +468,7 @@ public class FrontPage extends MifosWebPage {
 
 		Map<String, String> newLoanDetailsMap = parseExcelSheet(
 				clientExcelSheetPath, excelSheetName, sheetName);
+        this.sheetName= sheetName;
 		insertValues(newLoanDetailsMap);
 		
 	}
@@ -535,9 +538,31 @@ public class FrontPage extends MifosWebPage {
 			Thread.sleep(getResourceKey("mediumWait"));
 			((JavascriptExecutor) getWebDriver())
 					.executeScript("scroll(500,0);");
-			if(!(sheetName.equals("ProductMixInput")||sheetName.equals("DataTable Input"))){
-			verifySuccessMessage("editloanproduct", "Edit");
-			ProductCreatedURL=getWebDriver().getCurrentUrl();}
+			if(!(sheetName.equals("ProductMixInput")||sheetName.equals("DataTable Input")))
+			{
+			if (sheetName.equals("ProductSavingInput")) {
+				verifySuccessMessage("editSavingproduct", "Edit");
+				ProductCreatedURL = getWebDriver().getCurrentUrl();
+			} else if(sheetName.equals("ProductFDInput"))
+			{
+			verifySuccessMessage("editFDproduct", "Edit");
+			ProductCreatedURL = getWebDriver().getCurrentUrl();
+			}
+			else if(sheetName.equals("ProductRDInput"))
+			{
+			verifySuccessMessage("editRDproduct", "Edit");
+			ProductCreatedURL = getWebDriver().getCurrentUrl();
+			}else if(sheetName.equals("ProductShareInput"))
+				{
+				verifySuccessMessage("editShareproduct", "Edit");
+				ProductCreatedURL = getWebDriver().getCurrentUrl();
+				}
+			else {
+				
+				verifySuccessMessage("editloanproduct", "Edit");
+				ProductCreatedURL = getWebDriver().getCurrentUrl();
+			}
+			}
 			DataTableCreatedURL=getWebDriver().getCurrentUrl();
 			Thread.sleep(getResourceKey("mediumWait"));
 
@@ -602,7 +627,7 @@ public class FrontPage extends MifosWebPage {
 		int Transactioncounter = 0;
 		try {
 			FileInputStream file = new FileInputStream(new File(
-					clientExcelSheetPath + "\\" + excelSheetName));
+					clientExcelSheetPath + "/" + excelSheetName));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 
@@ -1008,7 +1033,7 @@ public class FrontPage extends MifosWebPage {
 	
 		try {
 			FileInputStream file = new FileInputStream(new File(
-					clientExcelSheetPath + "\\" + excelSheetName));
+					clientExcelSheetPath + "/" + excelSheetName));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
@@ -1041,15 +1066,27 @@ public class FrontPage extends MifosWebPage {
 		int rowCount=0;
 		int xlColumnPointer=0;
 		int counter=0;
+		boolean rowMatchSuccess = true;
+		int failRowCnt = 0;
+		int failColCnt = 0;
+		String expected = null;
+		String actual = null;
+		double screenVal = 0.0;
+		String Xpath2="]/td";
+		DateFormat dateFormat = new SimpleDateFormat(
+				"dd MMMM yyyy");
+
 	
 		try {
 			FileInputStream file = new FileInputStream(new File(
-					clientExcelSheetPath + "\\" + excelSheetName));
+					clientExcelSheetPath + "/" + excelSheetName));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
 			
 			List<WebElement> applicationCol = null;
+			List<XLCellElement> xlRow = null;
+			String Xpath1 = null;
 			for (int xlRowCount = 1; xlRowCount <= rowCount; xlRowCount++) {
 				do{
 					counter++;
@@ -1064,34 +1101,43 @@ public class FrontPage extends MifosWebPage {
 							 
 							 setSavingTransactionID.add(getWebDriver()
 										.findElement(
-												By.xpath("(//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/table/tbody/tr)["+xlRowCount+"]/td[1]")).getText());
+												By.xpath("(//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'])["+xlRowCount+"]/td[1]")).getText());
 						}
 						else
 						{
 						setSavingTransactionID.add(getWebDriver()
 								.findElement(
-										By.xpath("(.//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'])["+xlRowCount+"]/td[1]")).getText());
-					
+										By.xpath("(//*[@id='main']/div[2]/div/div/div/div/div/div[4]/div[3]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'])["+xlRowCount+"]/td[1]")).getText());
+						 
 						}
 						}
 				if(sheetname.contains("Transaction"))
 				{
+					
 					if(sheetname.contains("FixedDeposit") || sheetname.contains("RecurringDeposit") 
 							|| sheetname.contains("RD") || sheetname.contains("FD"))
 					{
 						 xlColumnPointer=1;
-						 applicationCol=getWebDriver()
-									.findElements(
-											By.xpath("(//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div/div/div[2]/table/tbody/tr)["+xlRowCount+"]/td"));
+						 Xpath1 = "//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'][";
+						 String FullXpath=Xpath1+xlRowCount+Xpath2;
+						 applicationCol=getWebDriver().findElements(By.xpath(FullXpath));
+						 xlRow = getColumnDetails(
+									xlColumnPointer, xlRowCount,
+									applicationCol, sheet, sheetname);
 					}
 				
 					else
 					{
 				 xlColumnPointer=1;
+				 
+				 Xpath1 = "//*[@id='main']/div[2]/div/div/div/div/div/div[4]/div[3]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'][";
+				 String FullXpath=Xpath1+xlRowCount+Xpath2;
 				 applicationCol=getWebDriver()
 							.findElements(
-									By.xpath("(.//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[2]/table/tbody/tr[@class='pointer-main ng-scope'])["+xlRowCount+"]/td"));
-				
+									By.xpath(FullXpath));
+				 xlRow = getColumnDetails(
+							xlColumnPointer, xlRowCount,
+							applicationCol, sheet, sheetname);
 					}}
 				else if(sheetname.contains("Charges"))
 				{
@@ -1106,25 +1152,126 @@ public class FrontPage extends MifosWebPage {
 				
 					else
 					{
-				 xlColumnPointer=0;
-				 int row=xlRowCount+1;
-				 applicationCol=getWebDriver()
-							.findElements(
-									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div[3]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
+						Xpath1 = "//*[@id='main']/div[2]/div/div/div/div/div/div[4]/div[3]/div/div/div[3]/table/tbody/tr[";
+						int row=xlRowCount+1;
+						String FullXpath=Xpath1+row+Xpath2;
+				 applicationCol=getWebDriver().findElements(By.xpath(FullXpath));
 				}}
 				else if(sheetname.equals("FixedDeposit Summary") || sheetname.contains("RecurringDeposit Summary"))
 				{
 				 xlColumnPointer=0;
 				 applicationCol=getWebDriver()
 							.findElements(
-									By.xpath(".//*[@id='main']/div[3]/div/div/div/div/div/div[2]/div/div/div[1]/div[1]/div[1]/table/tbody/tr["+xlRowCount+"]/td"));
+									By.xpath(".//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div/div/div[1]/div[1]/div[1]/table/tbody/tr["+xlRowCount+"]/td"));
+				                              //.//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div/div/div[1]/div[1]/div[1]/table/tbody/tr
 				}
 				
 				
 				}while(applicationCol.isEmpty() && counter<25);
-		verifyColumnDetails(xlColumnPointer, xlRowCount,
-				applicationCol, sheet, sheetname);
-	}
+				if(sheetname.contains("Transaction"))
+				{
+	for (int approw1 = 1; approw1 <= rowCount; approw1++) {
+		int appRow=approw1;
+		if(sheetname.contains("Charges"))
+				{
+			appRow=approw1+1;
+				}
+		 String FullXpath=Xpath1+appRow+Xpath2;
+		 applicationCol=getWebDriver()
+					.findElements(
+							By.xpath(FullXpath));
+					
+	if (!(applicationCol.get(1).getText().equals(dateFormat.format((Date) xlRow.get(0).value))
+	       && applicationCol.get(2).getText().equals((String) xlRow.get(1).value)
+	       && isDataEquals(applicationCol.get(3).getText(),(String) xlRow.get(2).value)
+	       && isDataEquals(applicationCol.get(4).getText(),(String) xlRow.get(3).value)))
+	
+	                {
+		                   rowMatchSuccess=false;
+						   continue;
+						
+					}
+	                        rowMatchSuccess=true;
+									for (int xlColl = 2; xlColl < applicationCol.size(); xlColl++) {
+									
+										int xlCol = xlColl-1;
+										String textVal = applicationCol.get(xlColl).getText();
+
+										switch (xlRow.get(xlCol).type) {
+										case "null":
+											break;
+										case "date":
+											if (!textVal.equals(dateFormat
+													.format((Date) xlRow
+															.get(xlCol).value))) {
+												rowMatchSuccess = false;
+												failRowCnt = appRow;
+												failColCnt = xlCol;
+												expected = dateFormat
+														.format((Date) xlRow
+																.get(xlCol).value);
+												actual = textVal;
+											}
+											break;
+										case "decimal":
+											
+											if ((textVal != null)
+													&& !(textVal.trim().equals("")))
+												screenVal = parseDecimal(textVal);
+											if (screenVal != parseDecimal((String) xlRow
+													.get(xlCol).value)) {
+												rowMatchSuccess = false;
+												failRowCnt = appRow;
+												failColCnt = xlCol;
+												expected = (String) xlRow
+														.get(xlCol).value;
+												actual = textVal;
+											}
+											break;
+										case "string":
+											if (textVal.contains("$")) {
+												textVal = textVal.substring(
+														textVal.indexOf(" ") + 1,
+														textVal.length());
+											}
+											if (!textVal.equals((String) xlRow
+													.get(xlCol).value)) {
+												rowMatchSuccess = false;
+												failRowCnt = appRow;
+												failColCnt = xlCol;
+												expected = (String) xlRow
+														.get(xlCol).value;
+												actual = textVal;
+
+											}
+											break;
+										}
+										if (!rowMatchSuccess) {
+											Assert.fail("Tab Name:" + sheetname
+													+ " Row number:" + failRowCnt
+													+ " Column number:" + failColCnt
+													+ " Expected result:" + expected
+													+ " Actual result:" + actual);
+										}
+									
+									}
+									
+										break;
+									
+								}
+								if (!rowMatchSuccess) {
+									Assert.fail("In Tab Name:" + sheetname
+											+ " Row having values "+dateFormat.format((Date) xlRow.get(0).value)+
+											" "+(String) xlRow.get(1).value+" "+(String) xlRow.get(2).value+
+											" not found");
+								}
+	
+		}
+				else{
+					verifyColumnDetails(xlColumnPointer, xlRowCount,
+							applicationCol, sheet, sheetname);
+					}
+			}
 		}catch (FileNotFoundException fnfe) {
 			fnfe.printStackTrace();
 		} catch (NoSuchElementException e) {
@@ -1133,6 +1280,23 @@ public class FrontPage extends MifosWebPage {
 	}
 	
 	
+	private String SetNull(String text) {
+		// TODO Auto-generated method stub
+		
+		if(text.equals(""))
+		{
+			text=null;
+		}
+		return text;
+	}
+
+	private boolean isDataEquals(final String value1, final String value2) throws ParseException {
+		if(StringUtils.isEmpty(value1) && StringUtils.isEmpty(value2)) return true ;
+		if(!StringUtils.isEmpty(value1) && !StringUtils.isEmpty(value2)) {
+			return String.valueOf(parseDecimal(value1)).equals(value2) ;
+		}
+		return false ;
+	}
 	public void verifyShareData(String clientExcelSheetPath,
 			String excelSheetName, String sheetname)throws InterruptedException, IOException, ParseException 
 	{
@@ -1150,7 +1314,7 @@ public class FrontPage extends MifosWebPage {
 	
 		try {
 			FileInputStream file = new FileInputStream(new File(
-					clientExcelSheetPath + "\\" + excelSheetName));
+					clientExcelSheetPath + "/" + excelSheetName));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
@@ -1168,13 +1332,14 @@ public class FrontPage extends MifosWebPage {
 					 if(sheetname.contains("Transaction"))
 					{
 						 int row=xlRowCount+1;
+						 String Xpath="//*[@id='main']/div[2]/div/div/div/div/div/div[4]/div/div/div[1]/table/tbody/tr["+ row + "]/td";
 						 applicationCol = getWebDriver()
 									.findElements(
-											By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div/div/div[1]/table/tbody/tr["+ row + "]/td"));
+											By.xpath(Xpath));
 						 List<XLCellElement> xlRow = getColumnDetails(
 									xlColumnPointer, xlRowCount,
 									applicationCol, sheet, sheetname);
-						 verifyTransactionData(clientExcelSheetPath,
+						 verifyTransactionData(Xpath,clientExcelSheetPath,
 									excelSheetName, sheetname,xlRow,rowCount,applicationCol);
 					}
 				
@@ -1185,7 +1350,7 @@ public class FrontPage extends MifosWebPage {
 				 int row=xlRowCount+1;
 				 applicationCol=getWebDriver()
 							.findElements(
-									By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div/div/div[2]/table/tbody/tr["+row+"]/td"));
+									By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[4]/div/div/div[2]/table/tbody/tr["+row+"]/td"));
 				}
 					 
 					 if(sheetname.contains("dividend"))
@@ -1194,7 +1359,7 @@ public class FrontPage extends MifosWebPage {
 					 int row=xlRowCount+1;
 					 applicationCol=getWebDriver()
 								.findElements(
-										By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
+										By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[4]/div/div/div[3]/table/tbody/tr["+row+"]/td"));
 					}
 				
 			
@@ -1203,11 +1368,11 @@ public class FrontPage extends MifosWebPage {
 					if(sheetname.contains("Details1")){
 			 applicationCol=getWebDriver()
 						.findElements(
-								By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[3]/div/div[1]/table/tbody/tr["+xlRowCount+"]/td"));}
+								By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[3]/div/div[1]/table/tbody/tr["+xlRowCount+"]/td"));}
 					if(sheetname.contains("Details2")){
 			 applicationCol=getWebDriver()
 						.findElements(
-								By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[3]/div/div[2]/table/tbody/tr["+xlRowCount+"]/td"));}
+								By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[3]/div/div[2]/table/tbody/tr["+xlRowCount+"]/td"));}
 			
 				}
 				
@@ -1235,7 +1400,7 @@ public class FrontPage extends MifosWebPage {
 	
 		try {
 			FileInputStream file = new FileInputStream(new File(
-					clientExcelSheetPath + "\\" + excelSheetName));
+					clientExcelSheetPath + "/" + excelSheetName));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 			rowCount = sheet.getLastRowNum() - sheet.getFirstRowNum();
@@ -1307,7 +1472,7 @@ public class FrontPage extends MifosWebPage {
 			Assert.fail(" Unable to click \n");
 		}
 	}
-	public void verifyTransactionData(String clientExcelSheetPath,
+	public void verifyTransactionData(String XPath,String clientExcelSheetPath,
 			String excelSheetName, String sheetname,List<XLCellElement> xlRow,int rowCount,List<WebElement> applicationCol)throws InterruptedException, IOException, ParseException 
 	{
 
@@ -1333,7 +1498,7 @@ public class FrontPage extends MifosWebPage {
 				int wou=appRow+1;
 			applicationCol = getWebDriver()
 					.findElements(
-							By.xpath("//*[@id='main']/div[3]/div/div/div/div/div/div[4]/div/div/div[1]/table/tbody/tr["+ wou + "]/td"));
+							By.xpath(XPath));
 			}while(applicationCol.isEmpty() && counter<2);
 			
 			
@@ -1820,9 +1985,8 @@ rowMatchSuccess=true;
 			LazyWebElement checkpenalty = getElement(getResource("addpenaltytooverdueloans"));
 			if (!checkpenalty.isSelected()) {
 				RunPeriodicAccural();
-				By locator = null;
-				locator = getLocator(getResource("addpenaltytooverdueloans"));
-				clickButton(locator, 30);
+				clickButton(getResource("addpenaltytooverdueloans"));
+				Thread.sleep(getResourceKey("smallWait"));
 			}
 			break;
 			
@@ -1960,7 +2124,7 @@ rowMatchSuccess=true;
 
 		try {
 			FileInputStream file = new FileInputStream(new File(
-					clientExcelSheetPath + "\\" + excelSheetName));
+					clientExcelSheetPath + "/" + excelSheetName));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 
@@ -2121,7 +2285,14 @@ rowMatchSuccess=true;
 				excelSheetName, sheetName);
 		for (Map.Entry<String, String> entry : verifyMap.entrySet()) {
 			Thread.sleep(getResourceKey("largeWait"));
+			if(sheetName.equals("error2"))
+			{
+				verifySuccessMessage(entry.getKey(), entry.getValue(), sheetName);
+			}
+			else
+			{
 			verifySuccessMessage(entry.getKey(), entry.getValue());
+			}
 			Thread.sleep(getResourceKey("smallWait"));
 
 		}

@@ -1539,7 +1539,6 @@ Background:
     |2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|
- Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
  Then I verified the following Tabs details successfully 
 	|2588-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 
@@ -2082,7 +2081,6 @@ Background:
     |2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
  And I disburse loan from "NewLoanInput" sheet
     |2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|
- Then I navigate to scheduler job & execute "Periodic Accrual Transactions"
  Then I verified the following Tabs details successfully 
 	|2618-MS-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DATE-VAR-INST-SPEDUEDATE-FEE-%APR-AMT-Newcreateloan2.xlsx|Summary|Repayment Schedule|Transactions|
 

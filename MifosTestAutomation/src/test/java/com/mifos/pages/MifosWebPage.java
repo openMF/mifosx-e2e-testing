@@ -11,6 +11,7 @@ import java.io.IOException;
 //import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -72,6 +73,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	public String RememberPreviousUrl;
 	public String CurrentSavingAccounturl;
 	public String currentShareUrl;
+	public String CheckforAccounting = "";
 	/**
 	 * Gets the resource.
 	 *
@@ -715,12 +717,25 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				 {
 					 Thread.sleep(10000);
 				 }
-				if (key.equals("Submitbutton")||key.equals("previewCollectionSheet")
-						||key.equals("clickonsubmit")|| key.equals("productiveCollectionSheet")
-                        ||key.equals("clickonapproveSaving") ||key.equals("GroupAddClient") ||key.equals("clickondeletetranche"))
+				String[] arr = {"Submitbutton","previewCollectionSheet","productiveCollectionSheet",
+						"clickonsubmit","clickonapproveSaving",
+						"GroupAddClient","clickondeletetranche"};
+				if (AsList(arr, key)) {
+					Thread.sleep(2000);
+				}
+			if (FrontPage.sheetName.equals("NewSavingInput") && key.equals("Submitbutton")) {
+				LazyWebElement check = getElement(getResource("isOverdraftAmountEnabled"));
+				if (check.isSelected()) {
+					LazyWebElement check1 = getElement(getResource("isDplimitEnabled"));
+					if (check1.isSelected()) {
+						clickButton(getLocator(getResource("isDplimitEnabled")));
+						FrontPage.sheetName = "";
+					}
+				}else
 				{
-			 Thread.sleep(2000);
-		        }
+				FrontPage.sheetName = "";
+				}
+			}
 			if (key.equals("ClickOnADD")) {
 				By loc = null;
 				loc = getLocator(getResource(key));
@@ -833,29 +848,40 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					By locator = null;
 					locator = getLocator(getResource(key));
 					waitForElementAndPoll(locator);
+					waitForElementAndPoll(locator).click();
 					if(key.equals("Savinginsertdate"))
 					{
+						//||key.equals("SavingClosedon")
 						String Date= value.substring(0, 2);
 						String Month=value.substring(3, value.length()-5);
 						String Year=value.substring(value.length()-4, value.length());
 						By locator1,Date1,Month1,Year1 = null;
 						locator = getLocator(getResource(key));
 						waitForElementAndPoll(locator).click();
+						Thread.sleep(2000);
 						locator1 = getLocator(getResource(key)+"/following-sibling::ul//thead/tr[1]/th[2]/button/strong");
 						Year1=getLocator(getResource(key)+"/following-sibling::ul//span[contains(.,'"+Year+"')]");
 						Month1=getLocator(getResource(key)+"/following-sibling::ul//span[contains(.,'"+Month+"')]");
 						Date1=getLocator(getResource(key)+"/following-sibling::ul//span[contains(.,'"+Date+"')]");
 						
 						waitForElementAndPoll(locator1).click();
+
+						Thread.sleep(1000);
 						waitForElementAndPoll(locator1).click();
+
+						Thread.sleep(1000);
 						waitForElementAndPoll(Year1).click();
+
+						Thread.sleep(1000);
 						waitForElementAndPoll(Month1).click();
+
+						Thread.sleep(1000);
 						waitForElementAndPoll(Date1).click();
 						Thread.sleep(1000);
 					}
 					else{
 					LazyWebElement locatorElement = getElement(locator, clear);
-                    
+                   
 					locatorElement.sendKeys(value);
 					locatorElement.sendKeys(Keys.ESCAPE);
 					if(key.equals("Foreclosuretransactiondate")|| key.equals("repaymenttransactiondate"))
@@ -869,6 +895,8 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				}
 				break;
 			case "dropDown":
+
+				
 				if (key.equals("selectgroup")||key.equals("selectcenter")|| key.equals("office")||key.equals("staff"))
 				 {
 					 Thread.sleep(1000);
@@ -887,6 +915,16 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
 					locatorElement.sendKeys(value + Keys.TAB);
+					if(key.equals("incomefromrecoveryrepayments"))
+					{
+						if(CheckforAccounting.equals("checked"))
+						{
+						otheraccural("npaInterestSuspenseAccountId","Interest Suspense Account for NPA",clear);
+						otheraccural("npaFeeSuspenseAccountId","Fees Suspense Account for NPA",clear);
+						otheraccural("npaPenaltySuspenseAccountId","Penalties Suspense Account for NPA",clear);
+						}
+						
+					}
 					
 				break;
 			case "checkbox":
@@ -904,6 +942,11 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 
 				break;
 			case "radiobutton":
+				By loc = null;
+				loc = getLocator(getResource(key));
+				LazyWebElement ele = getElement(loc);
+				ele.click();
+				CheckforAccounting = "checked";
 
 				break;
 			case "plus":
@@ -940,7 +983,11 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					double parseDoubleValue = Double.parseDouble(value);
 					int parseIntValue = (int) (parseDoubleValue);
 					value = Integer.toString(parseIntValue);
-				}							
+				}	
+				if(key.equals("repaymentstrategy"))
+				{
+					getWebDriver().findElement(By.id("overdueDaysForNPA")).sendKeys("200");
+				}
 				try {
 					LazyWebElement selectelement = getElement(getResource(key));
 					Select statusselect = new Select(selectelement);
@@ -960,6 +1007,17 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 	
 	}
 
+	private void otheraccural(String key, String value,boolean clear) {
+		// TODO Auto-generated method stub
+		clickButton(getLocator(getResource(key)));
+		By locator = null;
+		locator = getLocator(getResource(key + ".input"));
+		waitForElementAndPoll(locator);
+		LazyWebElement locatorElement = getElement(locator, clear);
+		locatorElement.sendKeys(value + Keys.TAB);
+		
+	}
+
 	/**
 	 * Submit id values.
 	 *
@@ -972,6 +1030,10 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 		submitValues(items, type, false, "id");
 	}
 
+	public static boolean AsList(String[] arr, String targetValue) {
+		return Arrays.asList(arr).contains(targetValue);
+	}
+	
 	/**
 	 * Submit id values.
 	 *
@@ -1514,6 +1576,27 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 				
 			}
 			Assert.assertTrue(validateSame(page, message));
+			}catch (AssertionError  e) {
+			Assert.fail(" Expected result:" + message
+					+ " Actual result:" + getText(getLocator(getResource(page))));
+		}
+	}
+	
+	public void verifySuccessMessage(String page, String message, String Sheet) {
+		try {
+			By locator = null;
+			locator =getLocator(getResource(page));
+			System.out.println("");
+			String pageValue = getText(locator);
+			
+			try {
+				if (pageValue.equals("")) {
+					waitForElementToBeVisibleWithText(locator, pageValue);
+				}
+			} catch (Exception e) {
+				
+			}
+			Assert.assertTrue(getText(getLocator(getResource(page))).contains(message));
 			}catch (AssertionError  e) {
 			Assert.fail(" Expected result:" + message
 					+ " Actual result:" + getText(getLocator(getResource(page))));
@@ -2410,7 +2493,18 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 		changeWindow("2", "Not able to open the window", true);
 	}
 
-
+	public void select_office()
+	{
+		
+			 
+			 By locator = null;
+			 clickButton(getLocator(getResource("office")));
+			 locator = getLocator(getResource("office" + ".input"));
+			 waitForElementAndPoll(locator);
+				LazyWebElement locatorElement = getElement(locator, true);
+				locatorElement.sendKeys("Branch Office" + Keys.TAB);
+		 
+	}
 
 	//@Override
 	public boolean isOpened() {

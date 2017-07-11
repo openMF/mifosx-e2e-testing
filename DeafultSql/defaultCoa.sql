@@ -39,6 +39,10 @@ INSERT INTO `acc_gl_account` (`id`, `name`, `parent_id`, `hierarchy`, `gl_code`,
 INSERT INTO `acc_gl_account` (`id`, `name`, `parent_id`, `hierarchy`, `gl_code`, `disabled`, `manual_journal_entries_allowed`, `account_usage`, `classification_enum`, `tag_id`, `description`) VALUES (40, 'Expense account -Doubtful', NULL, '.', '506', 0, 1, 1, 5, NULL, NULL);
 INSERT INTO `acc_gl_account` (`id`, `name`, `parent_id`, `hierarchy`, `gl_code`, `disabled`, `manual_journal_entries_allowed`, `account_usage`, `classification_enum`, `tag_id`, `description`) VALUES (41, 'Liability account -Loss', NULL, '.', '507', 0, 1, 1, 2, NULL, NULL);
 INSERT INTO `acc_gl_account` (`id`, `name`, `parent_id`, `hierarchy`, `gl_code`, `disabled`, `manual_journal_entries_allowed`, `account_usage`, `classification_enum`, `tag_id`, `description`) VALUES (42, 'Expense account -Loss', NULL, '.', '508', 0, 1, 1, 5, NULL, NULL);
+INSERT INTO `acc_gl_account` (`id`, `name`, `parent_id`, `hierarchy`, `gl_code`, `disabled`, `manual_journal_entries_allowed`, `account_usage`, `classification_enum`, `tag_id`, `description`, `gl_classification_type`) VALUES (43, 'Interest Suspense Account for NPA', NULL, '.', '34', 0, 1, 1, 4, NULL, NULL, 1);
+INSERT INTO `acc_gl_account` (`id`, `name`, `parent_id`, `hierarchy`, `gl_code`, `disabled`, `manual_journal_entries_allowed`, `account_usage`, `classification_enum`, `tag_id`, `description`, `gl_classification_type`) VALUES (44, 'Fees Suspense Account for NPA', NULL, '.', '35', 0, 1, 1, 4, NULL, NULL, 1);
+INSERT INTO `acc_gl_account` (`id`, `name`, `parent_id`, `hierarchy`, `gl_code`, `disabled`, `manual_journal_entries_allowed`, `account_usage`, `classification_enum`, `tag_id`, `description`, `gl_classification_type`) VALUES (45, 'Penalties Suspense Account for NPA', NULL, '.', '36', 0, 1, 1, 4, NULL, NULL, 1);
+
 
 INSERT INTO `m_charge` (`id`, `name`, `currency_code`, `charge_applies_to_enum`, `charge_time_enum`, `charge_calculation_enum`, `charge_payment_mode_enum`, `amount`, `fee_on_day`, `fee_interval`, `fee_on_month`, `is_penalty`, `is_active`, `is_deleted`, `min_cap`, `max_cap`, `fee_frequency`, `income_or_liability_account_id`) VALUES (29, 'TrancheDisbursementCharge-%Disbursementamount', 'USD', 1, 12, 5, 0, 1.000000, NULL, NULL, NULL, 0, 1, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `m_charge` (`id`, `name`, `currency_code`, `charge_applies_to_enum`, `charge_time_enum`, `charge_calculation_enum`, `charge_payment_mode_enum`, `amount`, `fee_on_day`, `fee_interval`, `fee_on_month`, `is_penalty`, `is_active`, `is_deleted`, `min_cap`, `max_cap`, `fee_frequency`, `income_or_liability_account_id`) VALUES (30, 'TrancheDisbursementCharge-%Interest', 'USD', 1, 12, 4, 0, 1.000000, NULL, NULL, NULL, 0, 1, 0, NULL, NULL, NULL, NULL);
@@ -215,7 +219,9 @@ INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product
 INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`) VALUES (10, 11, 14, 1, NULL, NULL, 12);
 INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`) VALUES (11, 12, 14, 1, NULL, NULL, 6);
 INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`) VALUES (12, 13, 14, 1, NULL, NULL, 11);
-
+INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`, `code_value_cv_id`) VALUES (13, 43, 14, 1, NULL, NULL, 52, NULL);
+INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`, `code_value_cv_id`) VALUES (14, 44, 14, 1, NULL, NULL, 53, NULL);
+INSERT INTO `acc_product_mapping` (`id`, `gl_account_id`, `product_id`, `product_type`, `payment_type`, `charge_id`, `financial_account_type`, `code_value_cv_id`) VALUES (15, 45, 14, 1, NULL, NULL, 54, NULL);
 
 
 INSERT INTO `m_provisioning_criteria` (`id`, `criteria_name`, `createdby_id`, `created_date`, `lastmodifiedby_id`, `lastmodified_date`) VALUES (1, '4670 Provision Criteria', 2, '2015-04-01 16:30:30', 2, '2015-04-01 16:30:38');
@@ -290,5 +296,5 @@ INSERT INTO `acc_gl_financial_activity_account` (`id`, `gl_account_id`, `financi
 update c_configuration set enabled = 1 WHERE name = 'reschedule-repayments-on-holidays';
 INSERT INTO `m_holiday` (`id`, `name`, `from_date`, `to_date`, `repayments_rescheduled_to`, `status_enum`, `processed`, `description`, `extend_repayment_schedule`, `resheduling_type`) VALUES (1, '15 January 2013', '2013-01-15 00:00:00', '2013-01-15 00:00:00', '2013-01-20 00:00:00', 300, 0, '', 0, 2);
 INSERT INTO `m_holiday_office` (`holiday_id`, `office_id`) VALUES (1, 1);
-
+UPDATE m_product_loan set overdue_days_for_npa=200 where accounting_type=3;
 

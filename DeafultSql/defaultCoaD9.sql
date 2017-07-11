@@ -102,8 +102,6 @@ INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (17, 'Special', '2', 2, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (16, 'Married', '3', 3, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (16, 'Un Married', '4', 4, NULL, 1);
-INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (4, 'Male', '5', 5, NULL, 1);
-INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (4, 'Female', '6', 6, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (14, 'Out of MFI', '7', 7, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (14, 'Inactive', '8', 8, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (19, 'Invalid applicant', '9', 9, NULL, 1);
@@ -213,8 +211,5 @@ INSERT INTO `acc_gl_financial_activity_account` (`id`, `gl_account_id`, `financi
 INSERT INTO `acc_gl_financial_activity_account` (`id`, `gl_account_id`, `financial_activity_type`) VALUES (4, 48, 101);
 INSERT INTO `acc_gl_financial_activity_account` (`id`, `gl_account_id`, `financial_activity_type`) VALUES (5, 49, 102);
 
-update c_configuration set enabled = 1 WHERE name = 'reschedule-repayments-on-holidays';
-INSERT INTO `m_holiday` (`id`, `name`, `from_date`, `to_date`, `repayments_rescheduled_to`, `status_enum`, `processed`, `description`) VALUES (1, '15 January 2013', '2013-01-15 00:00:00', '2013-01-15 00:00:00', '2013-01-20 00:00:00', 300, 0, '');
-INSERT INTO `m_holiday_office` (`holiday_id`, `office_id`) VALUES (1, 1);
 
 

@@ -12,6 +12,7 @@ Scenario:4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETIN
 		| Productloannavigation.xlsx |
 	 Then I entered the values into product from "ProductLoanInput" Sheet
 		|4350-Simple-Group-Loan-Product-Loanproduct.xlsx|
+	
 	 Given I setup the center
 	 When I entered the values into center from "Input" sheet
 	 |4445-ACTCTR-MEETING-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEETING-Weeklyloanevery1weeks-Modapp-Synkrepaywithmeeting-Changedisbdate.xlsx|
@@ -39,6 +40,9 @@ Scenario:4446-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weekl
 	 	|Createclient.xlsx|		 				  								  				  				  			
 	 When I set up the new create loan from "NewLoanInput" sheet
 	 |4446-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATEotherthanmeetingdate.xlsx|
+     Then I verified the following Tabs details successfully 
+	 |4446-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLGloan-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATEotherthanmeetingdate.xlsx|Repayment Schedule|
+     
 
 @RunnerClass1
 Scenario:4447-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-DuringAPP-Change-DISDATE-othermeetingdate
@@ -154,27 +158,27 @@ Scenario:4453-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloa
 	 Then I verified the following Tabs details successfully 
 	 |4453-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015..xlsx|Summary|Repayment Schedule|
 	 
-@RunnerClass1
-Scenario:4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed
-	 Given I setup the center
-	 When I entered the values into center from "Input" sheet
-	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|
-	 Then I entered the values into group from "Group" sheet
-     |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|		  								  				  				  			
-	 Then I entered the values into client from "Input" sheet
-	 	|Createclient.xlsx|		 				  								  				  				  			
-	 When I set up the new create loan from "NewLoanInput" sheet
-	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|
-	 Then I Navigate Back to Current Center Page from "Center Page" sheet
-	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I make repayment and verified the following tabs
-     |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|Repay1|
-	 Then I Navigate Back to Current Center Page from "Center Page1" sheet
-	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|
-	 And I navigate To Loan Account Page
-	 Then I verified the following Tabs details successfully 
-	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|Summary|Repayment Schedule|
+#@RunnerClass1
+#Scenario:4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed
+#	 Given I setup the center
+#	 When I entered the values into center from "Input" sheet
+#	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|
+#	 Then I entered the values into group from "Group" sheet
+#     |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|		  								  				  				  			
+#	 Then I entered the values into client from "Input" sheet
+#	 	|Createclient.xlsx|		 				  								  				  				  			
+#	 When I set up the new create loan from "NewLoanInput" sheet
+#	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|
+#	 Then I Navigate Back to Current Center Page from "Center Page" sheet
+#	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|
+#	 And I navigate To Loan Account Page
+#	 Then I make repayment and verified the following tabs
+ #    |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|Repay1|
+#	 Then I Navigate Back to Current Center Page from "Center Page1" sheet
+#	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|
+#	 And I navigate To Loan Account Page
+#	 Then I verified the following Tabs details successfully 
+#	 |4454-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModiFurMeet-to15April2015-MakeRepay-ModiFurMeetto20April2015-ModiMeettoWed.xlsx|Summary|Repayment Schedule|
 
 @RunnerClass1
 Scenario:4455-ACTCTR-MEET-WEEKLYonFRI-SUBMITJLG-SYNK-DISP+REPAYwithMEE-Weeklyloanevery1weeks-Disburse-ModifymeetingtoDaily
@@ -403,6 +407,9 @@ Scenario:4471-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTA
 	 Then I navigate to collection Sheet
 	 Then I Make Repayment Through "Collection" sheet
 	 |4471-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|
+	 And I navigate To Loan Account Page
+	 Then I verified the following Tabs details successfully 
+	    |4471-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
 
 @RunnerClass1
 Scenario:4472-RBI-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF
@@ -849,6 +856,10 @@ Scenario:4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAF
 	 Then I navigate to collection Sheet
 	 Then I Make Repayment Through "Collection" sheet
 	 |4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|
+     And I navigate To Loan Account Page
+     Then I verified the following Tabs details successfully 
+	 |4496-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHOUTSTAFF-COLLSHEETON09JAN.xlsx|Summary|Repayment Schedule|
+     
 
 @RunnerClass1
 Scenario:4497-MS-ACTCTR-MEET-WEEKLYonFRI-ACTGRP-ACTCLIENT-DISJLG02JANWITHSTAFF-COLLSHEETON09JAN-WITHOTHERSTAFF
@@ -1278,12 +1289,6 @@ Scenario:4520-RBI-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHE
 	 |4520-RBI-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
 @RunnerClass1
-Scenario:4521-RBI-ACT2CTR-MEET-WEEKLYonFRI-NOSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I navigate to collection Sheet
-	 Then I Make Repayment Through "Productive Collection" sheet
-	 |4521-RBI-ACT2CTR-MEET-WEEKLYonFRI-NOSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-
-@RunnerClass1
 Scenario:4522-RBI-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-ON-10JAN2015
 	 Given I navigate to collection Sheet
 	 Then I Make Repayment Through "Productive Collection" sheet
@@ -1676,12 +1681,6 @@ Scenario:4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEE
      Then I navigate to collection Sheet
      Then I Make Repayment Through "Productive Collection" sheet
 	 |4545-MS-ACT2CTR-NOMEET-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
-
-@RunnerClass1
-Scenario:4546-MS-ACT2CTR-MEET-WEEKLYonFRI-NOSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN
-	 Given I navigate to collection Sheet
-	 Then I Make Repayment Through "Productive Collection" sheet
-	 |4546-MS-ACT2CTR-MEET-WEEKLYonFRI-NOSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN.xlsx|
 
 @RunnerClass1
 Scenario:4547-MS-ACT2CTR-MEET-WEEKLYonFRI-ASSIGNSTAFF-ACTGRP-ACTCLIENT-DISJLG02JAN-PRODUCTIVE_COLLSHEETON09JAN-ON-10JAN2015
@@ -2328,7 +2327,7 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  When I set up the new create loan from "NewLoanInput" sheet
 	  			|4605-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WRITEOFFON15JAN.xlsx|
 	  Then I "WRITEOFF" and verified the following tabs
-	            |4605-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WRITEOFFON15JAN.xlsx|Modify Transaction|Repayment Schedule|
+	            |4605-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WRITEOFFON15JAN.xlsx|Modify Transaction|
 
 @RunnerClass1
 	  Scenario: 4606-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-WAIVEINTERESTON15JAN  
@@ -2377,71 +2376,71 @@ Scenario:4603-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon0
 	  Then I make repayment and verified the following tabs
       |4609-Holiday-on-15-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN-DELETEHOLIDAY-REPAY15JAN.xlsx|Input|Repayment Schedule|
 
-@RunnerClass1
-	  Scenario: 4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN  
-      Given I "Create" holiday
-	  |4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
-      Given I setup the clients
-	  When I entered the values into client from "Input" sheet
-	  			|Createclient.xlsx|
-	  When I set up the new create loan from "NewLoanInput" sheet
-	  			|4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
-	  And I verified the "Repayment Schedule" details successfully 
-	  			|4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
+#@RunnerClass1
+#	  Scenario: 4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN  
+#      Given I "Create" holiday
+#	  |4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
+#      Given I setup the clients
+#	  When I entered the values into client from "Input" sheet
+#	  			|Createclient.xlsx|
+#	  When I set up the new create loan from "NewLoanInput" sheet
+#	  			|4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
+#	  And I verified the "Repayment Schedule" details successfully 
+#	  			|4610-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon01JAN.xlsx|
 
-@RunnerClass1
-	  Scenario: 4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN  
-      Given I setup the clients
-	  When I entered the values into client from "Input" sheet
-	  			|Createclient.xlsx|
-	  When I set up the new create loan from "NewLoanInput" sheet
-	  			|4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN.xlsx|
-	  Then i validate and Verify from "error" sheet
-	 			|4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN.xlsx|
-	  			
+#@RunnerClass1
+#	  Scenario: 4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN  
+ #     Given I setup the clients
+#	  When I entered the values into client from "Input" sheet
+#	  			|Createclient.xlsx|
+#	  When I set up the new create loan from "NewLoanInput" sheet
+#	  			|4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN.xlsx|
+#	  Then i validate and Verify from "error" sheet
+#	 			|4611-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon02JAN.xlsx|
+#	  			
 
-@RunnerClass1
-	  Scenario: 4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan  
-      Given I setup the clients
-	  When I entered the values into client from "Input" sheet
-	  			|Createclient.xlsx|
-	  When I set up the new create loan from "NewLoanInput" sheet
-	  			|4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
-	  And I verified the "Repayment Schedule" details successfully 
-	  			|4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
-	   Then I "Delete" holiday
-	  |4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
+#@RunnerClass1
+#	  Scenario: 4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan  
+#      Given I setup the clients
+##	  When I entered the values into client from "Input" sheet
+#	  			|Createclient.xlsx|
+#	  When I set up the new create loan from "NewLoanInput" sheet
+#	  			|4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
+#	  And I verified the "Repayment Schedule" details successfully 
+#	  			|4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
+#	   Then I "Delete" holiday
+#	  |4612-Holiday-from-02-Jan-2013-to-16-Jan-2013-Reschedule-repayment-on-20-Jan-2013-DISBon20-Jan.xlsx|
 	  
-@RunnerClass1
-	  Scenario: 4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB  
-      Given I setup the clients
-	  When I entered the values into client from "Input" sheet
-	  			|Createclient.xlsx|
-	  When I set up the new create loan from "NewLoanInput" sheet
-	  |4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
-	  Given I "Create" holiday
-	  |4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
-	  And I navigate To Loan Account Page
-	  Then I navigate to scheduler job & execute "Apply Holidays To Loans"
-	  And I verified the "Repayment Schedule" details successfully 
-	  |4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+#@RunnerClass1
+#	  Scenario: 4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB  
+#      Given I setup the clients
+#	  When I entered the values into client from "Input" sheet
+#	  			|Createclient.xlsx|
+#	  When I set up the new create loan from "NewLoanInput" sheet
+#	  |4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+#	  Given I "Create" holiday
+#	  |4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+#	  And I navigate To Loan Account Page
+#	  Then I navigate to scheduler job & execute "Apply Holidays To Loans"
+#	  And I verified the "Repayment Schedule" details successfully 
+#	  |4613-4613-DISBLOAN01JAN-Holiday-on-22-Jan-2013-Reschedule-repayment-on-25-Jan-2013-EXECUTE-SCHEDULER-JOB.xlsx|
 
-@RunnerClass1
-	  Scenario: 4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB  
-      Given I setup the clients
-	  When I entered the values into client from "Input" sheet
-	  			|Createclient.xlsx|
-	  When I set up the new create loan from "NewLoanInput" sheet
-	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
-	  Then I make repayment and verified the following tabs
-      |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|Input|
-	  Given I "Create" holiday
-	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
-	  And I navigate To Loan Account Page
-	  Then I navigate to scheduler job & execute "Apply Holidays To Loans"
-	  And I verified the "Repayment Schedule" details successfully 
-	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
-	 
+#@RunnerClass1
+#	  Scenario: 4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB  
+#      Given I setup the clients
+#	  When I entered the values into client from "Input" sheet
+#	  			|Createclient.xlsx|
+#	  When I set up the new create loan from "NewLoanInput" sheet
+#	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+#	  Then I make repayment and verified the following tabs
+#      |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|Input|
+#	  Given I "Create" holiday
+#	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+#	  And I navigate To Loan Account Page
+#	  Then I navigate to scheduler job & execute "Apply Holidays To Loans"
+#	  And I verified the "Repayment Schedule" details successfully 
+#	  |4614-DISBLOAN01FEB-REPAY15FEB-Holiday-on-15-FEB-2013-Reschedule-repayment-on-20-FEB-2013-EXECUTE-SCHEDULER-JOB.xlsx|
+#	 
 @RunnerClass1
 	  Scenario: 4580-RBI-SUBMITLOANON02JAN-INDCOLLSHEETON09JAN
 	  

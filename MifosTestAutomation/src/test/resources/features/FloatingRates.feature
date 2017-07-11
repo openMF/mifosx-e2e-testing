@@ -317,30 +317,30 @@ Background:
 				| 2362-RBI-EPP-DB-DL-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-EARLY-CASH-Newcreateloan2.xlsx| 
 				
 @RunnerClass2
-	  Scenario: 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH
+ Scenario: 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH
 
 	Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
 	Then I entered the values into product from "ProductLoanInput" Sheet
-		|2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Loanproduct.xlsx|
+		|2363-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Loanproduct.xlsx|
 
 	Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
 	  When I set up the new create loan from "NewLoanInput" sheet
-	  			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan1.xlsx|
+	  			| 2363-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Newcreateloan1.xlsx|
 	   Then I verified the "Summary" details successfully 
-	  			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan1.xlsx|
+	  			| 2363-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Newcreateloan1.xlsx|
 	  Then I make repayment and verified the following tabs
-       			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+       			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-OnTime-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  And I disburse loan from "NewLoanInput" sheet
-      			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|
+      			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-OnTime-CASH-Newcreateloan2.xlsx|
       Then I verified the "Summary" details successfully 
-	  			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|
+	  			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-OnTime-CASH-Newcreateloan2.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
-	  			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|
+	  			| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-OnTime-CASH-Newcreateloan2.xlsx|
 	  And I verified the "Transactions" details successfully	
-				| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx| 				
+				| 2363-RBI-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-OnTime-CASH-Newcreateloan2.xlsx| 				
 								
 @RunnerClass2
 	  Scenario: 2364-RBI-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH
@@ -1200,29 +1200,29 @@ Background:
 	Given I setup the product loan "Setup"
 		| Productloannavigation.xlsx |
 	Then I entered the values into product from "ProductLoanInput" Sheet
-		|2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Loanproduct.xlsx|
+		|2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Loanproduct.xlsx|
 	Then I should see product loan created successfully	from "ProductLoanOutput" Sheet
-		|2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Loanproduct.xlsx|	
+		|2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Loanproduct.xlsx|	
 
 	Given I setup the clients
 	  When I entered the values into client from "Input" sheet
 	  			|Createclient.xlsx|
 	  When I set up the new create loan from "NewLoanInput" sheet
-	  			| 2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan1.xlsx|
+	  			| 2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Newcreateloan1.xlsx|
 	  Then I verified the "Summary" details successfully 
-	  			| 2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan1.xlsx|
+	  			| 2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Newcreateloan1.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
-	  			| 2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan1.xlsx|	  			
+	  			| 2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Newcreateloan1.xlsx|	  			
 	  Then I make repayment and verified the following tabs
-       			| 2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
+       			| 2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Makerepayment1.xlsx|Input|Summary|Repayment Schedule|Transactions|
 	  And I disburse loan from "NewLoanInput" sheet
-      			| 2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|
+      			| 2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Newcreateloan2.xlsx|
       Then I verified the "Summary" details successfully 
-	  			| 2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|
+	  			| 2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Newcreateloan2.xlsx|
 	  And I verified the "Repayment Schedule" details successfully 
-	  			| 2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|
+	  			| 2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Newcreateloan2.xlsx|
 	  And I verified the "Transactions" details successfully	
-				| 2413-MS-EPP-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-BLR-ONTIME-CASH-Newcreateloan2.xlsx|								
+				| 2413-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH-Newcreateloan2.xlsx|								
 							
 @RunnerClass2
 	  Scenario: 2414-MS-EPP-DB-SAR-REC-NOCOM-RNI-CTPD-SAR-MD-TR-2-DLR-LATE-CASH

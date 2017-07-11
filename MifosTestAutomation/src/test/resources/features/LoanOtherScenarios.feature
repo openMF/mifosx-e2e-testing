@@ -1932,6 +1932,9 @@ Then I entered the values into product from "ProductLoanInput" Sheet
  	 |2708-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR01JAN-AccCL01FEB-RunPERon31stJAN-Newcreateloan1.xlsx|
  Then I Execute Periodic Accrual Accounting
      |2708-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR01JAN-AccCL01FEB-RunPERon31stJAN-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I verified the "Transactions" details successfully	
+	 |2708-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR01JAN-AccCL01FEB-RunPERon31stJAN-Newcreateloan1.xlsx|
+ 
 
 @scenario97-2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB
 	  Scenario: 2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB  
@@ -1950,7 +1953,9 @@ Then I entered the values into product from "ProductLoanInput" Sheet
  	 |2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB-Newcreateloan1.xlsx|
  Then I Execute Periodic Accrual Accounting
      |2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
-
+ And I verified the "Transactions" details successfully	
+	 |2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB-Newcreateloan1.xlsx|
+	 
 @scenario98-2710-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on1FEB-AccCL02MAR-Repayon03MAR
 	  Scenario: 2710-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on1FEB-AccCL02MAR-Repayon03MAR  
  Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
@@ -2004,6 +2009,9 @@ Then I entered the values into product from "ProductLoanInput" Sheet
  	 |2712-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRADDTR2-DISTR20JAN-AccCL1FEB-RunPERON1FEB-Newcreateloan1.xlsx|
  Then I Execute Periodic Accrual Accounting
      |2712-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRADDTR2-DISTR20JAN-AccCL1FEB-RunPERON1FEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I verified the "Transactions" details successfully	
+	 |2712-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRADDTR2-DISTR20JAN-AccCL1FEB-RunPERON1FEB-Newcreateloan1.xlsx|
+ 
 
 @scenario101-2713-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DISTR1-AccCL28FEB-DISTR2on10thFEB
 	  Scenario: 2713-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DISTR1-AccCL28FEB-DISTR2on10thFEB  
