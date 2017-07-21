@@ -915,13 +915,13 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					waitForElementAndPoll(locator);
 					LazyWebElement locatorElement = getElement(locator, clear);
 					locatorElement.sendKeys(value + Keys.TAB);
-					if(key.equals("incomefromrecoveryrepayments"))
+					if(key.equals("overpaymentliability"))
 					{
 						if(CheckforAccounting.equals("checked"))
 						{
-						otheraccural("npaInterestSuspenseAccountId","Interest Suspense Account for NPA",clear);
-						otheraccural("npaFeeSuspenseAccountId","Fees Suspense Account for NPA",clear);
-						otheraccural("npaPenaltySuspenseAccountId","Penalties Suspense Account for NPA",clear);
+						otheraccural("npaInterestSuspenseAccountId","1 Income",clear);
+						otheraccural("npaFeeSuspenseAccountId","2 Income",clear);
+						otheraccural("npaPenaltySuspenseAccountId","3 income",clear);
 						}
 						
 					}
@@ -984,7 +984,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					int parseIntValue = (int) (parseDoubleValue);
 					value = Integer.toString(parseIntValue);
 				}	
-				if(key.equals("repaymentstrategy"))
+				if(key.equals("RepaymentStrategy"))
 				{
 					getWebDriver().findElement(By.id("overdueDaysForNPA")).sendKeys("200");
 				}

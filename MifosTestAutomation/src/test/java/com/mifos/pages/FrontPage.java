@@ -649,6 +649,7 @@ public class FrontPage extends MifosWebPage {
 				        ExpectedConditions.elementToBeClickable(
 				            By.xpath("//a[contains(.,'" + sheetname + "')]")))
 				                .click();
+				Thread.sleep(500);
 				// Before reading transaction id need to un-check the
 				// hideAccurals
 				// button for periodic scenarios
@@ -687,7 +688,7 @@ public class FrontPage extends MifosWebPage {
 
 						Accrual = getWebDriver()
 								.findElement(
-										By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[3]/div[4]/div/div/div["
+										By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
 												+ sheetIndex
 												+ "]/table/tbody/tr["
 												+ xlRowCount + "]/td[4]"))
@@ -696,7 +697,7 @@ public class FrontPage extends MifosWebPage {
 							setAccuralTransactionType
 									.add(getWebDriver()
 											.findElement(
-													By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[3]/div[4]/div/div/div["
+													By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
 															+ sheetIndex
 															+ "]/table/tbody/tr["
 															+ xlRowCount
@@ -706,7 +707,7 @@ public class FrontPage extends MifosWebPage {
 							setAccuralTransactionID
 									.add(getWebDriver()
 											.findElement(
-													By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[3]/div[4]/div/div/div["
+													By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
 															+ sheetIndex
 															+ "]/table/tbody/tr["
 															+ xlRowCount
@@ -722,7 +723,7 @@ public class FrontPage extends MifosWebPage {
 						}
 					applicationCol = getWebDriver()
 							.findElements(
-									By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[3]/div[4]/div/div/div["
+									By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
 											+ sheetIndex
 											+ "]/table/tbody/tr["
 											+ xlRowCount + "]/td"));
@@ -756,7 +757,7 @@ public class FrontPage extends MifosWebPage {
 									}
 								applicationCol = getWebDriver()
 										.findElements(
-												By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[3]/div[4]/div/div/div["
+												By.xpath("//*[@id='main']/div[2]/div/div/div/div/div/div[2]/div[4]/div[4]/div/div/div["
 														+ sheetIndex
 														+ "]/table/tbody/tr["
 														+ appRow + "]/td"));
