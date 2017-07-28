@@ -649,7 +649,9 @@ public class FrontPage extends MifosWebPage {
 				        ExpectedConditions.elementToBeClickable(
 				            By.xpath("//a[contains(.,'" + sheetname + "')]")))
 				                .click();
-				Thread.sleep(500);
+				
+				Thread.sleep(getResourceKey("wait"));
+				
 				// Before reading transaction id need to un-check the
 				// hideAccurals
 				// button for periodic scenarios

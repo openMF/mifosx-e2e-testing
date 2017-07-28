@@ -984,7 +984,7 @@ public class MifosWebPage extends WebDriverAwareWebPage {
 					int parseIntValue = (int) (parseDoubleValue);
 					value = Integer.toString(parseIntValue);
 				}	
-				if(key.equals("RepaymentStrategy"))
+				if(key.equals("repaymentstrategy"))
 				{
 					getWebDriver().findElement(By.id("overdueDaysForNPA")).sendKeys("200");
 				}

@@ -259,7 +259,7 @@ Scenario: 4912-DISB2ndTranche-1st&2ndRepaymentWithMoreAmount-Writeoff
 	  			|Createclient.xlsx|
  When I set up the new create loan from "NewLoanInput" sheet
 	 | 4913-DISB2ndTranche-1st&2ndRepaymentWithMoreAmount-Preclose.xlsx |
- Then I "MakeReapyment&WaiveInterest&writeoff" and verified the following tabs
+ Then I "MakeReapyment&WaiveInterest&Preclose" and verified the following tabs
      | 4913-DISB2ndTranche-1st&2ndRepaymentWithMoreAmount-Preclose.xlsx|Modify Transaction1|Modify Transaction2|Modify Transaction3|Modify Transaction|Modify Transaction4|Modify Transaction5|Summary|Repayment Schedule|
  Then I "undo transaction from transaction tab" and verified the following tabs
 	 |4908-DISB-1st&2ndRepaymentWithMoreAmount-Preclose.xlsx|Modify Transaction1|
@@ -415,3 +415,98 @@ Scenario: 4921-DisbursementAfterMaturityDate-FirstRepaymentOnDisbursalDate-Colle
   Then I "Writeoff" and verified the following tabs
 	 | 4921-DisbursementAfterMaturityDate-FirstRepaymentOnDisbursalDate-CollectUpfrontAmount-Writeoff.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
   
+ @RunnerClass2
+ Scenario: 4922-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4922-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment.xlsx |
+  Then I verified the following Tabs details successfully
+	 | 4922-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment.xlsx |Summary|Repayment Schedule|Transactions|
+  And I "MakeRepayment" and verified the following tabs
+	 | 4922-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-1stRepayment.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+  Then I "UndoRepayment" and verified the following tabs
+	 | 4922-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-Undo1stRepayment.xlsx |Modify Transaction|Summary|Repayment Schedule|
+  Then I "AgainMakeRepayment" and verified the following tabs
+	 | 4922-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-Again1stRepayment.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+  Then I "MakeRepayment" and verified the following tabs
+	 | 4922-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Modify Transaction3|Modify Transaction4|Modify Transaction5|Modify Transaction6|Modify Transaction7|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass2	 
+Scenario: 4923-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-writeoff
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4923-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-writeoff.xlsx |
+  Then I "MakeRepayment" and verified the following tabs
+	 | 4923-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-writeoff.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+  And I "waive&writeoff" and verified the following tabs
+	 | 4923-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-writeoff-2.xlsx |Modify Transaction|Modify Transaction1|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass2
+Scenario: 4924-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-foreclose
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4924-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-foreclose.xlsx |
+  Then I "MakeRepayment&waive&foreclose"" and verified the following tabs
+	 | 4924-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-foreclose.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass2
+Scenario: 4925-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4925-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest.xlsx |
+  And I "MakeRepayment" and verified the following tabs
+	 | 4925-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+  Then I "UndoRepayment" and verified the following tabs
+	 | 4925-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest-Undo1stRepayment.xlsx |Modify Transaction|Summary|Repayment Schedule|
+  Then I "MakeRepayment" and verified the following tabs
+	 | 4925-EI-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Modify Transaction3|Modify Transaction4|Modify Transaction5|Modify Transaction6|Modify Transaction7|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass2
+Scenario: 4926-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4926-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest.xlsx |
+  And I "MakeRepayment" and verified the following tabs
+	 | 4926-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+  Then I "UndoRepayment" and verified the following tabs
+	 | 4926-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest-Undo1stRepayment.xlsx |Modify Transaction|Summary|Repayment Schedule|
+  Then I "MakeRepayment" and verified the following tabs
+	 | 4926-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-PostInterest-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Modify Transaction3|Modify Transaction4|Modify Transaction5|Modify Transaction6|Modify Transaction7|Summary|Repayment Schedule|Transactions|
+
+#Scenario: 4927-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment
+ # Given I setup the clients
+ # When I entered the values into client from "Input" sheet
+#	 |Createclient.xlsx|
+ # When I set up the new create loan from "NewLoanInput" sheet
+#	 | 4927-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment.xlsx |
+  #And I "MakeRepayment" and verified the following tabs
+#	 | 4927-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+ # Then I "UndoRepayment" and verified the following tabs
+#	 | 4927-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-Undo1stRepayment.xlsx |Modify Transaction|Summary|Repayment Schedule|
+#  Then I "MakeRepayment" and verified the following tabs
+#	 | 4927-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-AddTo1stInstallment-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Modify Transaction3|Modify Transaction4|Modify Transaction5|Modify Transaction6|Modify Transaction7|Summary|Repayment Schedule|Transactions|
+ 
+@RunnerClass2
+Scenario: 4928-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-DistEqualyToAllInst
+  Given I setup the clients
+  When I entered the values into client from "Input" sheet
+	 |Createclient.xlsx|
+  When I set up the new create loan from "NewLoanInput" sheet
+	 | 4928-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-DistEqualyToAllInst.xlsx |
+  And I "MakeRepayment" and verified the following tabs
+	 | 4928-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-DistEqualyToAllInst.xlsx |Modify Transaction|Summary|Repayment Schedule|Transactions|
+  Then I "UndoRepayment" and verified the following tabs
+	 | 4928-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-DistEqualyToAllInst-Undo1stRepayment.xlsx |Modify Transaction|Summary|Repayment Schedule|
+  Then I "MakeRepayment" and verified the following tabs
+	 | 4928-FLAT-DB-SAR-PartialPeriod-InitialBrokenPeriod-DistEqualyToAllInst-MakeRepayment.xlsx |Modify Transaction|Modify Transaction1|Modify Transaction2|Modify Transaction3|Modify Transaction4|Modify Transaction5|Modify Transaction6|Modify Transaction7|Summary|Repayment Schedule|Transactions|
+ 
