@@ -1,7 +1,7 @@
 Feature:LoanOtherScenarios
 
 Background:
-	Given I navigate to mifos using "default2#/"
+	Given I navigate to mifos using "default3#/"
 	And I login into mifos site using "Login" excel sheet
 		| Login.xlsx  |
 	Then I should see logged in successfully
@@ -1932,6 +1932,9 @@ Then I entered the values into product from "ProductLoanInput" Sheet
  	 |2708-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR01JAN-AccCL01FEB-RunPERon31stJAN-Newcreateloan1.xlsx|
  Then I Execute Periodic Accrual Accounting
      |2708-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR01JAN-AccCL01FEB-RunPERon31stJAN-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I verified the "Transactions" details successfully	
+	 |2708-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR01JAN-AccCL01FEB-RunPERon31stJAN-Newcreateloan1.xlsx|
+ 
 
 @scenario97-2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB
 	  Scenario: 2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB  
@@ -1950,7 +1953,9 @@ Then I entered the values into product from "ProductLoanInput" Sheet
  	 |2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB-Newcreateloan1.xlsx|
  Then I Execute Periodic Accrual Accounting
      |2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
-
+ And I verified the "Transactions" details successfully	
+	 |2709-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on15JAN-AccCL01FEB-RunPERon01FEB-Newcreateloan1.xlsx|
+	 
 @scenario98-2710-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on1FEB-AccCL02MAR-Repayon03MAR
 	  Scenario: 2710-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRAddTR2-DISTR2on1FEB-AccCL02MAR-Repayon03MAR  
  Given I Delete Account Closures Entry from "DeleteAccountClosures" sheet
@@ -2004,6 +2009,9 @@ Then I entered the values into product from "ProductLoanInput" Sheet
  	 |2712-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRADDTR2-DISTR20JAN-AccCL1FEB-RunPERON1FEB-Newcreateloan1.xlsx|
  Then I Execute Periodic Accrual Accounting
      |2712-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRADDTR2-DISTR20JAN-AccCL1FEB-RunPERON1FEB-Newcreateloan1.xlsx|RunPeriodicAccrual|
+ And I verified the "Transactions" details successfully	
+	 |2712-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DuringAPRADDTR2-DISTR20JAN-AccCL1FEB-RunPERON1FEB-Newcreateloan1.xlsx|
+ 
 
 @scenario101-2713-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DISTR1-AccCL28FEB-DISTR2on10thFEB
 	  Scenario: 2713-RBI-EI-DB-DL-REC-NON-RNI-CTPD-DL-MD-TR-2-DISTR1-AccCL28FEB-DISTR2on10thFEB  
@@ -2850,8 +2858,10 @@ Scenario:4091-CREATGROUP-WITHOUTCLIENTATTACHED
 @4092-CREATGROUP-WITHOUTCLIENTATTACHED-ACTIVE
 Scenario:4092-CREATGROUP-WITHOUTCLIENTATTACHED-ACTIVE
      Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4092-CREATGROUP-WITHOUTCLIENTATTACHED-ACTIVE.xlsx|	  	
+      When I entered the values into group from "Input" sheet
+                  |4092-CREATGROUP-WITHOUTCLIENTATTACHED-ACTIVE.xlsx|
+      Then i validate and Verify from "Output" sheet
+                |4092-CREATGROUP-WITHOUTCLIENTATTACHED-ACTIVE.xlsx|	  	
 	  			
 @4093-CREATGROUP-WITHCLIENTATTACHED
 Scenario:4093-CREATGROUP-WITHCLIENTATTACHED
@@ -2897,13 +2907,7 @@ Scenario:4099-CREATACTIVEGROUP-CLOSEGROUP
      Given I setup the group
 	  When I entered the values into group from "Input" sheet
 	  			|4099-CREATACTIVEGROUP-CLOSEGROUP.xlsx|		  			
-	  			
-
-@4100-CREATACTIVEGROUP-ATTACHEMEETING
-Scenario:4100-CREATACTIVEGROUP-ATTACHEMEETING
-     Given I setup the group
-   When I entered the values into group from "Input" sheet
-      |4100-CREATACTIVEGROUP-ATTACHEMEETING.xlsx|	  							
+	  				  							
 	  			
 @4101-CREATACTIVEGROUP-EDIT
 Scenario:4101-CREATACTIVEGROUP-EDIT
@@ -2963,102 +2967,4 @@ Scenario:4108-CREATGROUP-WITHCLIENTATTACHED-ACTIVATEGROUP
 	  Then i validate and Verify from "Output" sheet
 	            |4108-CREATGROUP-WITHCLIENTATTACHED-ACTIVATEGROUP.xlsx|
 	  			
-@4109-CREATACTIVEGROUP-WITHCLIENTATTACHED-ATTACHEMEETING
-Scenario:4109-CREATACTIVEGROUP-WITHCLIENTATTACHED-ATTACHEMEETING
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4109-CREATACTIVEGROUP-WITHCLIENTATTACHED-ATTACHEMEETING.xlsx|
-	 Then i validate and Verify from "Output" sheet
-	            |4109-CREATACTIVEGROUP-WITHCLIENTATTACHED-ATTACHEMEETING.xlsx|	  				  			
-
-@4110-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2
-Scenario:4110-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4110-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2.xlsx|
-	  			
-@4111-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-WEEKLY-2
-Scenario:4111-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-WEEKLY-2
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4111-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-WEEKLY-2.xlsx|
-	  			
-@4112-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-MONTHLY-2
-Scenario:4112-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-MONTHLY-2
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4112-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-MONTHLY-2.xlsx|
-	  			
-@4113-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-YEARLY-2
-Scenario:4113-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-YEARLY-2
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4113-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-YEARLY-2.xlsx|	  				  				  			
-	  			
-@4114-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2-FRI
-Scenario:4114-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2-FRI
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4114-CREATACTIVEGROUP-ATTACHEMEETING-Repeat-DAILY-2-FRI.xlsx|
-	  			
-@4115-CREATACTIVEGROUP-ATTACHEMEETING-BEFORE-GRP-ACTIVATION
-Scenario:4115-CREATACTIVEGROUP-ATTACHEMEETING-BEFORE-GRP-ACTIVATION
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4115-CREATACTIVEGROUP-ATTACHEMEETING-BEFORE-GRP-ACTIVATION.xlsx|
-	  			
-@4116-CREATACTIVEGROUP-ATTACHEMEETING-ATTACHEMEETING
-Scenario:4116-CREATACTIVEGROUP-ATTACHEMEETING-ATTACHEMEETING
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4116-CREATACTIVEGROUP-ATTACHEMEETING-ATTACHEMEETING.xlsx|	  	
-	  			
-@4117-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-ValidDATE
-Scenario:4117-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-ValidDATE
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4117-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-ValidDATE.xlsx|	  	
-	  			
-@4118-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-InValidDATE
-Scenario:4118-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-InValidDATE
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4118-CREATACTIVEGROUP-ATTACHEMEETING-ATTENDENCE-InValidDATE.xlsx|
-	  			
-@4119-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-Changemeetingstartdate
-Scenario:4119-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-Changemeetingstartdate
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4119-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-Changemeetingstartdate.xlsx|	  				  								  				  				  			
-	  			  				  				  			
-@4120-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoDAY
-Scenario:4120-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoDAY
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4120-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoDAY.xlsx|	 
-	  			
-@4121-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoMONTH
-Scenario:4121-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoMONTH
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4121-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoMONTH.xlsx|	  				  								  				  				  			
-
-@4122-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoYEAR
-Scenario:4122-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoYEAR
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4122-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-WEEKStoYEAR.xlsx|
-	  			
-@4123-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-DAYOFTHEWEEK
-Scenario:4123-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-DAYOFTHEWEEK
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4123-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-DAYOFTHEWEEK.xlsx|	  				  								  				  				  			
-
-@4124-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-CHANGE-FUTURE-DATE
-Scenario:4124-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-CHANGE-FUTURE-DATE
-     Given I setup the group
-	  When I entered the values into group from "Input" sheet
-	  			|4124-CREATACTIVEGROUP-ATTACHEMEETING-EDIT-MEETING-CHANGE-FUTURE-DATE.xlsx|	  				  								  				  				  			
-	  				  				  								  				  				  			
 	 	 	  			    			

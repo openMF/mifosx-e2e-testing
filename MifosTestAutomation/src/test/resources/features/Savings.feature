@@ -1,7 +1,7 @@
 Feature:Savings/FixedDeposit/RecurringDeposit/Share
 
 Background:
-	Given I navigate to mifos using "default9#/"
+	Given I navigate to mifos using "default8#/"
 	And I login into mifos site using "Login" excel sheet
 		|Login.xlsx|
 	Then I should see logged in successfully
@@ -83,7 +83,7 @@ Background:
 	  			|4711-SUBMITSAVINGS(WITHENFORCEMINBAL)ON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW50on01FEB2015.xlsx|
 	  Then I "Do Transaction" and verified the following tabs
 	  			|4711-SUBMITSAVINGS(WITHENFORCEMINBAL)ON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW50on01FEB2015.xlsx| SavingsWdraw |
-	  Then i validate and Verify from "error" sheet
+	  Then i validate and Verify from "error2" sheet
 	 			|4711-SUBMITSAVINGS(WITHENFORCEMINBAL)ON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW50on01FEB2015.xlsx|
 	
 @RunnerClass8
@@ -190,7 +190,7 @@ Background:
 	  			|4718-SUBMITSAVINGSON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW500on01FEB2015.xlsx|
 	  Then I "Do Transaction" and verified the following tabs
 	  			|4718-SUBMITSAVINGSON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW500on01FEB2015.xlsx| SavingsWdraw |
-	  Then i validate and Verify from "error" sheet
+	  Then i validate and Verify from "error2" sheet
 	 			|4718-SUBMITSAVINGSON01JAN2015-APPROVEON01JAN2015-ACTIVATEON01JAN2015-WITHDRAW500on01FEB2015.xlsx|
 				
 @RunnerClass8
@@ -318,8 +318,8 @@ Background:
 	  			|4725-CREATEGROUP2CLIENTS-SUBMIT01JAN2015(CHARGEMONTHLYFEE)-APPROVE01JAN2015-ACTIVATE01JAN2015-PAYCHARGE01FEB2015.xlsx|  Modify Transaction|
 	    And I verified the "Saving Transaction" details successfully
 	 			|4725-CREATEGROUP2CLIENTS-SUBMIT01JAN2015(CHARGEMONTHLYFEE)-APPROVE01JAN2015-ACTIVATE01JAN2015-PAYCHARGE01FEB2015.xlsx|
-	 	And I verified the "Saving Charges" details successfully 
-	 			|4725-CREATEGROUP2CLIENTS-SUBMIT01JAN2015(CHARGEMONTHLYFEE)-APPROVE01JAN2015-ACTIVATE01JAN2015-PAYCHARGE01FEB2015.xlsx|
+	 	#And I verified the "Saving Charges" details successfully 
+	 	#		|4725-CREATEGROUP2CLIENTS-SUBMIT01JAN2015(CHARGEMONTHLYFEE)-APPROVE01JAN2015-ACTIVATE01JAN2015-PAYCHARGE01FEB2015.xlsx|
 				
 @RunnerClass8
 	  Scenario: 4726-SUBMITSAVINGS01JAN2015-ASSIGNSTAFFON01JAN2015-ADDCHARGE-APPROVEON01JAN2015-ACTIVATEON01JAN2015
@@ -350,7 +350,7 @@ Background:
 	  			|4727-ACTIVATEON01JAN2015-DEPOSIT200on15JAN2015-WITHDRAW100on01FEB2015-POSTINTEREST-VIEWJRNALENTRY.xlsx|
 	  And I Navigate to Accounting web page
 	  Then I search with transaction id & verified the accounting entries
-	   			|4727-ACTIVATEON01JAN2015-DEPOSIT200on15JAN2015-WITHDRAW100on01FEB2015-POSTINTEREST-VIEWJRNALENTRY.xlsx| Deposit1 | Deposit2 | Interst_Posting1 | Withdrawal1 | Interst_Posting2 | Interst_Posting3 |
+	   			|4727-ACTIVATEON01JAN2015-DEPOSIT200on15JAN2015-WITHDRAW100on01FEB2015-POSTINTEREST-VIEWJRNALENTRY.xlsx| Deposit1 | Deposit2 | Withdrawal1 | Interst_Posting1 |  Interst_Posting2 | Interst_Posting3 |
 			
 @RunnerClass8
 	  Scenario: 4728-SUBMIT(DUEDATE-15JAN2015)01JAN2015-PAYCHARGE15JAN2015-DEPOSIT500on01FEB2015-VIEWJRNALENTRY
@@ -366,7 +366,7 @@ Background:
 	  			|4728-SUBMIT(DUEDATE-15JAN2015)01JAN2015-PAYCHARGE15JAN2015-DEPOSIT500on01FEB2015-VIEWJRNALENTRY.xlsx|
 	  And I Navigate to Accounting web page
 	  Then I search with transaction id & verified the accounting entries
-	   			|4728-SUBMIT(DUEDATE-15JAN2015)01JAN2015-PAYCHARGE15JAN2015-DEPOSIT500on01FEB2015-VIEWJRNALENTRY.xlsx| Pay_charge | Deposit1 | Deposit2 |
+	   			|4728-SUBMIT(DUEDATE-15JAN2015)01JAN2015-PAYCHARGE15JAN2015-DEPOSIT500on01FEB2015-VIEWJRNALENTRY.xlsx| Deposit1 | Pay_charge  | Deposit2 |
 	
 @RunnerClass8
 	  Scenario: 4729-ACTIVATEON01JAN2015-WITHDRAW100on01JAN2015-CLICKONPOSTINTEREST-VIEWJRNALENTRY
@@ -384,7 +384,7 @@ Background:
 	  			|4729-ACTIVATEON01JAN2015-WITHDRAW100on01JAN2015-CLICKONPOSTINTEREST-VIEWJRNALENTRY.xlsx|
 	  And I Navigate to Accounting web page
 	  Then I search with transaction id & verified the accounting entries
-	   			|4729-ACTIVATEON01JAN2015-WITHDRAW100on01JAN2015-CLICKONPOSTINTEREST-VIEWJRNALENTRY.xlsx| Withdrawal | Deposit |
+	   			|4729-ACTIVATEON01JAN2015-WITHDRAW100on01JAN2015-CLICKONPOSTINTEREST-VIEWJRNALENTRY.xlsx| Deposit |Withdrawal |
 				
 @RunnerClass8
 	  Scenario: 4730-CREATEGROUPWITH2CLIENTS-SUBMITSAVINGS01JAN2015-DEPOSIT500on15JAN2015-WITHDRAW50on01FEB2015-VIEWJRNLENTRY
@@ -426,7 +426,7 @@ Background:
 	  			|4731-CREATEGROUPWITH2CLIENTS-SUBMITSAVINGSON01JAN2015-POSTINTRST01APRIL2015-CLOSE01APRIL2015-VIEWJRNLENTRY.xlsx|
 	  And I Navigate to Accounting web page
 	  Then I search with transaction id & verified the accounting entries
-	   			|4731-CREATEGROUPWITH2CLIENTS-SUBMITSAVINGSON01JAN2015-POSTINTRST01APRIL2015-CLOSE01APRIL2015-VIEWJRNLENTRY.xlsx| Deposit1 | Interst_Posting1 | Interst_Posting2 | Withdrawal | Interst_Posting3 |
+	   			|4731-CREATEGROUPWITH2CLIENTS-SUBMITSAVINGSON01JAN2015-POSTINTRST01APRIL2015-CLOSE01APRIL2015-VIEWJRNLENTRY.xlsx| Deposit1 | Interst_Posting1 | Interst_Posting2 | Interst_Posting3 | Withdrawal |
 	
 	
 @RunnerClass8
@@ -479,7 +479,7 @@ Background:
 	  			|4733-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER846on08JAN2015toLOANACCOUNTofOTHERCLIENT-2ndClient.xlsx|
 	   And I Navigate to Accounting web page
 	   Then I search with transaction id & verified the accounting entries
-	   			|4733-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER846on08JAN2015toLOANACCOUNTofOTHERCLIENT-2ndClient.xlsx| Deposit1 | Deposit2 | Withdrawal |
+	   			|4733-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER846on08JAN2015toLOANACCOUNTofOTHERCLIENT-2ndClient.xlsx| Deposit2 | Deposit1 |  Withdrawal |
 	   Then I navigate To Loan Account Page
 	   Then I verified the "Summary" details successfully 
 	  			|4733-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER846on08JAN2015toLOANACCOUNTofOTHERCLIENT-1stClient.xlsx|
@@ -506,7 +506,7 @@ Background:
 	  			|4734-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTofSAMECLIENT-2ndClient.xlsx|
 	   And I Navigate to Accounting web page
 	   Then I search with transaction id & verified the accounting entries
-	   			|4734-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTofSAMECLIENT-2ndClient.xlsx| Deposit1 | Deposit2 | Withdrawal |
+	   			|4734-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTofSAMECLIENT-2ndClient.xlsx|  Deposit2 | Deposit1 |Withdrawal |
 	   Then I navigate To Loan Account Page
 	   Then I verified the "Summary" details successfully 
 	  			|4734-SUBMITSAVINGS01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTofSAMECLIENT-1stClient.xlsx|
@@ -536,14 +536,15 @@ Background:
 	  			|4735-SUBMIT01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTOTHERCLIENT-undoTransactionINLOANACCOUNT-2ndClient.xlsx|
 	   And I Navigate to Accounting web page
 	   Then I search with transaction id & verified the accounting entries
-	   			|4735-SUBMIT01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTOTHERCLIENT-undoTransactionINLOANACCOUNT-2ndClient.xlsx| Deposit1 | Deposit2 | Withdrawal |
+	   			|4735-SUBMIT01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTOTHERCLIENT-undoTransactionINLOANACCOUNT-2ndClient.xlsx|  Deposit2 | Deposit1 |Withdrawal |
 	   Then I navigate To Loan Account Page
 	   And I verified the "Transactions" details successfully
 	  			|4735-SUBMIT01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTOTHERCLIENT-undoTransactionINLOANACCOUNT-1stClient.xlsx|		  
         Then I "undo transaction from transaction tab" and verified the following tabs
                 |4735-SUBMIT01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTOTHERCLIENT-undoTransactionINLOANACCOUNT-1stClient.xlsx|Modify Transaction|
-	  Then i validate and Verify from "error" sheet
-	 			|4735-SUBMIT01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTOTHERCLIENT-undoTransactionINLOANACCOUNT-1stClient.xlsx|
+	  Then I navigate To Saving Account Page
+	 	And I verified the "Saving Transaction" details successfully 
+	  			|4735-SUBMIT01JAN2015-DEPOSIT3000on01JAN2015-TRANSFER900on01FEB2015toLOANACCOUNTOTHERCLIENT-undoTransactionINLOANACCOUNT-1stClient.xlsx|
 
 @RunnerClass8
 	  Scenario: 4736-SUBMITSAVINGS01JAN2015-APRACT01JAN2015-TRANSFER2000on08JAN2015toLOANACCOUNTofSAMECLIENT
@@ -828,7 +829,7 @@ Background:
 	  			|4753-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithLINKSAVINGS)-APRACT01JAN2015.xlsx|
 	  When I set up the new create FD account from "NewFDInput" sheet
 	  			|4753-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithLINKSAVINGS)-APRACT01JAN2015.xlsx|
-	  Then i validate and Verify from "error" sheet 
+	  Then i validate and Verify from "error2" sheet 
 	  			|4753-SUBMITFD01JAN2015(AMT5000-PRD12MNTHwithLINKSAVINGS)-APRACT01JAN2015.xlsx|	
 
 @RunnerClass8
@@ -1243,10 +1244,10 @@ Background:
 	  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
 	  Then I "Navigate to newly Created RD account" and verified the following tabs 
 	            |4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx| Recurring Navigate |
-	  And I verified the "RecurringDeposit Transaction 1" details successfully 
-	  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
-	  And I verified the "RecurringDeposit Summary 1" details successfully
-	  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
+	#  And I verified the "RecurringDeposit Transaction 1" details successfully 
+	#  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
+	#  And I verified the "RecurringDeposit Summary 1" details successfully
+	#  			|4776-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT01JAN01FEB2015-RUNSCHEDULERjOB-CLOSEACCOUNT(Reinvest).xlsx|
 				
 				
 @RunnerClass8
@@ -1333,9 +1334,7 @@ Background:
 	            |4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions.xlsx| Modify Transaction |
 	   And I verified the "RecurringDeposit Summary" details successfully
 	  			|4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions.xlsx|
-	  And I verified the "RecurringDeposit Transaction" details successfully 
-	  			|4781-SUBMITRD01JAN2015(AMT5000-PRD02MNTH)-APRACT01JAN2015-DPT01JAN01FEB2015-UNDOTransactions.xlsx|
-				
+	  		
 @RunnerClass8
 	  Scenario: 4782-SUBMITRD01JAN2015(AMT5000-PRD06MNTH)-APRACT01JAN2015-DPT01APR2015
      
@@ -1427,7 +1426,7 @@ Background:
 	  			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx|
 	   And I Navigate to Accounting web page
 	   Then I search with transaction id & verified the accounting entries
-	   			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx| Deposit1 | Interst_Posting1 |Deposit2 | Interst_Posting2 |Withdrawal |
+	   			|4785-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01JAN2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT.xlsx| Deposit1 | Deposit2 | Interst_Posting1 | Interst_Posting2 |Withdrawal |
 	
 	@RunnerClass8
 	  Scenario: 4786-SUBMITRD01JAN2015(AMT5000-PRD02MNT)-ACT01FEB2015-DPT2MNT-RUNSCHEDjOB-Close01APR2015(Trans2SavingsAcc)-JourENT
@@ -1530,8 +1529,8 @@ Scenario: 4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-a
 	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
  And I verified the "Share Other Details2" details successfully 
 	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
-  And I verified the "Share Transaction" details successfully 
-	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
+  #And I verified the "Share Transaction" details successfully 
+#	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
   And I verified the "Share Charge" details successfully 
 	  			|4790-SUBMITSA01JAN2015(MINACTPRD-30DAYS&LCKINPRD-15DAYS&ADDCHG'share-activation-flat')-ACT01JAN2015.xlsx|
   

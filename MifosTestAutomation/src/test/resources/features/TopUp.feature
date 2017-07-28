@@ -6,6 +6,9 @@ Background:
 	Then I should see logged in successfully
 
 
+
+################################################### 	TOP-UP   #############################################################
+
 	
 	            
 	@RunnerClass4   
@@ -206,7 +209,15 @@ Background:
 	  Then I navigate To Loan Account Page
 	  Then I verified the following Tabs details successfully 
 	            |4688-DISB01JAN2015-10000amount-DISB-TOPUP-10000amount-15JAN2015-Again-TOPUP-15000-01FEB2015-topup2.xlsx|Transactions|            
+	
+	
+	
+	
 			
+###########################################################  GUARANTOR  ######################################################################
+	
+	
+	
 			
 @RunnerClass4   
 	  Scenario:4689-SUBMITLOAN01JAN2015-APPROVEON01JAN2015
@@ -752,6 +763,14 @@ Background:
 	  			|4706-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-RepaymentALL-WithdrawAllfromSavings-undoLastTransactionLoan.xlsx|Modify Transaction1|
 	   Then i validate and Verify from "error" sheet
 	 			|4706-SUBMITLOAN01JAN2015-ADDGUARANTOR-SELF+EXT-DISBURSEON01JAN2015-RepaymentALL-WithdrawAllfromSavings-undoLastTransactionLoan.xlsx|
+
+
+
+
+################################################ OTHER SCENARIOS  ###############################################################3
+
+
+
 	 			
 @RunnerClass4      
 	  Scenario:4837-SUBMITLOAN-APR01JAN2015-UNDOAPPROVAL
@@ -925,4 +944,384 @@ Background:
 	  			|4851-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement).xlsx|	
 	  Then I make repayment and read the transaction Id
       			|4851-DISBLOAN01JAN2015(AddCharge)-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+@RunnerClass4     
+	  Scenario: 4852-DISBLOAN01JAN2015(AddCharge)-undoDISB-DISBLOAN(Amount-8000)15JAN2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4852-DISBLOAN01JAN2015(AddCharge)-undoDISB-DISBLOAN(Amount-8000)15JAN2015.xlsx|	
+	  Then I "Undo Disbursal And Disburse 8000" and verified the following tabs
+	  			|4852-DISBLOAN01JAN2015(AddCharge)-undoDISB-DISBLOAN(Amount-8000)15JAN2015.xlsx|Modify Transaction|
+	  Then I verified the "Summary" details successfully 
+	  			|4852-DISBLOAN01JAN2015(AddCharge)-undoDISB-DISBLOAN(Amount-8000)15JAN2015.xlsx|
+	  And I verified the "Repayment Schedule" details successfully 
+  			    |4852-DISBLOAN01JAN2015(AddCharge)-undoDISB-DISBLOAN(Amount-8000)15JAN2015.xlsx|
+  	  And I verified the "Transactions" details successfully 
+  			    |4852-DISBLOAN01JAN2015(AddCharge)-undoDISB-DISBLOAN(Amount-8000)15JAN2015.xlsx|
+
+@RunnerClass4     
+	  Scenario: 4853-DISBLOAN01JAN2015(AddCharge)-PREPAYLOANon01APR2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4853-DISBLOAN01JAN2015(AddCharge)-PREPAYLOANon01APR2015.xlsx|	
+	  Then I "Make Pre Payment" and verified the following tabs
+	  			|4853-DISBLOAN01JAN2015(AddCharge)-PREPAYLOANon01APR2015.xlsx|Prepay Loan|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4854-DISBLOAN01JAN2015(AddCharge)-WRITEOFFon01APR2015
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4854-DISBLOAN01JAN2015(AddCharge)-WRITEOFFon01APR2015.xlsx|	
+	  Then I "WaiveInterest" and verified the following tabs
+	  			|4854-DISBLOAN01JAN2015(AddCharge)-WRITEOFFon01APR2015.xlsx|Modify Transaction|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4855-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4855-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4855-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4856-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-1000(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4856-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-1000(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4856-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-1000(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4857-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4857-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4857-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+ 
+@RunnerClass4     
+	  Scenario: 4858-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4858-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4858-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4859-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4859-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4859-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+ 
+@RunnerClass4     
+	  Scenario: 4860-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-500(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4860-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-500(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4860-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-500(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4861-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4861-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4861-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+				
+@RunnerClass4     
+	  Scenario: 4862-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4862-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4862-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+ 
+ @RunnerClass4     
+	  Scenario: 4863-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4863-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4863-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4864-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-1000(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4864-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-1000(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4864-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-1000(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4865-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4865-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4865-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4866-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4866-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4866-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4867-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4867-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4867-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4868-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-500(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4868-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-500(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4868-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-500(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4869-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4869-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4869-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4     
+	  Scenario: 4870-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4870-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4870-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-1000(ontimeRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4871-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-3000(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4871-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-3000(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4871-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-3000(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4872-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-3000(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4872-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-3000(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4872-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-3000(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4873-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-3000(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4873-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-3000(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4873-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-3000(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4874-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4874-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4874-DISBLOAN01JAN2015-Make1stPMNTon01FEB2015-Amount-500(ontimeRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4875-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4875-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4875-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4876-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-3000(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4876-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-3000(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4876-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-3000(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4878-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-3000(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4878-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-3000(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4878-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-3000(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4879-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4879-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4879-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4880-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4880-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4880-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015-Amount-500(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4881-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-500(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4881-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-500(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4881-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-500(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4882-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4882-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4882-DISBLOAN01JAN2015-Make1stPMNTon15JANUARY2015(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4883-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4883-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4883-DISBLOAN01JAN2015-Make1stPMNTon15FEB2015-Amount-1000(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4884-DISBLOAN01JAN2015-Make1stPMNT-3000-on15FEB2015(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4884-DISBLOAN01JAN2015-Make1stPMNT-3000-on15FEB2015(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4884-DISBLOAN01JAN2015-Make1stPMNT-3000-on15FEB2015(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4885-DISBLOAN01JAN2015-Make1stPMNT-500-on15FEB2015(LateRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4885-DISBLOAN01JAN2015-Make1stPMNT-500-on15FEB2015(LateRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4885-DISBLOAN01JAN2015-Make1stPMNT-500-on15FEB2015(LateRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
+
+@RunnerClass4       
+	  Scenario: 4886-DISBLOAN01JAN2015-Make1stPMNT-3000-on15JANUARY2015-(earlyRepayement)
+          
+      Given I setup the clients
+	  When I entered the values into client from "Input" sheet
+	  			|Createclient.xlsx|
+	  When I set up the new create loan from "NewLoanInput" sheet
+	  			|4886-DISBLOAN01JAN2015-Make1stPMNT-3000-on15JANUARY2015-(earlyRepayement).xlsx|	
+	  Then I make repayment and read the transaction Id
+      			|4886-DISBLOAN01JAN2015-Make1stPMNT-3000-on15JANUARY2015-(earlyRepayement).xlsx|Input|Summary|Repayment Schedule|Transactions|
 	 			

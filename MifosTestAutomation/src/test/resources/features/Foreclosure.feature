@@ -4,6 +4,11 @@ Background:
 	And I login into mifos site using "Login" excel sheet
 		| Login.xlsx  |
 	Then I should see logged in successfully
+
+
+
+####################################################  FORECLOSURE  #############################################################  
+
 	
 	@RunnerClass1
 Scenario:4625-EI-DB-SAR-CIFEDIPP-CHECKED-DISB-01JAN2015-FC-15JAN2015
@@ -392,3 +397,276 @@ Scenario:4649-EI-FL-DL-VARINST-DATE-15JAN2015-DISB-FC-25JAN2015
 	  Then I "Foreclosure" and verified the following tabs
 	  			|4649-EI-FL-DL-VARINST-DATE-15JAN2015-DISB-FC-25JAN2015.xlsx| Foreclosure | Transactions |			
 				
+
+				
+				
+				
+				
+				
+				
+				
+@RunnerClass1
+	  Scenario: 4887-CreateGroupLoan-Submit-ModifyApplication-Submit
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4887-CreateGroupLoan-Submit-ModifyApplication-Submit.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4887-CreateGroupLoan-Submit-ModifyApplication-Submit.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4887-CreateGroupLoan-Submit-ModifyApplication-Submit.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4887-CreateGroupLoan-Submit-ModifyApplication-Submit.xlsx|
+	  When I modify New Loan Account from "Modify Application" sheet
+	            |4887-CreateGroupLoan-Submit-ModifyApplication-Submit.xlsx|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4887-CreateGroupLoan-Submit-ModifyApplication-Submit.xlsx|	
+				
+@RunnerClass1
+	  Scenario: 4888-CreateGroupLoan-SyncExpectedDisburse-05JAN2015-Submit
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4888-CreateGroupLoan-SyncExpectedDisburse-05JAN2015-Submit.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4888-CreateGroupLoan-SyncExpectedDisburse-05JAN2015-Submit.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4888-CreateGroupLoan-SyncExpectedDisburse-05JAN2015-Submit.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4888-CreateGroupLoan-SyncExpectedDisburse-05JAN2015-Submit.xlsx|
+	  Then i validate and Verify from "error" sheet
+	 			|4888-CreateGroupLoan-SyncExpectedDisburse-05JAN2015-Submit.xlsx|	
+				
+@RunnerClass1
+	  Scenario: 4889-CreateGroupLoan-DISB01JAN2015-Submit-ModifyApplication-Submit
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4889-CreateGroupLoan-DISB01JAN2015-Submit-ModifyApplication-Submit.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4889-CreateGroupLoan-DISB01JAN2015-Submit-ModifyApplication-Submit.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4889-CreateGroupLoan-DISB01JAN2015-Submit-ModifyApplication-Submit.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4889-CreateGroupLoan-DISB01JAN2015-Submit-ModifyApplication-Submit.xlsx|
+	  When I modify New Loan Account from "Modify Application" sheet
+	            |4889-CreateGroupLoan-DISB01JAN2015-Submit-ModifyApplication-Submit.xlsx|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4889-CreateGroupLoan-DISB01JAN2015-Submit-ModifyApplication-Submit.xlsx|	
+				
+@RunnerClass1
+	  Scenario: 4890-CreateGroupLoan-Weeklypayment-SyncMeetingDate-DISB01JAN2015-Submit
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4890-CreateGroupLoan-Weeklypayment-SyncMeetingDate-DISB01JAN2015-Submit.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4890-CreateGroupLoan-Weeklypayment-SyncMeetingDate-DISB01JAN2015-Submit.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4890-CreateGroupLoan-Weeklypayment-SyncMeetingDate-DISB01JAN2015-Submit.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4890-CreateGroupLoan-Weeklypayment-SyncMeetingDate-DISB01JAN2015-Submit.xlsx|
+	  Then i validate and Verify from "error" sheet
+	 			|4890-CreateGroupLoan-Weeklypayment-SyncMeetingDate-DISB01JAN2015-Submit.xlsx|	
+				
+@RunnerClass1
+	  Scenario: 4891-CreateGroupLoan-Weeklypayment-NOSyncMeetingDate-DISB01JAN2015-Submit
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4891-CreateGroupLoan-Weeklypayment-NOSyncMeetingDate-DISB01JAN2015-Submit.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4891-CreateGroupLoan-Weeklypayment-NOSyncMeetingDate-DISB01JAN2015-Submit.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4891-CreateGroupLoan-Weeklypayment-NOSyncMeetingDate-DISB01JAN2015-Submit.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4891-CreateGroupLoan-Weeklypayment-NOSyncMeetingDate-DISB01JAN2015-Submit.xlsx|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4891-CreateGroupLoan-Weeklypayment-NOSyncMeetingDate-DISB01JAN2015-Submit.xlsx|	
+				
+@RunnerClass1
+	  Scenario: 4892-CreateGroupLoan-Weeklypayment-SyncRepaymentDate-DISB01JAN2015-Submit
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4892-CreateGroupLoan-Weeklypayment-SyncRepaymentDate-DISB01JAN2015-Submit.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4892-CreateGroupLoan-Weeklypayment-SyncRepaymentDate-DISB01JAN2015-Submit.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4892-CreateGroupLoan-Weeklypayment-SyncRepaymentDate-DISB01JAN2015-Submit.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4892-CreateGroupLoan-Weeklypayment-SyncRepaymentDate-DISB01JAN2015-Submit.xlsx|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4892-CreateGroupLoan-Weeklypayment-SyncRepaymentDate-DISB01JAN2015-Submit.xlsx|
+		
+@RunnerClass1
+	  Scenario: 4893-SUBGRPLOANon01JAN2015(Both sync)-LINKSAVINGS-SUBMIT
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4893-SUBGRPLOANon01JAN2015(Both sync)-LINKSAVINGS-SUBMIT.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4893-SUBGRPLOANon01JAN2015(Both sync)-LINKSAVINGS-SUBMIT.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4893-SUBGRPLOANon01JAN2015(Both sync)-LINKSAVINGS-SUBMIT.xlsx|
+	  When I set up the new create saving account from "NewGroupSavingInput" sheet
+	            |4893-SUBGRPLOANon01JAN2015(Both sync)-LINKSAVINGS-SUBMIT.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4893-SUBGRPLOANon01JAN2015(Both sync)-LINKSAVINGS-SUBMIT.xlsx|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4893-SUBGRPLOANon01JAN2015(Both sync)-LINKSAVINGS-SUBMIT.xlsx|	
+				
+@RunnerClass1
+	  Scenario: 4894-SUBGRPLOANon01JAN2015(Both sync)-REMOVEoverdue(penalty)charge
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4894-SUBGRPLOANon01JAN2015(Both sync)-REMOVEoverdue(penalty)charge.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4894-SUBGRPLOANon01JAN2015(Both sync)-REMOVEoverdue(penalty)charge.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4894-SUBGRPLOANon01JAN2015(Both sync)-REMOVEoverdue(penalty)charge.xlsx|
+	  When I set up the new create saving account from "NewGroupSavingInput" sheet
+	            |4894-SUBGRPLOANon01JAN2015(Both sync)-REMOVEoverdue(penalty)charge.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4894-SUBGRPLOANon01JAN2015(Both sync)-REMOVEoverdue(penalty)charge.xlsx|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4894-SUBGRPLOANon01JAN2015(Both sync)-REMOVEoverdue(penalty)charge.xlsx|
+				
+@RunnerClass1
+	  Scenario: 4895-SUBGRPLOANon01JAN2015(attachCharge-disbursementFee)-APR&DISBon01JAN2015
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4895-SUBGRPLOANon01JAN2015(attachCharge-disbursementFee)-APR&DISBon01JAN2015.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4895-SUBGRPLOANon01JAN2015(attachCharge-disbursementFee)-APR&DISBon01JAN2015.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4895-SUBGRPLOANon01JAN2015(attachCharge-disbursementFee)-APR&DISBon01JAN2015.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4895-SUBGRPLOANon01JAN2015(attachCharge-disbursementFee)-APR&DISBon01JAN2015.xlsx|
+	  Then I verified the following Tabs details successfully
+	 			|4895-SUBGRPLOANon01JAN2015(attachCharge-disbursementFee)-APR&DISBon01JAN2015.xlsx|Summary|	Repayment Schedule|Transactions|
+				
+@RunnerClass1
+	  Scenario: 4896-SUBGRPLOANon01JAN2015(attachCharge-InstallmentFee)-APR&DISBon01JAN2015
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4896-SUBGRPLOANon01JAN2015(attachCharge-InstallmentFee)-APR&DISBon01JAN2015.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4896-SUBGRPLOANon01JAN2015(attachCharge-InstallmentFee)-APR&DISBon01JAN2015.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4896-SUBGRPLOANon01JAN2015(attachCharge-InstallmentFee)-APR&DISBon01JAN2015.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4896-SUBGRPLOANon01JAN2015(attachCharge-InstallmentFee)-APR&DISBon01JAN2015.xlsx|
+	  Then I verified the following Tabs details successfully
+	 			|4896-SUBGRPLOANon01JAN2015(attachCharge-InstallmentFee)-APR&DISBon01JAN2015.xlsx|Summary|	Repayment Schedule|Transactions|
+				
+@RunnerClass1
+	  Scenario: 4897-SUBGRPLOANon01JAN2015-ADDCHARGE(DisburseFee)changeAmountSubmit-APR&DISBon01JAN2015
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4897-SUBGRPLOANon01JAN2015-ADDCHARGE(DisburseFee)changeAmountSubmit-APR&DISBon01JAN2015.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4897-SUBGRPLOANon01JAN2015-ADDCHARGE(DisburseFee)changeAmountSubmit-APR&DISBon01JAN2015.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4897-SUBGRPLOANon01JAN2015-ADDCHARGE(DisburseFee)changeAmountSubmit-APR&DISBon01JAN2015.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4897-SUBGRPLOANon01JAN2015-ADDCHARGE(DisburseFee)changeAmountSubmit-APR&DISBon01JAN2015.xlsx|
+	  Then I verified the following Tabs details successfully
+	 			|4897-SUBGRPLOANon01JAN2015-ADDCHARGE(DisburseFee)changeAmountSubmit-APR&DISBon01JAN2015.xlsx|Summary|	Repayment Schedule|Transactions|
+				
+@RunnerClass1
+	  Scenario: 4898-SUBGRPLOANon01JAN2015-APRon01JAN2015-ADDCHARGE(InstalmentFee)changeAmountSubmit-DISBon01JAN2015
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4898-SUBGRPLOANon01JAN2015-APRon01JAN2015-ADDCHARGE(InstalmentFee)changeAmountSubmit-DISBon01JAN2015.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4898-SUBGRPLOANon01JAN2015-APRon01JAN2015-ADDCHARGE(InstalmentFee)changeAmountSubmit-DISBon01JAN2015.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4898-SUBGRPLOANon01JAN2015-APRon01JAN2015-ADDCHARGE(InstalmentFee)changeAmountSubmit-DISBon01JAN2015.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4898-SUBGRPLOANon01JAN2015-APRon01JAN2015-ADDCHARGE(InstalmentFee)changeAmountSubmit-DISBon01JAN2015.xlsx|
+	  Then I verified the following Tabs details successfully
+	 			|4898-SUBGRPLOANon01JAN2015-APRon01JAN2015-ADDCHARGE(InstalmentFee)changeAmountSubmit-DISBon01JAN2015.xlsx|Summary|	Repayment Schedule|Transactions|
+				
+@RunnerClass1
+	  Scenario: 4899-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-ADDCHARGE(DisbursementFee)changeAmountSubmit
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4899-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-ADDCHARGE(DisbursementFee)changeAmountSubmit.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4899-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-ADDCHARGE(DisbursementFee)changeAmountSubmit.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4899-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-ADDCHARGE(DisbursementFee)changeAmountSubmit.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4899-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-ADDCHARGE(DisbursementFee)changeAmountSubmit.xlsx|
+	  Then i validate and Verify from "error" sheet
+	 			|4899-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-ADDCHARGE(DisbursementFee)changeAmountSubmit.xlsx|
+				
+@RunnerClass1
+	  Scenario: 4900-SUBGRPLOANon01JAN2015-APRon01JAN2015-UndoApproval-APRon01FEB2015-DISBon01FEB2015
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4900-SUBGRPLOANon01JAN2015-APRon01JAN2015-UndoApproval-APRon01FEB2015-DISBon01FEB2015.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4900-SUBGRPLOANon01JAN2015-APRon01JAN2015-UndoApproval-APRon01FEB2015-DISBon01FEB2015.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4900-SUBGRPLOANon01JAN2015-APRon01JAN2015-UndoApproval-APRon01FEB2015-DISBon01FEB2015.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4900-SUBGRPLOANon01JAN2015-APRon01JAN2015-UndoApproval-APRon01FEB2015-DISBon01FEB2015.xlsx|
+	  Then I "UndoAprove And Disburse" and verified the following tabs
+	  			|4900-SUBGRPLOANon01JAN2015-APRon01JAN2015-UndoApproval-APRon01FEB2015-DISBon01FEB2015.xlsx|Modify Transaction|
+	  Then I verified the following Tabs details successfully
+	 			|4900-SUBGRPLOANon01JAN2015-APRon01JAN2015-UndoApproval-APRon01FEB2015-DISBon01FEB2015.xlsx|Summary|Repayment Schedule|Transactions|
+				
+@RunnerClass1
+	  Scenario: 4901-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-undoDisbursal-DISBon01FEB2015
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4901-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-undoDisbursal-DISBon01FEB2015.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4901-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-undoDisbursal-DISBon01FEB2015.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4901-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-undoDisbursal-DISBon01FEB2015.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4901-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-undoDisbursal-DISBon01FEB2015.xlsx|
+	  Then I "UndoDisburse And Disburse Again" and verified the following tabs
+	  			|4901-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-undoDisbursal-DISBon01FEB2015.xlsx|Modify Transaction|
+	  Then I verified the following Tabs details successfully
+	 			|4901-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-undoDisbursal-DISBon01FEB2015.xlsx|Summary|Repayment Schedule|Transactions|
+				
+@RunnerClass1
+	  Scenario: 4902-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-AssignOfficerOn01JAN2015
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4902-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-AssignOfficerOn01JAN2015.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4902-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-AssignOfficerOn01JAN2015.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4902-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-AssignOfficerOn01JAN2015.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4902-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-AssignOfficerOn01JAN2015.xlsx|
+	  Then I "Assign Loan Officer" and verified the following tabs
+	  			|4902-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-AssignOfficerOn01JAN2015.xlsx|Modify Transaction|
+	  Then i validate and Verify from "Validate" sheet
+	 			|4902-SUBGRPLOANon01JAN2015-APRDISBon01JAN2015-AssignOfficerOn01JAN2015.xlsx|
+				
+@RunnerClass1
+	  Scenario: 4903-SUBGRPLOANon01JAN2015-APRon01JAN2015-DISBtoSavingsOn01JAN2015
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4903-SUBGRPLOANon01JAN2015-APRon01JAN2015-DISBtoSavingsOn01JAN2015.xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4903-SUBGRPLOANon01JAN2015-APRon01JAN2015-DISBtoSavingsOn01JAN2015.xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4903-SUBGRPLOANon01JAN2015-APRon01JAN2015-DISBtoSavingsOn01JAN2015.xlsx|
+	  When I set up the new create saving account from "NewGroupSavingInput" sheet
+	            |4903-SUBGRPLOANon01JAN2015-APRon01JAN2015-DISBtoSavingsOn01JAN2015.xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4903-SUBGRPLOANon01JAN2015-APRon01JAN2015-DISBtoSavingsOn01JAN2015.xlsx|
+				
+@RunnerClass1
+	  Scenario: 4904-SUBGRPLOANon01JAN2015(Bothsync)-APRDISBon01JAN2015(with5000)
+      Given I setup the group
+	  Then I entered the values into group from "Group" sheet
+                |4904-SUBGRPLOANon01JAN2015(Both sync)-APRDISBon01JAN2015(with5000).xlsx|		  								  				  				  			
+	  Then I entered the values into client from "Input1" sheet
+	 	        |4904-SUBGRPLOANon01JAN2015(Both sync)-APRDISBon01JAN2015(with5000).xlsx|
+	  Then I entered the values into client from "Input2" sheet
+	 	        |4904-SUBGRPLOANon01JAN2015(Both sync)-APRDISBon01JAN2015(with5000).xlsx|
+	  When I set up the new create loan from "NewGroupLoanInput" sheet
+	  			|4904-SUBGRPLOANon01JAN2015(Both sync)-APRDISBon01JAN2015(with5000).xlsx|
+	  Then I verified the following Tabs details successfully
+	 			|4904-SUBGRPLOANon01JAN2015(Both sync)-APRDISBon01JAN2015(with5000).xlsx|Summary|Repayment Schedule|Transactions|

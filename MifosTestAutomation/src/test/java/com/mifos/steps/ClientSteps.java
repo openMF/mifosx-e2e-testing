@@ -19,6 +19,7 @@ import cucumber.api.java.en.When;
 public class ClientSteps {
 
 	final public FrontPage varFrontPage = new FrontPage();
+	final public MifosWebPage webpage = new MifosWebPage();
 	public String ExcelSheetPath = varFrontPage.getClientExcelSheetPath();
 
 	@Given("^I setup the clients$")
@@ -67,6 +68,8 @@ public class ClientSteps {
 				+ "entercollectionsheet");
 		String expectedCollectionPageUrl = TenantsUtils.getLocalTenantUrl()+ "entercollectionsheet";
 		String collectionPage = MifosWebPage.getWebDriver().getCurrentUrl();
+		Thread.sleep(2000);
+		webpage.select_office();
 		int i = 3;
 		while (!collectionPage.contains("entercollectionsheet") && i>0) {
 			try {

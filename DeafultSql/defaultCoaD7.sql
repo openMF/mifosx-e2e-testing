@@ -81,8 +81,6 @@ INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (17, 'Special', '2', 2, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (16, 'Married', '3', 3, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (16, 'Un Married', '4', 4, NULL, 1);
-INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (4, 'Male', '5', 5, NULL, 1);
-INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (4, 'Female', '6', 6, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (14, 'Out of MFI', '7', 7, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (14, 'Inactive', '8', 8, NULL, 1);
 INSERT INTO `m_code_value` (`code_id`, `code_value`, `code_description`, `order_position`, `code_score`, `is_active`) VALUES (19, 'Invalid applicant', '9', 9, NULL, 1);
@@ -160,7 +158,7 @@ INSERT INTO `m_staff` (`id`, `is_loan_officer`, `office_id`, `firstname`, `lastn
 INSERT INTO `m_savings_product` (`id`, `name`, `short_name`, `description`, `deposit_type_enum`, `currency_code`, `currency_digits`, `currency_multiplesof`, `nominal_annual_interest_rate`, `interest_compounding_period_enum`, `interest_posting_period_enum`, `interest_calculation_type_enum`, `interest_calculation_days_in_year_type_enum`, `min_required_opening_balance`, `lockin_period_frequency`, `lockin_period_frequency_enum`, `accounting_type`, `withdrawal_fee_amount`, `withdrawal_fee_type_enum`, `withdrawal_fee_for_transfer`, `allow_overdraft`, `overdraft_limit`, `nominal_annual_interest_rate_overdraft`, `min_overdraft_for_interest_calculation`, `min_required_balance`, `enforce_min_required_balance`, `min_balance_for_interest_calculation`, `withhold_tax`, `tax_group_id`, `is_dormancy_tracking_active`, `days_to_inactive`, `days_to_dormancy`, `days_to_escheat`) VALUES (1, 'Simple Savings', 'SS', 'SS', 100, 'USD', 2, 100, 8.000000, 1, 4, 1, 365, NULL, NULL, NULL, 1, NULL, NULL, 0, 0, 0.000000, 0.000000, 0.000000, 0.000000, 0, NULL, 0, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `acc_gl_financial_activity_account` (`id`, `gl_account_id`, `financial_activity_type`) VALUES (1, 1, 103);
 update c_configuration set enabled = 1 WHERE name = 'reschedule-repayments-on-holidays';
-INSERT INTO `m_holiday` (`id`, `name`, `from_date`, `to_date`, `repayments_rescheduled_to`, `status_enum`, `processed`, `description`) VALUES (1, '15 January 2013', '2013-01-15 00:00:00', '2013-01-15 00:00:00', '2013-01-20 00:00:00', 300, 0, '');
+INSERT INTO `m_holiday` (`id`, `name`, `from_date`, `to_date`, `repayments_rescheduled_to`, `status_enum`, `processed`, `description`, `extend_repayment_schedule`, `resheduling_type`) VALUES (1, '15 January 2013', '2013-01-15 00:00:00', '2013-01-15 00:00:00', '2013-01-20 00:00:00', 300, 0, '', 0, 2);
 INSERT INTO `m_holiday_office` (`holiday_id`, `office_id`) VALUES (1, 1);
 
 

@@ -37,6 +37,7 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.protocol.HttpRequestExecutor;
 import org.browsermob.core.har.*;
 import org.browsermob.proxy.util.*;
+import org.browsermob.proxy.util.Base64;
 import org.eclipse.jetty.util.MultiMap;
 import org.eclipse.jetty.util.UrlEncoded;
 import org.java_bandwidthlimiter.StreamManager;

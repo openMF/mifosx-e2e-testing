@@ -89,7 +89,7 @@ public class FirefoxDriverFactory implements WebDriverFactory {
 				}
 
 				System.setProperty("resources.file.path",
-						"src\\test\\resources\\mifos.properties");
+						"/root/Desktop/mifosx-e2e-testing/MifosTestAutomation/src/test/resources/mifos.properties");
 				System.setProperty("testing.framework.testdata.metadata",
 						"mifos-test-metadata.properties");
 				

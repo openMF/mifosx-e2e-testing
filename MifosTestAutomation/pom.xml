@@ -36,14 +36,14 @@
 						<includes>
 							<include>**/*Test.java</include>
 						</includes>
-						<parallel>classes</parallel>
-							<threadCount>15</threadCount>
+						<forkCount>2.5C</forkCount>
+                           <reuseForks>true</reuseForks>
 						
 						<testFailureIgnore>true</testFailureIgnore>
 						<systemPropertyVariables>
 							<webdriver.factory.class.name>com.mifos.testing.framework.webdriver.FirefoxDriverFactory</webdriver.factory.class.name>
 							<webdriver.chrome.driver>C:\ChromeDriver\chromedriver.exe</webdriver.chrome.driver>
-							<resources.file.path>src\test\resources\mifos.properties</resources.file.path>
+							<resources.file.path>/root/Desktop/mifosx-e2e-testing/MifosTestAutomation/src/test/resources/mifos.properties</resources.file.path>
 							<testing.framework.testdata.metadata>mifos-test-metadata.properties</testing.framework.testdata.metadata>
 						</systemPropertyVariables>
 															
